@@ -1,4 +1,4 @@
-'''es 1.Radice Quadrata Sicura
+'''es 1.Radice Quadrata Sicura.
 
 Scrivi una funzione safe_sqrt(number) che calcoli la radice quadrata di un numero usando math.sqrt(). Gestisci l'eccezione ValueError se l'input è negativo restituendo un messaggio informativo.'''
 
