@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body background="src/ristorante.jpg" style="background-size: cover; background-position: center; background-repeat: no-repeat; margin: 0; padding: 0; height: 100vh;">
+    <h3 align="center">Home Page</h3>
+    <br>
+    <table width="100%" border="1">
+        <tr>
+            <td align="center">
+                <a href="home_page.html"><b>Home</b></a> | <a href="Chi_siamo.html"><b>Chi Siamo</b></a> | <a href="Prodotti.html"><b>Prodotti</b></a> | <a href="Servizi.html"><b>Servizi</b></a> | <a href="Contatti.html"><b>Contatti</b></a>
+            </td>
+        </tr>
+    </table>
+    
+    <form action="link-del-destinatario" method="get">
+        <br><br><br>
+
+        <table align="center" valign="center" style="font-size: 15px; padding: 10px;">
+            <tr>
+                <td>Nome:</td>
+                <td><input type="text" name="nome" value="Lorenzo" size="50" style="font-size: 15px; padding: 10px;"></td>
+            </tr>
+            <tr>
+                <td>Cognome:</td>
+                <td><input type="text" name="cognome" value="Anzivino" size="50" style="font-size: 15px; padding: 10px;"></td>
+            </tr>
+            <tr>
+                <td>Telefono:</td>
+                <td><input type="text" name="telefono" value="389-7638987" size="50" style="font-size: 15px; padding: 10px;"></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="email" name="email" value="lorenzo@gmail.com" size="50" style="font-size: 15px; padding: 10px;"></td>
+            </tr>
+            <tr>
+                <td>Messaggio:</td>
+                <td><textarea name="messaggio" style="font-size: 15px; padding: 10px;"></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Invia" style="font-size: 15px; padding: 10px 20px;">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

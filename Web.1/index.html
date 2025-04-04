@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document Lorenzo Anzivino</title>
+    </head>
+
+    <body>
+        <!-- TAG DI TIPO BLOCK -->
+        <h1>TAG di tipo BLOCK: vanno a capo automaticamente</h1>
+        <h3>Titolo della pagina, prima lezione</h3>
+        <p>Questo è un paragrafo: spazio intorno alla</p>
+        <p>Questo è un paragrafo: spazio intorno alla scritta</p>
+        <div>Division: contenitore nessun valore estetico</div>
+
+        <!-- TAG di tipo INLINE -->
+        <h2>TAG di tipo INLINE: Non vanno a capo da soli</h2>
+        <h3>Eccezioni: non hanno una chiusura... img</h3>
+        <img>
+        <a> a... ancora di salvataggio </a> 
+        <span>Intervallo: fratello gemello di div</span>
+        
+        <br/>
+        <!-- ATTRIBUTI -->
+        <h2> Attributi comando che aggiunge informazioni al tag </h2>
+
+        <img src = "nome della foto .estenzione + percorso (es foto.jpg)"/>
+        <a href = "https://github.com/Lorenzoanzivino/ITS-Esercizi"> ancora di salvataggio h = hypertext reference </a>
+        <span>Intervallo: fratello gemello di div</span>
+
+        <!-- Elenchi non ordinati -->
+        <ul>
+            <li>Lunedi</li>
+            <li>Martedi</li>
+            <li>Mercoledi</li>
+            <li>Giovedi</li>
+            <li>Venerdi</li>
+        </ul>
+        <!-- elenchi Ordinati -->
+        <ol>
+            <li>Lunedi</li>
+            <li>Martedi</li>
+            <li>Mercoledi</li>
+            <li>Giovedi</li>
+            <li>Venerdi</li>
+        </ol>
+
+        <!-- TABELLE ...
+            all'inizio del 1990 si usavano solo le tabelle
+            dal 2000... non si usano più perche sono nati gli smartphone e sono cambiati gli schermi e le forme.
+            Le tabelle sono file excell
+            ora si usano i DIV perchè sono tante scatole senza legami
+            i DIV utilizzano la stessa logica delle tabelle... -->
+
+        <!-- COME SI COSTRUISCE -->   
+        <!-- tr = riga , td = colonna --> 
+        <table border = "1">
+            <!-- celle della riga 1-->
+            <tr> <!-- Disegnata la riga -->
+                <td>A1</td> <!-- Disegnata la cella singola -->
+                <td><h1> BANNER del sito </h1></td>
+                <td>C1</td>
+            </tr>
+            <!-- celle riga 2 con TABELLE ANNIDATE -->
+            <tr> 
+                <td>A2</td> 
+                <td>
+                    <table border="1" width = "100%">
+                        <tr>
+                            <td>Titolo</td>
+                            <td align="right" > Descrizione </td>
+                        </tr>
+                    </table>
+                </td>
+                <td>C2</td>
+            </tr>
+        </table>
+        <!-- FORM: inserimento di dati, rendere interattiva la pagina
+            Nel tag FORM devo mettere: 
+                action... destinatario
+                method... metodo di invio get/post
+                name... name 
+            
+            Quando invio dati con form sono tutte stringhe
+
+                Quando invio i dati in CHIARO (get) = dati non sensibili
+                quando invio i dati nascosti (post) = dati sensibili-->
+
+        <form action="link del destinatario, es: https://www.google.it" method="get" name="Lorenzo">
+            <input type="text" name="nome">
+            <input type="file" name="cv" id="">
+
+            <!-- permette una sola scelta-->
+             
+            <input type="checkbox" value="yes" name="privacy">
+            <!-- RADIO: permette di avere una selezione multipla per più scelte-->
+            <input type="radio" value="maschio" name="sesso">
+            <input type="radio" value="femmina" name="sesso">
+            <input type="radio" value="binario" name="sesso">
+
+            <select name="mese">
+                <option>Gennaio</option>
+                <option>Febbraio</option>
+                <option>Marzo</option>
+                <option>Aprile</option>
+                <option>Maggio</option>
+                <option>Giugno</option>
+                <option>Luglio</option>
+                <option>Agosto</option>
+            </select>
+
+            <textarea name="messaggio"></textarea>
+            <!-- INVIARE IL FORM, tutti i valori e le spedisce al destinatario-->
+            <input type="submit">
+        </form>
+    </body>
+</html>
