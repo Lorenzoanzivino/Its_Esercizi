@@ -32,3 +32,5 @@
         - finally:
     - Asserzioni:
         - assert
+
+- 03/04/25 Esercizio 3 web.1
