@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Struttura HTML con Tabelle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <table class="main-table">
+        <!-- FOTO TOP -->
+        <tr>
+            <td colspan="2" class="top-image">
+                <img src="src/top.jpg" alt="Top Image">
+            </td>
+        </tr>
+
+        <!-- LINK DI NAVIGAZIONE -->
+        <tr class="navigation">
+            <td colspan="2">
+                <a href="#">HOME</a> |
+                <a href="#">LA NOSTRA AZIENDA</a> |
+                <a href="#">I PRODOTTI</a> |
+                <a href="#">I SERVIZI</a> |
+                <a href="#">I CONTATTI</a>
+            </td>
+        </tr>
+
+        <!-- CONTENUTO PRINCIPALE -->
+        <tr>
+            <!-- Colonna sinistra -->
+            <td class="left-column">
+                <table>
+                    <tr>
+                        <td><img src="src/registrati-ora.jpg" alt="Registrati Ora" class="fixed-image"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="src/login.jpg" alt="Login" class="fixed-image"></td>
+                    </tr>
+                    <tr>
+                        <td class="padding-top"><img src="src/catalogo.jpg" alt="Catalogo" class="fixed-image"></td>
+                    </tr>
+                </table>
+            </td>
+
+            <!-- Colonna destra -->
+            <td class="right-column">
+                <table>
+                    <tr>
+                        <td>
+                            <p><b>L'attività della Eit Service offre i seguenti servizi:</b></p>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur suscipit perferendis neque unde ipsam nihil. Ratione, cupiditate. Nesciunt, voluptatem dignissimos! Veritatis, nam sint. Perspiciatis eveniet optio autem quam nam neque!</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table width="100%">
+                                <!-- Riga 2 -->
+                                <tr>
+                                    <td class="book-image"><img src="src/libro1.jpg" alt="Foto libro"></td>
+                                    <td width="100%">
+                                        <table width="100%">
+                                            <tr class="book-info"><td><b>Le frodi carosello</b></td></tr>
+                                            <tr class="book-info"><td>Categoria : fiscale</td></tr>
+                                            <tr class="book-info"><td>Editore : MAGGIOLI</td></tr>
+                                            <tr class="book-info"><td>Codice : 9788891619204</td></tr>
+                                            <tr class="book-info"><td>Prezzo : 22,00</td></tr>
+                                            <tr class="book-info"><td><font color="green">*** Articolo Disponibile ***</font></td></tr>
+                                            <tr class="book-info"><td align="right"><b><i>..... maggiori informazioni</i></b></td></tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="text-align: center;">
+                                        <img src="src/divisore.jpg" alt="Divisore" style="width: 100%; height: auto;">
+                                    </td>
+                                </tr>
+
+                                <!-- Riga 3 -->
+                                <tr>
+                                    <td class="book-image"><img src="src/libro2.jpg" alt="Foto libro"></td>
+                                    <td>
+                                        <table width="100%">
+                                            <tr class="book-info"><td><b>La cartella di pagamento</b></td></tr>
+                                            <tr class="book-info"><td>Categoria : Fiscale</td></tr>
+                                            <tr class="book-info"><td>Editore : MAGGIOLI</td></tr>
+                                            <tr class="book-info"><td>Codice : 9788891619204</td></tr>
+                                            <tr class="book-info"><td>Prezzo : 54,00</td></tr>
+                                            <tr class="book-info"><td><font color="green">*** Articolo Disponibile ***</font></td></tr>
+                                            <tr class="book-info"><td align="right"><b><i>..... maggiori informazioni</i></b></td></tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="text-align: center;">
+                                        <img src="src/divisore.jpg" alt="Divisore" style="width: 100%; height: auto;">
+                                    </td>
+                                </tr>
+
+                                <!-- Riga 4 -->
+                                <tr>
+                                    <td class="book-image"><img src="src/libro3.jpg" alt="Foto libro"></td>
+                                    <td>
+                                        <table width="100%">
+                                            <tr class="book-info"><td><b>Azienda agricola e fisco</b></td></tr>
+                                            <tr class="book-info"><td>Categoria : Fiscale</td></tr>
+                                            <tr class="book-info"><td>Editore : MAGGIOLI</td></tr>
+                                            <tr class="book-info"><td>Codice : 9788891619815</td></tr>
+                                            <tr class="book-info"><td>Prezzo : 42,00</td></tr>
+                                            <tr class="book-info"><td><font color="green">*** Articolo Disponibile ***</font></td></tr>
+                                            <tr class="book-info"><td align="right"><b><i>..... maggiori informazioni</i></b></td></tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="text-align: center;">
+                                        <img src="src/divisore.jpg" alt="Divisore" style="width: 100%; height: auto;">
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <!-- Riempitivo per altezza -->
+        <tr>
+            <td colspan="2" class="filler">&nbsp;</td>
+        </tr>
+    </table>
+</body>
+</html>

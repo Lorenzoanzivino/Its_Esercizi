@@ -1,0 +1,77 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: rgb(177, 233, 177);
+}
+
+.main-table {
+    width: 1000px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    text-align: center;
+    min-height: 100vh;
+    background-color: white;
+}
+
+.filler {
+    height: 100px;
+}
+
+.fixed-image {
+    display: block;
+    margin-left: 0;
+}
+
+.top-image {
+    background-color: lightgray;
+}
+
+.navigation {
+    background-color: lightgrey;
+}
+
+.navigation td {
+    padding: 10px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.left-column {
+    width: 33%;
+    vertical-align: top;
+    text-align: left;
+}
+
+.right-column {
+    width: 67%;
+    vertical-align: top;
+    text-align: left;
+}
+
+.padding-top {
+    padding-top: 30px;
+}
+
+.book-image img {
+    height: 240px;
+}
+
+.book-info {
+    background-color: rgb(241, 241, 241);
+}
+
+.book-info td {
+    padding: 5px;
+    width: 100%;
+    vertical-align: top;
+    
+}
+.right-column td {
+    min-height: 300px; 
+}
+
