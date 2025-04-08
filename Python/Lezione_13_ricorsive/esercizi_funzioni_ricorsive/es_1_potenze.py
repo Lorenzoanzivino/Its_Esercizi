@@ -30,3 +30,43 @@ print(risultato2)
 # 5 elevato alla potenza di 2.
 risultato3= recursivePower(5,2)
 print(risultato3)
+
+print("------------------------------------------")
+
+
+# CAPIRE COSA DECREMENTA -> in questo caso decrementa l'esponente
+'''
+3^4 = 3 * 3^3 =
+    = 3 * (3 * 3^2) =
+    = 3* (3 * (3 * 3^1)) =
+    = 3 * (3 * (3 * (3 * 3^0)) =
+
+    cosa rimane fisso?
+    cosa cambia?
+    dove e quando mi devo fermare?
+'''
+
+def potenza_ricorsiva(base:int, esponente:int) -> int:
+
+    if esponente == 0:
+        return 1
+    
+    elif base == 0:
+        return 0
+    
+    else:
+        return int(base * potenza_ricorsiva(base, esponente - 1))
+    
+# 3⁴, ovvero 3 elevato alla potenza di 4.
+risultato=potenza_ricorsiva(3,4)
+print(f"3^4: {risultato}")
+# 4 elevato alla potenza di 3
+risultato1=potenza_ricorsiva(4,3)
+print(f"4^3: {risultato1}")
+# 2 elevato alla potenza di 5.
+risultato2= potenza_ricorsiva(2,5)
+print(f"2^5: {risultato2}")
+# 5 elevato alla potenza di 2.
+risultato3= potenza_ricorsiva(5,2)
+print(f"5^2: {risultato3}")
+    
