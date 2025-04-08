@@ -18,15 +18,15 @@ def recursivePower(base:int,esponente:int):
     else:
         return base*recursivePower(base,esponente - 1)
     
-#3⁴, ovvero 3 elevato alla potenza di 4.
+# 3⁴, ovvero 3 elevato alla potenza di 4.
 risultato=recursivePower(3,4)
 print(risultato)
-#4 elevato alla potenza di 3
+# 4 elevato alla potenza di 3
 risultato1=recursivePower(4,3)
 print(risultato1)
-#2 elevato alla potenza di 5.
+# 2 elevato alla potenza di 5.
 risultato2= recursivePower(2,5)
 print(risultato2)
-#5 elevato alla potenza di 2.
+# 5 elevato alla potenza di 2.
 risultato3= recursivePower(5,2)
 print(risultato3)
