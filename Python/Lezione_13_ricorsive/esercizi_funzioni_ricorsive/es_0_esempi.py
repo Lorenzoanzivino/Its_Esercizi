@@ -74,3 +74,4 @@ def recursiveSumInRange(a:int, b:int) -> int:
     
 # calling sumInRange function for a=5, b=10
 print(recursiveSumInRange(5,10))
+
