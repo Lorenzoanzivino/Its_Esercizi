@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezione DOM</title>
+    
+    <!-- SCRIPT JAVASCRIPT -->
+    <script>
+        function test() {
+            var x = 15;
+
+            var mioelemento = document.getElementById("paperino"); // recuperato l'elemento(TAG)
+
+            if(x<10) {
+
+                mioelemento.innerHTML = "X è minore di 10";
+                mioelemento.style.color = "Red";
+
+            }else{
+                mioelemento.innerHTML = "X è maggiore di 10";
+                mioelemento.style.color = "orange";
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <h1>Titolo della pagina</h1>
+    <h1 onclick = "document.body.style.backgroundColor = 'red'">TITOLO PAGINA</h1>
+    <!-- DOM (non è javascript... browser) : document...
+            1- Gestione eventi : tastiera e mouse
+            html mi mette a disposizione EVENTI ... possono eseguire DOM
+
+            document : 3 cose... individuare l'elemento (tag)... decido cosa fare:
+            - gestisco attributo
+            - creo Evento
+            - modifico lo stile
+
+            2 - Tramite javascript
+    -->
+
+    <h1 id="paperino">Scritta Personalizzata</h1>
+
+    <h2 onclick="test()">Clicca qui per scambiare contenuto di</h2>
+
+</body>
+</html>
