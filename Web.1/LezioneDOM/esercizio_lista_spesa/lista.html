@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista_spesa</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            padding: 30px;
+        }
+        h1 {
+            color: #333;
+        }
+        input.prodotto {
+            padding: 8px;
+            width: 200px;
+            margin-right: 10px;
+        }
+        input.quantità {
+            padding: 8px;
+            width: 60px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 8px 12px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        ul {
+            margin-top: 20px;
+        }
+        li {
+            margin: 5px 0;
+            padding-bottom: 5px;
+            border-bottom: 1px dashed #aaa;
+        }
+    </style>
+    <script>
+        function aggiungiProdotto() {
+            var inputProdotto = document.getElementById('prodotto');
+            var inputQuantità = document.getElementById('quantità');
+            var nomeProdotto = inputProdotto.value;
+            var quantità = inputQuantità.value;
+
+            if (nomeProdotto !== "") {
+                var li = document.createElement('li');
+                li.textContent = `${nomeProdotto.charAt(0).toUpperCase()}${nomeProdotto.slice(1).toLowerCase()} x${quantità || '1'}`;
+                document.getElementById('listaSpesa').appendChild(li);
+                inputProdotto.value = "";
+                inputQuantità.value = "";
+            }
+            if (aggiungiProdotto == "invio"){
+                aggiungiProdotto = true
+            }
+        }
+
+        function svuotaLista() {
+            document.getElementById('listaSpesa').innerHTML = "";
+        }
+    </script>
+</head>
+<body>
+    <form action="javascript:void(0);">
+        <table>
+            <tr>
+                <td colspan="4">
+                    <h1>🛒 Lista della Spesa</h1>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id="prodotto" class="prodotto" placeholder="Inserisci un prodotto">
+                </td>
+                <td>
+                    <input type="text" id="quantità" class="quantità" placeholder="Qtà">
+                </td>
+                <td>
+                    <button type="button" onclick="aggiungiProdotto()">Aggiungi</button>
+                </td>
+                <td>
+                    <button type="button" onclick="svuotaLista()">Svuota Lista</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <br>
+    <ul id="listaSpesa"></ul>
+</body>
+</html>
