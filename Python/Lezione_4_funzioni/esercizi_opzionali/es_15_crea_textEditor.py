@@ -9,8 +9,7 @@ Crea un semplice editor di testo che permetta all'utente di aprire, modificare e
     Salva il testo modificato in un file quando l'utente sceglie di salvare.'''
 
 editor:dict = {} # inventario vuoto che simuli una cartella
-
-editor = {}  # Dizionario vuoto che simula una cartella
+lista_eliminati = []
 
 def aggiungi_file(nome: str, testo: str):
     if nome in editor:
@@ -54,8 +53,8 @@ def copia_file(nome: str):
 def visualizza_editor():
     if editor:
         print("\nEditor completo:")
-        for nome, testo in editor.items():
-            print(f"Nome: {nome} - Testo: {testo}")
+        for nome in editor.items():
+            print(f"Nome: {nome}")
             print("-" * 20)  # Separatore
     else:
         print("L'editor è vuoto.")
@@ -70,6 +69,8 @@ def gestisci_file():
         print("5 - Copia un file")
         print("6 - Visualizza l'editor")
         print("7 - Esci")
+        print("undo - torna indietro")
+        print("redo - ripristina")
         
         scelta = input("\nInserisci il numero dell'operazione: ")
 
@@ -95,6 +96,9 @@ def gestisci_file():
         elif scelta == "7":
             print("Programma terminato")
             break
+        elif scelta == undo:
+            editor.pop(nome)
+
         else:
             print("Operazione non valida")
 
