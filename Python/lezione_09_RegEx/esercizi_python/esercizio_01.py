@@ -11,12 +11,8 @@ is_integer("12.3")     # False
 '''
 import re
 
-def is_integer(s:str) -> bool:
-    result = re.match(r'(-?)([0-9])+', s)
-    if int(result.group()):
-        return True
-    else:
-        return False
+def is_integer(s: str) -> bool:
+    return bool(re.fullmatch(r'-?\d+', s))
 
 print(is_integer("123"))      # True
 print(is_integer("-456"))     # True
