@@ -41,4 +41,4 @@
 
 - 14/04/25 inizio Bootstrap
 
-- 15/04/25 inizio DOCKER
+- 15/04/25 inizio Docker
