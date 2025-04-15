@@ -40,3 +40,5 @@
 - 09/04/25 inizio RegEx
 
 - 14/04/25 inizio Bootstrap
+
+- 15/04/25 inizio DOCKER
