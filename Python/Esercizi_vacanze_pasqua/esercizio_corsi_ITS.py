@@ -1,3 +1,4 @@
+# Parte 1
 class Room:
     def __init__(self, id: str, floor: int, seats: int):
         self.id = id
@@ -18,7 +19,7 @@ class Room:
         return self.area
 
 class Building:
-    def __init__(self, name: str, address: str, floors: int):
+    def __init__(self, name: str, address: str, floors: tuple):
         self.name = name
         self.address = address
         self.floors = floors
@@ -31,7 +32,7 @@ class Building:
         return self.rooms
 
     def add_room(self, room):
-        if room.get_floor() >= 1 and room.get_floor() <= self.floors:
+        if room.get_floor() >= self.floors[0] and room.get_floor() <= self.floors[1]:
             if room.get_id() not in [room.get_id() for room in self.rooms]:
                 self.rooms.append(room)
 
@@ -41,6 +42,7 @@ class Building:
             total_area += room.get_area()
         return total_area
 
+# Parte 2
 class Person:
     def __init__(self, cf:str, name:str, surname:str, age:int):
         self.cf = cf
@@ -90,6 +92,7 @@ class Group:
         if len(self.lecturers) < self.get_limit_lecturers():
             self.lecturers.append(lecturer)
 
+# Parte 3
 class Course:
     def __init__(self, name: str, room=None, group=None, lecturer=None):
         self.name = name
