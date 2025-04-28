@@ -17,7 +17,6 @@ class Persona:
     def __str__(self) -> str:
         return f"Nome: {self.nome}\nCognome: {self.cognome}\nEtà: {self.eta}"  
 
-    
     def setName(self,nome)->None:
         if nome:
             self.nome = nome
@@ -35,10 +34,6 @@ class Persona:
             self.eta = 0
         else:
             self.eta = eta  
-
-
- 
-           
 
     def getName(self)-> str:
         return self.nome
