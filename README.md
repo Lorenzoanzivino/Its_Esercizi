@@ -44,3 +44,5 @@
 - 15/04/25 inizio Docker
 
 - 16/05/25 inizio Classi ereditarietà Lezione 8
+
+- 28/05/25 inizio Polimorfismo lezione 8
