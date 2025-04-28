@@ -23,5 +23,7 @@ class Alieno:
     def __str__(self) -> str:
         return f"\nAlieno proveniente dalla galassia: {self.getGalaxy()}\n"
     
+    
     def speak(self) -> None:
-        print("testo alieno: **************")
+        print("\nLingua aliena: **************\n")
+    
