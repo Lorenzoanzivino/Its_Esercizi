@@ -41,3 +41,7 @@ class Persona:
         return self.cognome
     def getEta(self)->int:
         return self.eta
+
+    # Metodo speak() per la classe Persona che consente di simulare un saluto
+    def speak(self) -> None:
+        print(f"\nHello! my name is {self.getName()}!\n")
