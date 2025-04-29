@@ -46,3 +46,15 @@
 - 16/05/25 inizio Classi ereditarietà Lezione 8
 
 - 28/05/25 inizio Polimorfismo lezione 8
+
+- 29/05/25 Linux: Concetti Fondamentali e Strumenti Essenziali
+    - Linux
+    - Utente root
+    - Gruppi e Password
+    - Shell Bash
+    - Comandi utili
+    - Comandi legati al file system
+    - Standard di input/output/error
+    - Pipeline
+    - Lista
+    - Operatori Logici
