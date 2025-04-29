@@ -47,7 +47,7 @@
 
 - 28/05/25 inizio Polimorfismo lezione 8
 
-- 29/05/25 Linux: Concetti Fondamentali e Strumenti Essenziali
+- 29/05/25 Linux: Concetti Fondamentali e Strumenti Essenziali:
     - Linux
     - Utente root
     - Gruppi e Password
