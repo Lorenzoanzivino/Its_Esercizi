@@ -26,22 +26,25 @@ Codice driver
     Cerca film per parola chiave nel titolo, gestendo il caso con risultati che senza.'''
 
 class MovieCatalog:
-    def __init__(self):
-        # Dizionario per memorizzare i registi e i loro film
-        self.catalogo: dict = {}
+    # Seguire questo schema per i progetti di Progettazione
+    catalogo: dict[str, list[str]]
 
-    def add_movie(self, director_name: str, movies: list[str]):
+    def __init__(self) -> None:
+        # Dizionario per memorizzare i registi e i loro film
+        self.catalogo = {} # Inizializzata
+
+    def add_movie(self, director_name: str, movies: list[str]) -> None:
         # Aggiunge uno o più film al regista specificato
         if director_name not in self.catalogo:
-            self.catalogo[director_name] = []
-
-        for movie in movies:
-            if movie not in self.catalogo[director_name]:
-                self.catalogo[director_name].append(movie)
-
+            self.catalogo[director_name] = movies
+        else:
+            for movie in movies:
+                if movie not in self.catalogo[director_name]:
+                    self.catalogo[director_name].append(movie)
+                
         print(f"Film aggiunti al regista {director_name}: {', '.join(movies)}")
 
-    def remove_movie(self, director_name, movie_name):
+    def remove_movie(self, director_name, movie_name) -> None:
         # Controllo se il regista esiste nel catalogo
         if director_name in self.catalogo:
             # Controllo se il film è presente nella lista del regista
@@ -67,7 +70,7 @@ class MovieCatalog:
         else:
             print(f"Il regista '{director_name}' non è presente nel catalogo.")
 
-    def list_directors(self):
+    def list_directors(self) -> list[str]:
         # Elenco dei registi presenti nel catalogo
         if self.catalogo:
             print("Registi nel catalogo:")
@@ -76,28 +79,30 @@ class MovieCatalog:
         else:
             print("Nessun regista nel catalogo.")
 
-    def get_movies_by_director(self, director_name):
+    def get_movies_by_director(self, director_name) -> list[str]:
         # Restituisce tutti i film di un regista specifico
         if director_name in self.catalogo:
-            print(f"Film di {director_name}: {', '.join(self.catalogo[director_name])}")
-        else:
-            print(f"Il regista '{director_name}' non è presente nel catalogo.")
+            return self.catalogo[director_name]
 
-    def search_movies_by_title(self, title):
+    def search_movies_by_title(self, title) -> dict[str, list[str]] | str:
         # Cerca film che contengono una certa parola nel titolo
-        risultati = []
+        result : dict[str, list[str]] = {}
+
         for director, movies in self.catalogo.items():
+            matching_movies: list[str] = []
+
             for movie in movies:
                 if title.lower() in movie.lower():
-                    risultati.append(f"{director}: {movie}")
+                    matching_movies.append(movie)
+            
 
-        if risultati:
-            print("Film trovati:")
-            for risultato in risultati:
-                print(risultato)
+            if matching_movies:
+                result[director] = matching_movies
+
+        if result:
+            return result
         else:
-            print(f"Nessun film trovato con il titolo '{title}'.")
-
+            return "non è stato trovato nulla"
 
 # Creo istanze diverse della classe MovieCatalog
 catalogo1 = MovieCatalog()
