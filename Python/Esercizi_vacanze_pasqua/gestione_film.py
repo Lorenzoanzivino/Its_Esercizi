@@ -30,7 +30,7 @@ class MovieCatalog:
         # Dizionario per memorizzare i registi e i loro film
         self.catalogo: dict = {}
 
-    def add_movie(self, director_name: str, movies: list):
+    def add_movie(self, director_name: str, movies: list[str]):
         # Aggiunge uno o più film al regista specificato
         if director_name not in self.catalogo:
             self.catalogo[director_name] = []
