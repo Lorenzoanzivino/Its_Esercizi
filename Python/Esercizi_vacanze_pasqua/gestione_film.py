@@ -103,6 +103,7 @@ class MovieCatalog:
             return result
         else:
             return "non è stato trovato nulla"
+            
 
 # Creo istanze diverse della classe MovieCatalog
 catalogo1 = MovieCatalog()
