@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variabili in JS</title>
+    <script>
+        test();
+        console.log(anni); // undefined
+
+        // HOISTING : CAratteristica di JS ... Meccanismo automatico -> Esegue il codice con una sequenza diversa
+        // "Sposta" le dichiarazioni delle variabili alla riga 1 All'inizio -> Vale solo per VAR Fase 1
+        // "Sposta" le funzioni tutte all'inizio
+        function test() {
+            console.log("Sto eseguenda la Funzione testo")
+        }
+
+        // dichiarazione delle variabili : Fase 1
+        // Era un errore perche ti permetteva di utilizzare lo stesso nome con il rischio di sovrascrivere i dati
+        var anni = 10;
+        var anni = 30;
+
+        // dichiarazione variabili : Fase 2 ES5 / ES6
+        let anni2 = 20;
+
+        anni2 = 30;
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
