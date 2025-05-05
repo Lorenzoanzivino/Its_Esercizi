@@ -96,7 +96,7 @@ def gestisci_file():
         elif scelta == "7":
             print("Programma terminato")
             break
-        elif scelta == undo:
+        elif scelta == "undo":
             editor.pop(nome)
 
         else:
