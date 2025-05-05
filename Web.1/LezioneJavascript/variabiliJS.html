@@ -6,14 +6,24 @@
     <title>Variabili in JS</title>
     <script>
         test();
+
+        // Nuovo modo di scrivere le funzioni - ELIMINANDO l'HOISTING -
+        let test2 = () => {
+            console.log("Sto eseguendo la funzione Test2");
+        };
+
+        test2();
+
         console.log(anni); // undefined
 
         // HOISTING : CAratteristica di JS ... Meccanismo automatico -> Esegue il codice con una sequenza diversa
         // "Sposta" le dichiarazioni delle variabili alla riga 1 All'inizio -> Vale solo per VAR Fase 1
         // "Sposta" le funzioni tutte all'inizio
+
+        // Vecchio modo di definire funzioni con Hoisting
         function test() {
-            console.log("Sto eseguenda la Funzione testo")
-        }
+            console.log("Sto eseguenda la Funzione test");
+        };
 
         // dichiarazione delle variabili : Fase 1
         // Era un errore perche ti permetteva di utilizzare lo stesso nome con il rischio di sovrascrivere i dati
@@ -22,9 +32,21 @@
 
         // dichiarazione variabili : Fase 2 ES5 / ES6
         let anni2 = 20;
-
         anni2 = 30;
 
+        // variabili : Stringhe - numeri - boolean - null - undefined
+        // tipizzazione debole ... il tipo può cambiare
+        // Fase 1 :
+        var x = "Mario" + "ciao a tutti" + 10; // stringhe
+
+        // Fase 2 : Template string ... backtick (accento grave) -> Come la formattazione
+        // ALT + 96 tastierino windows
+        // Alt gr + ' (tasto a destra dello 0) 
+        let z = `ciao 10 ${anni2} arrivederci` ;
+
+        let y = 10; // numeri
+
+        x = true; // boolean
     </script>
 </head>
 <body>
