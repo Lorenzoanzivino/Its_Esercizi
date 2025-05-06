@@ -17,11 +17,16 @@ computer science? Provide examples of other disciplines where it applies.
 3. What are the core components of computational thinking as identified by Karl
 Beecher, and how do they interact in problem-solving?
 
-    3.1. Decomposition : divide the problem into smaller parts
-    Pattern recognition : finding similarities.
-    Abstraction : focus only on what matters.
-    Algorithms : Create steps to solve.
-    They interact like a flow : it analyzes, simplifies and resolves.
+    3.1. Core components of CT include:
+    ○ Logical thinking
+    ○ Algorithmic thinking
+    ○ Decomposition
+    ○ Generalisation and pattern recognition
+    ○ Abstraction
+    ○ Modelling
+    ○ Evaluation
+    These work together to analyze problems, design solutions, and translate
+    them into computational form.
 
 4. What is the difference between deductive and inductive reasoning? Provide
 examples of each in a computational context.
