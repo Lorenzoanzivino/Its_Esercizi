@@ -1,0 +1,30 @@
+The first ten chapters of Computational Thinking establish a conceptual and practical
+framework for approaching problems through methods derived from computer science.
+Computational thinking (CT) is defined as the process of formulating problems and
+expressing solutions in forms that can be effectively carried out by a computer. It
+emphasizes abstraction, decomposition, algorithmic thinking, pattern recognition, modelling,
+and evaluation. CT is positioned as distinct from, though related to, both programming and
+computer science, with applicability across disciplines.
+
+    🧠 Pensiero computazionale – Riassunto (Capitoli 1–10)
+
+    I primi dieci capitoli di Computational Thinking stabiliscono un quadro concettuale e pratico per affrontare i problemi utilizzando metodi derivati dall’informatica.
+    Il pensiero computazionale (CT) è definito come il processo di formulazione dei problemi e di espressione delle soluzioni in forme che possano essere eseguite efficacemente da un computer. Esso pone enfasi su astrazione, decomposizione, pensiero algoritmico, riconoscimento dei pattern, modellazione e valutazione. Il CT si distingue dalla programmazione e dall’informatica, pur essendo connesso ad esse, e ha applicazioni in molte discipline diverse.
+
+The foundation of CT is logical and algorithmic thinking. Logic is introduced as a formal
+system for constructing and validating arguments. Deductive reasoning leads to conclusions
+that necessarily follow from premises, while inductive reasoning supports probabilistic
+conclusions. Boolean logic is presented as the basis for binary decision-making in
+computers, employing logical operators such as AND, OR, NOT, IMPLIES, and IF AND
+ONLY IF. Symbolic logic and truth tables are used to establish the exact behaviour of these
+operators.
+
+    📐 Logica e pensiero algoritmico
+
+    La base del CT è il pensiero logico e algoritmico.
+    La logica è introdotta come un sistema formale per costruire e convalidare argomentazioni.
+    Il ragionamento deduttivo porta a conclusioni che derivano necessariamente dalle premesse.
+    Il ragionamento induttivo porta a conclusioni probabilistiche basate su osservazioni.
+    La logica booleana è la base delle decisioni binarie nei computer, con operatori logici come AND (e), OR (o), NOT (non), IMPLICA, SE E SOLO SE.
+
+    Si usano logica simbolica e tabelle di verità per rappresentare precisamente il comportamento degli operatori logici.
