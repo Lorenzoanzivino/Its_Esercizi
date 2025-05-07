@@ -6,6 +6,12 @@ and programming?
     1.1. Computational thinking is a problem-solving process that involves abstraction, decomposition, algorithmic thinking, pattern recognition, modeling, and evaluation.
     In computer science, CT is the theoretical and practical study of computation.
 
+    1.2 Computational thinking (CT) is a problem-solving approach that involves
+    expressing problems and solutions in a way that a computer can execute. It differs
+    from computer science, which is the academic study of computation, and from
+    programming, which is the practice of writing software
+
+
 2. Why is computational thinking considered relevant beyond the field of
 computer science? Provide examples of other disciplines where it applies.
 
@@ -14,8 +20,12 @@ computer science? Provide examples of other disciplines where it applies.
     Biology: modeling ecosystems
     History: analyzing cause-effect chains
 
-3. What are the core components of computational thinking as identified by Karl
-Beecher, and how do they interact in problem-solving?
+    2.2. CT is applicable across disciplines because it teaches structured problem-solving.
+    Examples include biology (e.g., genome analysis), climate science (modeling),
+    linguistics (syntax parsing), and law (automated reasoning in legal systems)
+    3. What are the core components of computational thinking as identified by Karl
+    Beecher, and how do they interact in problem-solving?
+
 
     3.1. Core components of CT include:
     ○ Logical thinking
@@ -28,6 +38,7 @@ Beecher, and how do they interact in problem-solving?
     These work together to analyze problems, design solutions, and translate
     them into computational form.
 
+
 4. What is the difference between deductive and inductive reasoning? Provide
 examples of each in a computational context.
 
@@ -35,6 +46,12 @@ examples of each in a computational context.
     Example : All cycles repeat => the cycle for repeats.
     Inductive : from the particular to the general.
     Example : the for and while repeat => all cycles repeat operations.
+
+    4.2 Deductive reasoning derives conclusions guaranteed by premises (e.g., All men are
+    mortal; Socrates is a man; therefore, Socrates is mortal).
+    Inductive reasoning suggests probable conclusions based on observations (e.g.,
+    All observed swans are white; therefore, all swans are probably white).
+
 
 5. How does Boolean logic support computational decision-making? Explain the
 function of each major logical operator.
@@ -44,12 +61,26 @@ function of each major logical operator.
     OR: True if at least one value is True
     NOT: Inverts the logical value
 
+    5.2. Boolean logic is a binary logic system (true/false) used to control decisions in
+    algorithms. Operators include:
+    ○ AND (both conditions must be true),
+    ○ OR (at least one must be true),
+    ○ NOT (inverts truth value),
+    ○ IMPLIES (if A, then B),
+    ○ IF AND ONLY IF (A and B are both true or both false).
+
+
 6. What is symbolic logic, and why is it used instead of natural language in
 computational contexts?
 
     6.1. Symbolic logic uses symbols such as: P and Q to be unambiguous
     Natural language is often vague.
     Computers require precision which is why symbolic logic is preferred.
+
+    6.2. Symbolic logic replaces ambiguous natural language with precise symbols (e.g., P
+    → Q) to formalize reasoning and eliminate confusion, making it ideal for
+    programming and algorithm design.
+
 
 7. What are the essential characteristics of an algorithm? How do sequence,
 selection, and iteration contribute to algorithmic structure?
@@ -60,11 +91,22 @@ selection, and iteration contribute to algorithmic structure?
     Selection: conditions (if).
     Iteration: repetitions (loops).
 
+    7.2. An algorithm is a finite, ordered sequence of precise steps.
+    ○ Sequence: steps are executed in order.
+    ○ Selection: decision-making (e.g., if-else).
+    ○ Iteration: repetition (e.g., loops).
+
+
 8. Explain the concept of program state. Why is managing state crucial in
 algorithm execution?
 
     8.1. State is set of values of variables at a time.
     Managing it is crucial for flow, correctness, and debugging.
+
+    8.2. State refers to the current values of variables and the program's memory at a given
+    moment. Managing state ensures predictable behavior and progression through an
+    algorithm.
+
 
 9. What is decomposition, and why is it a valuable problem-solving strategy?
 Provide an example of a decomposed problem.
@@ -75,10 +117,19 @@ Provide an example of a decomposed problem.
     - Bake the cake.
     - Let it cool.
 
+    9.2. Decomposition breaks a complex problem into simpler parts.
+    Example: Building a website → split into tasks like front-end design, back-end logic,
+    and database setup.
+
 10. What role does pattern recognition play in computational thinking? How does
 it assist with generalization?
 
     10.1. The role of pattern recognition is important because it helps identify similarities in problems. It aids in generalizing reusable solutions for exemple sorting algorithm.
+
+    10.2. Pattern recognition identifies similarities in problems or solutions. It helps in
+    generalisation, where a single solution can be adapted to a class of problems (e.g.,
+    sorting algorithms).
+
 
 11. Define abstraction. How is it used to manage complexity in both
 problem-solving and programming?
@@ -87,6 +138,9 @@ problem-solving and programming?
     in Problem solving helps to focus on the main aspects, simplifying the process.
     in Programming the Abstraction simplifies problems by hiding complex details, reducing complexity, and making problem-solving easier.
 
+    11.2.  Abstraction filters out irrelevant details to focus on what’s essential. It’s used to
+    simplify models, data structures, and program logic
+
 
 12. What is modelling in the context of computational thinking? Distinguish
 between static and dynamic models.
@@ -94,6 +148,11 @@ between static and dynamic models.
     12.1. Modelling in the context of CT is the process of simplifying a problem to make it clearer.
     Static: representing a system that does not change over time, used to represent structure or fixed data.
     Dynamic: representing a system that changes over time, used for simulation.
+
+    12.2. Modelling creates simplified representations of real systems.
+    ● Static models represent structure (e.g., class diagrams).
+    ● Dynamic models show behavior over time (e.g., state machines)
+
 
 13. What strategies can be used to anticipate, detect, and fix errors in a
 computational solution?
@@ -105,12 +164,23 @@ computational solution?
     Edge case testing: Test the code with unusual or unexpected inputs.
     Code review: Work with others to check the code and find any errors.
 
+    13.2. Error strategies include:
+    ● Defensive design (anticipate failure),
+    ● Testing (systematic validation),
+    ● Debugging (identifying and fixing issues),
+    ● Prioritization (focus on severe/frequent bugs).
+
+
 14. What is the role of testing in program development? Explain the difference
 between verification and validation.
 
     14.1. Ensures that the code does exactly what it was written for, minimizing bugs.
     Check : Check that the program meets the specific requests, i.e. that it works as described in the initial project.
     Validation : Ensures that the program actually solves the problem for which it was created, not just that it works technically
+
+    14.2. Verification ensures the program does what it’s supposed to (meets specs).
+    Validation checks if the program solves the real-world problem correctly
+
 
 15. How can a computational solution be evaluated in terms of correctness,
 efficiency, usability, and elegance?
@@ -121,35 +191,50 @@ efficiency, usability, and elegance?
     Usability : focuses on how easy it is for the user to interact with the solution, ensuring the interfaces are simple and intuitive.
     Elegance : describes how well the solution is designed, being clear, readable, and free of unnecessary complexity.
 
+    15.2. Solutions are evaluated by:
+    ● Correctness: does it work?
+    ● Efficiency: is it fast/resource-light?
+    ● Usability: is it user-friendly?
+    ● Elegance: is it clear and concise?
+    
+
 16. What are some typical trade-offs encountered when designing a computational
 solution?
 
     16.1. Speed vs. Memory : A very fast algorithm may require more memory, while one that uses less memory may be slower.
-
     Simplicity vs. Flexibility : A simple design is easier to understand and maintain, but it can be less flexible when you need to adapt to new requirements.
-
     Readability vs. Performance : A readable code is easier to change, but may not be the most performance-optimized. Sometimes, a compromise is necessary to achieve good efficiency without sacrificing comprehensibility too much.
+
+    16.2. Common trade-offs:
+    ● Speed vs. readability
+    ● Simplicity vs. extensibility
+    ● Resource usage vs. accurac
+
 
 17. How do variables and data types function in Python, and how are they aligned with the concepts of state and assignment?
 
     17.1. Variables represent the status of the program, i.e. the values retained during execution.
     Example: x is equal to 5 means that the variable x has a value 5.
-
     The data types define the nature of the data that a variable can contain.
     Example: int for whole numbers, str for text strings, lists for sorted sequences.
-
     The assignment allows you to change the status of the program, assigning new values to the variables.
+
+    17.2.  In Python, variables store data like numbers, strings, and booleans.
+    Assignment stores values (e.g., x = 5), crucial for tracking state changes.
+
 
 18. What are the differences between mutable and immutable data types in Python,
 and why do they matter in programming?
 
     18.1.Mutable: Items that can be modified after they were created.
     Example: Lists can be changed, you can add, remove, or edit items in a list.
-
     Immutable: Items that cannot be changed after creation.
     Example: Strings cannot be edited directly, but a new string must be created for each change.
-
     The difference is important especially in functions and cycles, where immutable data is safer because they do not change unexpectedly.
+
+    18.2.  Mutable types (e.g., lists, dictionaries) can change after creation.
+    Immutable types (e.g., strings, tuples) cannot. This affects how variables are passed and used in functions.
+
 
 19. How do modules and packages help in organizing code? What are the benefits
 of separating concerns in program structure?
@@ -159,6 +244,10 @@ of separating concerns in program structure?
     Packages are collections of modules, which further organize the code. A package can contain multiple modules and subpackages.
     Separating responsibilities makes the code more readable, maintainable, and reusable.
 
+    19.2. Modules and packages group related code into separate files or directories, improving clarity, reuse, and maintenance. Separation of concerns ensures each
+    part handles a distinct aspect of the system
+
+
 20. What is object-oriented programming, and how do abstractions like classes
 and instances support pattern reuse in software design?
 
@@ -166,3 +255,8 @@ and instances support pattern reuse in software design?
     Abstraction: Classes hide complex details, allowing you to use the object without worrying about its internal implementation.
     Reuse: Thanks to inheritance, classes can extend and share features.
     Encapsulation: Protects the internal data of a class by making only certain information accessible, ensuring greater control.
+
+    20.2. Object-oriented programming (OOP) models data as objects with attributes and behaviors.
+    ● Classes define abstract types.
+    ● Instances are concrete examples.
+    Abstractions help reuse code and model real-world entities.
