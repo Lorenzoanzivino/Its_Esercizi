@@ -1,0 +1,1202 @@
+LEZIONE 3 : IF, ELIF, ELSE
+
+    if (condition 1) :
+    # code to execute if the condition1 is True
+
+    elif (condition 2) : 
+        # code to execute if the condition1 is False and condition2 is True
+
+    else (condition 3):
+        # code to execute if all conditions are False
+
+    Es/1 : 
+        n : int = int(input(“Digita un numero: “))
+        if n == 5:
+            Print(f”{n} è uguale a 5!”) f{} formatta l’output così da non fare le concatenazioni di stringhe
+        else:
+            Print(f”{n} è diverso da 5!”)
+
+    Es/2 :
+        n : int = int(input(“Digita un numero: “))
+        if n == 5:
+            Print(f”{n} è uguale a 5!”) 
+        else:
+            If n % 2 == 0:
+            Print(f”{n} è diverso da 5 ma è pari”)
+
+    Es/3 :
+        n : int = int(input(“Digita un numero: “))
+        if n == 5:
+            Print(f”{n} è uguale a 5!”) 
+        elif n%2 == 0:
+            Print(f”{n} è diverso da 5 ma è pari”)
+        else:
+            Print(f”{n} è diverso da 5 ed è dispari”) 
+
+LEZIONE 3 : WHILE, FOR
+
+    # 1 modo : PRINT
+        Print(“Hello World!”)
+        Print(“Hello World!”)
+        Print(“Hello World!”)
+        Print(“Hello World!”)
+        Print(“Hello World!”)
+
+    # 2 modo : WHILE
+        Vuole che la condizione delle ripetizione sia vera per continuare il ciclo, se è falsa esce o non ci entra proprio
+            i:int = 1
+            While i <= 5:
+                Print(“Hello World!”)
+                i += 1 
+
+    # 3 modo : FOR
+        Per iterare sopra un’altra sequenza di elementi, in questo caso “i” non serve inizializzarla perche fa parte del ciclo, nasce cresce e muore nel ciclo.
+        
+        For i in range(5): funzione range => prende in considerazione un range numerico, in questo caso (5)
+            Print(“Hello World!”)
+        
+        # Stampare in output numeri da 1 a 10
+        For i in range(1, 11): perche da 0 a n-1
+            Print(i)
+        
+        Output
+        1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+        
+        # Stampare in output solo i numeri dispari da 1 a 10
+        For i in range(1, 11, 2): perche da 0 a n-1... l’ultimo numero dice di quanto il contatore deve aumentare(i+=2)
+            Print(i)
+        
+        Output
+        1, 3, 5, 7, 9
+
+    # 1 Modo : Lista
+        Lista:list [1, 2, 3, 4, 5]
+        For i in range(len(lista)):
+            Print(lista[i])
+        
+    # 2 Modo : Lista
+        For item in lista:
+            Print(item)
+        BREAK =  interrompe
+        CONTINUE = continua
+        
+        For i in range(10):
+            If i%2==0:
+            continue
+        Print(i)
+        
+        For i in range(10):
+            N:int=int(input(“Digita un numero”))
+            If n%2!=0:
+            Break
+        “Finchè è pari continua fino a 10 poi chiude, ma se fosse disparo interrompe il ciclo subito”
+
+LEZIONE 3 : COLLECTION:
+
+    Lists [1, 2, 3, 4, “A”, “a”] order
+    Sets [1, 2, 3, 4, “a”] unorder
+    Dictionary {“A”:1, “b”:2.0} key:value
+    Indexing :
+    mylist[0] primo elemento della lista
+    mylist[-1] ultimo elemento della
+    mydictionary[“key”] valore associato alla chiave
+    Modifying :
+    mylist.append (“new”) aggiunge elemento “new”
+    mylist.remove (“new”) rimuove elemento ”new”
+    mylist.pop(4) rimuove elemento nella posizione 4
+    mylist.pop() rimuove l’ultimo elemento della lista
+    Mylist.extend(iterable) aggiunge tutti gli elementi
+    - - -
+    myset.add(“new”) aggiunge elemento “new”
+    myset.remove (“new”) rimuove elemento “new”
+    myset.pop() rimuove primuove primo elemento dell’indice
+    - - -
+    mydictionary[“new”] = value aggiunge o modifica il valore associato alla chiave
+    mydictionary.pop(“new”) rimuove una chiave specifica e associa il valore
+    - - -
+    Additional resources: (set update, union)
+    set.update(iterable) aggiungi tutti gli elementi da una specifica iterabili.
+    firstset:set[int]= {1, 5, 7, 8} - secondset:set[int] = {2, 3, 7. 6}
+    firstset.update(secondset) > firstset = {1, 2, 3, 4, 5, 6, 7, 8}
+    firstset.union(secondset) > thirdset = {1, 2, 3, 4, 5, 6, 7, 8}
+        • Update aggiunge gli elementi al set selezionato
+        • Union crea un set nuovo
+
+    SET:
+        myset = {1, “hello”, 3, 0.5, True, False 2}
+        Print(myset)
+        Output: {False, 0.5, 1, 2, 3, “hello”}
+    Python interpreta False e True come 0 e 1. In questo set abbiamo 1 e True, leggendo True come 1 vede che c’è un duplicato di 1 e ne mette uno solo, eliminando True e lasciando solo 1. 
+    Funzioni di hasching (consentono la memorizzazione di dati e un accesso veloce nei set) per memorizzare gli elementi del set.
+
+    Ciclo for in sets
+        myset:set[int] = {5, 4, 8, 10}
+        For valure in myset:
+            Print(value)
+        Results:
+        5, 4, 8, 10
+
+    Dictionary additional
+        Mydict:dict[str, int] = {“a”:5, “b”:2}
+        For key, value in mydict.items():
+        Print(key, values)
+        Result: a 5, b 2
+
+    Dictionary.values()
+        For value in mydict.values():
+        Print(value)
+        Result: 5, 2
+    
+    Dictionary.keys()
+        For key in mydict.keys():
+        Print(key)
+        Result: a, b
+    
+    List.extend:
+        List.extend(iterable) (iterabili=liste, set, tuple, dizionari)
+    
+    Extend funziona come gli update
+        Firstlist:list[int] = [1, 5, 7, 8] secondlist:list[int] = [2, 3, 7, 6]
+        Firstlist.extend(secondlist)
+        result: Firstlist = [1, 5, 7, 8, 2, 3, 7, 6]
+        Firstlist.extend({“key”:value, “bool”:True}.values())
+        Result: firstlist[1, 5, 7, 8, ‘value’, True]
+
+LEZIONE 3 : MATCH STATEMENT
+
+    Per gli output di numeri di posizione di una Gara inserire 1ST, 2ND, 3RD, 4TH, 5TH, 6TH... ect
+    Fare diagramma, expected output
+    Match Statement
+    Match variable:
+    Case variable_value1:
+    instructions for variable_value1
+    Case variable_value2:
+    instructions for variable_value2
+    
+        Case _:
+        instruction for default case
+        #insert a number
+        N:int = int(input(“insert finishing position: “))
+        #check inserted number and return the position in cardinal form
+        #match statement
+        Match n:
+        #n=1
+        Case 1:
+        print(f”{n}st!”)
+        #n=2
+        Case 2:
+        print(f”{n}nd!”)
+        #n=3
+        Case 3:
+        print(f”{n}rd!”)
+        #default case
+        Case _:
+        print(f”{n}th!”)
+
+    Nel Match statement non posso usare OR ma devo usare i simboli OR = | (barra verticale).
+    n:int = int(input(“insert a number: “))
+
+    Match n:
+        case n if n > 0 and n%2 == 0:
+            print(f”{n} is positive and even”)
+        case n if n > 0 and n%2 != 0:
+            print(f”{n} is positive and odd”)
+        case n if n < 0 and n%2 == 0:
+            print(f”{n} is negative and even”)
+        case n if n < 0 and n%2 != 0:
+            print(f”{n} is negative and odd”)
+        case _: 
+            print(“inserted number is 0”)
+
+    VARIABILI : 
+
+        g:str=“f”
+        age:int = 5
+        match (g, age):
+            case (“f”, 5):
+                print(“piccola”)
+            case (“m”, 5):
+                print(“piccolo”)
+            case (“f”, 10):
+                print(“Grande”)
+            case (“m”, 10):
+                print(“gigante”)
+            case _:
+            print(“Kinder Sorpresa!”)
+
+    Match Statement and tuples/1 :
+
+        # Define a tuple
+        point = (3,5)
+        # match statement
+        match point:
+            case (0, 0):
+                print("Origine")
+            case (x, 0):
+                print(f"Punto sull'asse X: ({x}, 0)")
+            case (0, y):
+                print(f"Punto sull'asse Y: (0, {y})")
+            case _:
+                print(f"Punto generico: {point}")
+
+    Match Statement and tuples/2 :
+
+        # Define a tuple
+        point = (3,5)
+        # match statement
+        match point:
+            case (0, 0):
+                print("Origine")
+            case (point[0], 0):
+                print(f"Punto sull'asse X: ({point[0]}, 0)")
+            case (0, point[1]):
+                print(f"Punto sull'asse Y: (0, {point[1]})")
+            case _:
+                print(f"Punto generico: {point}")
+        ERROR!!!
+
+
+    Match Statement and tuples/3 :
+
+        # Define a tuple
+        point = (3,5)
+        # match statement
+        match point:
+            case (0, 0):
+                print("Origine")
+            case (1, 0):
+                print(f"Punto sull'asse X: ({point[0]}, 0)")
+            case (0, 2):
+                print(f"Punto sull'asse Y: (0, {point[1]})")
+            case _:
+                print(f"Punto generico: {point}")
+
+    Match Statement and tuples/4 :
+
+        # Define a tuple
+        point = (3,5)
+        # match statement
+        match point:
+            case (0, 0):
+                print("Origine")
+            case (x, 0):
+                print(f"Punto sull'asse X: ({point[0]}, 0)")
+            case (0, y):
+                print(f"Punto sull'asse Y: (0, {point[1]})")
+            case _:
+                print(f"Punto generico: (x,y)")
+
+- - - - -
+
+LEZIONE 4 : PROBLEM-SOLVING, ERRORI e FUNZIONI
+
+    FUNZIONI:  
+
+            "def functionName(list of parameters): # instructions for function body"
+        
+        Es : fai 3 somme diverse:
+        # somma tra 1 a 10 
+        # somma tra 20 a 37 
+        # somma tra 35 e 49
+
+        Per una funzione dobbiamo: ‘’’slide 5 lezione 4’’’
+        Step1 : 
+            Definire una funzione :
+            Usare def (parola chiave), per riconoscere una funzione, dobbiamo sapere che la 	sintassi di una funzione abbiamo: nomeDellaFunzione + (parametri) = 
+                
+                def nomeDellaFunzione( )
+
+            La funzione che non prende nulla in input, perciò non scriviamo nulla dentro le 	parentesi.
+            La funzione che ha bisogno di parametri e quindi ha qualcosa nelle parentesi.
+
+                Print(lista di parametri) : print=nome + ( ):valori in input
+
+        Step2 : 
+            Utilizzare una funzione :
+                
+                def = (parola chiave che dice a python che stiamo definendo una funzione) 
+
+                sumInRange = (nome della funzione)
+                (a:int, b:int) = (valori presi in input chiamati parametri)
+
+            Questi valori a e b serviranno per la somma tra i valori di a e b, inizializzo una variabile result = 0 e faccio il mio ciclo for. Dopo il ciclo for devo incrementare result += 1 e poi gli diamo il return result
+            Alla fine faccio il print(f”La somma tra a e b è: {sumInRange(1, 10)}”)
+
+                def sumInRange (a:int, b:int):
+                    result:int = 0
+                    fori i in range(a, b+1):
+                        result = result + i
+                    return result
+                print(f”La somma tra a e b è: {sumInRange(1, 10)}”)
+                print(f”La somma tra a e b è: {sumInRange(20, 37)}”)
+                print(f”La somma tra a e b è: {sumInRange(35, 49)}”)
+
+            posso anche salvare il valore della funzione in una Variabile, cosi poi da richiamare nel print solo il nome della variabile:
+
+                mysum = sumInRange(1, 10)
+                print(f”La somma tra a e b è: {mysum}”)
+
+        La funzione è un Gruppo di istruzuini che devono compiere specifiche operazioni. La funzione la dichiari quando quel gruppo di istruzioni, a cui vengono assegnati dei nomi (nome della funzione), dovranno essere utilizzati in futuro, per evitare di riscriviere i codici più volte, basterà richiamare la funzione.
+        Le funzioni possono prendere anche valori in input dall’utente.
+        ‘’’User Defined Functions
+        · Built-in functions: funzioni integrate dentro python, gia scritte da qualcun’altro. La funzione Lower ad esempio è una funzione gia fornita (.lower). 
+        · Le user defined sono funzioni scritte da zero dall’utente.’’’
+        - R e t u r n
+        Ultima istruzione inserita nelle funzioni, se abbiamo il return significa che la funzione sta ritornando un  qualcosa, coppure salvata in una variabile che poi sara utilizzata nel codice.
+            
+            Return VS Print
+            subtract(4, 1)
+            def subtract(a, b):
+            result = a - b
+            return result
+            subtract(4, 1) - We didn’t “catch” the return
+            >>>
+            print(subtract(4, 1)) - We “caught” it and gave it to the print() function
+            >>> 3
+
+        - Ci sono alcune funzioni che eseguono determinate istruzioni senza restituire alcun valore.  In questo caso, l'istruzione di ritorno viene omessa per indicare che la funzione non restituisce alcun valore.
+
+            def greet(name:str) -> None:
+                print(f‘‘Hello {name}!’’)
+            greet(“Angela”)
+
+            >>> Hello Angela!
+            Print(type(greet(Angela)))
+
+            >>> <class 'NoneType'>
+
+        - In Python, una funzione può restituire più di un valore utilizzando tuple, elenchi o dizionari. Il metodo più comune è restituire un
+        Tuple, dove i valori sono separati da una virgola dopo l'istruzione di ritorno.
+
+            # define a function returning multiple values(returning a tuple)
+            def operations(a: int, b: int) -> tuple[int, int]:
+                sum_result:int = a + b
+                diff_result:int = a – b
+                # Returns a tuple with two values
+                return sum_result, diff_result
+            # Assigns values to two variables
+            sum_value, diff_value = operations(10, 5)
+            print("Sum:", sum_value)		           
+            # Output: Sum: 15
+            print("Difference:", diff_value)		
+            # Output: Difference: 5
+            print(type(operations(10,5)))
+
+            >>> <class 'tuple'>
+
+
+        - In Python, una funzione può restituire più di un valore utilizzando tuple, elenchi o dizionari. Il metodo più comune è restituire un
+        Tuple, dove i valori sono separati da una virgola dopo l'istruzione di ritorno.
+
+            # define a function returning a list
+            def get_coordinates(x:int, y:int) -> list[float]:
+                return [x, y]
+            coords = get_coordinates(12.5, 45.8)
+            print(coords[0], coords[1], sep=", ")
+
+            >>> 12.5, 45.8
+            print(type(coords))
+
+            >>> <class 'list'>
+
+        - In Python, una funzione può restituire più di un valore utilizzando tuple, elenchi o dizionari. Il metodo più comune è restituire un
+        Tuple, dove i valori sono separati da una virgola dopo la dichiarazione di ritorno
+
+            # define a function returning a dictionary
+            def get_user(myname:str, myrole:str) -> dict[str, str]:
+                return {"name": myname, "role": myrole}
+            user = get_user(“Alice”, “Admin”)
+            print(user["name"]) # Output: Alice
+            print(user["role"]) # Output: Admin
+
+            print(type(user))
+
+            >>> Alice
+            >>> Admin
+            >>> <class 'dict'>
+
+        · Funzioni con parametri con passaggio di posizione.
+
+        Ci sono tre modi per passare argomenti ai parametri:
+        - passare per posizione,
+        - passare per parola chiave,
+        - Passare per valore di default.
+        Quando gli argomenti vengono passati per posizione, gli argomenti nell'istruzione chiamante sono abbinati ai parametri nell'intestazione della funzione Sulla base del loro ordine.
+        Questo è:
+        - il primo argomento viene passato al primo parametro,
+        - il secondo argomento viene passato al secondo parametro, e così via
+
+            def describe_person(name:str, age:int, city:str):
+                print(f"{name} is {age} years old and lives in {city}.")
+            # Chiamata alla funzione con passaggio per posizione
+            describe_person("Alice", 25, "Rome")
+            # str(age) forza solo (age) a essere una stringa in output “Cast”
+            def greet(name:str, age:int) -> None:
+                print("Hi, my name is" + name + " and I'm " + str(age) + " years old!")
+            greet("Angela", 13)
+
+        Gli argomenti possono essere passati alle funzioni utilizzando i nomi dei parametri corrispondenti invece di basarsi sulla posizione.
+        Questo metodo di passaggio dei valori alle funzioni è chiamato passaggio di parole chiave.
+        Ad esempio, la funzione descrive-person può essere scritta
+        def describe_person(name:str, age:int, city:str):
+        print(f"{name} is {age} years old and lives in {city}.")
+        # calling the describe_person function passing values by position
+        describe_person("Alice", 25, "Rome")
+            ● describe_person(name=“Alice”, age=25, city=“Rome”)
+            ● describe_person(age=25, city=“Rome”, name=“Alice”)
+            ● describe_person(city=“Rome”, age=25, name=“Alice”)
+            ● and so on.
+        Note: Arguments passed by position must precede arguments passed by keyword. (Similarly for parameters.)
+        describe_person(“Alice”, city=“Rome”, age=25)
+        describe_person(city=“Rome”, 25, name=“Alice”) #ERROR! Not Valid!
+
+        Come strutturare una funzione, i parametri sono obbligatori. A volte possiamo usare valori di default (parametro 1 e 2 obbligatori dati da esterno) e vanno a sinistra, prima di tutti gli altri.
+        For instance, consider the function total defined by:
+
+            def total(w, x, y=10, z=20):
+            # “w” e “x” sono obbligatori mentre “y” e “z” hanno un valore casuale finché non verrà cambiato, posso anche mettere “y=None” e “z=None”
+                return (w ** x) + y + z
+            # calling function total, while omitting the last two values
+            total(2, 3)
+            # Output: 38 -> calculated as 2^3 + 10 + 20
+            # calling function total, while omitting the last values
+            total(2, 3, 4)
+            # Output: 32 -> calculated as 2^3 + 4 + 20
+            # calling function total with 4 input values
+            total(2, 3, 4, 5)
+            # Output: 17 -> calculated as 2^3 + 4 + 5
+
+        Funzioni senza parametri:
+        Alcune funzioni possono essere definite ed eseguite senza ricevere valori o parametri di input. In Python, le funzioni non sempre richiedono argomenti per eseguire un'azione. Questi tipi di funzioni sono utili quando un compito deve essere eseguiti in modo standard, senza dipendere dall'ingresso esterno.
+
+            def hello():
+                print(‘‘Hello’’)
+            hello()
+            >>> Hello
+
+        Anche se alcune funzioni non ricevono alcun parametro di input, possono comunque restituire un valore. La decisione se una funzione dovrebbe accettare parametri o restituire un valore dipende interamente dall'attività che deve svolgere. Se una funzione deve restituire un valore, significa che il suo output verrà utilizzato altrove nel programma, ad esempio, per assegnarlo a un Variare o passare il risultato ad un'altra funzione. D'altra parte, una funzione non può ricevere alcun parametro di input ed eseguire ancora operazioni utili, come la restituzione di un, Valore predefinito o lavoro con variabili globali.
+
+            def get_pi( ):
+                return 3.14159
+            pi_value:float = get_pi()
+            print("The value of pi is:", pi_value)
+            >>> The value of pi is:3.14159
+
+        Se il risultato della funzione deve essere utilizzato in altre parti del programma, è utile restituire un valore.
+        Se la funzione deve lavorare con dati esterni forniti dall’utente o dal programma, è utile accettare i parametri.
+        Se la funzione esegue solo un'azione (come la stampa di un messaggio), potrebbe non essere necessaria né dei parametri né dei valori di ritorno. In definitiva, la struttura di una funzione dipende dallo scopo necessario per raggiungere e dall'efficienza con cui vogliamo organizzare Il nostro codice.
+        ARGS ( *args ) → per le tuple
+        KWARGS ( **kwargs ) → per dictionary
+        il doppio asterisco **kwargs → la parola kwargs è una parola standard, il doppio ** aggiunge una serie infinita di elementi a coppia di chiave:valore. Il doppio ** vale per i dizionari, il singolo * vale per tutto il resto. 
+        Built-in functions:
+        Librerie già installatein python che non hanno bisogno del IMPORT. Ad esempio Print(), len(), sum(), abs(), round(), range(), min(), max(), sorted() ect…
+
+
+    Fare PULL da Github a VsCode:
+        Comando: git pull – oppure “3 puntini” nella source di vscode e fare pull se ci sono modifiche.
+        Per un progetto condiviso da zero: creo la repository, pubblica, aggiungo i collaboratori tramite Settings>Collaborators>Add people. 
+        Se la repository la crea qualcuno: fare il pull da github a vscode, clonare il link della repository con git clone il link, salvare la repo nella cartella, modificare  o fare codici nuovi nella repository locale poi creare un nuovo branch cosi che il main branch rimarrà intatto e lavorerò nel nuovo branch. Una volta finito tutto quanto, faccio il marge, unisco il nuovo branch con quello originale. Rischio di confliffi perche nel nuovo branch puoi modificare anche parte del main.
+        Creare nuovo branch: cliccare master/main poi nella barra cliccare create new branch e scrivi branch1. Ogni modifica dopo, saranno sul nuovo branch (clone della cartella)
+
+
+
+    Spiegazione esercizio 9 compito sul P-GRECO :
+        “The main program should call the function computePI to determine how many terms of the series are needed to obtain the
+        following approximation:
+        • π ≈ 3.14 (2 decimal digits)
+        • π ≈ 3.141 (3 decimal digits)
+        • π ≈ 3.1415 (4 decimal digits)
+        • π ≈ 3.14159 (5 decimal digits)
+        Note: The program must iterate until it reaches each of the specified thresholds, counting the number of terms required and printing the results.”
+
+        def computePI(approximation_value, decimal_digits)
+        dividiamo il problema in 3 step:
+        - 1. generalizzare la formula
+        - 2. scrivere la funzione computerPI
+        - 3. utilizza la funzione per calcolare le approssimazioni
+
+        - 1 Generalizzare:  formula: π = 4 - 4/3 + 4/5 - 4/7 + 4/9 - 4/11 + …
+        il denominatore di ogni termine ( frazione) cambia sempre con un incremento di +2 e il segno che cambia da positivo a negativo alternandosi.
+        Dividere il primo problema in 2 sotto problemi (1.1:denominatore e 1.2:segno)
+        1.1 denominatore:
+        • The first term of the series is 4.
+        • The second term of the series is 4/3.
+        • The third term of the series is 4/5.
+        • The fourth term of the series is 4/7.
+        • The fifth term of the series is 4/9.
+        • The sixth term of the series is 4/11, and so on.
+
+        We need to initialize a counter i to 0 and define pi = 0.
+
+        • For i = 0, we have the first term of the series, which is pi = 4.
+        • For i = 1, we have the second term of the series, which is pi = 4/3.
+        • For i = 2, we have the third term of the series, which is pi = 4/5.
+        • For i = 3, we have the fourth term of the series, which is pi = 4/7.
+        • For i = 4, we have the fifth term of the series, which is pi = 4/9.
+        • For i = 5, we have the sixth term of the series, which is pi = 4/11.
+
+        • i = 0
+        pi = 4 = 4/1 = 4 / (0 + 1)
+        • i = 1
+        pi = 4/3 = 4 / (1 + 1 + 1)
+        • i = 2
+        pi = 4/5 = 4 / (2 + 2 + 1)
+        • i = 3
+        pi = 4/7 = 4 / (3 + 3 + 1)
+
+
+        Thus, we found that 4/7 can be written as
+        4 / (3 + 3 + 1) = 4 / (2 * 3 + 1),
+        and since i = 3,
+
+        cosi troviamo la FORMULA GENERALE 4 / (2 * i + 1).
+        • i = 0
+        pi = 4 = 4/1 = 4 / (2 * 0 + 1)
+        • i = 1
+        pi = 4/3 = 4 / (2 * 1 + 1)
+        • i = 2
+        pi = 4/5 = 4 / (2 * 2 + 1)
+        • i = 3
+        pi = 4/7 = 4 / (2 * 3 + 1)
+        • i = 4
+        pi = 4/9 = 4 / (2 * 4 + 1)
+        • i = 5
+        pi = 4/11 = 4 / (2 * 5 + 1)
+
+        FUNZIONE
+        # define a counter for while loop
+        i:int = 0
+        # define a term for pi for each iteration
+        pi:float = 0.00
+        # <= 5 perche ci servono solo 4 valori da traccia, quindi da 0 a 5
+        while i <=5 :
+            # print each term of the series
+            print(f"4 / {2*i + 1}")
+            # incrementing i by 1
+            i +=1
+
+        ORA TROVIAMO un MODO PER IL SEGNO
+        Now, let's write the code that displays the obtained result in the output.
+        # define a counter for while loop
+        i:int = 0
+        # define a term for pi for each iteration
+        pi:float = 0.00
+        while i <=6 :
+        # if i is even, the term of the pi series is positive
+        if i%2==0 :
+        print(f"+ 4 / {2*i + 1}")
+        # if i is odd, the term of the pi series is negative
+        else:
+        print(f"- 4 / {2*i + 1}")
+        # incrementing i by 1
+        i += 1
+
+    3. Use the function computePI(approximation_value, decimal_digits) to calculate 4 different approximations of π.
+    # calling computePI function to determine how many terms are needed to obtain 3.14 ( 152 terms)
+    print(f"{computePI(3.14, 2)} terms are needed to compute a value of pi approximated to 3.14!")
+    # calling computePI function to determine how many terms are needed to obtain 3.141 ( 916 terms)
+    print(f"{computePI(3.141, 3)} terms are needed to compute a value of pi approximated to 3.141!")
+    # calling computePI function to determine how many terms are needed to obtain 3.145 ( 7010 terms)
+    print(f"{computePI(3.1415, 4)} terms are needed to compute a value of pi approximated to 3.1415!")
+    # calling computePI function to determine how many terms are needed to obtain 3.1459 ( 130'658 terms)
+    print(f"{computePI(3.14159, 5)} terms are needed to compute a value of pi approximated to 3.14159!")
+
+- - - - -
+
+LEZIONE 6 : CLASSI
+
+    class persona:
+        def __init__(self, nome:str, cognome:str, data_nascita:str):
+            self.nome = nome
+            self.cognome = cognome
+            self.data_nascita = data_nascita
+
+    class studente(persona)
+        def __init__(self, nome, cognome, data_nascita, corso, **kwargs):
+            super().__init__(nome, cognome, data_nascita, **kwargs)
+            self.corso = corso
+        # super(). → costruttore per ereditarietare
+        # dichiarare variabili con dentro attributi della classe
+        studente_1: studente = studente(nome = “erik”, cognome = “crow”, data_nascita = “12/12)1980”) 
+        variabile1 →  persona_1: persona = persona(“eric”, crow”, 12/12/1980)
+        variabile2 →  persona_2: persona = persona(“eric”, crow”, 12/12/1980)
+
+        print(persona_1.nome)
+        print(persona_2.nome)
+        print(persona_2.data_nascita)
+        SELF = è una convenzione utilizzata come primo parametro nei metodi di una classe. Rappresenta l'istanza corrente della classe, permettendo di accedere ai suoi attributi e metodi. 
+
+    Le classi sono stampi e solitamente specificano attributi e funzioni.
+    Tramite le classi possiamo modellare le entità.
+    Un modello è un’approssimazione della reatà e grazie ai modelli possiamo fare delle previsioni. Due modelli del mondo possono essere La legge di Newton e quella di Einstein.
+    Le funzioni possono essere tipo: calcola la media dei voti.
+    Oggetto e istanza sono la stessa cosa.
+    Eridarietà: permette di avere gerarchie di classi e avere duplicati di cui
+    necessitiamo. Dopo aver creato la gerarchia di classe.
+
+    Non ci possono essere dipendenze circolari perché la prima classe sblocca la seconda classe, la prima e seconda classe sbloccano la terza, ma la terza classe non può sbloccare la prima etc..
+    Non si può fare nemmeno che A importa B, B importa C e C importa A.
+    Gli attrubitui di Person sono Age, height.
+    Gli attributi di Student sono quelli ereditati da Person(Age,height) più i suoi attrubuti(matrNr, University), stessa cosa per Exchange student.....
+    La sintassi è:
+    class Person: (a differenza delle funzioni che vanno scritte in minuscolo,nelle classi la prima lettera per convenzione si scriva in maiuscolo. Se c’è una parola composta, il nome deve essere scritta sempre con la prima in maiuscolo.Tipo: PersonExchange)
+    L’object initialization è una funzione scritta così: def __init__(self,name,age): è un costruttore.
+    se scrivo ciò: self.name= name (si riferisce all’istanza e non alla classa in generale. Per uguagliare due classi
+    Esempio: getter e setter sono funzioni che ottengono e settano. Per impedire che un utente modifichi un valore, si fanno i seguenti passaggi: Quando i nomi delle variabili hanno due underscore davanti, convenzionalmente sono considerati privati.
+
+    Metodo __STR__ :
+        Ci permette di definire una descrizione per quell’oggetto
+            class Persona:
+                def __init__(self, name, age)
+                    self.name = name
+                    self.age = age
+                def __str__(self)
+                    return f ” {self.name}, {self.age} years old”
+            p = Persona(“Luca”, 30)
+            print(p)
+
+    Metodo __CALL__ :
+        Ci permette di usare un’oggetto come una funzione
+            class Persona:
+                def __init__(self, message)
+                    self.msg = message
+                def __call__(self)
+                    return f ” hello {self.msg} “
+            g = Greeter(“Alice”)
+            print(g)
+
+- - - - -
+
+LEZIONE 13 : FUNZIONI RICORSIVE
+
+    Esempio di Traccia :
+        Write a Python function called countdown that takes a positive integer n as input and prints a countdown from n to zero.
+        If the input number is negative, display an error message.
+        To implement the function, you must exclusively use a while loop and the parameter n passed as input to the function.
+        Declaring any additional variables inside the function is not allowed.
+        Then, call the function with n = -5 and n = 5.
+        Expected Output:
+        Error! Inserted number is negative!
+        -------------------------------------------------
+        5
+        4
+        3
+        2
+        1
+        0
+
+
+        Solution :
+        Your code might look like this:
+        def countdown(n:int) -> None:
+            # n is positive (n >= 0)
+            if n > = 0 :
+                # print the countdown, while n>=0
+                while n >= 0:
+                    print(n)
+                    n = n - 1
+            # n is negative (n < 0)
+            else:
+                print("Error! Inserted number is negative!")
+        # calling function countdown for n = -5
+        countdown(-5)
+        # calling function countdown for n = 5
+        countdown(5)
+
+        Le funzioni RICORSIVE:
+        #1 - step 1: scrivere i casi in cui la ricorsione si blocca
+        #2 - step 2: scrivere la parte ricorsiva
+
+        Dobbiamo scrivere un numero e mostrare il countdown se positivo, se negativo mostrare errore.
+        def countdown(n:int) -> None:
+            #1 Step 1
+            # n is negative
+            if n < 0 :
+                print("Error! Inserted number is negative!")
+            # step 2
+            # n = 0 must stop the recursive process
+            elif n == 0:
+                print(0)
+
+        Calcolo che viene fatto scendendo verso 0 per poi bloccarsi
+        Calcolo che sale verso il risultato che dovrà dare
+
+- - - - -
+
+LEZIONE 18 : Le ECCEZIONI
+    Raise (keywords) sollecita l’eccezione come condizione di errore.
+    Se una determinata istruzione non mi interessa posso trattarla come se fosse un errore usando raise Exception.
+        number = 10
+        if number > 5:
+            raise Exception(f”Number should not exceed 5. {number}”)
+        print(number)
+
+    Possiamo usare anche try: codice che potrebbe sollevare un’eccezione e except: esecuzione del codice nel caso in cui si verifica quell’eccezione… poi else: se non si verifica l’eccezione
+
+    Esempio:
+    Una divisione per 0 darà errore. Ma se uso try: e except: posso dirgli, se capita una divisione per 0 invece che bloccare il codice, gli dico di generare un’altra istruzione altrimenti continuare.
+
+    Cleaning Up After Execution With finally
+    Imagine that you always had to implement some sort of action to clean up after executing your code.
+    Python enables you to do so using the finally clause
+
+    Possiamo creare una classe contenente eccezioni personali:
+    class le_mie_eccezioni(Exception)
+
+LEZIONE 18 : LE ASSERZIONI
+
+    Le asserzioni,  sono utilizzate per verificare se, in una certa parte del codice, una condizione è vera, e tutto procede altrimenti sollevo un’eccezione.
+    Se l’asserzione è falsa genera un’eccezione.
+    Le asserzioni sono utili per il debug del codice. Non vengono utilizzate per gestire l’input dell’utente, perche non sono interattive.
+    Sintassi:
+    assert condizione, “messaggio opzionale”
+
+    Esempio :
+        x = 5
+        assert x > 0, “must be positive
+        se x è maggiore di 0 allora continua normalmente.
+        Se x < 0 allora genera una eccezione
+
+    quando gli script alla fine saranno tanti e voglio toglierli, non posso commentarli tutti, perciò uso:
+    python -O script.py nel terminale
+    per ignorare gli assert posso usare lo script…
+    python -O script.py → asserzione ignorata
+    python script.py → asserzione non ignorata
+
+- - - - -
+
+LEZIONE 5 : COMPREHENSION 
+
+    1- List comprehension:
+        Rimpiazza un codice basato su loop e iterazioni, facciamo la stessa cosa su unica riga di codice. Output + collection + condition = [ x+1   for x in range(20)   if x % 2 == 0 ]
+
+        Sintassi: [espressione for item in iterazione if condizione]
+        • Esempio (ciclo tradizionale) :
+            for x in range(10): if x % 2 == 0: squares.append(x**2)
+        • Comprehension: 
+            squares = [x**2 for x in range(10) if x % 2 == 0]
+
+        • Esempio convertire stringhe maiuscolo: 
+            name:list[str] = [“alice”, “bob”, “carol”] uppercase_name:list [str] = [name.upper() for name in names] 
+            # output → [“ALICE”, “BOB”, “CAROL”]
+
+        • Esempio Flatten a list of lists :
+            matrix:list [list [int]] = [[1, 2], [3, 4]] flat:list[int] = [num for row in matrix for num in row]
+            # output → [1, 2, 3, 4]
+
+    2- Set comprehension:
+        Sintassi: {espressione for item in iterable if condizione}
+        • Esempio Set : 
+            words = [ “hi”, “hello”, “hey”, “hi”]nunique_lengths = {len(word) for word in words}
+            # output → {2, 3, 5}
+
+    3- Dictionary comprehension:
+        Sintassi: {espressione for item in iterable if condizione}
+        • Esempio Dict:
+            squares_dict = { x :  x**2  for x in range(5) }
+            # output → { 0 : 0, 1 : 1, 2 : 4, 3 : 9,  4 : 16 }
+
+    Quando non usarle:
+        • Non usarle quando la leggibilità del codice viene ROVINATA (non è facilmente leggibile)
+        • Non usarla per modificare lo stato delle variabili
+        • Non creare comprehension annidate.
+        • Usarle specialmente per creare nuove collezioni e popolate.
+
+- - - - -
+
+LEZIONE 9 : RegEx
+    
+    RegEx : espressione regolare, Una stringa che identifica uno specifico gruppo di stringhe, oppure estrarre una serie di numeri sempre all’interno di una stringa, o di trovare parole specifiche.
+    Lavorano solo con le STRINGHE...
+
+    Elementi che compongono RegEx:
+        - Anchors: “^” _ “$”
+            · ^ Start of line anchor: (^) + (Hello) = vado a trovare la stringa che inizia con quella parola che mi 	serve specificata dall’accento → parola...
+            · $ end of line anchor: (Parola) + ($) = vado a trovare la stringa che finisce con quella parola 	specificata dal simbolo $ → ...parola
+            · ^ Parola $ : Trova solo la parola delimitata da ^ e $ → parola
+
+        - Quantificatori 1: “*” _ “+” _ “?”
+            · * zero or more: abc* → prendo le stringhe per cdui il carattere immediatamente antecedente 	compare 0 o più volte “ab” _ “abc” _ “abcc” ect
+            · + One or more: 1 o più: abc+ →  “abc” _ “abcc” ect
+            · ? Zero or one: rende opzionale lalettera vicino il simbolo, abc? → La C è opzionale  “ab” or  “abc”
+
+        - Quantificatore 2:  {} usare le graffe con un numero che specifica quante volte un simbolo si presenti.
+            · {n} : abc{3} → “abccc” oppure ab(c){3} “abccc” stop
+            · {n, } : abc{2, } → “abcc” “abccc” da 2 in poi…
+            · {n, m} : abc{2, 4} → “abcc” “abccc” o “abcccc” stop
+
+        - Wildcards: . Si usa il punto in quella posizione può esserci qualsiasi simbolo o carattere
+            · . Qualsiasi carattere: a.c → “abc” o “axc” o “a?c”… il punto dice qualsiasi carattere
+            · .* qualsiasi carattere da 0 a infinito: a.*c → “ac” “abvc”
+            · .+ qualsiasi carattere da 1 a più …
+
+        - Operators 1: “|” _ “(…)” _ “(?:…)” con le parentesi creo dei gruppi
+            · | Alternation (OR) → cat|dog = prende “cat” e “dog”
+            · (…) grouping/capture → (abc)+ = “abcabc”…
+            · (?:…) Non Gapturing group → (?:ab|cd) = “ab” “cd” o “abcd” simile a (abc){3}
+
+        - Operators 2: “(?=...)” _ “(?!…)” con le parentesi creo dei gruppi
+            · (?=…) Positive lookahead → a(?=b)+ = “a” “b”… verifico a solo se seguita da b
+            · (?!…) Negativa lookahead → a(?!b) = Prendo a se non è seguita da b a(?!b)c = ac
+
+        - Character class 1: creo classi, abbina un solo carattere tra quelli della classe. In una quadra se inserisco 2 lettere o 2 numeri che fanno parte di una parola, come risultato mi darà tutte le parole che possano mescolarsi con le lettere nella quadra singolarmente.
+            · […] un solo carattere tra quelli della classe: → gr[ae]y = “gray”  “grey” / li[ber]o → “libo” “lieo” “liro”
+            · [a-z] solo una lettera minuscola tra quelle della classe 
+            · [A-Z] solo una lettera Maiuscola
+            · [0-9] solo un numero tra quelli della classe
+
+        - Character class 2:
+            · [^abc] Negazione: esclude una di quelli nella quadra
+            · [a-zA-Z0-9_.]  Combinazione: Qualsiasi numero lettera minuscola o maiuscola
+              es: Email → [a-zA-Z0-9_.] + @ = L.rossi34@gmail.com (accettabile)
+
+        - Character class 3:
+            · \d – digit: è come scrivere [0-9]
+            · \D – Non digit: è come scrivere [^0-9]
+            · \w – word: come scrive [a-zA-Z]
+            · \W – not word [^a-zA-Z]
+            · \s – Whitespace: considera spazi
+            · \S – Not  whitespace: non considerare spazi
+            · \b – come l’ancora ma per la parola e non per la riga
+            · \B – ignora la parola
+
+    Su python importare RE:
+
+    es 1 :
+        import re
+        text:str = “My mail is marco@gmail.com”
+        result:list[str] = re.findall (r’ \S+@ \S+’, text) → mettere sempre r’
+            ragionamento da programmatore, non fare cosi...
+        print(result) # Output = [‘marco@gmail.com’]
+
+    es 2 :
+        impor re
+        text:str= “rome Paris”
+        result (nessun tipo perché racchiude più tipi (oggetto di tipo match)) = re.match(r’[A-Z] [a-z] +’, text)
+        print(result.group()) # Output = “Rome”  → il punto group() passo un indice con indice del sottogruppo
+
+    es 3 :
+        import re
+        text:str = “I have 20 cats and 3 dogs”
+        numbers:list[str] = re.findall (r’ \d+’, text) → mettere sempre r’
+        print(numbers) # Output = [‘20’, ‘3’]
+
+        esempio Codice fiscale 16 caratteri
+        regex = \b[A-Z0-9]{16}\b
+
+- - - - -
+
+LEZIONE 8 : EREDITARIETA'
+
+    Ci permette di riutilizzare attributi di una classe base in una classe derivata
+        class BaseClass:
+            def method_base(self) -> None:
+                pass # base class method
+        class DerivedClass(BaseClass):
+            def method_derived(self) -> None:
+                pass # derived class method
+
+        Inheritance (Basic Example) :
+            class Animal:
+                def speak(self) -> None:
+                    print("The animal makes a sound")
+            class Dog(Animal):
+                def bark(self) -> None:
+                    print("Woof!")
+            fido:Dog = Dog()
+            fido.speak() # Output: "The animal makes a sound"
+            fido.bark() # Output: "Woof!"
+
+
+    Con l’utilizzo di super(). possiamo richiamare il costruttore della classe madre nella classe figlia.
+    
+    # Without super().
+        class Animal:
+            def __init__(self, name:str) -> None:
+                self.name:str = name
+                print("Animal initialized")
+
+        class Dog(Animal):
+            def __init__(self, name:str) -> None:
+                self.name:str = name
+                print("Dog initialized")
+
+        fido:Dog = Dog("Rudy")
+
+        # Output: Dog initialized
+        # With super( ).
+
+        class Animal:
+            def __init__(self, name:str, colore) -> None:
+                self.name:str = name
+                print("Animal initialized")
+
+        class Dog(Animal):
+            def __init__(self, name:str, colore) -> None:
+                super().__init__(name, colore)
+                print("Dog initialized")
+
+        fido:Dog = Dog("Rudy" , “nero”)
+
+        # Output: Animal initialized
+        # Dog initialized
+
+    Metodo Overriding :
+        Quando la classe base e le sottoclassi hanno lo stesso metodo con gli stessi parametri. Il metodo della sottoclasse ha la priorità e viene sostituito.
+            class Animal:
+                def speak(self) -> None:
+                    print("The animal makes a sound")
+
+            class Cat(Animal):
+                def speak(self) -> None:
+                    print("Meow!")
+
+            kitty:Cat = Cat()
+            kitty.speak() # Output: "Meow!"
+            Method override
+
+
+    Attributi e metodi protetti :
+        Sono accessibili solo dalla classe e dalle sue sottoclasse e sono protetti quando il nome è seguito da un solo underscore ( _ )
+        Cosa sono i Membri Protetti?
+            • Un attributo o un metodo protetto è destinato ad essere accessibile solo all'interno della classe e della sua sottoclassi.
+            • Definito utilizzando un singolo prefisso underscore: _attribute o _method().
+        Nota importante
+            • Python non applica restrizioni di accesso come Java o C++; utilizza le convenzioni.
+            • Gli sviluppatori dovrebbero rispettare il punto di riferimento come un "non toccare a meno che tu non sia una sottoclasse" Avvertimento.
+
+    Attributi e metodi protetti/2 :
+        class Animal:
+            def __init__(self) -> None:
+                self._type:str = "Mammal" # Protected attribute
+            def _sound(self) -> None: # Protected method
+                print("Generic animal sound")
+
+        class Dog(Animal):
+            def describe(self) -> None:
+                print(f"I am a {self._type}") # Accessing protected attribute
+                self._sound() # Calling protected method
+
+        fido:Dog = Dog()
+        fido.describe() 
+        # Output: "I am a Mammal"
+        # Generic animal sound
+
+- - - - -
+
+LEZIONE 6 : CLASSI (Gestione di attributi e metodi)
+
+    Attributi publici :
+        class Animal:
+            def __init__(self) -> None:
+                self.name:str = "Generic Animal" #Public attribute
+
+        animal:Animal = Animal( )
+        print(animal.name) 
+        #Output: "Generic Animal"
+
+        animal.name = "It's a dog" # MODIFIES the public attribute 'name'
+        print(animal.name) 
+        #Output: "It's a dog"
+
+        · Gli attributi pubblici sono pericolosi perche qualsiasi informazione può essere letta da tutti e anche modificata
+
+    Ecco perché:
+        • Nessuna protezione: qualsiasi codice esterno può modificare il valore in qualsiasi momento.
+        • Nessun controllo: non è possibile applicare regole come il controllo di tipo, la convalida o la registrazione.
+        • Può portare a bug: i cambiamenti involontari o non validi potrebbero causare stati incoerenti o non validi.
+
+    Alternativa :
+        Un approccio più sicuro comporterebbe:
+            • Utilizzo di attributi privati (prefissazione con _ o __).
+            • Accesso tramite getter/setter metodi per mantenere il controllo.
+        Un attributo privato è destinato a essere completamente nascosto dall'esterno della classe. Viene definito utilizzando il prefisso con doppio underscore: __attributo.
+
+    Punti chiave: 
+        • Python esegue il name mangling, rinominando __attributo internamente come _NomeClasse__attributo. 
+        • Non è veramente "privato", ma scoraggia l'accesso esterno.
+
+    Attributi privati/1 :
+        class Animal:
+            def __init__(self) -> None:
+                self.__name:str = "Generic Animal" #Private attribute
+
+        animal : Animal = Animal( )
+        print(animal.name) #X Error: not accessible directly
+
+        animal.name = "It's a dog" #Creates a NEW public attribute 'name'
+        print(animal.name) 
+        #Output: "It's a dog"
+
+    Attributi privati/2 (usiamo sempre SET e GET) :
+        class Animal :
+            def __init__(self) -> None:
+                self.__name:str = "Generic Animal" #Private attribute
+            
+            #V Makes 'name' accessible again
+            def get_name(self) -> str:
+                return self.__name
+
+        animal:Animal = Animal( )
+        print(animal.get_name( )) 
+        # Output: "Generic Animal"
+
+    Metodi Statici e Attributi di Classe :
+        • Metodo Statico: definito con @staticmethod sopra prima del metodo, non accede né all'istanza né alla classe.
+        • Attributo di Classe: condiviso da tutte le istanze della classe. Utile per comportamenti comuni e costanti condivise. Attributi di classe comune ma non dipende dall’istanza (istanza = self).
+
+    Attributi di Classe – Esempio Base :
+        class Persona :
+            popolazione:int = 0  # Attributo di classe pubblico
+            def __init__(self, nome:str) -> None:
+                self.__nome:str = nome  # Attributo privato perche c’è __
+                Persona.popolazione += 1
+
+        print(Persona.popolazione)  #Output: 0
+        persona1:Persona = Persona("Alice")
+        print(Persona.popolazione)  #Output: 1
+        persona2:Persona = Persona("Bob")
+        print(Persona.popolazione)  #Output: 2
+
+    Metodi Statici – Esempio Base :
+        class Matematica:
+            PI : float = 3.14  # Attributo di classe pubblico costante
+
+            @staticmethod → decoratore
+            def area_cerchio(raggio:float) -> float:  # Metodo Statico
+                return Matematica.PI * raggio * raggio
+
+        print(Matematica.PI)    #Output: 3.14
+        print(Matematica.area_cerchio(5))   #Output: 78.5
+
+    Che Cos'è un Metodo di Classe?
+    Un metodo di classe è un metodo che è legato alla classe, non all'istanza.
+
+    Concetti principali:
+        • È definito con @classmethod
+        • Prende cls (non self) come primo parametro.
+        • Può accedere e modificare gli attributi a livello di classe.
+        • CLS fa riferimento alla classe
+        
+    Metodi di Classe – Esempio Base :
+        class Persona:
+            __popolazione : int = 0  # Attributo di classe privato __
+            def __init__(self, nome:str) -> None:
+                self.__nome:str = nome  # Attributo privato
+                Persona.__popolazione += 1
+
+            @classmethod
+            def get_popolazione(cls) -> None:
+                return cls.__popolazione → scrivere CLS sarebbe come scrivere Persona
+
+        print(Persona.get_popolazione())
+        #Output: 0
+        persona1:Persona = Persona("Alice")
+        print(Persona.get_popolazione())
+        #Output: 1
+        persona2:Persona = Persona("Bob")
+        print(Persona.get_popolazione())
+        #Output: 2
+
+- - - - -
+
+LEZIONE 9 : LAMBDA
+
+    Piccola funzione : utile per definire una logica semplice, utilizzata come argomnto dato in imput a un’altra funzione per definire semplici logiche.
+    Può avere più argomenti ma ha una sola espressione.
+    per tipizzare la lambda bidogna utilizzare callable (importato da typing), per definire gli argomenti e il ritorno si utilizza → Callable [ [tipo_argomento1, tipo_argomento2, ... ], tipo_di_ritorno]
+
+    Quando si usa Lambda :
+        • Quando utilizzarla per poco tempo senza creare definizioni di funzioni
+        • Quando non definire una funzione classica
+        • Quando devo dare una logica ad altre funzione
+
+    Quando non si usa Lambda :
+        • Quando quello che dobbiamo fare richiede logiche compresse
+        • Quando sono funzioni riutilizzate più volte nel codice
+        • Quando va a compromettere la leggibilità del codice
+
+    Sintassi : lambda  arguments  :  expression
+    
+    Es/1… 
+        Basic Lambda
+            from typing import Callable
+            square : Callable [ [int, int], int] = lambda x : x ** 2
+            print(square(5))
+            #output : 25
+
+        Funzione senza Lambda :
+            def square(x : int) → int :
+                return x ** 2
+
+    Es/2…
+        Basic lambda:
+        from typing import Callable
+        positive_or_negative:Callable[[int], str] = lambda x: "Positivo" if x > 0 else  "Zero o Negativo"
+        print(positive_or_negative(5))  
+
+        #Output: Positivo
+        print(positive_or_negative(-3)) 
+        #Output: Zero o Negativo
+
+        Funzione senza Lambda :
+        def positive_or_negative(x:int) → str :
+            if x > 0:
+                return "Positivo"
+            else:
+                return "Zero o Negativo"
+
+    Nelle funzioni filter( ) e sorted( ) si utilizza lambda come argomento in imput della funzione:
+    
+        Using with filter( ):
+        nums:list[int] = [1, 2, 3, 4, 5]
+        evens : list [ int ] = list ( filter ( lambda x : x % 2 == 0, nums ) )
+        print(evens)    #Output: [2, 4]
+
+        Using with sorted( ):
+        names:list[str] = ['Alice', 'Bob', 'Charlie']
+        sorted_by_length : list [ str ] = sorted ( names, key = lambda name : len (name) )
+        print(sorted_by_length) #Output: ['Bob', 'Alice', 'Charlie']
+
+    Uso di RegEx + Lambda :
+
+    Es/1…
+        import re
+        words : list [ str ] = [ "abc123", "456", "43", "hello", "98abc", "test999" ]
+        # Keep only strings that contain only digits
+        only_digits : list [ str ] = list ( filter ( lambda x : re.fullmatch(r"\d+", x), words ) )
+        print ( only_digits )   #Output: ['456', '43']
+        Here:
+        re.fullmatch(r"\d+", x) : checks if the entire string x is only digits.
+        lambda: defines this condition inline.
+        Filter( ) : applies lambda to every string in the list.
+
+    Es/2…
+        import re
+        text : str = " Price :  100 dollars, Tax :  20 dollars "
+        # Multiply all numbers by 2 using a lambda
+        new_text : str = re.sub(r"\d+", lambda m: str ( int ( m.group( ) ) * 2 ), text )
+        print ( new_text )  #Output: "Price: 200 dollars, Tax: 40 dollars"
+        Here:
+        re.sub( ): replaces every number.
+        lambda :  dynamically computes the replacement.
+
+
+LEZIONE 15 : FILE (Sequenza di Bytes)
+    
+    Struttura del File :
+        - Header (intestazione) : Contiene una descrizione di ciò che contiene il file (Dati sui dati del file)
+        - Corpo del file : Contiene tutte le informazioni del contenuto
+        - Fine del file : Sequenza specifica che indica la fine del file 
+
+    In Python (Opening/Closing) :
+        Python apre il file tramite il sistema operativo
+        Es/1 :
+            # Funzione open()
+            PATH: str = "example.txt"
+            file = open(PATH, "r", encoding="utf-8")
+            output: str = file.read()
+            print(output)
+            
+            # Funzione close()
+            file.close()
