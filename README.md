@@ -64,3 +64,5 @@
 - 05/05/25 Progettazione : Use Case UML
 
 - 08/05/25 Inglese : Esame
+
+- 08/05/25 Python : Lezione 15 : File (opening/closing)
