@@ -43,11 +43,11 @@
 
 - 15/04/25 Docker: Lezione 23
 
-- 16/05/25 Classi ereditarietà: Lezione 8
+- 16/04/25 Classi ereditarietà: Lezione 8
 
-- 28/05/25 Polimorfismo: lezione 8
+- 28/04/25 Polimorfismo: lezione 8
 
-- 29/05/25 Linux: Concetti Fondamentali e Strumenti Essenziali: Lezione 21
+- 29/04/25 Linux: Concetti Fondamentali e Strumenti Essenziali: Lezione 21
     - Linux
     - Utente root
     - Gruppi e Password
@@ -59,4 +59,8 @@
     - Lista
     - Operatori Logici
 
-- 30/05/25 Lambda : Lezione 9
+- 30/04/25 Lambda : Lezione 9
+
+- 05/05/25 Progettazione : Use Case UML
+
+- 08/05/25 Inglese : Esame
