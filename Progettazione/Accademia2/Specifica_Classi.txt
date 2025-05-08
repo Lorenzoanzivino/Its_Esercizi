@@ -1,0 +1,47 @@
+1. Specifica della classe AttivitàDocente
+
+	[Vincolo Attività.istantiCoerenti]: Se presenti, l’istante di fine deve essere successivo a quello di inizio.
+	Se a.istanteInizio è diverso da null e a.istanteFine è diverso da null, allora deve essere vero che a.istanteInizio è < di a.istanteFine.
+
+	[Vincolo Attività.giornoCoerente]: Il giorno deve coincidere con la data dell’istante di inizio, se presente.
+	Se a.istanteInizio è diverso da null, allora a.giorno deve essere = alla data dell’istanteInizio.
+
+	[Vincolo Attività.durataCalcolata]: La durata deve essere coerente con la differenza tra istante di fine e istante di inizio.
+	Se a.istanteInizio è diverso da null e a.istanteFine è diverso da null, allora a.durata è = a a.istanteFine meno a.istanteInizio.
+
+	[Vincolo Attività.associazioneDocente]: Ogni attività deve essere associata a un docente universitario.
+	Per ogni attività a di tipo AttivitàDocente, deve esistere almeno un docente d di tipo DocenteUniversitario per cui l’attività a è collegata a d tramite l’associazione svolge.
+	
+
+2. Specifica della classe DocenteUniversitario
+
+	[Vincolo Docente.matricolaUnivoca]: La matricola deve identificare univocamente ogni docente.
+	Per ogni d1 e d2 di tipo DocenteUniversitario, se d1.matricola è = a d2.matricola, allora d1 è uguale a d2.
+
+	[Vincolo Docente.natoPrimaDiAttività]: La data di nascita del docente deve precedere il giorno in cui svolge qualsiasi attività.
+	Per ogni attività a svolta da d, deve essere vero che d.dataNascita è < di a.giorno.
+
+	[Vincolo Docente.posizioneValida]: La posizione universitaria deve essere = a uno dei seguenti valori:
+	"ricercatore", "professore associato" oppure "professore ordinario".
+    
+    
+3. Specifica della classe ProgettoDiRicerca
+
+	[Vincolo: ProgettoDiRicerca.dateCoerenti] La data di fine di un progetto deve essere successiva alla data di inizio.
+	Per ogni oggetto di tipo ProgettoDiRicerca, la dataFine deve essere > della dataInizio.
+
+	[Vincolo: ProgettoDiRicerca.docentiCoinvolti] Un progetto deve avere almeno un docente coinvolto.
+	Per ogni oggetto di tipo ProgettoDiRicerca, deve esistere almeno un oggetto di tipo Docente tale che il docente partecipa al progetto.
+
+	[Vincolo: ProgettoDiRicerca.acronimoUnivoco] L’acronimo di ogni progetto deve essere univoco.
+	Per ogni coppia di oggetti distinti di tipo ProgettoDiRicerca, l’acronimo del primo progetto deve essere diverso dall’acronimo del secondo progetto.
+
+
+4. Specifica della classe WorkPackage
+
+	[Vincolo: WorkPackage.dateCoerenti] La data di fine di un WorkPackage deve essere successiva alla sua data di inizio.
+	Per ogni oggetto di tipo WorkPackage, la dataFine deve essere > della dataInizio.
+
+	[Vincolo: WorkPackage.dateDentroProgetto] Le date di inizio e fine di un WorkPackage devono essere comprese tra l’inizio e la fine del progetto a cui appartiene.
+	Per ogni oggetto di tipo WP e ogni oggetto di tipo ProgettoDiRicerca, la dataInizio del progetto deve essere <= alla dataInizio del WP, che deve essere < della  dataFine del WP, che a sua volta
+	deve essere <= alla dataFine del progetto.

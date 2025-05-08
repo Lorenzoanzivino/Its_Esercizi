@@ -1,0 +1,29 @@
+Specifica dei tipi di Dato non standard
+
+Matricola
+    Descrizione: Stringa che può contenere lettere e numeri.
+    Lunghezza: Da 5 a 12 caratteri.
+
+Acronimo
+    Descrizione: Stringa alfanumerica, formata dalle iniziali di parole.
+    Lunghezza: Da 5 a 10 caratteri.
+
+DurataMalattia
+    Descrizione: Durata di un periodo di malattia.
+    Formula: Espressa come intervallo di tempo in giorni, ore o minuti.
+
+DataNascita
+    Descrizione: Data di nascita di una persona.
+    Formato: YYYY-MM-DD.
+
+DataIniziale
+    Descrizione: Data e ora di inizio di un evento o attività.
+    Formato: YYYY-MM-DD HH:MM:SS.
+
+DataFinale
+    Descrizione: Data e ora di fine di un evento o attività.
+    Formato: YYYY-MM-DD HH:MM:SS.
+
+Durata
+    Descrizione: Intervallo temporale tra una data finale e una data iniziale.
+    Formula: Calcolata come DataFinale – DataIniziale.

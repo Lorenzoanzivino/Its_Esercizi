@@ -1,0 +1,46 @@
+Raffinamento dei requisiti :
+
+1. Docente Universitario :
+	1.1. nome : Stringa
+	1.2. cognome : Stringa
+	1.3. luogo (v. req. 5)
+	1.4. dataNascita : Data
+	1.5. matricola : Matricola {id}
+	1.6. posizioneUniversitaria :
+		1.6.1. ricercatore
+		1.6.2. professore associato
+		1.6.3. professore ordinario
+
+2. Progetto di ricerca :
+	2.1. nome : Stringa
+	2.2. acronimo : Acronimo 
+	2.3. dataInizio : DataOra
+	2.4. dataFine : DataOra
+	2.5. docenti che partecipano (v. req. 1)
+	2.6. workPackage (WP) (v. req. 3)
+	
+3. WorkPackage :
+	3.1. progetto a cui fa riferimento (v. req. 2)
+	3.2. nome : Stringa
+	3.3. dataInizio : DataOra
+	3.4. dataFine : DataOra
+
+4. Attività docente (v. req. 1)
+	4.1. Assenza :
+		4.1.1 motivazione : Enum {chiusuraUniversitaria, malattia, gravidanza}
+	4.2. impegni Istituzionali :
+		4.2.1. motivazione : Enum {didattica, ricerca, missione, consiglioDipartimento, consiglioAreaDidattica}
+	4.3. impegni Progettuali :
+		4.3.1. motivazione : Enum {ricercaSviluppo, dimostrazioni, management}
+	4.4. giorno in cui avvengono : Data
+	4.5. istanteInizio : DataOra (opzionale per assenza da malattia)
+	4.6. istanteFine : DataOra (opzionale per assenza da malattia)
+	4.5. durata (calcolabile dall'istanteInizio e istanteFine)
+		
+5. Luogo (v. req. 1.3)
+	5.1. citta 
+		5.1.1. nome : Stringa {id}
+	5.2. regione
+		5.2.1. nome : Stringa {id}
+	5.3. nazione
+		5.3.1. nome : Stringa {id}
