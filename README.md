@@ -28,6 +28,7 @@
 - 📅 29/03/25 – Lezione 6: **Metodi `__str__` & `__call__`**
 - 📅 16/04/25 – Lezione 8: **Ereditarietà**
 - 📅 28/04/25 – Lezione 8: **Polimorfismo**
+- 📅 28/04/25 – Lezione 8: **Classi Astratte**
 
 ---
 
