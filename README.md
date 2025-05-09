@@ -1,5 +1,5 @@
 # 🌥️ Cloud Developer :
-## Esercizi & Lezioni :
+## ✍️ Esercizi & 📘 Lezioni :
 📁 Directory: "ITS-Esercizi"  
 🧰 Ambienti: Python, GitHub, VSCode, Web, Docker, Linux, UML
 
