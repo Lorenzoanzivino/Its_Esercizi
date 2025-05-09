@@ -67,4 +67,6 @@
 
 - 08/05/25 Python : Lezione 15 : File (opening/closing)
 
-- 09/05/25 Python : Lezione 15 : File (context manager WITH)
+- 09/05/25 Python : Lezione 15 : 
+    - File (context manager WITH)
+    - Json.load

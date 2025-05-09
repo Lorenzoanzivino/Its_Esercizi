@@ -1,3 +1,13 @@
+'''Crea un context manager che permette di calcolare il tempo che viene impiegato ad eseguire le istruzioni che si trovano nel with
+
+with Timer():
+
+    time.sleep(1)
+
+time elapsed: 1.00000
+
+in questo esempio il tempo passato non sarà mai uguale a 1'''
+
 import time
 
 class Stopwatch:

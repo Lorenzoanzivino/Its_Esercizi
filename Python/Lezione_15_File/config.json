@@ -1,0 +1,23 @@
+{
+    "nome": "Mario Rossi",
+    "eta": 30,
+    "codice_fiscale": {
+        "nome": "Mario",
+        "cognome": "Rossi"
+    },
+    "email": "mario.rossi@example.com",
+    "indirizzo": {
+      "via": "Via Roma 1",
+      "citta": "Roma",
+      "cap": "00100"
+    },
+    "hobby": ["lettura", "palestra", "cinema"],
+    "occupazione": {
+      "lavoro": "Ingegnere",
+      "azienda": "TechCorp",
+      "anni_esperienza": 5
+    },
+    "iscrizioni_newsletter": true
+  }
+
+  

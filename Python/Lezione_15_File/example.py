@@ -36,3 +36,12 @@ print("iNIZIO DEL PROGRAMMA")
 
 with MyResource() as resources :
     print("Sono dentro il blocco with")
+
+
+import json
+
+with open("config.json", "r") as file:
+    
+    my_config : dict = json.load(file)
+
+    print(my_config["name"])

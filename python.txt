@@ -1250,3 +1250,10 @@ LEZIONE 15 : FILE ("Sequenza di Bytes")
                 print("Sono dentro il blocco with")
         
         Il WITH sostituisce la creazione del percorso di un file, il try e tutto il resto
+
+        File JSON :
+            E' un dizionario che rappresenta informazioni salvate.
+            Può essere usato come contenitori di info per configurazioni
+
+            Creazione file :
+                confing.json
