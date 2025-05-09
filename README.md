@@ -1,72 +1,89 @@
-# Cloud: Esercizi
+# 🌥️ Cloud Developer – Esercizi & Lezioni  
+📁 Directory: "ITS-Esercizi"  
+🧰 Ambienti: Python, GitHub, VSCode, Web, Docker, Linux, UML
 
-### Corso Cloud Developer, directory "ITS-Esercizi" per esercizi di Python e Progettazione con VScode.
+---
 
-- 4/03/25 delle Funzioni: Lezione 4
+### 🐍 Python
 
-- 10/03/25 comandi Git e visione fuznionalità Git-hub
+- 📅 04/03/25 – Lezione 4: **Funzioni**
+- 📅 27/03/25 – Lezione 13: **Funzioni Ricorsive**
+- 📅 02/04/25 – Lezione 18: **Eccezioni & Asserzioni**
+  - `raise Exception()`
+  - `try / except / finally`
+  - `assert`
+- 📅 09/04/25 – Lezione 9: **Regex**
+- 📅 30/04/25 – Lezione 9: **Lambda Functions**
+- 📅 08/05/25 – Lezione 15: **File (open/close)**
+- 📅 09/05/25 – Lezione 15:
+  - File con `with` (Context Manager)
+  - JSON con `json.load`
+  - Debugger
 
-- 11/03/25 comandi di Pull da remoto a locale
+---
 
-- 13/03/25 studio delle Classi: Lezione 6
+### 👨‍💻 Programmazione ad Oggetti (OOP)
 
-- 18/03/25 Corso modulo di "Progettazione"
+- 📅 13/03/25 – Lezione 6: **Classi**
+- 📅 29/03/25 – Lezione 6: **Metodi `__str__` & `__call__`**
+- 📅 16/04/25 – Lezione 8: **Ereditarietà**
+- 📅 28/04/25 – Lezione 8: **Polimorfismo**
 
-- 27/03/25 Funzioni Ricorsive: Lezione 13
+---
 
-- 29/03/25 metodi di classi __str__ & __call__ : Lezione 6
+### 🧪 Progettazione Software
 
-- 01/04/25 create cartelle: 
-    - 1.Programmazione con esercizi Azienda_1 e Volo_1
-    - 2.Web.1
-        - HTML
-        - CSS
-        - DOM
-        - BOOTSTRAP
+- 📅 18/03/25 – Modulo di **Progettazione**
+- 📅 05/05/25 – **Use Case UML**
 
-- 02/04/25 delle Eccezioni e Asserzioni: lezione 18
-    - Eccezioni:
-        - raise Exception()
-        - try:
-        - except:
-        - finally:
-    - Asserzioni:
-        - assert
+---
 
-- 03/04/25 Web.1 Esercizio 3 
+### 🧰 Git & GitHub
 
-- 04/04/25 Web.1 CSS
+- 📅 10/03/25 – Comandi Git + panoramica GitHub
+- 📅 11/03/25 – Comando **pull** (remoto → locale)
 
-- 09/04/25 RegEx: Lezione 9
+---
 
-- 14/04/25 Web.1 Bootstrap
+### 🌐 Web.1 Development
 
-- 15/04/25 Docker: Lezione 23
+- 📅 01/04/25 – Creazione cartelle:
+  - **1. Programmazione**
+    - Azienda_1 🏢
+    - Volo_1 ✈️
+  - **2. Web.1**
+    - HTML 🌐
+    - CSS 🎨
+    - DOM 🔧
+    - Bootstrap 📦
 
-- 16/04/25 Classi ereditarietà: Lezione 8
+- 📅 03/04/25 – Esercizio 3 Web.1
+- 📅 04/04/25 – CSS
+- 📅 14/04/25 – Bootstrap
 
-- 28/04/25 Polimorfismo: lezione 8
+---
 
-- 29/04/25 Linux: Concetti Fondamentali e Strumenti Essenziali: Lezione 21
-    - Linux
-    - Utente root
-    - Gruppi e Password
-    - Shell Bash
-    - Comandi utili
-    - Comandi legati al file system
-    - Standard di input/output/error
-    - Pipeline
-    - Lista
-    - Operatori Logici
+### 🐳 Docker
 
-- 30/04/25 Lambda : Lezione 9
+- 📅 15/04/25 – Lezione 23: **Docker**
 
-- 05/05/25 Progettazione : Use Case UML
+---
 
-- 08/05/25 Inglese : Esame
+### 🐧 Linux & Bash
 
-- 08/05/25 Python : Lezione 15 : File (opening/closing)
+- 📅 29/04/25 – Lezione 21: **Concetti Fondamentali**
+  - Utente root 👤
+  - Gruppi e password 👥
+  - Shell Bash 🖥️
+  - Comandi utili 🧾
+  - File system 📂
+  - Input / Output / Error 🔄
+  - Pipeline ⛓️
+  - Lista 📋
+  - Operatori logici ⚙️
 
-- 09/05/25 Python : Lezione 15 : 
-    - File (context manager WITH)
-    - Json.load
+---
+
+### 📚 Altro
+
+- 📅 08/05/25 – 🇬🇧 **Esame di Inglese**
