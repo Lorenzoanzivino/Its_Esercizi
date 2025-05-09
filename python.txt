@@ -1193,67 +1193,122 @@ LEZIONE 9 : LAMBDA
         lambda :  dynamically computes the replacement.
 
 
-LEZIONE 15 : FILE ("Sequenza di Bytes")
-    Uilizzare un file è utile per poter scrivere informazioni da tenere in memoria
-    Struttura del File :
-        - HEADER (intestazione) : Descrizione di ciò che contiene il file (Dati sui dati del file)
-        - CORPO del file : Contiene tutte le informazioni del contenuto
-        - FINE del file : Sequenza specifica che indica la fine del file 
+🧾 LEZIONE 15 – FILE ("Sequenza di Bytes")
+    
+    📌 Cos'è un File:
 
-    In Python (open()/close()) :
+        Un file è una sequenza di byte memorizzata su disco. Viene utilizzato per salvare informazioni in modo persistente, anche dopo la chiusura del programma.
+        📂 Struttura di un File
 
-        Python apre il file tramite il sistema operativo :
-        Creare un file.py (example.py) e un file.txt (example.txt)
-        Usare sempre un Path (percorso) relativo, perche l'assoluto è locale.
-        Dalla funzione open() ritorna un WRAPPER
+            HEADER (Intestazione):
+                Contiene metadati, cioè informazioni sui dati del file (es. formato, codifica, versione).
+            CORPO (Body):
+                Contiene il contenuto effettivo del file, cioè i dati salvati.
+            FINE DEL FILE (EOF – End Of File):
+                Una sequenza speciale (o flag) che segnala al sistema operativo che non ci sono altri dati da leggere.
 
-        Es/1 :
-            # Funzione open()
-            PATH: str = "example.txt"
-            file = open(PATH, "r", encoding="utf-8")
-            output: str = file.read()
-            print(output)
-            
-            # Funzione close()
-            file.close()
+    🐍 Lavorare con i File in Python :
+        📘 Funzione open() :
+            Permette di aprire un file. Sintassi:
+            file = open("percorso/file.txt", "modalità", encoding="utf-8")
 
-        Es/2 :
-            file = open("example.txt", "a")
-            try :
-                pass
-            except Exception as e:
-                pass
-            finally :
+        📕 Modalità di apertura:
+            Modalità e Descrizione :
+            "r"	Lettura (errore se il file non esiste)
+            "w"	Scrittura (crea o sovrascrive)
+            "a"	Aggiunta (scrive in fondo al file)
+            "b"	Binario (es. "rb", "wb")
+
+                ✅ Esempio 1: Lettura da File :
+
+                # Apertura in modalità lettura
+                PATH = "example.txt"
+                file = open(PATH, "r", encoding="utf-8")
+
+                # Legge tutto il contenuto del file
+                output = file.read()
+                print(output)
+
+                # Chiusura del file (obbligatoria)
                 file.close()
 
-            # CONTEXT : (context manager = classe che ha __enter__() / __exit__())
-            # Uscendo dal print che è indentato il file si chiude automaticamente
-            with open("example.txt", "w") as file :
-                print(file.read())
+    ⚠️ Gestione Manuale con try-finally :
 
-        # Spiegazione di come funziona il WITH gestisce tutto in automatico tramite questa classe
-            class MyResource :
-                def __enter(self) :
-                    return self
-                
-                def __exit__(self, exc_type, exc_value, traceback):
-                    print("Sono nella funzione")
+        Utile per garantire la chiusura del file anche in caso di errore.
 
-                    if exc_type is not None:
-                        print(f"An error occured: {exc_value}")
+            file = open("example.txt", "a")  # modalità append
+            try:
+                file.write("Nuova riga\n")
+            except Exception as e:
+                print("Errore:", e)
+            finally:
+                file.close()  # Chiusura garantita
 
-                    return True
-                
-            print("iNIZIO DEL PROGRAMMA")
+    🧠 Context Manager: with :
 
-            with MyResource() as resources :
-                print("Sono dentro il blocco with")
-        
-        Il WITH sostituisce la creazione del percorso di un file, il try e tutto il resto
+        Python gestisce l'apertura e chiusura dei file automaticamente con with, evitando errori.
 
-        File JSON :
-            E' un dizionario che rappresenta informazioni salvate.
-            Può essere usato come contenitori di info per configurazioni
+            with open("example.txt", "r", encoding="utf-8") as file:
+                contenuto = file.read()
+                print(contenuto)
+            # Il file è già chiuso fuori dal blocco
 
-            Creazione file :
-                confing.json
+    📌 Dietro le quinte: il context manager usa due metodi speciali:
+
+        class MyResource:
+            def __enter__(self):
+                print("Entrato")
+                return self
+
+            def __exit__(self, exc_type, exc_value, traceback):
+                print("Uscita automatica dal blocco")
+                if exc_type:
+                    print("Errore:", exc_value)
+                return True  # Impedisce il propagarsi dell’eccezione
+
+        with MyResource() as res:
+            print("Dentro il blocco")
+
+    🗂️ File JSON (JavaScript Object Notation) :
+
+        È un formato testuale per rappresentare dizionari e liste.
+
+        Molto usato per configurazioni e scambio dati tra programmi e sistemi.
+
+    📁 Esempio: config.json :
+
+        {
+        "username": "admin",
+        "theme": "dark",
+        "version": 1.2
+        }
+
+    📥 Lettura e scrittura in Python:
+
+        import json
+
+        # Scrittura (dizionario → file JSON)
+        config = {"username": "admin", "theme": "dark"}
+        with open("config.json", "w") as file:
+            json.dump(config, file)
+
+        # Lettura (file JSON → dizionario)
+        with open("config.json", "r") as file:
+            config_data = json.load(file)
+            print(config_data["theme"])
+
+    🧑‍💻 Best Practice
+
+        Usa sempre with open(...) per evitare dimenticanze nella chiusura del file.
+
+        Usa path relativi (es. "dati/file.txt"), così il codice è portabile su altri sistemi.
+
+        Specifica l'encoding (es. "utf-8") per garantire la corretta lettura/scrittura di caratteri speciali.
+
+        Gestisci gli errori con try-except per evitare crash in caso di file inesistenti o corrotti.
+
+    📎 Riepilogo:
+
+        ✅ I file permettono la persistenza dei dati
+        ✅ Python offre strumenti potenti e semplici (open(), with, json)
+        ✅ I file JSON sono perfetti per strutturare configurazioni o dati leggibili dall’uomo
