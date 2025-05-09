@@ -35,6 +35,16 @@
 ### 🧪 Progettazione Software
 
 - 📅 18/03/25 – Modulo di **Progettazione**
+    - Azienda_1 🏢
+    - Volo_1 ✈️
+    - Università_1 🎓
+    - Ordini_Fatture_1 🎓
+    - Impiegati_Studenti_1 🧑‍💼
+    - GO! ⚫
+    - Esercitazione_univeritaria 🧪
+    - Officine_1 🛠️
+    - Accademia_2 🏛️
+
 - 📅 05/05/25 – **Use Case UML**
 
 ---
@@ -49,14 +59,12 @@
 ### 🌐 Web.1 Development
 
 - 📅 01/04/25 – Creazione cartelle:
-  - **1. Programmazione**
-    - Azienda_1 🏢
-    - Volo_1 ✈️
-  - **2. Web.1**
+  - **Web.1**
     - HTML 🌐
     - CSS 🎨
     - DOM 🔧
     - Bootstrap 📦
+    - JavaScipt 🟨
 
 - 📅 03/04/25 – Esercizio 3 Web.1
 - 📅 04/04/25 – CSS
