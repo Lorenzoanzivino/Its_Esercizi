@@ -16,10 +16,10 @@ finally :
 # CONTEXT : (context manager = classe che ha __enter__() / __exit__())
 # Uscendo dal print che è indentato il file si chiude automaticamente# il WITH sostituisce la creazione del percorso di un file scritto sopra
 with open("example.txt", "w") as file :
-    print(file.read())
+    print(file.read())'''
 
 
-# Spiegazione di come funziona il WITH gestisce tutto in automatico tramite questa classe
+'''# Spiegazione di come funziona il WITH gestisce tutto in automatico tramite questa classe
 class MyResource :
     def __enter(self) :
         return self
@@ -56,6 +56,7 @@ with open("config.json", "w") as file:
     json.dump(my_config, file)
 
 print(my_config)
+
 """file = open("config_new.json", "w")
 
 db: dict = {"GRGFLV...": {"nome": "Giorgio", "surname": "Fiorentino", "age": 30}}

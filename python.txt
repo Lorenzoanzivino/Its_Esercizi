@@ -1312,3 +1312,69 @@ LEZIONE 9 : LAMBDA
         ✅ I file permettono la persistenza dei dati
         ✅ Python offre strumenti potenti e semplici (open(), with, json)
         ✅ I file JSON sono perfetti per strutturare configurazioni o dati leggibili dall’uomo
+
+    🐞 Debugger in Python :
+        📌 Cos'è un Debugger?
+            Uno strumento che permette di:
+                🛑 Fermare l'esecuzione del programma in punti specifici (breakpoint).
+                🔎 Ispezionare il valore delle variabili.
+                🔄 Eseguire il codice riga per riga.
+                🎯 Individuare bug e comportamenti inattesi.
+                🔧 Correggere errori logici e di flusso.
+
+        🛠️ Strumenti di Debugging in Python :
+            pdb (Python Debugger) – Debugger nativo, da riga di comando:
+                Si importa con:
+                import pdb; pdb.set_trace()
+                Una volta attivato, puoi usare comandi interattivi:
+                    n → next: esegue la riga corrente e si ferma alla successiva.
+                    c → continue: continua fino al prossimo breakpoint.
+                    l → list: mostra le righe di codice attorno.
+                    p var → print: stampa il valore della variabile var.
+                    q → quit: esce dal debugger.
+
+            Debugger integrato negli IDE :
+                🎓 Thonny – molto semplice e didattico.
+                💻 Visual Studio Code (VS Code) – potente e molto usato:
+                    Puoi mettere breakpoint cliccando a sinistra del numero di riga.
+                    Funzioni utili: Step Over, Step Into, Watch Variables, Call Stack.
+                🧱 PyCharm – offre strumenti avanzati di debugging e profiling.
+
+        🔍 Quando usare il debugger?
+            Quando il programma non funziona come previsto.
+            Quando hai bisogno di capire il flusso di esecuzione.
+            Per trovare e correggere bug difficili da rilevare solo con print().
+
+        💡 Confronto Debugger vs Print :
+
+        🐍 Metodo     ✅ Vantaggi                        ❌ Svantaggi
+           print()	     Facile, immediato,	                Poco flessibile, non interattivo.
+           debugger	     Potente, interattivo, preciso,	    Più tecnico, richiede tempo per imparare.
+
+    🐞 Debugger in Python con VSCode :
+        ⚙️ Come attivare il debugger in VS Code :
+            Apri il tuo file .py in Visual Studio Code.
+            In alto a destra clicca sull’icona verde "play con insetto" o su "Run and Debug" ▶️🐞.
+            Dal menu a discesa, seleziona "Python: Debug Current File" (o in italiano "Python: Esegui debug del file corrente").
+            Il debugger partirà e appariranno nuovi pannelli e controlli utili.
+
+        🎮 Strumenti principali del Debugger in VS Code :
+
+            🔧 Strumento :	           📝 Funzione :
+
+            ⛔ Breakpoint	          Clicca a sinistra del numero di riga per fermare l’esecuzione in quel punto.
+            ▶️ Continue (F5)	       Continua l’esecuzione fino al prossimo breakpoint.
+            ⏭️ Step Over (F10)	       Esegue la riga attuale senza entrare dentro funzioni.
+            ⏬ Step Into (F11)	      Entra dentro una funzione chiamata sulla riga corrente.
+            ⏫ Step Out (Shift+F11)	  Esegue il resto della funzione e torna al punto da cui era stata chiamata.
+            🔍 Variables / Watch	   Mostra le variabili e i loro valori aggiornati in tempo reale.
+            🧭 Call Stack	           Mostra la sequenza di chiamate delle funzioni (utile per capire da dove si arriva).
+            📌 Watch	               Puoi aggiungere variabili specifiche da tenere d’occhio.
+            🧪 Debug Console	       Una console interattiva per eseguire comandi Python live durante il debug.
+            
+        💡 Consigli pratici
+
+            Usa breakpoint() nel codice per forzare un punto di stop.
+            Usa Watch per monitorare variabili complesse (es. oggetti, liste).
+            Se il codice è lungo, aggiungi più breakpoint per seguire l'esecuzione passo passo.
+            Il debugger è utile anche per studiare il comportamento di funzioni ricorsive, cicli, e branching logico (if/else).
