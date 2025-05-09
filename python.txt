@@ -1182,7 +1182,7 @@ LEZIONE 9 : LAMBDA
         lambda :  dynamically computes the replacement.
 
 
-**LEZIONE 15 : FILE (Sequenza di Bytes)**
+**LEZIONE 15** : FILE (Sequenza di Bytes)**
     
     Struttura del File :
         - Header (intestazione) : Contiene una descrizione di ciò che contiene il file (Dati sui dati del file)
