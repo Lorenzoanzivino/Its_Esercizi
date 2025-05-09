@@ -1,4 +1,4 @@
-# Funzione open()
+'''# Funzione open()
 
 # PATH: str = "example.txt"
 # file = open(PATH, "r", encoding="utf-8")
@@ -35,13 +35,31 @@ class MyResource :
 print("iNIZIO DEL PROGRAMMA")
 
 with MyResource() as resources :
-    print("Sono dentro il blocco with")
+    print("Sono dentro il blocco with")'''
 
+class Example:
+
+    def __init__(self, name : str, version: str):
+        self.name = name
+        self.version = version
 
 import json
-
+my_config = None
 with open("config.json", "r") as file:
     
     my_config : dict = json.load(file)
 
-    print(my_config["name"])
+my_config["Squadra"] = "Lazio"
+
+with open("config.json", "w") as file:
+
+    json.dump(my_config, file)
+
+print(my_config)
+"""file = open("config_new.json", "w")
+
+db: dict = {"GRGFLV...": {"nome": "Giorgio", "surname": "Fiorentino", "age": 30}}
+
+json.dump(db, file)
+
+file.close()"""
