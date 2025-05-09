@@ -16,8 +16,9 @@
 - 📅 30/04/25 – Lezione 9: **Lambda Functions**
 - 📅 08/05/25 – Lezione 15: **File (open/close)**
 - 📅 09/05/25 – Lezione 15:
-  - File con `with` (Context Manager)
-  - JSON con `json.load`
+  - File : `with` (Context Manager)
+  - Metodi : `open()/close()` 
+  - Json : `json.load`
   - Debugger
 
 ---
@@ -68,7 +69,8 @@
 
 - 📅 03/04/25 – Esercizio 3 Web.1
 - 📅 04/04/25 – CSS
-- 📅 14/04/25 – Bootstrap
+- 📅 14/04/25 – Bootstrap / Dom
+- 📅 05/05/25 – Javascript
 
 ---
 
