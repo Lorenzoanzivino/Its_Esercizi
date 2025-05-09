@@ -9,29 +9,29 @@ LEZIONE 3 : IF, ELIF, ELSE
     else (condition 3):
         # code to execute if all conditions are False
 
-    Es/1 : 
-        n : int = int(input(“Digita un numero: “))
-        if n == 5:
-            Print(f”{n} è uguale a 5!”) f{} formatta l’output così da non fare le concatenazioni di stringhe
-        else:
-            Print(f”{n} è diverso da 5!”)
+        Es/1 : 
+            n : int = int(input(“Digita un numero: “))
+            if n == 5:
+                Print(f”{n} è uguale a 5!”) f{} formatta l’output così da non fare le concatenazioni di stringhe
+            else:
+                Print(f”{n} è diverso da 5!”)
 
-    Es/2 :
-        n : int = int(input(“Digita un numero: “))
-        if n == 5:
-            Print(f”{n} è uguale a 5!”) 
-        else:
-            If n % 2 == 0:
-            Print(f”{n} è diverso da 5 ma è pari”)
+        Es/2 :
+            n : int = int(input(“Digita un numero: “))
+            if n == 5:
+                Print(f”{n} è uguale a 5!”) 
+            else:
+                If n % 2 == 0:
+                Print(f”{n} è diverso da 5 ma è pari”)
 
-    Es/3 :
-        n : int = int(input(“Digita un numero: “))
-        if n == 5:
-            Print(f”{n} è uguale a 5!”) 
-        elif n%2 == 0:
-            Print(f”{n} è diverso da 5 ma è pari”)
-        else:
-            Print(f”{n} è diverso da 5 ed è dispari”) 
+        Es/3 :
+            n : int = int(input(“Digita un numero: “))
+            if n == 5:
+                Print(f”{n} è uguale a 5!”) 
+            elif n%2 == 0:
+                Print(f”{n} è diverso da 5 ma è pari”)
+            else:
+                Print(f”{n} è diverso da 5 ed è dispari”) 
 
 LEZIONE 3 : WHILE, FOR
 
@@ -52,21 +52,26 @@ LEZIONE 3 : WHILE, FOR
     # 3 modo : FOR
         Per iterare sopra un’altra sequenza di elementi, in questo caso “i” non serve inizializzarla perche fa parte del ciclo, nasce cresce e muore nel ciclo.
         
-        For i in range(5): funzione range => prende in considerazione un range numerico, in questo caso (5)
+        # funzione range() => prende in considerazione un range numerico, in questo caso (5)
+        For i in range(5):
             Print(“Hello World!”)
+
+        #Output
+        Hello World!
         
         # Stampare in output numeri da 1 a 10
         For i in range(1, 11): perche da 0 a n-1
             Print(i)
         
-        Output
+        #Output
         1, 2, 3, 4, 5, 6, 7, 8, 9, 10
         
         # Stampare in output solo i numeri dispari da 1 a 10
-        For i in range(1, 11, 2): perche da 0 a n-1... l’ultimo numero dice di quanto il contatore deve aumentare(i+=2)
+        For i in range(1, 11, 2): perche da 0 a n-1... 
+        # L’ultimo numero dice di quanto il contatore deve aumentare(i+=2)
             Print(i)
         
-        Output
+        #Output
         1, 3, 5, 7, 9
 
     # 1 Modo : Lista
@@ -96,10 +101,12 @@ LEZIONE 3 : COLLECTION:
     Lists [1, 2, 3, 4, “A”, “a”] order
     Sets [1, 2, 3, 4, “a”] unorder
     Dictionary {“A”:1, “b”:2.0} key:value
+
     Indexing :
     mylist[0] primo elemento della lista
     mylist[-1] ultimo elemento della
     mydictionary[“key”] valore associato alla chiave
+
     Modifying :
     mylist.append (“new”) aggiunge elemento “new”
     mylist.remove (“new”) rimuove elemento ”new”
@@ -129,25 +136,25 @@ LEZIONE 3 : COLLECTION:
     Python interpreta False e True come 0 e 1. In questo set abbiamo 1 e True, leggendo True come 1 vede che c’è un duplicato di 1 e ne mette uno solo, eliminando True e lasciando solo 1. 
     Funzioni di hasching (consentono la memorizzazione di dati e un accesso veloce nei set) per memorizzare gli elementi del set.
 
-    Ciclo for in sets
+    Ciclo for in sets :
         myset:set[int] = {5, 4, 8, 10}
         For valure in myset:
             Print(value)
         Results:
         5, 4, 8, 10
 
-    Dictionary additional
+    Dictionary additional :
         Mydict:dict[str, int] = {“a”:5, “b”:2}
         For key, value in mydict.items():
         Print(key, values)
         Result: a 5, b 2
 
-    Dictionary.values()
+    Dictionary.values() :
         For value in mydict.values():
         Print(value)
         Result: 5, 2
     
-    Dictionary.keys()
+    Dictionary.keys() :
         For key in mydict.keys():
         Print(key)
         Result: a, b
@@ -290,34 +297,41 @@ LEZIONE 3 : MATCH STATEMENT
 
 LEZIONE 4 : PROBLEM-SOLVING, ERRORI e FUNZIONI
 
-    FUNZIONI:  
+    FUNZIONI:
+        Una funzione è un blocco di codice riutilizzabile che esegue un compito specifico. Serve per organizzare il codice, evitare ripetizioni e semplificare la manutenzione.
 
-            "def functionName(list of parameters): # instructions for function body"
+        🔧 Caratteristiche principali:
+        Ha un nome.
+        Può ricevere input (detti parametri).
+        Può restituire un output (detto valore di ritorno).
+        Può essere richiamata più volte nel programma.
+
+            # Definizione della funzione
+            def saluta(nome) -> None:
+                return "Ciao, " + nome
+
+            # Chiamata alla funzione → stampa: Ciao, Luca
+            print(saluta("Luca"))
+
         
         Es : fai 3 somme diverse:
-        # somma tra 1 a 10 
-        # somma tra 20 a 37 
-        # somma tra 35 e 49
+        # somma tra 1 a 10 / tra 20 a 37 / 35 e 49
 
         Per una funzione dobbiamo: ‘’’slide 5 lezione 4’’’
         Step1 : 
             Definire una funzione :
-            Usare def (parola chiave), per riconoscere una funzione, dobbiamo sapere che la 	sintassi di una funzione abbiamo: nomeDellaFunzione + (parametri) = 
-                
-                def nomeDellaFunzione( )
+            Usare def (parola chiave), per riconoscere una funzione, dobbiamo sapere che la sintassi di una funzione abbiamo: nomeDellaFunzione + (parametri) : 
+                ** def nomeDellaFunzione() **
 
-            La funzione che non prende nulla in input, perciò non scriviamo nulla dentro le 	parentesi.
-            La funzione che ha bisogno di parametri e quindi ha qualcosa nelle parentesi.
-
-                Print(lista di parametri) : print=nome + ( ):valori in input
+            La funzione che non prende nulla in input, perciò non scriviamo nulla dentro le parentesi. La funzione che ha bisogno di parametri e quindi ha qualcosa nelle parentesi.
+                ** Print(lista di parametri) : print = nome + ():valori in input **
 
         Step2 : 
             Utilizzare una funzione :
                 
-                def = (parola chiave che dice a python che stiamo definendo una funzione) 
-
-                sumInRange = (nome della funzione)
-                (a:int, b:int) = (valori presi in input chiamati parametri)
+                - def = (parola chiave, dice a python che stiamo definendo una funzione)  
+                - sumInRange = (nome della funzione)
+                - (a:int, b:int) = (valori presi in input chiamati parametri)
 
             Questi valori a e b serviranno per la somma tra i valori di a e b, inizializzo una variabile result = 0 e faccio il mio ciclo for. Dopo il ciclo for devo incrementare result += 1 e poi gli diamo il return result
             Alla fine faccio il print(f”La somma tra a e b è: {sumInRange(1, 10)}”)
@@ -415,7 +429,7 @@ LEZIONE 4 : PROBLEM-SOLVING, ERRORI e FUNZIONI
             >>> Admin
             >>> <class 'dict'>
 
-        · Funzioni con parametri con passaggio di posizione.
+        Funzioni con parametri con passaggio di posizione:
 
         Ci sono tre modi per passare argomenti ai parametri:
         - passare per posizione,
@@ -442,10 +456,10 @@ LEZIONE 4 : PROBLEM-SOLVING, ERRORI e FUNZIONI
         print(f"{name} is {age} years old and lives in {city}.")
         # calling the describe_person function passing values by position
         describe_person("Alice", 25, "Rome")
-            ● describe_person(name=“Alice”, age=25, city=“Rome”)
-            ● describe_person(age=25, city=“Rome”, name=“Alice”)
-            ● describe_person(city=“Rome”, age=25, name=“Alice”)
-            ● and so on.
+            • describe_person(name=“Alice”, age=25, city=“Rome”)
+            • describe_person(age=25, city=“Rome”, name=“Alice”)
+            • describe_person(city=“Rome”, age=25, name=“Alice”)
+            • and so on.
         Note: Arguments passed by position must precede arguments passed by keyword. (Similarly for parameters.)
         describe_person(“Alice”, city=“Rome”, age=25)
         describe_person(city=“Rome”, 25, name=“Alice”) #ERROR! Not Valid!
@@ -492,114 +506,116 @@ LEZIONE 4 : PROBLEM-SOLVING, ERRORI e FUNZIONI
         Librerie già installatein python che non hanno bisogno del IMPORT. Ad esempio Print(), len(), sum(), abs(), round(), range(), min(), max(), sorted() ect…
 
 
-    Fare PULL da Github a VsCode:
-        Comando: git pull – oppure “3 puntini” nella source di vscode e fare pull se ci sono modifiche.
-        Per un progetto condiviso da zero: creo la repository, pubblica, aggiungo i collaboratori tramite Settings>Collaborators>Add people. 
-        Se la repository la crea qualcuno: fare il pull da github a vscode, clonare il link della repository con git clone il link, salvare la repo nella cartella, modificare  o fare codici nuovi nella repository locale poi creare un nuovo branch cosi che il main branch rimarrà intatto e lavorerò nel nuovo branch. Una volta finito tutto quanto, faccio il marge, unisco il nuovo branch con quello originale. Rischio di confliffi perche nel nuovo branch puoi modificare anche parte del main.
-        Creare nuovo branch: cliccare master/main poi nella barra cliccare create new branch e scrivi branch1. Ogni modifica dopo, saranno sul nuovo branch (clone della cartella)
+        Fare PULL da Github a VsCode:
+            Comando: git pull – oppure “3 puntini” nella source di vscode e fare pull se ci sono modifiche.
+            Per un progetto condiviso da zero: creo la repository, pubblica, aggiungo i collaboratori tramite Settings>Collaborators>Add people. 
+            Se la repository la crea qualcuno: fare il pull da github a vscode, clonare il link della repository con git clone il link, salvare la repo nella cartella, modificare  o fare codici nuovi nella repository locale poi creare un nuovo branch cosi che il main branch rimarrà intatto e lavorerò nel nuovo branch. 
+            Una volta finito tutto quanto, faccio il marge, unisco il nuovo branch con quello originale. Rischio di confliffi perche nel nuovo branch puoi modificare anche parte del main.
+            Creare nuovo branch: cliccare master/main poi nella barra cliccare create new branch e scrivi branch1. 
+            Ogni modifica dopo, saranno sul nuovo branch (clone della cartella)
 
 
 
-    Spiegazione esercizio 9 compito sul P-GRECO :
-        “The main program should call the function computePI to determine how many terms of the series are needed to obtain the
-        following approximation:
-        • π ≈ 3.14 (2 decimal digits)
-        • π ≈ 3.141 (3 decimal digits)
-        • π ≈ 3.1415 (4 decimal digits)
-        • π ≈ 3.14159 (5 decimal digits)
-        Note: The program must iterate until it reaches each of the specified thresholds, counting the number of terms required and printing the results.”
+        "Spiegazione esercizio 9 compito sul P-GRECO :
+            “The main program should call the function computePI to determine how many terms of the series are needed to obtain the
+            following approximation:
+            • π ≈ 3.14 (2 decimal digits)
+            • π ≈ 3.141 (3 decimal digits)
+            • π ≈ 3.1415 (4 decimal digits)
+            • π ≈ 3.14159 (5 decimal digits)
+            Note: The program must iterate until it reaches each of the specified thresholds, counting the number of terms required and printing the results.”
 
-        def computePI(approximation_value, decimal_digits)
-        dividiamo il problema in 3 step:
-        - 1. generalizzare la formula
-        - 2. scrivere la funzione computerPI
-        - 3. utilizza la funzione per calcolare le approssimazioni
+            def computePI(approximation_value, decimal_digits)
+            dividiamo il problema in 3 step:
+            - 1. generalizzare la formula
+            - 2. scrivere la funzione computerPI
+            - 3. utilizza la funzione per calcolare le approssimazioni
 
-        - 1 Generalizzare:  formula: π = 4 - 4/3 + 4/5 - 4/7 + 4/9 - 4/11 + …
-        il denominatore di ogni termine ( frazione) cambia sempre con un incremento di +2 e il segno che cambia da positivo a negativo alternandosi.
-        Dividere il primo problema in 2 sotto problemi (1.1:denominatore e 1.2:segno)
-        1.1 denominatore:
-        • The first term of the series is 4.
-        • The second term of the series is 4/3.
-        • The third term of the series is 4/5.
-        • The fourth term of the series is 4/7.
-        • The fifth term of the series is 4/9.
-        • The sixth term of the series is 4/11, and so on.
+            - 1 Generalizzare:  formula: π = 4 - 4/3 + 4/5 - 4/7 + 4/9 - 4/11 + …
+            il denominatore di ogni termine ( frazione) cambia sempre con un incremento di +2 e il segno che cambia da positivo a negativo alternandosi.
+            Dividere il primo problema in 2 sotto problemi (1.1:denominatore e 1.2:segno)
+            1.1 denominatore:
+            • The first term of the series is 4.
+            • The second term of the series is 4/3.
+            • The third term of the series is 4/5.
+            • The fourth term of the series is 4/7.
+            • The fifth term of the series is 4/9.
+            • The sixth term of the series is 4/11, and so on.
 
-        We need to initialize a counter i to 0 and define pi = 0.
+            We need to initialize a counter i to 0 and define pi = 0.
 
-        • For i = 0, we have the first term of the series, which is pi = 4.
-        • For i = 1, we have the second term of the series, which is pi = 4/3.
-        • For i = 2, we have the third term of the series, which is pi = 4/5.
-        • For i = 3, we have the fourth term of the series, which is pi = 4/7.
-        • For i = 4, we have the fifth term of the series, which is pi = 4/9.
-        • For i = 5, we have the sixth term of the series, which is pi = 4/11.
+            • For i = 0, we have the first term of the series, which is pi = 4.
+            • For i = 1, we have the second term of the series, which is pi = 4/3.
+            • For i = 2, we have the third term of the series, which is pi = 4/5.
+            • For i = 3, we have the fourth term of the series, which is pi = 4/7.
+            • For i = 4, we have the fifth term of the series, which is pi = 4/9.
+            • For i = 5, we have the sixth term of the series, which is pi = 4/11.
 
-        • i = 0
-        pi = 4 = 4/1 = 4 / (0 + 1)
-        • i = 1
-        pi = 4/3 = 4 / (1 + 1 + 1)
-        • i = 2
-        pi = 4/5 = 4 / (2 + 2 + 1)
-        • i = 3
-        pi = 4/7 = 4 / (3 + 3 + 1)
+            • i = 0
+            pi = 4 = 4/1 = 4 / (0 + 1)
+            • i = 1
+            pi = 4/3 = 4 / (1 + 1 + 1)
+            • i = 2
+            pi = 4/5 = 4 / (2 + 2 + 1)
+            • i = 3
+            pi = 4/7 = 4 / (3 + 3 + 1)
 
 
-        Thus, we found that 4/7 can be written as
-        4 / (3 + 3 + 1) = 4 / (2 * 3 + 1),
-        and since i = 3,
+            Thus, we found that 4/7 can be written as
+            4 / (3 + 3 + 1) = 4 / (2 * 3 + 1),
+            and since i = 3,
 
-        cosi troviamo la FORMULA GENERALE 4 / (2 * i + 1).
-        • i = 0
-        pi = 4 = 4/1 = 4 / (2 * 0 + 1)
-        • i = 1
-        pi = 4/3 = 4 / (2 * 1 + 1)
-        • i = 2
-        pi = 4/5 = 4 / (2 * 2 + 1)
-        • i = 3
-        pi = 4/7 = 4 / (2 * 3 + 1)
-        • i = 4
-        pi = 4/9 = 4 / (2 * 4 + 1)
-        • i = 5
-        pi = 4/11 = 4 / (2 * 5 + 1)
+            cosi troviamo la FORMULA GENERALE 4 / (2 * i + 1).
+            • i = 0
+            pi = 4 = 4/1 = 4 / (2 * 0 + 1)
+            • i = 1
+            pi = 4/3 = 4 / (2 * 1 + 1)
+            • i = 2
+            pi = 4/5 = 4 / (2 * 2 + 1)
+            • i = 3
+            pi = 4/7 = 4 / (2 * 3 + 1)
+            • i = 4
+            pi = 4/9 = 4 / (2 * 4 + 1)
+            • i = 5
+            pi = 4/11 = 4 / (2 * 5 + 1)
 
-        FUNZIONE
-        # define a counter for while loop
-        i:int = 0
-        # define a term for pi for each iteration
-        pi:float = 0.00
-        # <= 5 perche ci servono solo 4 valori da traccia, quindi da 0 a 5
-        while i <=5 :
-            # print each term of the series
-            print(f"4 / {2*i + 1}")
-            # incrementing i by 1
-            i +=1
+            FUNZIONE
+            # define a counter for while loop
+            i:int = 0
+            # define a term for pi for each iteration
+            pi:float = 0.00
+            # <= 5 perche ci servono solo 4 valori da traccia, quindi da 0 a 5
+            while i <=5 :
+                # print each term of the series
+                print(f"4 / {2*i + 1}")
+                # incrementing i by 1
+                i +=1
 
-        ORA TROVIAMO un MODO PER IL SEGNO
-        Now, let's write the code that displays the obtained result in the output.
-        # define a counter for while loop
-        i:int = 0
-        # define a term for pi for each iteration
-        pi:float = 0.00
-        while i <=6 :
-        # if i is even, the term of the pi series is positive
-        if i%2==0 :
-        print(f"+ 4 / {2*i + 1}")
-        # if i is odd, the term of the pi series is negative
-        else:
-        print(f"- 4 / {2*i + 1}")
-        # incrementing i by 1
-        i += 1
+            ORA TROVIAMO un MODO PER IL SEGNO
+            Now, let's write the code that displays the obtained result in the output.
+            # define a counter for while loop
+            i:int = 0
+            # define a term for pi for each iteration
+            pi:float = 0.00
+            while i <=6 :
+                # if i is even, the term of the pi series is positive
+                if i%2==0 :
+                    print(f"+ 4 / {2*i + 1}")
+                # if i is odd, the term of the pi series is negative
+                else:
+                    print(f"- 4 / {2*i + 1}")
+                # incrementing i by 1
+                i += 1"
 
-    3. Use the function computePI(approximation_value, decimal_digits) to calculate 4 different approximations of π.
-    # calling computePI function to determine how many terms are needed to obtain 3.14 ( 152 terms)
-    print(f"{computePI(3.14, 2)} terms are needed to compute a value of pi approximated to 3.14!")
-    # calling computePI function to determine how many terms are needed to obtain 3.141 ( 916 terms)
-    print(f"{computePI(3.141, 3)} terms are needed to compute a value of pi approximated to 3.141!")
-    # calling computePI function to determine how many terms are needed to obtain 3.145 ( 7010 terms)
-    print(f"{computePI(3.1415, 4)} terms are needed to compute a value of pi approximated to 3.1415!")
-    # calling computePI function to determine how many terms are needed to obtain 3.1459 ( 130'658 terms)
-    print(f"{computePI(3.14159, 5)} terms are needed to compute a value of pi approximated to 3.14159!")
+            3. Use the function computePI(approximation_value, decimal_digits) to calculate 4 different approximations of π.
+            # calling computePI function to determine how many terms are needed to obtain 3.14 ( 152 terms)
+            print(f"{computePI(3.14, 2)} terms are needed to compute a value of pi approximated to 3.14!")
+            # calling computePI function to determine how many terms are needed to obtain 3.141 ( 916 terms)
+            print(f"{computePI(3.141, 3)} terms are needed to compute a value of pi approximated to 3.141!")
+            # calling computePI function to determine how many terms are needed to obtain 3.145 ( 7010 terms)
+            print(f"{computePI(3.1415, 4)} terms are needed to compute a value of pi approximated to 3.1415!")
+            # calling computePI function to determine how many terms are needed to obtain 3.1459 ( 130'658 terms)
+            print(f"{computePI(3.14159, 5)} terms are needed to compute a value of pi approximated to 3.14159!")
 
 - - - - -
 
@@ -743,8 +759,8 @@ LEZIONE 18 : Le ECCEZIONI
     Possiamo creare una classe contenente eccezioni personali:
     class le_mie_eccezioni(Exception)
 
-LEZIONE 18 : LE ASSERZIONI
 
+LEZIONE 18 : LE ASSERZIONI
     Le asserzioni,  sono utilizzate per verificare se, in una certa parte del codice, una condizione è vera, e tutto procede altrimenti sollevo un’eccezione.
     Se l’asserzione è falsa genera un’eccezione.
     Le asserzioni sono utili per il debug del codice. Non vengono utilizzate per gestire l’input dell’utente, perche non sono interattive.
@@ -766,7 +782,6 @@ LEZIONE 18 : LE ASSERZIONI
 - - - - -
 
 LEZIONE 5 : COMPREHENSION 
-
     1- List comprehension:
         Rimpiazza un codice basato su loop e iterazioni, facciamo la stessa cosa su unica riga di codice. Output + collection + condition = [ x+1   for x in range(20)   if x % 2 == 0 ]
 
@@ -805,7 +820,6 @@ LEZIONE 5 : COMPREHENSION
 - - - - -
 
 LEZIONE 9 : RegEx
-    
     RegEx : espressione regolare, Una stringa che identifica uno specifico gruppo di stringhe, oppure estrarre una serie di numeri sempre all’interno di una stringa, o di trovare parole specifiche.
     Lavorano solo con le STRINGHE...
 
@@ -887,7 +901,6 @@ LEZIONE 9 : RegEx
 - - - - -
 
 LEZIONE 8 : EREDITARIETA'
-
     Ci permette di riutilizzare attributi di una classe base in una classe derivata
         class BaseClass:
             def method_base(self) -> None:
@@ -985,7 +998,6 @@ LEZIONE 8 : EREDITARIETA'
 - - - - -
 
 LEZIONE 6 : CLASSI (Gestione di attributi e metodi)
-
     Attributi publici :
         class Animal:
             def __init__(self) -> None:
@@ -1101,7 +1113,6 @@ LEZIONE 6 : CLASSI (Gestione di attributi e metodi)
 - - - - -
 
 LEZIONE 9 : LAMBDA
-
     Piccola funzione : utile per definire una logica semplice, utilizzata come argomnto dato in imput a un’altra funzione per definire semplici logiche.
     Può avere più argomenti ma ha una sola espressione.
     per tipizzare la lambda bidogna utilizzare callable (importato da typing), per definire gli argomenti e il ritorno si utilizza → Callable [ [tipo_argomento1, tipo_argomento2, ... ], tipo_di_ritorno]
@@ -1182,16 +1193,19 @@ LEZIONE 9 : LAMBDA
         lambda :  dynamically computes the replacement.
 
 
-LEZIONE 15 : FILE (Sequenza di Bytes)
-    
+LEZIONE 15 : FILE ("Sequenza di Bytes")
+    Uilizzare un file è utile per poter scrivere informazioni da tenere in memoria
     Struttura del File :
-        - Header (intestazione) : Contiene una descrizione di ciò che contiene il file (Dati sui dati del file)
-        - Corpo del file : Contiene tutte le informazioni del contenuto
-        - Fine del file : Sequenza specifica che indica la fine del file 
+        - HEADER (intestazione) : Descrizione di ciò che contiene il file (Dati sui dati del file)
+        - CORPO del file : Contiene tutte le informazioni del contenuto
+        - FINE del file : Sequenza specifica che indica la fine del file 
 
-    In Python (Opening/Closing) :
+    In Python (open()/close()) :
+
         Python apre il file tramite il sistema operativo :
         Creare un file.py (example.py) e un file.txt (example.txt)
+        Usare sempre un Path (percorso) relativo, perche l'assoluto è locale.
+        Dalla funzione open() ritorna un WRAPPER
 
         Es/1 :
             # Funzione open()
@@ -1202,3 +1216,37 @@ LEZIONE 15 : FILE (Sequenza di Bytes)
             
             # Funzione close()
             file.close()
+
+        Es/2 :
+            file = open("example.txt", "a")
+            try :
+                pass
+            except Exception as e:
+                pass
+            finally :
+                file.close()
+
+            # CONTEXT : (context manager = classe che ha __enter__() / __exit__())
+            # Uscendo dal print che è indentato il file si chiude automaticamente
+            with open("example.txt", "w") as file :
+                print(file.read())
+
+        # Spiegazione di come funziona il WITH gestisce tutto in automatico tramite questa classe
+            class MyResource :
+                def __enter(self) :
+                    return self
+                
+                def __exit__(self, exc_type, exc_value, traceback):
+                    print("Sono nella funzione")
+
+                    if exc_type is not None:
+                        print(f"An error occured: {exc_value}")
+
+                    return True
+                
+            print("iNIZIO DEL PROGRAMMA")
+
+            with MyResource() as resources :
+                print("Sono dentro il blocco with")
+        
+        Il WITH sostituisce la creazione del percorso di un file, il try e tutto il resto
