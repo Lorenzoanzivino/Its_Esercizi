@@ -1,26 +1,29 @@
 Python:
-  Lezione 6 classi:
+
+  Lezione 4 Funzioni:
+    - es 8_15
+    - es 8_16
+
+  Lezione 6 Classi:
     - es 9_14
     - es 9_15
 
-  lezione 9 regex:
+  lezione 9 RegEx:
     - esercizi_analisi
     - esercizi_python
+    - esercizi_Lambda 
 
-  lezione 13 ricorsive:
+  lezione 13 ricorsive e Fibonacci:
     - es_5
     - es_6
     - es_7
     - es_8
     - es_9
+    - es_10
 
-  lezione 18 eccezioni:
+  lezione 18 Eccezioni:
     - es_3
     - es_4
     - es_5
     - es_6
     - es_7
-
-web:
-  lezione Bootstrap:
-    - lezione libri
