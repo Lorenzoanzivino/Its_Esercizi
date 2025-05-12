@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Variabili in JS</title>
     <script>
-        test();
+        test3();
 
         // Nuovo modo di scrivere le funzioni - ELIMINANDO l'HOISTING -
         let test2 = () => {
@@ -21,8 +21,8 @@
         // "Sposta" le funzioni tutte all'inizio
 
         // Vecchio modo di definire funzioni con Hoisting
-        function test() {
-            console.log("Sto eseguenda la Funzione test");
+        function test3() {
+            console.log("Sto eseguenda la Funzione test3");
         };
 
         // dichiarazione delle variabili : Fase 1
@@ -47,9 +47,32 @@
         let y = 10; // numeri
 
         x = true; // boolean
+
+        // per i numeri e le stringhe la dichiarazione dei tipi è implicita e non va messa
+        let numeri = 10;
+
+        // Front-end ... html ... 100% i dati solo tutte sottoforma di stringa
+        function test(){
+            let x = document.getElementById("primoNumero").value;
+            x = parseFloat(x)
+            console.log(x+10);
+
+            console.log(x + "ciao");
+
+            console.log(x*2);
+            console.log(x*"2");
+            console.log(x*"Ciao"); // Nan... not a number
+        }
+
+
     </script>
 </head>
 <body>
+    <h1>Variabili</h1>
+    <form action="">
+        <input type="number" id="primoNumero">
+        <button onclick="test()">VAI</button>
+    </form>
 
 </body>
 </html>
