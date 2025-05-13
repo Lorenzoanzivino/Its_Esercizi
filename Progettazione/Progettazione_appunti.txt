@@ -309,7 +309,10 @@
                             return f"{self.via()}, {self.civico()}"
 
                         def __eq__(self, other) -> bool:
-                            return (self.via(), self.civico() ) == (other.via(), other.civico())
+                            if not isinstance(other, Indirizzo):
+                                return False
+                            else:
+                                return (self.via(), self.civico() ) == (other.via(), other.civico())
 
 
                     if __name__ == '__main__':
