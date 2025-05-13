@@ -1,0 +1,236 @@
+🧠 Progettazione Software — Prof. Toni Mancini
+    🎯 Obiettivi del Corso
+
+        ❌ Abbandonare l’intuizione :
+            L’intuizione non basta nella progettazione software complessa.
+            Serve invece pensiero analitico e ragionamento logico.
+
+        ✅ Competenze da acquisire :
+            Progettare applicazioni software reali e non banali
+            Dedicare molto tempo alla comprensione dei dati e delle loro interrelazioni
+            Prendere decisioni ragionate, senza soluzioni uniche o ricette predefinite
+            Adattare un metodo generale al problema specifico
+
+        🧩 Capacità da sviluppare :
+            Ragionamento logico
+            Valutazione delle alternative
+            Scomposizione di problemi complessi in sottoproblemi
+
+        📌 Esempio 1: Gestione Contatti :
+
+            🔍 Requisiti funzionali
+                Memorizzare:
+                    Nome e cognome
+                    Numeri di telefono (casa, ufficio, cellulare)
+                    Email
+
+            Gestione dei gruppi di contatti
+                Funzionalità:
+                    Aggiungere, modificare, cancellare un contatto
+                    Assegnare/rimuovere contatti da gruppi
+                    Ricerca per nome/cognome
+
+            🧑‍💻 Considerazioni :
+                Applicazione semplice → può essere già implementata in Python
+                Focus sulla modellazione dei dati, non solo sulla scrittura del codice
+
+        📌 Esempio 2: Sistema Bancario :
+
+            🎯 Obiettivo
+                Gestire conti correnti, investimenti, promotori finanziari
+
+            🔍 Funzionalità richieste :
+                Tracciare acquisti/vendite (azioni, obbligazioni…)
+                Calcolare il valore aggiornato del portafoglio
+                Assistere promotori finanziari nelle scelte
+                Permettere ai responsabili di valutare i promotori
+
+            🧑‍💼 Stima di progetto (spannometrica) :
+                Comprensione del problema: 6 mesi (33%)
+                Progettazione: 9 mesi (50%)
+                Realizzazione: 3 mesi (17%)
+
+            🧑‍🔧 Attori Coinvolti nel Ciclo di Vita del Software :
+                Committente: Cliente
+                Esperti del dominio: Forniscono conoscenza specifica (es. leggi, regolamenti)
+                Analisti: Studiano requisiti e rischi
+                Progettisti: Definiscono l’architettura
+                Programmatori: Front-end e Back-end
+                Utenti finali: Usano l’applicazione
+                Manutentori: Gestiscono aggiornamenti e fix
+    
+
+🔁 Ciclo di Vita del Software :
+
+    1. Studio di Fattibilità 🧐 
+        Comprendere requisiti generali
+        Valutare costi/benefici
+        Pianificare tempi e risorse
+        Scegliere ambiente hardware/software
+
+    2. Raccolta Requisiti 📝 
+        Intervistare gli attori
+        Sintetizzare e raffinare i requisiti
+
+    3. Analisi Concettuale dei Requisiti 📐
+        Schema concettuale:
+            Modello matematico dell'app
+            Modella dati, relazioni, servizi offerti
+
+        Non contiene scelte implementative
+
+    4. Progetto (Design) 🏗️
+        Definisce come realizzare le funzioni
+        Scelte tecnologiche e architetturali
+        Strutture dati in RAM e su disco
+
+    5. Realizzazione (Implementazione) 💻
+        Scrittura del codice
+        Documentazione tecnica
+
+    6. Integrazione e Verifica ✅
+        Assemblaggio componenti
+        Test di correttezza, completezza, efficienza
+
+    7. Messa in Esercizio 🚀
+        Deploy dell'applicazione
+
+    8. Manutenzione 🔧
+        Monitoraggio, aggiornamenti e fix
+
+    🔄 Modelli di Ciclo di Vita :
+
+        ⬇️ Modello a Cascata (Waterfall)
+            Ogni fase segue la precedente
+            Utile solo a scopo didattico
+
+        🔄 Modello a Spirale (Iterativo)
+            Fasi ripetute più volte:
+                Raccolta requisiti
+                Analisi
+                Design
+                Realizzazione
+                Verifica
+                Manutenzione
+            Ogni iterazione produce una versione migliorata
+
+    🔄 Confronto tra modelli di sviluppo :
+
+        Puoi espandere un pochino il confronto tra Waterfall e Spirale:
+        Modello	        Pro	                                        Contro
+        ⬇️ Waterfall	Facile da pianificare e documentare,	    Rigidità, poco flessibile
+        🔄 Iterativo	Permette feedback continuo,	                Richiede buona gestione e test continui
+
+
+🧰 UML – Unified Modeling Language :
+    Linguaggio grafico standard per modellare applicazioni
+    Unisce 3 linguaggi principali
+    14 tipi di diagrammi totali
+
+    📊 Tipi principali di diagrammi :
+        🔹 Diagrammi Strutturali
+            Class Diagram
+            Object Diagram
+
+        🔹 Diagrammi Comportamentali :
+            Use Case Diagram
+            State/Transition Diagram
+            Sequence/Collaboration Diagram
+            Activity Diagram
+
+        🔹 Diagrammi Architetturali :
+            Component Diagram
+            Deployment Diagram
+
+    🎯 Focus del Corso :
+        Useremo:
+            Class & Object Diagram
+            Use Case Diagram
+            State/Transition Diagram
+            UML semplificato con regole precise
+
+    🧱 Oggetti in UML :
+        Caratteristiche :
+            Elemento con identità propria
+            Ha un identificatore (es: div_comm)
+            Istanza di una classe specifica
+            Rappresentato come rettangolo diviso in 3 sezioni
+
+
+    Esempio:
+
+    -----------------
+    |   div_comm    |   ← Identificatore (oggetto)
+    -----------------
+    |     Libro     |   ← Classe più specifica
+    -----------------
+    |...attributi...|
+
+
+🔧 Esempi di Raffinamento Requisiti
+
+    🏢 Esempio Azienda :
+        Requisiti Impiegati
+            Nome, cognome, data di nascita
+            Stipendio (real ≥ 0)
+            Dipartimento (uno solo)
+            Progetti (possono essere molti)
+
+        Requisiti Dipartimenti
+            Nome, telefono
+            Direttore (un impiegato)
+            Elenco impiegati    
+
+        Requisiti Progetti
+            Nome, budget (real ≥ 0)
+            Elenco impiegati coinvolti
+
+
+    ✈️ Esempio Voli Aerei :
+        Requisiti Voli
+            Codice (alfanumerico)
+            Durata (ore e minuti)
+            Compagnia aerea
+            Aeroporti (partenza e arrivo)
+
+        Requisiti Aeroporti
+            Codice (4 caratteri)
+            Nome
+            Città
+
+        Requisiti Compagnie Aeree
+            Nome, anno fondazione (>0)
+            Città sede
+
+        Requisiti Città
+            Nome, nazione
+            Numero abitanti (>0)
+            Compagnie con sede nella città
+
+
+🏗️ Lezione 7 – Fase di Design:
+
+    1️⃣ Ristrutturare il diagramma delle classi
+        Obiettivo: traducibilità immediata in codice Python
+
+    2️⃣ Fare scelte tecnologiche
+        Performance, sicurezza, scalabilità
+        Sostituire:
+            Tipi concettuali con tipi supportati (es: String, int)
+            Generalizzazioni tra classi/associazioni non supportate
+
+    3️⃣ Gestione tipi nei diagrammi
+        Tipi base: intero, reale, stringa
+        Tipi enumerativi: ad es. Genere = {Maschio, Femmina}
+        Tipi specializzati: Intero > 0, Stringa non vuota
+        Tipi composti: es. Indirizzo, CAP
+
+
+💡 Conclusione :
+    La progettazione software non è solo scrivere codice, ma richiede:
+
+        ✅ Comprensione del dominio
+        ✅ Modellazione rigorosa
+        ✅ Scelte progettuali giustificate
+        ✅ Uso corretto di strumenti come UML
+        ✅ Pianificazione e valutazione continua
