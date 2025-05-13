@@ -308,11 +308,16 @@
                         def __str__(self) -> str:
                             return f"{self.via()}, {self.civico()}"
 
+                        # Controlla l'uguaglianza tra contenuti diversi
                         def __eq__(self, other) -> bool:
-                            if not isinstance(other, Indirizzo):
+                            if not isinstance(other, Indirizzo) or hash(self) != hash(other):
                                 return False
                             else:
                                 return (self.via(), self.civico() ) == (other.via(), other.civico())
+
+                        # Hash di un ogg: è un int il cui valore dipende dal contenuto degli atributi
+                        def __hash__(self)->int: 
+                            return hash((self.via(), self.civico()))
 
 
                     if __name__ == '__main__':
