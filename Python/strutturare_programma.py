@@ -17,6 +17,8 @@
 
 ''' scrivere una funzione che prende una lista di elementi non ordinati e restituisca una lista ordinata '''
 
+import time
+
 def bubblesort(lista: list[int]) -> list[int]:
     for i in range(len(lista)):
         for j in range(len(lista) - i - 1):
@@ -27,4 +29,30 @@ def bubblesort(lista: list[int]) -> list[int]:
 
 lista:list = [5, 2, 2, 5, 5, 6, 235, 634]
 
-print(bubblesort(lista=lista))
+
+import time
+
+class Stopwatch:
+    def __init__(self):
+        self.start_time = 0.0
+        self.end_time = 0.0
+
+    def __enter__(self):
+        self.start_time = time.time()
+
+        return self
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        self.end_time = time.time()
+        elapsed_time = self.end_time - self.start_time
+        print(f"Elapsed time: {elapsed_time:.8f} seconds")
+
+        if exc_type is not None:
+            print(f"Exception type : {exc_type}")
+            print(f"An error occured : {exc_value}")
+            print(f"Traceback : {traceback}")
+
+        return True
+    
+with Stopwatch():
+    print(bubblesort(lista=lista))
