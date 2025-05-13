@@ -1,4 +1,4 @@
-🧠 Progettazione Software — Prof. Toni Mancini
+🧠 Progettazione Software — (Analisti)
     🎯 Obiettivi del Corso
 
         ❌ Abbandonare l’intuizione :
@@ -208,22 +208,166 @@
             Compagnie con sede nella città
 
 
-🏗️ Lezione 7 – Fase di Design:
+🏗️ Lezione 7 – Fase di Design: (Progettista)
 
     1️⃣ Ristrutturare il diagramma delle classi
-        Obiettivo: traducibilità immediata in codice Python
+        Diagramma delle classi ristrutturato :
+            Obiettivo: 
+                - Traducibilità immediata in codice Python
+                - Rendere il diagramma subito implementabile in Python
 
     2️⃣ Fare scelte tecnologiche
         Performance, sicurezza, scalabilità
-        Sostituire:
-            Tipi concettuali con tipi supportati (es: String, int)
-            Generalizzazioni tra classi/associazioni non supportate
+            Sostituire:
+                - Tipi concettuali con tipi supportati (es: String, int)
+                - Generalizzazioni tra classi/associazioni non supportate
 
     3️⃣ Gestione tipi nei diagrammi
-        Tipi base: intero, reale, stringa
-        Tipi enumerativi: ad es. Genere = {Maschio, Femmina}
-        Tipi specializzati: Intero > 0, Stringa non vuota
-        Tipi composti: es. Indirizzo, CAP
+        - Tipi base: intero, reale, stringa
+        - Tipi enumerativi: ad es. Genere = {Maschio, Femmina}
+        - Tipi specializzati: Intero > 0, Stringa non vuota
+        - Tipi composti: es. Indirizzo, CAP
+
+
+    📋 3 Step in ordine :
+
+        1️⃣ Fare il designe dei tipi di dati :
+
+            🔢 Tipi base: 
+                - intero : int 
+                - reale : float 
+                - stringa : str 
+                - booleano : bool 
+                - DataOra : datetime -> from datetime import datetime, date, time
+                - Data : datetime.date -> from datetime import datetime, date, time
+                - Ora : datetime.time -> from datetime import datetime, date, time
+
+            🎭 Tipi enumerativi: 
+                - Genere : {Maschio, Femmina}
+                    
+                    Python :
+                        from enum import StrEnum, auto
+
+                        class Genere(StrEnum)
+                            uomo = auto()
+                            donna = auto()
+                        
+                    No Python:
+                        class Genere:
+                            _is_woman:bool
+
+                            donna = Genere(True)
+                            uomo = Genere(False)
+
+                            def __init__(self, is_woman:bool):
+                                self._is_woman = is_woman
+
+                        class Persona:
+                            _nome:str
+                            _genere:Genere
+
+                            def __init__(self, nome:str, genere:Genere):
+                                self._nome = nome
+                                self._genere = genere
+
+                            def genere() -> Genere:
+                                return self._genere
+
+                        donna = Genere(True)
+                        uomo = Genere(False)
+                        ometto = Genere(False)
+
+                        mario = Persona("mario", uomo)
+                        anna = Persona("mario", donna)
+                        aldo = Persona("mario", ometto)
+
+                        print(mario.genere() == aldo.genere())  ->  # False!!!
+
+            🧩 Tipi specializzati: 
+                - Intero > 0
+                - Reale <= 0
+                
+            🏗️ Tipi composti: 
+                - Indirizzo : 
+                    from typing import Self
+
+                    ✅ class Indirizzo:
+                        _via:str
+                        _civico:int
+
+                        def __init__(self, via:str, civico:int) -> Self:
+                            self._via = via
+                            self._civico = civico
+                        
+                        def via(self) -> str:
+                            return self._via
+                        
+                        def civico(self) -> int:
+                            return self._civico
+
+                        def __str__(self) -> str:
+                            return f"{self.via()}, {self.civico()}"
+
+                        def __eq__(self, other) -> bool:
+                            return (self.via(), self.civico() ) == (other.via(), other.civico())
+
+
+                    if __name__ == '__main__':
+
+                        i1 = Indirizzo("Via di casa mia", 35)
+                        i2 = Indirizzo("Via di casa mia", 35)
+                        print(i1)
+
+                        print(i1 == i2) # True
+
+                        l:list[indirizzo] = [i1]
+                        print(i2 in l) # True
+
+                - Voto : 
+                    ❌ class VotoScorretto:
+                        _v:int
+
+                        def __init__(self, v:int) -> Voto:
+                            if (v < 18 or v > 31):
+                                raise ValueError("'v' deve essere tra 18 e 30")
+                            self._v = v
+
+                        def valore(self) -> int:
+                            return self._v
+
+                        # controllo di equaglianza
+                        def __eq__(self, other) -> bool:
+                            return self._v == other._v
+
+                    # Main
+                    v1:VotoScorretto = VotoScorretto(18)
+                    v2:VotoScorretto = VotoScorretto(18)
+
+                    v1 == v2 # !! PROBLEMI
+
+                    ------------------------------------
+
+                    # class int:
+                    #    def __new__(v:int|str|float)
+                    #        return ...
+                    #
+                    #    def __eq__(...): ---
+
+                    ✅ class VotoCorretto(int):
+                        def __new__(cls, v:int|str|float) -> Self:
+                            if (v < 18 or v > 31):
+                                raise ValueError(f"Value v == {v} deve essere tra 18 e 30")
+                            return int.__new__(cls, v)
+
+                    # Main
+                    v:Voto = Voto(19)  ->  # Vale 19
+                    v2:Voto = Voto(v)  ->  # Vale v
+
+                    v == v2 --> True !!!
+
+        2️⃣ :
+
+        3️⃣ :
 
 
 💡 Conclusione :
