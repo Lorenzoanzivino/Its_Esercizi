@@ -20,12 +20,22 @@
 import time
 
 def bubblesort(lista: list[int]) -> list[int]:
+
+    ordered: bool = True    
+    
     for i in range(len(lista)):
         for j in range(len(lista) - i - 1):
-            if lista[j] > lista[j + 1]:
-                # Scambio
-                lista[j], lista[j + 1] = lista[j + 1], lista[j]
-    return lista
+#            if lista[j] > lista[j + 1]:
+#                # Scambio
+#                lista[j], lista[j + 1] = lista[j + 1], lista[j]
+#    return lista
+
+            if lista[i] >= lista[j]:
+                ordered = False
+
+        if ordered:
+        
+            return lista
 
 lista:list = [5, 2, 2, 5, 5, 6, 235, 634]
 
