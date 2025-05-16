@@ -5,3 +5,13 @@ Ad esempio, se n = 6, la progressione armonica A vale:
 A = 1/6 * 1/5 * 1/4 * 1/3 * 1/2 * 1 = 0.001389.
 
 Scrivere in Python una funzione ricorsiva chiamata armonica che dato un numero n intero positivo, calcoli la relativa progressione armonica, arrotondando il risultato finale a 6 cifre decimali.'''
+
+def recursiveArmonica(n:int) -> float:
+
+    if n == 1:
+        return 1
+    
+    else:
+        return 1 / n * recursiveArmonica(n - 1)
+
+print(recursiveArmonica(6))
