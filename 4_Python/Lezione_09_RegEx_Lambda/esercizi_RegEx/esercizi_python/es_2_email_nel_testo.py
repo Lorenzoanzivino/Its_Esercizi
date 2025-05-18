@@ -11,7 +11,7 @@ import re
 
 def extract_emails(text:str) -> list[str]:
 
-    pattern : str = r'\w\w+@\w[\w-]*\w?.\w+'
+    pattern : str = r'[\w\.-]+@[\w\.-]+\.\w{2,}'
 
     found_email = re.findall(pattern, text)
 
