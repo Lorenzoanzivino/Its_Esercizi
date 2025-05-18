@@ -221,3 +221,98 @@ class Fornitore:
         return (f"Fornitore: {self.ragioneSociale}, P.IVA: {self.partitaIVA.partitaiva}, Indirizzo: {self.indirizzo}, Telefono: {self.telefono.telefono}, Email: {self.email.value}")
     
 # ================================
+
+# SLOT DI TEST
+'''
+Istruzioni per avviare il test
+
+1) Aprire il terminale.
+
+2) Clonare la repository (se necessario):
+    - git clone https://github.com/tuo_utente/tuo_repo.git
+
+3) Accedere alla cartella del progetto:
+    - cd percorso/del/progetto
+
+4) Eseguire lo script Python:
+    - python3.11 ordini_fatture1.py
+'''
+
+def test_tutte_le_classi_con_print():
+    print("Test Stringa:")
+    try:
+        print(Stringa.valida("ciao"))              # dovrebbe stampare "ciao"
+        print(Stringa.valida("   spazio   "))      # dovrebbe stampare "   spazio   "
+        try:
+            Stringa.valida("")                      # dovrebbe sollevare errore
+        except ValueError as e:
+            print(f"Errore atteso: {e}")
+    except Exception as e:
+        print(f"Errore inatteso: {e}")
+
+    print("\nTest Indirizzo:")
+    indirizzo = Indirizzo("Via Garibaldi", 25, "50100")
+    print(indirizzo)  # stampa "Via Garibaldi, 25, CAP: 50100"
+
+    print("\nTest PartitaIVA:")
+    try:
+        partita_iva = PartitaIVA("12345678901")
+        print(partita_iva.partitaiva)  # stampa "12345678901"
+        PartitaIVA("abc")               # dovrebbe sollevare errore
+    except ValueError as e:
+        print(f"Errore atteso: {e}")
+
+    print("\nTest Telefono:")
+    try:
+        telefono = Telefono("+391234567890")
+        print(telefono.telefono)       # stampa "+391234567890"
+        Telefono("123")                # dovrebbe sollevare errore
+    except ValueError as e:
+        print(f"Errore atteso: {e}")
+
+    print("\nTest Email:")
+    try:
+        email = Email("prova@mail.com")
+        print(email.value)             # stampa "prova@mail.com"
+        Email("invalid-email")         # dovrebbe sollevare errore
+    except ValueError as e:
+        print(f"Errore atteso: {e}")
+
+    print("\nTest CodiceFiscale:")
+    try:
+        cf = CodiceFiscale("RSSMRA85M01H501U")
+        print(cf)                     # stampa "RSSMRA85M01H501U"
+        CodiceFiscale("123")          # dovrebbe sollevare errore
+    except ValueError as e:
+        print(f"Errore atteso: {e}")
+
+    print("\nTest StatoOrdine:")
+    stato = StatoOrdine.INVIATO
+    print(stato)                      # stampa "inviato"
+
+    print("\nTest Nazione, Regione, Citta:")
+    nazione = Nazione("Italia")
+    regione = Regione("Lombardia")
+    citta = Citta("Milano")
+    print(nazione.nome)               # stampa "Italia"
+    print(regione.nome)               # stampa "Lombardia"
+    print(citta.nome)                 # stampa "Milano"
+
+    print("\nTest Direttore:")
+    direttore = Direttore("Luca", "Bianchi", cf, date(1980, 5, 20), 15)
+    print(direttore)                  # stampa descrizione direttore
+
+    print("\nTest Dipartimento:")
+    dip = Dipartimento("HR", indirizzo)
+    print(dip)                       # stampa "Dipartimento: HR, Indirizzo: Via Garibaldi, 25, CAP: 50100"
+
+    print("\nTest Ordine:")
+    ordine = Ordine(date.today(), 1000.0, 22.0, "Acquisto materiali", StatoOrdine.SALDATO)
+    print(ordine)                    # stampa descrizione ordine
+
+    print("\nTest Fornitore:")
+    fornitore = Fornitore("XYZ Spa", partita_iva, indirizzo, telefono, email)
+    print(fornitore)                 # stampa descrizione fornitore
+
+if __name__ == "__main__":
+    test_tutte_le_classi_con_print()
