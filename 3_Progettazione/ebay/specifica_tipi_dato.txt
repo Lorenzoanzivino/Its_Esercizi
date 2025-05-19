@@ -1,0 +1,15 @@
+Specifica dei tipi di dato:
+
+Specificsa delle classi : V = vincolo
+
+	Specifica classe Bid :
+		[V.Bid.istanteMaggioreDiRegistrazione] Gli utenti devono registrarsi prima di proporre bid.
+		Per ogni b:Bid sia u:Utente tale che (b, u) : bid_ut allora deve essere che b.istante > u.registrazione.
+
+		[V.Bid.istanteTraPubblicazioneScadenza] L’istante dei bid devono essere tra la pubblicazione e la scadenza dell’asta.
+		Per ogni b:Bid sia a:Asta tale che (a,b):asta_bid deve essere che a.pubblicazione < b.istante < a.scadenza
+
+
+	Specifica della classe PostOggetto :
+		[V.postOggetto.pubblicazioneMaggioreRegistrazione] Un post deve essere pubblicato da un utente già registrato
+		Per ogni p.PostOggetto sia u:Utente tale che (u,p):pubblica deve essere che p.pubblicazione > u.registrazione.
