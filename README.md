@@ -77,7 +77,7 @@
 
 ### 🐳 Docker
 
-- 📅 15/04/25 – Lezione 23: **Docker**
+- 📅 15/04/25 – Lezione 20: **Docker**
 
 ---
 

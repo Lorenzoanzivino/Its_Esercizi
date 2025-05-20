@@ -1510,7 +1510,7 @@ LEZIONE 9: LAMBDA 🐍✨
 
 - - -
 
-LEZIONE 23 : 🚢 DOCKER
+LEZIONE 20 : 🚢 DOCKER
 
     La piattaforma per il containerizzazione delle applicazioni.
 
@@ -1635,3 +1635,5 @@ LEZIONE 23 : 🚢 DOCKER
         Eseguire la stessa applicazione su Linux, Windows e macOS senza modifiche.
 
         Creare ambienti di sviluppo identici a quelli di produzione.
+
+========================================================================================================================================================================================
