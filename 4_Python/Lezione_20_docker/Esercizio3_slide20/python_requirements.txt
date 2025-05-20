@@ -1,0 +1,10 @@
+numpy == 2.2.4
+
+# Percorso completo del file
+'''its@its-Virtual-Machine:~/vscode_projects/Esercizi_ITS/4_Python/Lezione_20_docker/Esercizio3_slide20$'''
+
+# Comando per buildare il docker
+'''docker build . -t my-numpy-app'''
+
+# Comando per stampare
+'''docker run my-numpy-app python app.py
