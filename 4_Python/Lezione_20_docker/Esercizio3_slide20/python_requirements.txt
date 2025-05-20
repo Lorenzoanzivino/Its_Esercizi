@@ -7,4 +7,4 @@ numpy == 2.2.4
 '''docker build . -t my-numpy-app'''
 
 # Comando per stampare
-'''docker run my-numpy-app python app.py
+'''docker run my-numpy-app python app.py'''

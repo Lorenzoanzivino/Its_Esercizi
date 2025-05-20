@@ -1647,3 +1647,12 @@
         Eseguire la stessa applicazione su Linux, Windows e macOS senza modifiche.
 
         Creare ambienti di sviluppo identici a quelli di produzione.
+
+        # Percorso completo del file
+            - its@its-Virtual-Machine:~/vscode_projects/Esercizi_ITS/4_Python/Lezione_20_docker/Esercizio3_slide20$
+
+        # Comando per buildare il docker
+            - docker build . -t my-numpy-app
+
+        # Comando per stampare
+            - docker run my-numpy-app python app.py
