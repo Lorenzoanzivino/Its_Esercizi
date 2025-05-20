@@ -1,4 +1,9 @@
-🧠 LEZIONE 3: IF, ELIF, ELSE
+========================================================================================================================================================================================
+🐍 APPUNTI PYTHON 🐍
+========================================================================================================================================================================================
+
+
+🧠 LEZIONE 3/1: IF, ELIF, ELSE
     Condizionali e Flusso di Esecuzione :
 
         Sintassi base:
@@ -37,7 +42,7 @@
         else:
             print(f"{n} è diverso da 5 ed è dispari")
 
-    🔁 LEZIONE 3: WHILE, FOR
+🔁 LEZIONE 3/2: WHILE, FOR
     Cicli di Ripetizione :
 
         1° Modo: Print Ripetuti
@@ -68,7 +73,7 @@
                 for i in range(1, 11, 2):
                     print(i)
 
-    🗃️ LEZIONE 3: COLLECTION
+🗃️ LEZIONE 3/3: COLLECTION
     Liste, Set, Dizionari
 
         Liste:
@@ -96,7 +101,7 @@
             mydict["new"] = 3  # Aggiunge o modifica un valore
             mydict.pop("new")  # Rimuove la chiave "new"
 
-    🎯 LEZIONE 3: MATCH STATEMENT
+🎯 LEZIONE 3/4: MATCH STATEMENT
     Esempi di uso di Match
 
         Posizione Gara:
@@ -125,7 +130,8 @@
                 case _:
                     print(f"Punto generico: {point}")
 
-- - - - -
+========================================================================================================================================================================================
+
 
 🧠 LEZIONE 4 – Problem-Solving, Errori & Funzioni in Python
     🔍 Cosa imparerai oggi
@@ -392,10 +398,94 @@
             # calling computePI function to determine how many terms are needed to obtain 3.1459 ( 130'658 terms)
             print(f"{computePI(3.14159, 5)} terms are needed to compute a value of pi approximated to 3.14159!")
 
-- - - - -
+========================================================================================================================================================================================
 
-🏫 LEZIONE 6: CLASSI
-Introduzione alle Classi e Oggetti
+
+🧠 LEZIONE 5: COMPREHENSION in Python
+
+    Le comprehension sono un modo conciso e leggibile per creare nuove collezioni (liste, set, dizionari) partendo da iterabili esistenti, usando una sola riga di codice.
+    🔢 1. List Comprehension
+
+    🧾 Sintassi:
+
+        [espressione for item in iterabile if condizione]
+
+        ✔️ Rimpiazza i loop tradizionali, mantenendo il codice più compatto.
+        ✅ Esempio base: quadrati dei numeri pari
+
+        Versione tradizionale:
+
+        squares = []
+        for x in range(10):
+            if x % 2 == 0:
+                squares.append(x**2)
+
+        Versione con comprehension:
+
+        squares = [x**2 for x in range(10) if x % 2 == 0]
+
+    🔠 Esempio: convertire una lista di nomi in maiuscolo
+
+        names = ["alice", "bob", "carol"]
+        uppercase_names = [name.upper() for name in names]
+        # Output: ['ALICE', 'BOB', 'CAROL']
+
+        📦 Esempio: flatten di una lista di liste
+
+        matrix = [[1, 2], [3, 4]]
+        flat = [num for row in matrix for num in row]
+        # Output: [1, 2, 3, 4]
+
+    🟣 2. Set Comprehension
+
+        🧾 Sintassi:
+
+            {espressione for item in iterabile if condizione}
+
+            ✔️ Restituisce un set (insieme) con valori unici.
+            🔁 Esempio: lunghezze uniche di parole
+
+            words = ["hi", "hello", "hey", "hi"]
+            unique_lengths = {len(word) for word in words}
+            # Output: {2, 3, 5}
+
+    🟠 3. Dictionary Comprehension
+
+        🧾 Sintassi:
+
+            {chiave: valore for item in iterabile if condizione}
+
+            ✔️ Crea un dizionario usando logica iterativa.
+            🔢 Esempio: mappare numeri al loro quadrato
+
+            squares_dict = {x: x**2 for x in range(5)}
+            # Output: {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
+
+    ⚠️ Quando evitare le comprehension
+
+        🚫 Non usarle se:
+
+            ✅ Rovinano la leggibilità del codice
+
+            ✅ Devono modificare lo stato di variabili già esistenti
+
+            ✅ Sono troppo annidate (nested) e diventano difficili da capire
+
+        📌 Quando usarle
+
+            ✅ Perfette per:
+
+                Creare nuove liste, set o dizionari in modo rapido
+
+                Applicare filtri e trasformazioni agli elementi
+
+                Migliorare il codice se mantengono chiarezza + sintesi
+
+========================================================================================================================================================================================
+
+
+🏫 LEZIONE 6/1: CLASSI
+    Introduzione alle Classi e Oggetti
 
     Classe persona:
     La classe persona è una struttura che rappresenta una persona con attributi come nome, cognome e data_nascita.
@@ -490,335 +580,254 @@ Introduzione alle Classi e Oggetti
         Getter e Setter:
         Le funzioni getter e setter sono utilizzate per ottenere e impostare i valori degli attributi. Servono per proteggere l'accesso ai dati sensibili.
 
-- - - - -
+🧑‍🏫 LEZIONE 6/2: CLASSI (Gestione di attributi e metodi) 🐍
 
-🧠 LEZIONE 13: FUNZIONI RICORSIVE
-    📋 Esercizio: Countdown con while (senza variabili aggiuntive)
-    🧩 Traccia:
+    In questa lezione esploreremo come gestire attributi e metodi in Python, con particolare attenzione agli attributi pubblici, privati, metodi statici e metodi di classe.
+    🔑 Attributi Pubblici 🔑
 
-    ✍️ Scrivere una funzione Python chiamata countdown che:
+    Gli attributi pubblici sono accessibili da qualsiasi parte del programma. Tuttavia, l'uso di attributi pubblici può essere rischioso, poiché chiunque può modificarli senza restrizioni.
+    Esempio di Attributo Pubblico:
 
-        Prende un intero positivo n come input
+        class Animal:
+            def __init__(self) -> None:
+                self.name: str = "Generic Animal"  # Public attribute
 
-        Stampa il conto alla rovescia da n a 0
+        animal: Animal = Animal()
+        print(animal.name)  # Output: "Generic Animal"
 
-        Se il numero è negativo, stampa un messaggio di errore
+        animal.name = "It's a dog"  # MODIFICA l'attributo pubblico 'name'
+        print(animal.name)  # Output: "It's a dog"
 
-        Deve usare solo un ciclo while e solo la variabile n (niente altre variabili!)
+    Problemi degli attributi pubblici:
 
-        Chiamare la funzione con n = -5 e n = 5
+        Nessuna protezione: chiunque può leggere o modificare l'attributo.
 
-    ✅ Output atteso:
+        Nessun controllo su tipo o validazione.
 
-    Error! Inserted number is negative!
-    -------------------------------------------------
-    5
-    4
-    3
-    2
-    1
-    0
+        Potenziali bug dovuti a modifiche non intenzionali.
 
-    💡 Soluzione con ciclo while:
+    🚫 Attributi Privati 🚫
 
-    def countdown(n: int) -> None:
-        if n >= 0:
-            while n >= 0:
-                print(n)
-                n = n - 1
-        else:
-            print("Error! Inserted number is negative!")
+        Un approccio più sicuro è utilizzare attributi privati, che possono essere accessibili solo all'interno della classe. Questo si ottiene utilizzando il prefisso con doppio underscore __.
+        Esempio di Attributo Privato (senza getter):
 
-    🔁 Chiamate alla funzione:
+        class Animal:
+            def __init__(self) -> None:
+                self.__name: str = "Generic Animal"  # Private attribute
 
-    countdown(-5)
-    print("-------------------------------------------------")
-    countdown(5)
+        animal: Animal = Animal()
+        print(animal.name)  # Errore: non accessibile direttamente
 
-    🔁 Funzioni RICORSIVE
-        🧠 Cos’è una funzione ricorsiva?
+        Python e Name Mangling:
+        Python esegue il name mangling, cambiando internamente __name in _NomeClasse__name. Non è veramente privato, ma scoraggia l'accesso esterno.
 
-        Una funzione ricorsiva è una funzione che si richiama da sola per risolvere un problema suddividendolo in sottoproblemi più semplici.
-        🧱 Struttura base della ricorsione:
+    🔑 Utilizzo di Getter e Setter per Attributi Privati 🔑
 
-            Caso base (terminazione) – dove la funzione si ferma e non si richiama più
+        Per rendere un attributo privato accessibile in modo controllato, si utilizzano i metodi getter e setter.
+        Esempio con Getter:
 
-            Passo ricorsivo – dove la funzione richiama sé stessa con un input modificato
+        class Animal:
+            def __init__(self) -> None:
+                self.__name: str = "Generic Animal"  # Private attribute
+            
+            # Getter per 'name'
+            def get_name(self) -> str:
+                return self.__name
 
-        🧨 Esempio: countdown ricorsivo
-        ✍️ Traccia:
+        animal: Animal = Animal()
+        print(animal.get_name())  # Output: "Generic Animal"
 
-        Scrivere una funzione countdown ricorsiva che:
+    🛠️ Metodi Statici e Attributi di Classe 🛠️
 
-            Prende n come input
+        I metodi statici e gli attributi di classe sono concetti utili quando hai bisogno di metodi o variabili che non dipendono dall'istanza della classe, ma sono condivisi da tutte le istanze.
+        ⚙️ Attributi di Classe ⚙️
 
-            Se n < 0 → stampa errore
+        Gli attributi di classe sono condivisi da tutte le istanze della classe. Sono utili per comportamenti comuni o costanti che non dipendono dall'istanza.
+        Esempio di Attributo di Classe:
 
-            Se n == 0 → stampa 0 e si ferma
+        class Persona:
+            popolazione: int = 0  # Attributo di classe pubblico
 
-            Altrimenti → stampa n e richiama sé stessa con n-1
+            def __init__(self, nome: str) -> None:
+                self.__nome: str = nome  # Attributo privato
+                Persona.popolazione += 1
 
-        ✅ Codice:
+        print(Persona.popolazione)  # Output: 0
+        persona1: Persona = Persona("Alice")
+        print(Persona.popolazione)  # Output: 1
+        persona2: Persona = Persona("Bob")
+        print(Persona.popolazione)  # Output: 2
 
-        def countdown(n: int) -> None:
-            # Step 1: caso base negativo
-            if n < 0:
-                print("Error! Inserted number is negative!")
-            # Step 2: caso base n == 0
-            elif n == 0:
-                print(0)
-            # Step 3: passo ricorsivo
-            else:
-                print(n)
-                countdown(n - 1)
+    📐 Metodi Statici 📐
 
-        💬 Esempio chiamata:
+    I metodi statici non accedono né all'istanza né alla classe. Sono utili per operazioni che non richiedono la modifica o l'interazione con gli attributi della classe.
+    Esempio di Metodo Statico:
 
-        countdown(-5)
-        print("-------------------------------------------------")
-        countdown(5)
+    class Matematica:
+        PI: float = 3.14  # Attributo di classe pubblico costante
 
-        📌 Concetti chiave:
+        @staticmethod  # Decoratore per definire un metodo statico
+        def area_cerchio(raggio: float) -> float:  # Metodo Statico
+            return Matematica.PI * raggio * raggio
 
-            🧱 Caso base: condizione in cui non si richiama più la funzione (es. n == 0)
+    print(Matematica.PI)  # Output: 3.14
+    print(Matematica.area_cerchio(5))  # Output: 78.5
 
-            🔁 Passo ricorsivo: quando la funzione si richiama con un nuovo valore (es. n - 1)
+    🏫 Che Cos'è un Metodo di Classe? 🏫
 
-            ⚠️ Attenzione: senza caso base, la ricorsione va in loop infinito ➡️ errore RecursionError
+    Un metodo di classe è legato alla classe stessa, non a una sua istanza. È definito con il decoratore @classmethod e prende cls come primo parametro invece di self.
 
-        📚 Ricorda!
+        cls fa riferimento alla classe, non a una specifica istanza.
 
-            Una funzione ricorsiva deve sempre avere:
+        Può accedere e modificare gli attributi di classe.
 
-                ❗ Un caso base
+    Esempio di Metodo di Classe:
 
-                🔄 Un passo ricorsivo
+    class Persona:
+        __popolazione: int = 0  # Attributo di classe privato
 
-            La ricorsione può essere utile in problemi ripetitivi e strutturati (es. countdown, fattoriale, alberi, Fibonacci, ecc.)
+        def __init__(self, nome: str) -> None:
+            self.__nome: str = nome  # Attributo privato
+            Persona.__popolazione += 1
 
-- - - - -
+        @classmethod
+        def get_popolazione(cls) -> None:
+            return cls.__popolazione  # Accede all'attributo di classe
 
-🚨 LEZIONE 18: LE ECCEZIONI
-    ❗ Cos'è un'Eccezione?
+    print(Persona.get_popolazione())  # Output: 0
+    persona1: Persona = Persona("Alice")
+    print(Persona.get_popolazione())  # Output: 1
+    persona2: Persona = Persona("Bob")
+    print(Persona.get_popolazione())  # Output: 2
 
-        Un'eccezione in Python è un evento che si verifica durante l'esecuzione del programma e che interrompe il normale flusso del codice.
-        Python permette di gestire le eccezioni per evitare crash improvvisi ⚠️
-        🔥 raise: sollevare un'eccezione manualmente
+    ✨ Riflessioni Finali ✨
 
-        La keyword raise viene usata per generare un'eccezione manualmente, ad esempio per segnalare che qualcosa non va nel programma.
+        Attributi Pubblici: Possono essere letti e modificati liberamente, ma possono causare problemi di integrità.
 
-        number = 10
-        if number > 5:
-            raise Exception(f"Number should not exceed 5. {number}")
-        print(number)
+        Attributi Privati: Proteggono i dati e richiedono getter e setter per l'accesso.
 
-        📌 Output:
+        Metodi Statici e di Classe: Sono utili per operazioni che non dipendono dall'istanza della classe, come calcoli o valori condivisi.
 
-        Exception: Number should not exceed 5. 10
+========================================================================================================================================================================================
 
-        🧪 Blocco try-except-else-finally
-        🔹 try: blocco che potrebbe generare un'eccezione
-        🔸 except: cosa fare se l’eccezione si verifica
-        🟢 else: viene eseguito solo se non si verifica alcuna eccezione
-        🧹 finally: viene sempre eseguito, anche in caso di errore (utile per cleanup)
-        ✅ Esempio: gestione della divisione per zero
 
-        try:
-            result = 10 / 0
-        except ZeroDivisionError:
-            print("⚠️ Non puoi dividere per zero!")
-        else:
-            print(f"✅ Il risultato è: {result}")
-        finally:
-            print("🔚 Operazione completata (con o senza errori)")
+🧑‍🏫 LEZIONE 8: EREDITARIETÀ 🌳
 
-        📌 Output:
+    L'ereditarietà permette di riutilizzare attributi e metodi di una classe base in una classe derivata. Vediamo i dettagli!
+    🔄 Riutilizzo di Attributi e Metodi con l'Ereditarietà 🐾
 
-        ⚠️ Non puoi dividere per zero!
-        🔚 Operazione completata (con o senza errori)
+    Con l'ereditarietà, una classe derivata può utilizzare metodi e attributi di una classe base.
 
-        🧹 Blocco finally
+        class Animal:
+            def speak(self) -> None:
+                print("The animal makes a sound")
 
-        Viene eseguito sempre, utile ad esempio per:
+        class Dog(Animal):
+            def bark(self) -> None:
+                print("Woof!")
 
-            Chiudere file
+        fido: Dog = Dog()
+        fido.speak()  # Output: "The animal makes a sound"
+        fido.bark()   # Output: "Woof!"
 
-            Liberare risorse
+    🔧 Uso di super() per il Costruttore della Classe Base 🔧
 
-            Terminare una connessione
+        Con super(), puoi richiamare il costruttore della classe madre dalla classe figlia per evitare di duplicare il codice.
+        Senza super():
 
-    💡 Creare Eccezioni Personalizzate :
-        Puoi creare eccezioni tue, per casi specifici della tua applicazione, estendendo la classe Exception.
+            class Animal:
+                def __init__(self, name: str) -> None:
+                    self.name = name
+                    print("Animal initialized")
 
-        class MiaEccezione(Exception):
-            pass
+            class Dog(Animal):
+                def __init__(self, name: str) -> None:
+                    self.name = name
+                    print("Dog initialized")
 
-        def controlla_valore(n):
-            if n > 100:
-                raise MiaEccezione("❌ Valore troppo alto!")
-            else:
-                print("✅ Valore accettato")
+            fido = Dog("Rudy")
 
-        controlla_valore(150)
+            Output:
 
-        📌 Output:
+            Dog initialized
 
-        MiaEccezione: ❌ Valore troppo alto!
+            Con super():
 
-    🧠 Riepilogo concetti chiave:
-        Concetto	                    Spiegazione
-        raise	                        Solleva un'eccezione manualmente 🚨
-        try	                            Blocca il codice "a rischio"
-        except	                        Gestisce l'errore in caso di eccezione
-        else	                        Viene eseguito solo se nessuna eccezione è stata sollevata
-        finally	                        Viene sempre eseguito, utile per cleanup 🧽
-        Eccezioni personalizzate	    Create con classi che ereditano da Exception
+            class Animal:
+                def __init__(self, name: str, color: str) -> None:
+                    self.name = name
+                    print("Animal initialized")
 
-- - -
+            class Dog(Animal):
+                def __init__(self, name: str, color: str) -> None:
+                    super().__init__(name, color)
+                    print("Dog initialized")
 
-✅ LEZIONE 18: LE ASSERZIONI in Python
-    🔍 Cosa sono le Asserzioni?
+            fido = Dog("Rudy", "black")
 
-    Le asserzioni (assert) servono per verificare che una condizione sia vera in un certo punto del programma.
+            Output:
 
-        Se la condizione è vera: ✅ il programma continua normalmente
+            Animal initialized
+            Dog initialized
 
-        Se la condizione è falsa: ❌ viene generata un'eccezione AssertionError
+    🐱 Metodo Overriding 🐾
 
-    Le asserzioni sono molto utili per il debug 🐛
-    ⚠️ Non sono pensate per gestire input utente.
-    🧾 Sintassi di base:
+        Quando una sottoclasse implementa un metodo che ha lo stesso nome e gli stessi parametri di un metodo della classe base, la sottoclasse "sovrascrive" il metodo della classe base.
 
-    assert condizione, "Messaggio opzionale"
+            class Animal:
+                def speak(self) -> None:
+                    print("The animal makes a sound")
 
-    💡 Esempio pratico:
+            class Cat(Animal):
+                def speak(self) -> None:
+                    print("Meow!")
 
-    x = 5
-    assert x > 0, "❌ x deve essere positivo!"
+            kitty = Cat()
+            kitty.speak()  # Output: "Meow!"
 
-    📌 Cosa succede:
+    🔒 Attributi e Metodi Protetti 🔒
 
-        Se x > 0 → programma continua ✅
+        Gli attributi e i metodi protetti (con un singolo underscore _) sono destinati ad essere utilizzati solo all'interno della classe e dalle sue sottoclassi.
+        Cosa sono i Membri Protetti?
 
-        Se x <= 0 → viene sollevata un’eccezione AssertionError con messaggio ❌
+        Attributi e metodi protetti sono prefissati da un singolo underscore _.
 
-    🧪 Perché usare assert?
+        Python non ha restrizioni di accesso, ma la convenzione è di non modificare questi membri se non sei una sottoclasse.
 
-        Per verificare precondizioni o postcondizioni
+        class Animal:
+            def __init__(self) -> None:
+                self._type = "Mammal"  # Protected attribute
 
-        Per assicurarti che il programma sia in uno stato atteso
+            def _sound(self) -> None:  # Protected method
+                print("Generic animal sound")
 
-        Per controllare il comportamento mentre sviluppi o testi il codice
+        class Dog(Animal):
+            def describe(self) -> None:
+                print(f"I am a {self._type}")  # Accessing protected attribute
+                self._sound()  # Calling protected method
 
-    🧼 Come disattivare tutte le asserzioni
+        fido = Dog()
+        fido.describe()
 
-    Quando il progetto è pronto per la produzione (e non vuoi che gli assert abbiano effetto), puoi disattivarli dal terminale:
+        Output:
 
-    python -O script.py
+        I am a Mammal
+        Generic animal sound
 
-    🔵 Con -O (optimize):
+    ✨ Riflessioni Finali ✨
 
-        Tutte le asserzioni (assert) vengono ignorate
+        Ereditarietà: Permette di creare nuove classi che estendono il comportamento di classi già esistenti.
 
-        Ideale per rilasci finali o ambiente di produzione
+        Metodo Overriding: Fornisce un modo per personalizzare il comportamento dei metodi nelle classi derivate.
 
-    📌 Confronto modalità:
-        Comando	Effetto sugli assert
-        python script.py	Asserzioni attive ✅
-        python -O script.py	Asserzioni ignorate ❌
+        Attributi e Metodi Protetti: Segnala agli sviluppatori che un membro è destinato solo a essere utilizzato dalla classe e dalle sue sottoclassi, anche se Python non applica restrizioni vere e proprie.
 
-    🧠 Riepilogo concetti chiave:
-        Concetto	        Descrizione
-        assert	            Verifica una condizione e lancia un'eccezione se falsa
-        Quando usarlo	    Per debug e controllo dello stato interno del programma
-        Quando evitarlo	    Per input utente o logica di produzione
-        Disattivazione	    Usa python -O per ignorare le asserzioni
+        Con questi strumenti, puoi scrivere codice più riutilizzabile, modulare ed estensibile! 🚀
 
-- - - - -
+========================================================================================================================================================================================
 
-🧠 LEZIONE 5: COMPREHENSION in Python
 
-    Le comprehension sono un modo conciso e leggibile per creare nuove collezioni (liste, set, dizionari) partendo da iterabili esistenti, usando una sola riga di codice.
-    🔢 1. List Comprehension
-
-    🧾 Sintassi:
-
-        [espressione for item in iterabile if condizione]
-
-        ✔️ Rimpiazza i loop tradizionali, mantenendo il codice più compatto.
-        ✅ Esempio base: quadrati dei numeri pari
-
-        Versione tradizionale:
-
-        squares = []
-        for x in range(10):
-            if x % 2 == 0:
-                squares.append(x**2)
-
-        Versione con comprehension:
-
-        squares = [x**2 for x in range(10) if x % 2 == 0]
-
-    🔠 Esempio: convertire una lista di nomi in maiuscolo
-
-        names = ["alice", "bob", "carol"]
-        uppercase_names = [name.upper() for name in names]
-        # Output: ['ALICE', 'BOB', 'CAROL']
-
-        📦 Esempio: flatten di una lista di liste
-
-        matrix = [[1, 2], [3, 4]]
-        flat = [num for row in matrix for num in row]
-        # Output: [1, 2, 3, 4]
-
-    🟣 2. Set Comprehension
-
-        🧾 Sintassi:
-
-            {espressione for item in iterabile if condizione}
-
-            ✔️ Restituisce un set (insieme) con valori unici.
-            🔁 Esempio: lunghezze uniche di parole
-
-            words = ["hi", "hello", "hey", "hi"]
-            unique_lengths = {len(word) for word in words}
-            # Output: {2, 3, 5}
-
-    🟠 3. Dictionary Comprehension
-
-        🧾 Sintassi:
-
-            {chiave: valore for item in iterabile if condizione}
-
-            ✔️ Crea un dizionario usando logica iterativa.
-            🔢 Esempio: mappare numeri al loro quadrato
-
-            squares_dict = {x: x**2 for x in range(5)}
-            # Output: {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
-
-    ⚠️ Quando evitare le comprehension
-
-        🚫 Non usarle se:
-
-            ✅ Rovinano la leggibilità del codice
-
-            ✅ Devono modificare lo stato di variabili già esistenti
-
-            ✅ Sono troppo annidate (nested) e diventano difficili da capire
-
-        📌 Quando usarle
-
-            ✅ Perfette per:
-
-                Creare nuove liste, set o dizionari in modo rapido
-
-                Applicare filtri e trasformazioni agli elementi
-
-                Migliorare il codice se mantengono chiarezza + sintesi
-
-- - - - -
-
-🧩 LEZIONE 9: RegEx – Espressioni Regolari in Python
+🧩 LEZIONE 9/1: RegEx – Espressioni Regolari in Python
 
     Una RegEx (espressione regolare) è una stringa speciale usata per trovare, verificare o estrarre pattern all’interno di altre stringhe. Utile per filtrare email, codici, numeri, parole chiave, ecc.
 
@@ -975,254 +984,7 @@ Introduzione alle Classi e Oggetti
 
         regex = r'\b[A-Z0-9]{16}\b'
 
-- - - - -
-
-🧑‍🏫 LEZIONE 8: EREDITARIETÀ 🌳
-
-    L'ereditarietà permette di riutilizzare attributi e metodi di una classe base in una classe derivata. Vediamo i dettagli!
-    🔄 Riutilizzo di Attributi e Metodi con l'Ereditarietà 🐾
-
-    Con l'ereditarietà, una classe derivata può utilizzare metodi e attributi di una classe base.
-
-        class Animal:
-            def speak(self) -> None:
-                print("The animal makes a sound")
-
-        class Dog(Animal):
-            def bark(self) -> None:
-                print("Woof!")
-
-        fido: Dog = Dog()
-        fido.speak()  # Output: "The animal makes a sound"
-        fido.bark()   # Output: "Woof!"
-
-    🔧 Uso di super() per il Costruttore della Classe Base 🔧
-
-        Con super(), puoi richiamare il costruttore della classe madre dalla classe figlia per evitare di duplicare il codice.
-        Senza super():
-
-            class Animal:
-                def __init__(self, name: str) -> None:
-                    self.name = name
-                    print("Animal initialized")
-
-            class Dog(Animal):
-                def __init__(self, name: str) -> None:
-                    self.name = name
-                    print("Dog initialized")
-
-            fido = Dog("Rudy")
-
-            Output:
-
-            Dog initialized
-
-            Con super():
-
-            class Animal:
-                def __init__(self, name: str, color: str) -> None:
-                    self.name = name
-                    print("Animal initialized")
-
-            class Dog(Animal):
-                def __init__(self, name: str, color: str) -> None:
-                    super().__init__(name, color)
-                    print("Dog initialized")
-
-            fido = Dog("Rudy", "black")
-
-            Output:
-
-            Animal initialized
-            Dog initialized
-
-    🐱 Metodo Overriding 🐾
-
-        Quando una sottoclasse implementa un metodo che ha lo stesso nome e gli stessi parametri di un metodo della classe base, la sottoclasse "sovrascrive" il metodo della classe base.
-
-            class Animal:
-                def speak(self) -> None:
-                    print("The animal makes a sound")
-
-            class Cat(Animal):
-                def speak(self) -> None:
-                    print("Meow!")
-
-            kitty = Cat()
-            kitty.speak()  # Output: "Meow!"
-
-    🔒 Attributi e Metodi Protetti 🔒
-
-        Gli attributi e i metodi protetti (con un singolo underscore _) sono destinati ad essere utilizzati solo all'interno della classe e dalle sue sottoclassi.
-        Cosa sono i Membri Protetti?
-
-        Attributi e metodi protetti sono prefissati da un singolo underscore _.
-
-        Python non ha restrizioni di accesso, ma la convenzione è di non modificare questi membri se non sei una sottoclasse.
-
-        class Animal:
-            def __init__(self) -> None:
-                self._type = "Mammal"  # Protected attribute
-
-            def _sound(self) -> None:  # Protected method
-                print("Generic animal sound")
-
-        class Dog(Animal):
-            def describe(self) -> None:
-                print(f"I am a {self._type}")  # Accessing protected attribute
-                self._sound()  # Calling protected method
-
-        fido = Dog()
-        fido.describe()
-
-        Output:
-
-        I am a Mammal
-        Generic animal sound
-
-    ✨ Riflessioni Finali ✨
-
-        Ereditarietà: Permette di creare nuove classi che estendono il comportamento di classi già esistenti.
-
-        Metodo Overriding: Fornisce un modo per personalizzare il comportamento dei metodi nelle classi derivate.
-
-        Attributi e Metodi Protetti: Segnala agli sviluppatori che un membro è destinato solo a essere utilizzato dalla classe e dalle sue sottoclassi, anche se Python non applica restrizioni vere e proprie.
-
-        Con questi strumenti, puoi scrivere codice più riutilizzabile, modulare ed estensibile! 🚀
-
-- - - - -
-
-🧑‍🏫 LEZIONE 6: CLASSI (Gestione di attributi e metodi) 🐍
-
-    In questa lezione esploreremo come gestire attributi e metodi in Python, con particolare attenzione agli attributi pubblici, privati, metodi statici e metodi di classe.
-    🔑 Attributi Pubblici 🔑
-
-    Gli attributi pubblici sono accessibili da qualsiasi parte del programma. Tuttavia, l'uso di attributi pubblici può essere rischioso, poiché chiunque può modificarli senza restrizioni.
-    Esempio di Attributo Pubblico:
-
-        class Animal:
-            def __init__(self) -> None:
-                self.name: str = "Generic Animal"  # Public attribute
-
-        animal: Animal = Animal()
-        print(animal.name)  # Output: "Generic Animal"
-
-        animal.name = "It's a dog"  # MODIFICA l'attributo pubblico 'name'
-        print(animal.name)  # Output: "It's a dog"
-
-    Problemi degli attributi pubblici:
-
-        Nessuna protezione: chiunque può leggere o modificare l'attributo.
-
-        Nessun controllo su tipo o validazione.
-
-        Potenziali bug dovuti a modifiche non intenzionali.
-
-    🚫 Attributi Privati 🚫
-
-        Un approccio più sicuro è utilizzare attributi privati, che possono essere accessibili solo all'interno della classe. Questo si ottiene utilizzando il prefisso con doppio underscore __.
-        Esempio di Attributo Privato (senza getter):
-
-        class Animal:
-            def __init__(self) -> None:
-                self.__name: str = "Generic Animal"  # Private attribute
-
-        animal: Animal = Animal()
-        print(animal.name)  # Errore: non accessibile direttamente
-
-        Python e Name Mangling:
-        Python esegue il name mangling, cambiando internamente __name in _NomeClasse__name. Non è veramente privato, ma scoraggia l'accesso esterno.
-
-    🔑 Utilizzo di Getter e Setter per Attributi Privati 🔑
-
-        Per rendere un attributo privato accessibile in modo controllato, si utilizzano i metodi getter e setter.
-        Esempio con Getter:
-
-        class Animal:
-            def __init__(self) -> None:
-                self.__name: str = "Generic Animal"  # Private attribute
-            
-            # Getter per 'name'
-            def get_name(self) -> str:
-                return self.__name
-
-        animal: Animal = Animal()
-        print(animal.get_name())  # Output: "Generic Animal"
-
-    🛠️ Metodi Statici e Attributi di Classe 🛠️
-
-        I metodi statici e gli attributi di classe sono concetti utili quando hai bisogno di metodi o variabili che non dipendono dall'istanza della classe, ma sono condivisi da tutte le istanze.
-        ⚙️ Attributi di Classe ⚙️
-
-        Gli attributi di classe sono condivisi da tutte le istanze della classe. Sono utili per comportamenti comuni o costanti che non dipendono dall'istanza.
-        Esempio di Attributo di Classe:
-
-        class Persona:
-            popolazione: int = 0  # Attributo di classe pubblico
-
-            def __init__(self, nome: str) -> None:
-                self.__nome: str = nome  # Attributo privato
-                Persona.popolazione += 1
-
-        print(Persona.popolazione)  # Output: 0
-        persona1: Persona = Persona("Alice")
-        print(Persona.popolazione)  # Output: 1
-        persona2: Persona = Persona("Bob")
-        print(Persona.popolazione)  # Output: 2
-
-    📐 Metodi Statici 📐
-
-    I metodi statici non accedono né all'istanza né alla classe. Sono utili per operazioni che non richiedono la modifica o l'interazione con gli attributi della classe.
-    Esempio di Metodo Statico:
-
-    class Matematica:
-        PI: float = 3.14  # Attributo di classe pubblico costante
-
-        @staticmethod  # Decoratore per definire un metodo statico
-        def area_cerchio(raggio: float) -> float:  # Metodo Statico
-            return Matematica.PI * raggio * raggio
-
-    print(Matematica.PI)  # Output: 3.14
-    print(Matematica.area_cerchio(5))  # Output: 78.5
-
-    🏫 Che Cos'è un Metodo di Classe? 🏫
-
-    Un metodo di classe è legato alla classe stessa, non a una sua istanza. È definito con il decoratore @classmethod e prende cls come primo parametro invece di self.
-
-        cls fa riferimento alla classe, non a una specifica istanza.
-
-        Può accedere e modificare gli attributi di classe.
-
-    Esempio di Metodo di Classe:
-
-    class Persona:
-        __popolazione: int = 0  # Attributo di classe privato
-
-        def __init__(self, nome: str) -> None:
-            self.__nome: str = nome  # Attributo privato
-            Persona.__popolazione += 1
-
-        @classmethod
-        def get_popolazione(cls) -> None:
-            return cls.__popolazione  # Accede all'attributo di classe
-
-    print(Persona.get_popolazione())  # Output: 0
-    persona1: Persona = Persona("Alice")
-    print(Persona.get_popolazione())  # Output: 1
-    persona2: Persona = Persona("Bob")
-    print(Persona.get_popolazione())  # Output: 2
-
-    ✨ Riflessioni Finali ✨
-
-        Attributi Pubblici: Possono essere letti e modificati liberamente, ma possono causare problemi di integrità.
-
-        Attributi Privati: Proteggono i dati e richiedono getter e setter per l'accesso.
-
-        Metodi Statici e di Classe: Sono utili per operazioni che non dipendono dall'istanza della classe, come calcoli o valori condivisi.
-
-- - - - -
-
-LEZIONE 9: LAMBDA 🐍✨
+✨ LEZIONE 9/2: LAMBDA 🐍
     Cos'è una funzione Lambda? 🤔
 
     Una lambda è una piccola funzione anonima, utile per definire logiche semplici in modo compatto. Può avere più argomenti, ma una sola espressione. Viene generalmente utilizzata come argomento di input per altre funzioni, come filter(), map() o sorted().
@@ -1320,6 +1082,115 @@ LEZIONE 9: LAMBDA 🐍✨
             Usala quando il codice è semplice e facilmente comprensibile.
 
             Evitala quando la logica è complessa o la funzione deve essere riutilizzata più volte.
+
+========================================================================================================================================================================================
+
+
+🧠 LEZIONE 13: FUNZIONI RICORSIVE
+    📋 Esercizio: Countdown con while (senza variabili aggiuntive)
+    🧩 Traccia:
+
+    ✍️ Scrivere una funzione Python chiamata countdown che:
+
+        Prende un intero positivo n come input
+
+        Stampa il conto alla rovescia da n a 0
+
+        Se il numero è negativo, stampa un messaggio di errore
+
+        Deve usare solo un ciclo while e solo la variabile n (niente altre variabili!)
+
+        Chiamare la funzione con n = -5 e n = 5
+
+    ✅ Output atteso:
+
+    Error! Inserted number is negative!
+    -------------------------------------------------
+    5
+    4
+    3
+    2
+    1
+    0
+
+    💡 Soluzione con ciclo while:
+
+    def countdown(n: int) -> None:
+        if n >= 0:
+            while n >= 0:
+                print(n)
+                n = n - 1
+        else:
+            print("Error! Inserted number is negative!")
+
+    🔁 Chiamate alla funzione:
+
+    countdown(-5)
+    print("-------------------------------------------------")
+    countdown(5)
+
+    🔁 Funzioni RICORSIVE
+        🧠 Cos’è una funzione ricorsiva?
+
+        Una funzione ricorsiva è una funzione che si richiama da sola per risolvere un problema suddividendolo in sottoproblemi più semplici.
+        🧱 Struttura base della ricorsione:
+
+            Caso base (terminazione) – dove la funzione si ferma e non si richiama più
+
+            Passo ricorsivo – dove la funzione richiama sé stessa con un input modificato
+
+        🧨 Esempio: countdown ricorsivo
+        ✍️ Traccia:
+
+        Scrivere una funzione countdown ricorsiva che:
+
+            Prende n come input
+
+            Se n < 0 → stampa errore
+
+            Se n == 0 → stampa 0 e si ferma
+
+            Altrimenti → stampa n e richiama sé stessa con n-1
+
+        ✅ Codice:
+
+        def countdown(n: int) -> None:
+            # Step 1: caso base negativo
+            if n < 0:
+                print("Error! Inserted number is negative!")
+            # Step 2: caso base n == 0
+            elif n == 0:
+                print(0)
+            # Step 3: passo ricorsivo
+            else:
+                print(n)
+                countdown(n - 1)
+
+        💬 Esempio chiamata:
+
+        countdown(-5)
+        print("-------------------------------------------------")
+        countdown(5)
+
+        📌 Concetti chiave:
+
+            🧱 Caso base: condizione in cui non si richiama più la funzione (es. n == 0)
+
+            🔁 Passo ricorsivo: quando la funzione si richiama con un nuovo valore (es. n - 1)
+
+            ⚠️ Attenzione: senza caso base, la ricorsione va in loop infinito ➡️ errore RecursionError
+
+        📚 Ricorda!
+
+            Una funzione ricorsiva deve sempre avere:
+
+                ❗ Un caso base
+
+                🔄 Un passo ricorsivo
+
+            La ricorsione può essere utile in problemi ripetitivi e strutturati (es. countdown, fattoriale, alberi, Fibonacci, ecc.)
+
+========================================================================================================================================================================================
 
 
 🧾 LEZIONE 15 – FILE ("Sequenza di Bytes")
@@ -1508,9 +1379,150 @@ LEZIONE 9: LAMBDA 🐍✨
             Se il codice è lungo, aggiungi più breakpoint per seguire l'esecuzione passo passo.
             Il debugger è utile anche per studiare il comportamento di funzioni ricorsive, cicli, e branching logico (if/else).
 
-- - -
+========================================================================================================================================================================================
 
-LEZIONE 20 : 🚢 DOCKER
+
+🚨 LEZIONE 18/1: LE ECCEZIONI
+    ❗ Cos'è un'Eccezione?
+
+        Un'eccezione in Python è un evento che si verifica durante l'esecuzione del programma e che interrompe il normale flusso del codice.
+        Python permette di gestire le eccezioni per evitare crash improvvisi ⚠️
+        🔥 raise: sollevare un'eccezione manualmente
+
+        La keyword raise viene usata per generare un'eccezione manualmente, ad esempio per segnalare che qualcosa non va nel programma.
+
+        number = 10
+        if number > 5:
+            raise Exception(f"Number should not exceed 5. {number}")
+        print(number)
+
+        📌 Output:
+
+        Exception: Number should not exceed 5. 10
+
+        🧪 Blocco try-except-else-finally
+        🔹 try: blocco che potrebbe generare un'eccezione
+        🔸 except: cosa fare se l’eccezione si verifica
+        🟢 else: viene eseguito solo se non si verifica alcuna eccezione
+        🧹 finally: viene sempre eseguito, anche in caso di errore (utile per cleanup)
+        ✅ Esempio: gestione della divisione per zero
+
+        try:
+            result = 10 / 0
+        except ZeroDivisionError:
+            print("⚠️ Non puoi dividere per zero!")
+        else:
+            print(f"✅ Il risultato è: {result}")
+        finally:
+            print("🔚 Operazione completata (con o senza errori)")
+
+        📌 Output:
+
+        ⚠️ Non puoi dividere per zero!
+        🔚 Operazione completata (con o senza errori)
+
+        🧹 Blocco finally
+
+        Viene eseguito sempre, utile ad esempio per:
+
+            Chiudere file
+
+            Liberare risorse
+
+            Terminare una connessione
+
+    💡 Creare Eccezioni Personalizzate :
+        Puoi creare eccezioni tue, per casi specifici della tua applicazione, estendendo la classe Exception.
+
+        class MiaEccezione(Exception):
+            pass
+
+        def controlla_valore(n):
+            if n > 100:
+                raise MiaEccezione("❌ Valore troppo alto!")
+            else:
+                print("✅ Valore accettato")
+
+        controlla_valore(150)
+
+        📌 Output:
+
+        MiaEccezione: ❌ Valore troppo alto!
+
+    🧠 Riepilogo concetti chiave:
+        Concetto	                    Spiegazione
+        raise	                        Solleva un'eccezione manualmente 🚨
+        try	                            Blocca il codice "a rischio"
+        except	                        Gestisce l'errore in caso di eccezione
+        else	                        Viene eseguito solo se nessuna eccezione è stata sollevata
+        finally	                        Viene sempre eseguito, utile per cleanup 🧽
+        Eccezioni personalizzate	    Create con classi che ereditano da Exception
+
+========================================================================================================================================================================================
+
+
+✅ LEZIONE 18/2: LE ASSERZIONI in Python
+    🔍 Cosa sono le Asserzioni?
+
+    Le asserzioni (assert) servono per verificare che una condizione sia vera in un certo punto del programma.
+
+        Se la condizione è vera: ✅ il programma continua normalmente
+
+        Se la condizione è falsa: ❌ viene generata un'eccezione AssertionError
+
+    Le asserzioni sono molto utili per il debug 🐛
+    ⚠️ Non sono pensate per gestire input utente.
+    🧾 Sintassi di base:
+
+    assert condizione, "Messaggio opzionale"
+
+    💡 Esempio pratico:
+
+    x = 5
+    assert x > 0, "❌ x deve essere positivo!"
+
+    📌 Cosa succede:
+
+        Se x > 0 → programma continua ✅
+
+        Se x <= 0 → viene sollevata un’eccezione AssertionError con messaggio ❌
+
+    🧪 Perché usare assert?
+
+        Per verificare precondizioni o postcondizioni
+
+        Per assicurarti che il programma sia in uno stato atteso
+
+        Per controllare il comportamento mentre sviluppi o testi il codice
+
+    🧼 Come disattivare tutte le asserzioni
+
+    Quando il progetto è pronto per la produzione (e non vuoi che gli assert abbiano effetto), puoi disattivarli dal terminale:
+
+    python -O script.py
+
+    🔵 Con -O (optimize):
+
+        Tutte le asserzioni (assert) vengono ignorate
+
+        Ideale per rilasci finali o ambiente di produzione
+
+    📌 Confronto modalità:
+        Comando	Effetto sugli assert
+        python script.py	Asserzioni attive ✅
+        python -O script.py	Asserzioni ignorate ❌
+
+    🧠 Riepilogo concetti chiave:
+        Concetto	        Descrizione
+        assert	            Verifica una condizione e lancia un'eccezione se falsa
+        Quando usarlo	    Per debug e controllo dello stato interno del programma
+        Quando evitarlo	    Per input utente o logica di produzione
+        Disattivazione	    Usa python -O per ignorare le asserzioni
+
+========================================================================================================================================================================================
+
+
+🚢 LEZIONE 20 : DOCKER
 
     La piattaforma per il containerizzazione delle applicazioni.
 
@@ -1635,5 +1647,3 @@ LEZIONE 20 : 🚢 DOCKER
         Eseguire la stessa applicazione su Linux, Windows e macOS senza modifiche.
 
         Creare ambienti di sviluppo identici a quelli di produzione.
-
-========================================================================================================================================================================================
