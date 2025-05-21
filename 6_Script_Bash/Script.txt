@@ -1,0 +1,134 @@
+🐧 1. Cos'è uno Script
+
+    Uno script è un file di testo che contiene una sequenza di comandi di shell.
+
+    Perché usare gli script di shell?
+
+        Automatizzare compiti ripetitivi
+
+        Risparmiare tempo
+
+        Personalizzare comandi
+
+        Aiutare nell'amministrazione del sistema
+
+    Creazione script:
+
+        $ mkdir scripts
+        $ cd scripts
+        $ nano hello_world.sh
+
+💻 2. Shell di esecuzione
+
+    La prima riga di uno script indica la shell da usare:
+
+    #!/bin/bash
+
+    Visualizza la shell corrente:
+
+    $ echo $SHELL
+
+📝 3. Commenti
+
+    #: Commento normale
+
+    #!: Shebang, indica l'interprete (va sempre nella prima riga!)
+
+▶️ 4. Esecuzione di uno Script
+
+    Tre modi:
+
+        bash < script.sh
+
+        bash script.sh
+
+        ./script.sh (richiede permessi di esecuzione)
+
+    Permessi di esecuzione:
+
+    $ chmod u+x script.sh
+
+🔧 5. Variabili
+    🟢 Variabili locali
+
+        Sintassi: nome=valore (senza spazi)
+
+        Accesso: $nome
+
+        Cancellazione: unset nome
+
+        Esempi:
+
+            a=ciao
+            echo $a        # Output: ciao
+            b=who
+            $b             # Esegue il comando `who`
+
+🌍 Variabili di ambiente
+
+    Sono visibili dai processi figli. Alcune predefinite:
+
+        $HOME, $USER, $SHELL, $PATH, $TERM, $MAIL
+
+    Visualizza:
+
+        echo $HOME
+
+⌨️ 6. Read
+
+    Il comando read prende input da tastiera e lo assegna a variabili.
+
+    Esempio:
+
+    read nome
+    echo "Ciao, $nome"
+
+➕ 7. Operazioni aritmetiche
+    ✅ Comandi e Sintassi:
+
+        expr 1 + 2             # Output: 3
+        a=9; b=3
+        expr $a - $b           # Output: 6
+        echo $(($a+$b))        # Output: 12
+        echo $[$a - $b]        # Output: 6
+
+🔁 8. Strutture di controllo
+    📌 If
+
+        if [ condizione ]; then
+        # comandi se vero
+        else
+        # comandi se falso
+        fi
+
+        Operatori numerici:
+
+            -eq, -ne, -lt, -le, -gt, -ge
+
+        Operatori logici:
+
+            !, -a (AND), -o (OR)
+
+        Operatori file:
+
+            -f, -d, -s, -r, -w, -x
+
+    📌 Case
+
+        case $var in
+        val1) comando ;;
+        val2) altro_comando ;;
+        *)    comando_di_default ;;
+        esac
+
+🔁 For
+
+    for var in lista; do
+    # comandi
+    done
+
+🔄 While
+
+    while [ condizione ]; do
+    # comandi
+    done
