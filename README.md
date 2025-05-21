@@ -78,6 +78,7 @@
 ### 🐳 Docker
 
 - 📅 15/04/25 – Lezione 20: **Docker**
+- 📅 20/05/25 – Lezione 20: **Docker**
 
 ---
 
@@ -99,3 +100,4 @@
 ### 📚 Altro
 
 - 📅 08/05/25 – 🇬🇧 **Esame di Inglese**
+- 📅 22/05/25 –  Soft_Skills_4  **Organizzazione_Aziendale**
