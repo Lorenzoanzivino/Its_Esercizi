@@ -1,0 +1,68 @@
+🖥️ Lezione 1: Cenni su hardware e S.O.
+    1. Componenti dell'architettura di un elaboratore
+        ◦ CPU (Central Processing Unit): È composta principalmente da tre unità:
+            ▪ ALU (Arithmetic Logic Unit): si occupa delle operazioni matematiche e logiche.
+            ▪ Control Unit (CU): coordina il flusso di istruzioni e dati tra le varie componenti.
+            ▪ Registri: sono piccole aree di memoria ultra-veloci situate all'interno della CPU, usate per memorizzare temporaneamente dati e istruzioni. La velocità della CPU è misurata in GHz (gigahertz), che indica il numero di cicli di clock al secondo.
+        ◦ RAM (Random Access Memory): Oltre ad essere volatile, la RAM è anche dinamica (DRAM) o statica (SRAM). La DRAM è più economica ma più lenta, mentre la SRAM è più veloce ma più costosa. La RAM è divisa in heap (memoria per variabili dinamiche) e stack (memoria per variabili locali).
+        ◦ Memoria su disco (HDD/SSD):
+            ▪ HDD: In un hard disk, i dati sono memorizzati su dischi magnetici rotanti. La velocità di lettura/scrittura è limitata dal movimento fisico delle testine, ma gli HDD sono ideali per archiviazioni a lungo termine grazie al loro costo contenuto.
+            ▪ SSD: Gli SSD sono basati su memoria flash NAND, quindi non hanno parti mobili, rendendoli molto più veloci e resistenti agli urti. Hanno un ciclo di vita limitato in termini di scritture, ma sono sempre più usati per il loro miglioramento nelle prestazioni.
+    2. Sistema operativo
+        ◦ Il sistema operativo fornisce un'interfaccia tra l'hardware e l'utente, gestendo l'allocazione delle risorse e la sicurezza. Ogni sistema operativo ha un kernel, che è la parte fondamentale responsabile della gestione delle risorse hardware e dell'esecuzione dei processi. Il kernel può essere monolitico (tutto in un unico blocco) o microkernel (separato in moduli).
+    3. Comandi del sistema operativo
+        ◦ ls: Visualizza il contenuto della directory corrente. L'uso di opzioni come ls -a mostra anche i file nascosti (quelli che iniziano con un punto).
+        ◦ cd: Usato per navigare tra le directory. Esempio: cd .. ti porta alla directory superiore.
+        ◦ touch: Crea un file vuoto o aggiorna la data di modifica di un file esistente. È utile per creare file di log temporanei.
+        ◦ mkdir: Serve per creare directory, importante per strutturare progetti o file system.
+        ◦ rm: Rimuove file o directory. È importante essere cauti con il comando, specialmente con rm -rf, che rimuove in modo ricorsivo e forzato tutte le directory e i loro contenuti.
+    4. Creazione di una struttura standard di un progetto Python
+        ◦ Una struttura di progetto ben definita in Python include file per il codice (solitamente una cartella src o project_name), test (cartella tests), e file di configurazione (requirements.txt, setup.py). Inoltre, è fondamentale avere un file README.md per documentare il progetto e un file .gitignore per escludere file non necessari dal controllo versione.
+
+🌐 Lezione 7: Reti di Calcolatori – Fondamenti e Principi
+    1. Cos'è una rete di calcolatori
+        ◦ Le reti di calcolatori sono composte da due o più dispositivi (computer, server, router, etc.) interconnessi che permettono la trasmissione di dati. Le reti possono essere cablate, wireless o un mix di entrambi, con la possibilità di essere collegate tra loro tramite modem, switch, router, o hub.
+        ◦ I principali modi di trasmissione includono la trasmissione seriale (un bit alla volta) e la trasmissione parallela (più bit contemporaneamente).
+    2. Utilizzi delle reti
+        ◦ Le reti sono essenziali per garantire la collaborazione remota, l'accesso a risorse condivise, e la comunicazione globale. Le moderne reti sono progettate per essere scalabili, permettendo la connessione di milioni di dispositivi in tutto il mondo, come nel caso delle reti sociali, delle applicazioni cloud e delle reti aziendali.
+    3. Comunicazione point-to-point e broadcast
+        ◦ La comunicazione point-to-point avviene tra due dispositivi con una connessione diretta (ad esempio, un collegamento tra un computer e una stampante). Questo tipo di comunicazione è affidabile, ma non scalabile a livello di rete globale.
+        ◦ La comunicazione broadcast è utilizzata per inviare un messaggio a tutti i dispositivi su una rete, come nel caso di un router che invia pacchetti a tutti i dispositivi in una rete locale.
+    4. Topologia
+        ◦ Topologia ad albero: è una combinazione della topologia a stella e della topologia a bus. Viene utilizzata in reti di grandi dimensioni in cui ci sono più livelli di dispositivi.
+        ◦ Topologia a maglia completa: ogni dispositivo è connesso direttamente a tutti gli altri dispositivi della rete. Garantisce alta resilienza e ridondanza, ma è costosa da implementare.
+    5. Modello Client-Server
+        ◦ Nel modello Client-Server, il server è il nodo centrale che offre risorse o servizi (come file, applicazioni, database), mentre i client sono i dispositivi che accedono a queste risorse. I client inviano richieste HTTP o altre richieste di rete al server, che elabora la richiesta e restituisce una risposta. Questo modello è usato per applicazioni web, email, e servizi di streaming.
+    6. Modello Peer-to-Peer (P2P)
+        ◦ In una rete P2P, i nodi sono simmetrici e tutti i dispositivi possono fungere sia da client che da server. Le risorse (file, video, ecc.) vengono distribuite direttamente tra gli utenti. I client P2P sono autonomi, il che significa che non c'è un server centrale che gestisce le connessioni.
+        ◦ Le applicazioni P2P sono particolarmente utili per sharing di file (es. BitTorrent), comunicazioni vocali e video (es. Skype), e in blockchain (dove la rete distribuisce il controllo e la gestione dei dati tra i vari nodi).
+    7. Classificazione su scala geografica
+        ◦ Le WAN (Wide Area Network) possono essere pubbliche (internet) o private (come le VPN aziendali). Le MAN (Metropolitan Area Network) sono utili per connettere edifici in una città o università, e le LAN (Local Area Network) sono utilizzate per connettere dispositivi all'interno di una singola struttura come un ufficio o una casa.
+
+🔢 Lezione 10: Architettura – Gestione delle Informazioni
+    1. Gestione delle informazioni
+        ◦ La gestione delle informazioni riguarda anche il concetto di Database Management System (DBMS), che è un software che gestisce la creazione, l'archiviazione e il recupero delle informazioni in un database. I DBMS si occupano di operazioni come query (ricerca), inserimento, aggiornamento e eliminazione dei dati.
+    2. Codice Binario
+        ◦ Oltre a essere fondamentale per la rappresentazione numerica, il codice binario viene usato in sistemi digitali, dove ogni stato (acceso o spento) è rappresentato da 1 o 0. Le porte logiche (AND, OR, NOT) sono utilizzate per costruire circuiti elettronici che elaborano i dati in binario.
+    3. Codice ASCII
+        ◦ ASCII è anche utilizzato per rappresentare simboli di controllo come il carriage return (ritorno a capo), line feed (avanzamento linea), e tabulazione. Ogni codice ASCII occupa un byte (8 bit), e i caratteri non visibili sono utilizzati per il controllo del flusso di dati nei terminali.
+    4. Dimensioni dei dati
+        ◦ Le dimensioni dei dati vengono misurate in bit, byte e word (parola), che rappresentano unità di memorizzazione in un computer. La dimensione di una parola varia a seconda dell'architettura del computer, di solito 16, 32 o 64 bit.
+        ◦ Il termine bitrate si riferisce alla quantità di dati che possono essere trasferiti in un dato periodo di tempo (ad esempio, 10 Mbps indica 10 megabit al secondo).
+    5. Proprietà del binario
+        ◦ Il sistema binario ha numerosi vantaggi per la realizzazione di circuiti elettronici, come la semplicità nel design di porte logiche e la facilità con cui possono essere rappresentati stati elettronici (on/off, 1/0).
+    6. Conversione binario-decimale
+        ◦ Il metodo della divisione per 2 funziona dividendo ripetutamente un numero decimale per 2 e registrando i resti, che poi vengono letti al contrario. Ad esempio, per il numero 13:
+            ▪ 13 ÷ 2 = 6 resto 1
+            ▪ 6 ÷ 2 = 3 resto 0
+            ▪ 3 ÷ 2 = 1 resto 1
+            ▪ 1 ÷ 2 = 0 resto 1 Il numero binario di 13 è 1101.
+    7. Conversione decimale-binario
+        ◦ Il metodo della divisione per 2 è simile al metodo di conversione inversa. Si divide il numero decimale per 2, annotando il resto ad ogni passaggio. Il risultato finale sarà la rappresentazione binaria del numero.
+    8. Addizione e sottrazione binaria
+        ◦ Addizione binaria: simile all'addizione decimale, ma con solo 0 e 1. Quando si somma 1 + 1 si ottiene 10, quindi un carry (riporto) deve essere aggiunto al bit successivo.
+        ◦ Sottrazione binaria: quando si sottrae un numero binario più grande da uno più piccolo, si utilizza il complemento a due, che è un modo per rappresentare i numeri negativi in binario.
+    9. Algebra Booleana
+        ◦ L'algebra booleana è essenziale nella progettazione di circuiti digitali, per ottimizzare le operazioni logiche. Le equazioni booleane possono essere semplificate usando le leggi dell'algebra booleana per costruire circuiti più efficienti e risparmiare risorse.
+    10. Modello di Von Neumann
+    • Il modello di Von Neumann prevede che la memoria condivida lo spazio sia per i dati che per il programma in esecuzione. Questo modello ha portato all'idea dei registri di memoria e delle istruzioni di fetch per ottenere dati dalla memoria.
