@@ -106,4 +106,5 @@
 ### 📚 Altro
 
 - 📅 08/05/25 – 🇬🇧 **Esame di Inglese**
+  - 🥇 Voto : 10/10
 - 📅 22/05/25 –  Soft_Skills_4  **Organizzazione_Aziendale**
