@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Somma e Media con Array</title>
+</head>
+<body>
+
+  <h1>Calcolo Somma e Media con Array</h1>
+  <p id="risultato"></p>
+
+  <script>
+    // Creazione dell'array con 5 numeri
+    let numeri = [10, 20, 30, 40, 50];
+
+    // Calcolo della somma usando un ciclo
+    let somma = 0;
+    for (let i = 0; i < numeri.length; i++) {
+      somma += numeri[i];
+    }
+
+    // Calcolo della media
+    let media = somma / numeri.length;
+
+    // Output nella pagina
+    document.getElementById("risultato").innerHTML =
+      "Numeri: " + numeri.join(", ") + "<br>" +
+      "Somma: " + somma + "<br>" +
+      "Media: " + media;
+  </script>
+
+</body>
+</html>

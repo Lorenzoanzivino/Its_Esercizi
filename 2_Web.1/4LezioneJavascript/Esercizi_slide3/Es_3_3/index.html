@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Conversione Secondi</title>
+</head>
+<body>
+
+  <h1>Converti Secondi in Ore, Minuti e Secondi</h1>
+  <p id="risultato"></p>
+
+  <script>
+    // Secondi da convertire (puoi cambiare questo valore)
+    let inputSecondi = 12560;
+
+    // Calcolo ore, minuti e secondi
+    let ore = Math.floor(inputSecondi / 3600);
+    let resto = inputSecondi % 3600;
+    let minuti = Math.floor(resto / 60);
+    let secondi = resto % 60;
+
+    // Output del risultato
+    document.getElementById("risultato").innerHTML =
+      inputSecondi + " secondi corrispondono a: <br>" +
+      ore + " ore, " + minuti + " minuti e " + secondi + " secondi.";
+  </script>
+
+</body>
+</html>

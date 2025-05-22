@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Calcolo Età e Anni per 100</title>
+</head>
+<body>
+
+  <h1>Calcolo dell'età e anni mancanti ai 100</h1>
+  <p id="risultato"></p>
+
+  <script>
+    // Dichiarazione delle variabili
+    let annoCorrente = 2025;
+    let annoNascita = 1997;
+
+    // Calcolo dell'età
+    let eta = annoCorrente - annoNascita;
+
+    // Calcolo degli anni mancanti per arrivare a 100
+    let anniPer100 = 100 - eta;
+
+    // Output dei risultati nella pagina
+    document.getElementById("risultato").innerHTML =
+      "Hai " + eta + " anni.<br>" +
+      "Ti mancano " + anniPer100 + " anni per compiere 100 anni.";
+  </script>
+
+</body>
+</html>
