@@ -37,7 +37,7 @@
 ### 🧪 Progettazione Software
 
 - 📅 18/03/25 – Modulo di **Progettazione**
-    - Azienda_1 🏢
+  - Azienda_1 🏢
     - Volo_1 ✈️
     - Università_1 🎓
     - Ordini_Fatture_1 🎓
@@ -49,6 +49,7 @@
 
 - 📅 05/05/25 – **Use Case UML**
 - 📅 07/05/25 – **Ebay/1**
+
 - 📅 19/05/25 – **Ebay/2**
 - 📅 22/05/25 – **Consegna progettazione dei tipi di di dato**
 
