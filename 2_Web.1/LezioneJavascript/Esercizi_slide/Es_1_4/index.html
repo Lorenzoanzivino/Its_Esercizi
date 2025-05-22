@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Esercizio 1.4</title>
+</head>
+<body>
+    <h1>Esercizio 1.4</h1>
+    <p id="output"></p>
+
+    <script>
+        let valore = '50';
+
+        // Controllo se è numerico
+        let isNumeric = !isNaN(valore);
+
+        // Output iniziale
+        let output = `
+            Valore iniziale: ${valore} <br>
+            Tipo: ${typeof valore} <br>
+            È numerico? ${isNumeric} <br>
+        `;
+
+        // Conversione a numero
+        valore = Number(valore);
+
+        // Output dopo conversione
+        output += `
+            Valore dopo conversione: ${valore} <br>
+            Tipo: ${typeof valore}
+        `;
+
+        document.getElementById("output").innerHTML = output;
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Esercizio 1.5</title>
+</head>
+<body>
+  <h1>Giorni della settimana</h1>
+  <pre id="output"></pre>
+
+  <script>
+    let giorni = "Lunedì,Martedì,Mercoledì,Giovedì,Venerdì,Sabato,Domenica";
+
+    // Visualizza nel browser
+    document.getElementById("output").textContent = giorni.split(",").join("\n");
+
+    // Anche in console
+    console.log(giorni);
+    console.log(giorni.split(",").join("\n"));
+  </script>
+</body>
+</html>
