@@ -48,6 +48,9 @@
     - Accademia_2 🏛️
 
 - 📅 05/05/25 – **Use Case UML**
+- 📅 07/05/25 – **Ebay/1**
+- 📅 19/05/25 – **Ebay/2**
+- 📅 22/05/25 – **Consegna progettazione dei tipi di di dato**
 
 ---
 
@@ -55,6 +58,7 @@
 
 - 📅 10/03/25 – Comandi Git + panoramica GitHub
 - 📅 11/03/25 – Comando **pull** (remoto → locale)
+
 
 ---
 
@@ -72,7 +76,7 @@
 - 📅 04/04/25 – CSS
 - 📅 14/04/25 – Bootstrap / Dom
 - 📅 05/05/25 – Javascript
-
+- 📅 22/05/25 – Javascript esercizi
 ---
 
 ### 🐳 Docker
