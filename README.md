@@ -61,7 +61,6 @@
 - 📅 10/03/25 – Comandi Git + panoramica GitHub
 - 📅 11/03/25 – Comando **pull** (remoto → locale)
 
-
 ---
 
 ### 🌐 Web.1 Development
@@ -79,6 +78,7 @@
 - 📅 14/04/25 – Bootstrap / Dom
 - 📅 05/05/25 – Javascript
 - 📅 22/05/25 – Javascript esercizi
+
 ---
 
 ### 🐳 Docker
