@@ -1,5 +1,5 @@
 
-# ================================================
+# ============================================================================================================================
 # IMPORT E MODULI DI BASE
 '''Importazione di moduli standard per gestione date, enumerazioni e validazione tramite espressioni regolari'''
 
@@ -7,7 +7,7 @@ from datetime import date
 from enum import StrEnum
 import re
 
-# ================================
+# ============================================================================================================================
 
 # CLASSE STRINGA
 '''Classe di utilità per validare che un valore sia una stringa non vuota'''
@@ -21,7 +21,7 @@ class Stringa:
             raise ValueError("La stringa non può essere vuota o solo spazi")
         return valore
 
-# ================================
+# ============================================================================================================================
 
 # CLASSE INDIRIZZO
 '''Rappresenta un indirizzo con via, civico e CAP validato'''
@@ -57,7 +57,7 @@ class Indirizzo:
     def __hash__(self)->int: 
         return hash((self.via(), self.civico(), self.cap()))
 
-# ================================
+# ============================================================================================================================
 
 # CLASSE PARTITA IVA - TELEFONO - EMAIL - CF - RegEx
 '''Valida e rappresenta una partita IVA (11 cifre numeriche)'''
@@ -113,7 +113,7 @@ class CodiceFiscale:
     def __str__(self):
         return self.cf
 
-# ================================
+# ============================================================================================================================
 
 # CLASSE STATO ORDINE - StrEnum
 '''Stato dell’ordine: in preparazione, inviato, da saldare, saldato'''
@@ -124,7 +124,7 @@ class StatoOrdine(StrEnum):
     DA_SALDARE = "daSaldare"
     SALDATO = "saldato"
 
-# ================================
+# ============================================================================================================================
 
 # CLASSE NAZIONE - REGIONE - CITTA 
 '''Rappresenta il nome della Nazione, Regione e città'''
@@ -141,7 +141,7 @@ class Citta:
     def __init__(self, nome: str):
         self.nome = Stringa.valida(nome)
 
-# ================================
+# ============================================================================================================================
 
 # CLASSE DIRETTORE
 '''Rappresenta un direttore con dati personali, codice fiscale e anni di servizio'''
@@ -175,7 +175,7 @@ class Direttore:
         if anni > 70:  # ad esempio un limite massimo plausibile
             raise ValueError("Gli anni di servizio non possono essere così elevati")
 
-# ================================
+# ============================================================================================================================
 
 # CLASSE DIPARTIMENTO
 '''Rappresenta un dipartimento con nome e indirizzo'''
@@ -188,7 +188,7 @@ class Dipartimento:
     def __str__(self):
         return f"Dipartimento: {self.nome}, Indirizzo: {self.indirizzo}"
 
-# ================================
+# ============================================================================================================================
 
 # CLASSE ORDINE
 '''Rappresenta un ordine con data, importo imponibile, IVA, descrizione e stato'''
@@ -204,7 +204,7 @@ class Ordine:
     def __str__(self):
         return (f"Ordine stipulato il {self.dataStipula}, Imponibile: €{self.imponibile:.2f}, Aliquota IVA: {self.aliquotaIVA}%, Descrizione: {self.descrizione}, Stato: {self.stato.value}")
 
-# ================================
+# ============================================================================================================================
 
 # CLASSE FORNITORE
 '''Rappresenta un fornitore con ragione sociale, partita IVA, contatti e indirizzo'''
@@ -220,7 +220,7 @@ class Fornitore:
     def __str__(self):
         return (f"Fornitore: {self.ragioneSociale}, P.IVA: {self.partitaIVA.partitaiva}, Indirizzo: {self.indirizzo}, Telefono: {self.telefono.telefono}, Email: {self.email.value}")
     
-# ================================
+# ============================================================================================================================
 
 # SLOT DI TEST
 '''
