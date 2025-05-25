@@ -62,3 +62,20 @@ class TimeRange(tuple):
 
 	def __str__(self)->str:
 		return f"{ f'[{self[0]}' if self[0] else '(-infinity'}, { f'{self[1]}]' if self[1] else '+infinity)'}"
+
+
+# Intervallo chiuso
+tr1 = TimeRange("2024-01-01T00:00:00", "2024-01-10T00:00:00")
+print(tr1)  # [2024-01-01 00:00:00, 2024-01-10 00:00:00]
+
+# Intervallo aperto inizialmente
+tr2 = TimeRange(None, "2024-01-10T00:00:00")
+print(tr2)  # (-infinity, 2024-01-10 00:00:00]
+
+# Intervallo aperto alla fine
+tr3 = TimeRange("2024-01-01T00:00:00", None)
+print(tr3)  # [2024-01-01 00:00:00, +infinity)
+
+# Intervallo completamente aperto (nessun limite)
+tr4 = TimeRange(None, None)
+print(tr4)  # (-infinity, +infinity)
