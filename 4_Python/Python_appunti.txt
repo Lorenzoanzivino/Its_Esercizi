@@ -1656,3 +1656,138 @@
 
         # Comando per stampare
             - docker run my-numpy-app python app.py
+
+========================================================================================================================================================================================
+
+
+💻 LEZIONE 22 : Shell Programming (home/ > scripts/ tutti file con codici terminale)
+
+    🔍 Cosa imparerai oggi
+        ✅ Cos'è uno script
+        ✅ Differenza tra shell interattiva e shell di esecuzione
+        ✅ Come si esegue uno script
+        ✅ Uso delle variabili (locali e d’ambiente)
+        ✅ Comando read
+        ✅ Operazioni aritmetiche in shell
+        ✅ Istruzioni di controllo (if, case, for, while)
+
+    📄 Cos'è uno Script?
+        Uno script è un file di testo che contiene una serie di comandi shell, eseguiti uno dopo l’altro.
+            📌 Estensione tipica: .sh
+            📌 Interprete: la shell (di solito /bin/bash o /bin/sh)
+
+        ✅ Struttura base di uno script
+            #!/bin/bash
+            echo "Ciao, mondo!"
+
+            📌 Il primo rigo #!/bin/bash si chiama shebang: indica alla shell quale interprete usare.
+
+        🐚 Shell di esecuzione
+            La shell è l’interfaccia testuale tra utente e sistema operativo.
+            Può essere:
+                Interattiva → quando scrivi comandi uno per uno nel terminale.
+                Scriptata (non interattiva) → quando la shell esegue uno script.
+
+    ▶️ Esecuzione di uno Script:
+        1️⃣ Rendi eseguibile lo script
+            chmod +x mio_script.sh
+
+            2️⃣ Esegui lo script
+            ./mio_script.sh
+
+            Oppure:
+            bash mio_script.sh
+
+    🔁 Variabili locali:
+        Si usano per salvare valori temporanei all’interno dello script.
+            nome="Mario"
+            echo "Ciao $nome"
+
+            📌 Senza spazi attorno a =
+            📌 Per richiamarle: $variabile
+
+    🌍 Variabili d'ambiente:
+
+        Sono visibili ai processi figli e all’ambiente shell.
+            Esempio:
+
+            export PATH=$PATH:/nuovo/percorso
+
+            export NOME="Marco"
+            📌 Usa export per rendere una variabile globale
+
+    ⌨️ Read – Input da tastiera:
+        echo "Come ti chiami?"
+        read nome
+        echo "Ciao $nome"
+
+        📌 read legge l’input dell’utente e lo salva nella variabile.
+
+    ➕ Operazioni Aritmetiche:
+        Sintassi base:
+            a=5
+            b=3
+            somma=$((a + b))
+            echo "Risultato: $somma"
+
+            📌 Usa $(()) per le operazioni :
+                IL DOLLARO "$" PERMETTE DI ACCEDERE AL VALORE DELLA VARIABILE
+            📌 Supporta +, -, *, /, %, ** (potenza)
+
+    🔀 Istruzioni di Controllo:
+        ✅ if
+            x=10
+
+            if [ $x -gt 5 ]; then
+            echo "Maggiore di 5"
+            else
+            echo "Minore o uguale a 5"
+            fi
+
+            📌 Operatori: -eq, -ne, -gt, -lt, -ge, -le
+
+    🧮 case:
+        read -p "Inserisci un numero: " num
+
+            case $num in
+            1) echo "Hai scelto uno" ;;
+            2) echo "Hai scelto due" ;;
+            *) echo "Altro valore" ;;
+            esac
+
+    🔁 for:
+        for i in 1 2 3; do
+        echo "Numero: $i"
+        done
+
+    🔂 while:
+        x=1
+        while [ $x -le 5 ]; do
+        echo "x vale: $x"
+        x=$((x + 1))
+        done
+
+    🚀 Conclusioni:
+        🎯 Con gli script Bash puoi:
+        Automatizzare compiti ripetitivi
+        Gestire file e directory
+        Creare interazioni con l’utente
+        Fare calcoli e controlli logici
+
+        📌 Ogni comando che puoi scrivere nel terminale, lo puoi inserire in uno script!
+
+    🛠️ Esempio completo: script interattivo:
+        #!/bin/bash
+
+        echo "Come ti chiami?"
+        read nome
+
+        echo "Quanti anni hai?"
+        read eta
+
+        if [ $eta -ge 18 ]; then
+        echo "$nome, sei maggiorenne."
+        else
+        echo "$nome, sei minorenne."
+        fi
+
