@@ -1,0 +1,38 @@
+<!--Esercizio 4.8
+Scrivere un programma che dichiara e valorizza
+un array di 10 numeri a proprio piacimento e
+restituisca in output il totale di quanti numeri
+pari ci sono e quanti numeri dispari (utilizzare il
+ciclo for).
+Ad es.
+Nell’ array ci sono 3 numeri pari e 7 numeri
+dispari-->
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Esercizio 4.8</title>
+</head>
+<body>
+  <h2>Esercizio 4.8: Conta numeri pari e dispari</h2>
+  <div id="output"></div>
+
+  <script>
+    let numeri = [2, 5, 8, 11, 14, 17, 20, 3, 6, 9];
+    let pari = 0;
+    let dispari = 0;
+
+    for (let i = 0; i < numeri.length; i++) {
+      if (numeri[i] % 2 === 0) {
+        pari++;
+      } else {
+        dispari++;
+      }
+    }
+
+    document.getElementById("output").innerHTML =
+      `Nell’array ci sono ${pari} numeri pari e ${dispari} numeri dispari.`;
+  </script>
+</body>
+</html>

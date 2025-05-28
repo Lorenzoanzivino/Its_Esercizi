@@ -1,0 +1,38 @@
+<!-- Esercizio 4.2
+Scrivere un programma che stampa i numeri da
+0 a 10 sia con il ciclo for che con il ciclo while; -->
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Esercizio 4.2</title>
+</head>
+<body>
+  <h2>Numeri da 0 a 10</h2>
+
+  <h3>Con il ciclo for:</h3>
+  <div id="output-for"></div>
+
+  <h3>Con il ciclo while:</h3>
+  <div id="output-while"></div>
+
+  <script>
+    // Ciclo for
+    let risultatoFor = '';
+    for (let i = 0; i <= 10; i++) {
+      risultatoFor += i + '<br>';
+    }
+    document.getElementById('output-for').innerHTML = risultatoFor;
+
+    // Ciclo while
+    let risultatoWhile = '';
+    let j = 0;
+    while (j <= 10) {
+      risultatoWhile += j + '<br>';
+      j++;
+    }
+    document.getElementById('output-while').innerHTML = risultatoWhile;
+  </script>
+</body>
+</html>

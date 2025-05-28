@@ -1,0 +1,39 @@
+<!--Esercizio 4.3
+Modificare l'esercizio 2 in modo che stampa i
+numeri da 5 a 15 sia con il ciclo for che con il
+ciclo while;-->
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Esercizio 4.3</title>
+</head>
+<body>
+  <h2>Numeri da 5 a 15</h2>
+
+  <h3>Con il ciclo for:</h3>
+  <div id="output-for"></div>
+
+  <h3>Con il ciclo while:</h3>
+  <div id="output-while"></div>
+
+  <script>
+    // Ciclo for da 5 a 15
+    let risultatoFor = '';
+    for (let i = 5; i <= 15; i++) {
+      risultatoFor += i + '<br>';
+    }
+    document.getElementById('output-for').innerHTML = risultatoFor;
+
+    // Ciclo while da 5 a 15
+    let risultatoWhile = '';
+    let j = 5;
+    while (j <= 15) {
+      risultatoWhile += j + '<br>';
+      j++;
+    }
+    document.getElementById('output-while').innerHTML = risultatoWhile;
+  </script>
+</body>
+</html>

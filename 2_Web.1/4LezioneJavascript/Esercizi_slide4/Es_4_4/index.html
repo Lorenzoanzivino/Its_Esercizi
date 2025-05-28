@@ -1,0 +1,38 @@
+<!--Esercizio 4.4
+Scrivere un programma che conta da 0 a 20 con
+passo 2 e stampa i numeri ottenuti (0,2,...,20)
+sia con il ciclo for che con il ciclo while ;
+JavaScript-->
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Esercizio 4.4</title>
+</head>
+<body>
+  <h2>Esercizio 4.4: Conta da 0 a 20 con passo 2</h2>
+  <p><strong>Con for:</strong></p>
+  <div id="forOutput"></div>
+  <p><strong>Con while:</strong></p>
+  <div id="whileOutput"></div>
+
+  <script>
+    // FOR
+    let forText = "";
+    for (let i = 0; i <= 20; i += 2) {
+      forText += i + " ";
+    }
+    document.getElementById("forOutput").innerHTML = forText;
+
+    // WHILE
+    let whileText = "";
+    let j = 0;
+    while (j <= 20) {
+      whileText += j + " ";
+      j += 2;
+    }
+    document.getElementById("whileOutput").innerHTML = whileText;
+  </script>
+</body>
+</html>

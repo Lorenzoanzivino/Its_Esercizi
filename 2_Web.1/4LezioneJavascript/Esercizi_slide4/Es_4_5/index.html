@@ -1,0 +1,38 @@
+<!--Esercizio 4.5
+Modificare l'esercizio 4 in modo che stampi il
+doppio dei numeri ottenuti (0,4,...,40) sia con il
+ciclo for che con il ciclo while;
+JavaScript-->
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Esercizio 4.5</title>
+</head>
+<body>
+  <h2>Esercizio 4.5: Stampa il doppio dei numeri ottenuti</h2>
+  <p><strong>Con for:</strong></p>
+  <div id="forOutput"></div>
+  <p><strong>Con while:</strong></p>
+  <div id="whileOutput"></div>
+
+  <script>
+    // FOR
+    let forText = "";
+    for (let i = 0; i <= 20; i += 2) {
+      forText += (i * 2) + " ";
+    }
+    document.getElementById("forOutput").innerHTML = forText;
+
+    // WHILE
+    let whileText = "";
+    let j = 0;
+    while (j <= 20) {
+      whileText += (j * 2) + " ";
+      j += 2;
+    }
+    document.getElementById("whileOutput").innerHTML = whileText;
+  </script>
+</body>
+</html>

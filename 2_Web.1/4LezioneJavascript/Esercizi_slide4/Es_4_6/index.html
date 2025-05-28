@@ -1,0 +1,32 @@
+<!--Esercizio 4.6
+Scrivere un programma che dichiara e valorizza
+un array di 5 numeri a proprio piacimento e
+restituisca in output la somma e la media
+utilizzando il ciclo for.
+JavaScript-->
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Esercizio 4.6</title>
+</head>
+<body>
+  <h2>Esercizio 4.6: Somma e media di 5 numeri</h2>
+  <div id="output"></div>
+
+  <script>
+    let numeri = [10, 20, 30, 15, 5];
+    let somma = 0;
+
+    for (let i = 0; i < numeri.length; i++) {
+      somma += numeri[i];
+    }
+
+    let media = somma / numeri.length;
+
+    document.getElementById("output").innerHTML =
+      "Somma: " + somma + "<br>Media: " + media.toFixed(2);
+  </script>
+</body>
+</html>
