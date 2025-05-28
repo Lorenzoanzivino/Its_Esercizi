@@ -1,0 +1,44 @@
+<!-- Esercizio 5.2
+Scrivi un programma con due funzioni, la prima prende in
+ingresso un intero e verifica se sia compreso nel range da 1 a
+7. Se è compreso, la funzione restituirà TRUE, se non è
+compreso restituirà FALSE.
+La seconda funzione:
+- nel caso la prima restituisca TRUE visualizza il giorno della
+settimana corrispondente, considerando la seguente
+corrispondenza:
+1 = Lunedì
+...
+7 = Domenica
+- nel caso il giorno non sia compreso nel range, la funzione
+dovrà restituire un messaggio d'errore simile a questo:
+'Peccato, non posso indovinare il giorno.' -->
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Esercizio 5.2</title>
+</head>
+<body>
+
+<script>
+function isInRange(n) {
+    return n >= 1 && n <= 7;
+}
+
+function stampaGiorno(n) {
+    if (!isInRange(n)) {
+        return 'Peccato, non posso indovinare il giorno.';
+    }
+    const giorni = ['Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato', 'Domenica'];
+    return giorni[n - 1];
+}
+
+// Test in console
+console.log(stampaGiorno(3)); // Mercoledì
+console.log(stampaGiorno(8)); // Peccato, non posso indovinare il giorno.
+</script>
+
+</body>
+</html>

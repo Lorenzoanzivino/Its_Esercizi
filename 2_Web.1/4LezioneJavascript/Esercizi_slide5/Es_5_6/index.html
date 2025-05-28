@@ -1,0 +1,67 @@
+<!-- Esercizio 5.6
+Calcolatrice : Scrivere una pagina html con 2
+input di tipo number e far scegliere tramite una
+select il tipo ti operazione ( + - / *) ed un
+bottone calcola che, in base all’opzione scelta
+chiama una funzione javascript che calcola e
+visualizza a video il risultato.
+ -->
+
+
+ <!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Esercizio 5.6</title>
+</head>
+<body>
+
+Numero 1: <input type="number" id="num1"><br><br>
+Numero 2: <input type="number" id="num2"><br><br>
+
+Operazione: 
+<select id="operazione">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+</select><br><br>
+
+<button onclick="calcola()">Calcola</button>
+
+<p id="risultato"></p>
+
+<script>
+function calcola() {
+    const n1 = parseFloat(document.getElementById('num1').value);
+    const n2 = parseFloat(document.getElementById('num2').value);
+    const op = document.getElementById('operazione').value;
+    let res;
+
+    if (isNaN(n1) || isNaN(n2)) {
+        document.getElementById('risultato').textContent = 'Inserisci numeri validi.';
+        return;
+    }
+
+    switch (op) {
+        case '+': res = n1 + n2; break;
+        case '-': res = n1 - n2; break;
+        case '*': res = n1 * n2; break;
+        case '/': 
+            if (n2 === 0) {
+                document.getElementById('risultato').textContent = 'Errore: divisione per zero.';
+                return;
+            }
+            res = n1 / n2; 
+            break;
+        default:
+            document.getElementById('risultato').textContent = 'Operazione non valida.';
+            return;
+    }
+
+    document.getElementById('risultato').textContent = 'Risultato: ' + res;
+}
+</script>
+
+</body>
+</html>

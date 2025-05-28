@@ -1,0 +1,29 @@
+<!-- Esercizio 5.1
+Scrivi una funzione di uguaglianza che prenda in
+input due argomenti e restituisca TRUE se i due
+argomenti sono IDENTICI, altrimenti FALSE.
+JavaScript -->
+
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Esercizio 5.1</title>
+</head>
+<body>
+
+<script>
+function sonoIdentici(a, b) {
+    return a === b;
+}
+
+// Esempio di test in console
+console.log(sonoIdentici(5, 5));      // true
+console.log(sonoIdentici(5, '5'));    // false
+console.log(sonoIdentici('ciao', 'ciao')); // true
+console.log(sonoIdentici(true, 1));   // false
+</script>
+
+</body>
+</html>

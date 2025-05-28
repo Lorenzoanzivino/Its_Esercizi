@@ -1,0 +1,33 @@
+<!-- Esercizio 5.5
+JavaScript
+Scrivere un pagina che tramite una funzione
+javascript stampa a video 10 asterischi, poi 11
+poi 12 … fino a 30 (utilizzare il ciclo for) -->
+
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Esercizio 5.5</title>
+</head>
+<body>
+
+<div id="output"></div>
+
+<script>
+function stampaAsterischi() {
+    const output = document.getElementById('output');
+    for (let i = 10; i <= 30; i++) {
+        let riga = '*'.repeat(i);
+        let p = document.createElement('p');
+        p.textContent = riga;
+        output.appendChild(p);
+    }
+}
+
+stampaAsterischi();
+</script>
+
+</body>
+</html>
