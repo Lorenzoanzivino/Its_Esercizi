@@ -1193,6 +1193,127 @@
 ========================================================================================================================================================================================
 
 
+⚙️ LEZIONE 14 : PYTEST (test python)
+
+    🧪 Testing in Python
+        Cos'è il testing?
+
+            Processo per verificare che software, app e siti funzionino correttamente.
+
+            Risparmia tempo e denaro rilevando problemi prima che diventino critici.
+
+        Unit test:
+
+            Testano una singola “unità” di codice, es. una funzione o metodo.
+
+        Framework in Python:
+
+            unittest (standard)
+
+            pytest (più potente e leggibile)
+
+    ✅ L'istruzione assert
+
+        Serve a verificare che una condizione sia vera:
+            assert 1 > 0  # non succede nulla
+            assert 1 < 0  # solleva AssertionError
+
+            Con messaggio personalizzato:
+
+                n = 0
+                assert 1 < n, 'The Condition is False'
+
+    📦 Installazione di Pytest
+        pip install pytest
+        pytest --version
+
+    📁 Struttura consigliata del progetto
+        my_project/
+        ├── weather.py
+        └── tests/
+            └── test_weather.py
+
+            ⚠️ Non chiamare la cartella test/, ma tests/ per evitare conflitti con il modulo test di Python.
+
+    🔹 Esempio base:
+        weather.py
+
+        def check_weather(temperature: float) -> str:
+            if temperature > 20:
+                return "hot"
+            elif 10 < temperature <= 20:
+                return "average"
+            else:
+                return "cold"
+
+        test_weather.py
+
+        from my_project.weather import check_weather
+
+        def test_check_weather():
+            assert check_weather(21.00) == "hot", "temperature > 20 should be 'hot'"
+
+            ✅ Output con . = test passato
+
+            ❌ Output con F = test fallito
+
+    ⚠️ Errori comuni nei test
+
+        Funzioni che non iniziano con test_ non vengono eseguite.
+
+        Più assert in una funzione = un solo test, anche se fallisce una sola assert.
+
+    ♻️ @pytest.mark.parametrize
+        Permette di testare una funzione con più input/output senza ripetere il codice.
+
+        import pytest
+        from my_project.weather import check_weather
+
+        @pytest.mark.parametrize("temperature, expected", [
+            (21.00, "hot"),
+            (13.00, "average"),
+            (0.00, "cold"),
+            (15.00, "cold")  # Questo fallirà
+        ])
+        def test_check_weather(temperature, expected):
+            assert check_weather(temperature) == expected
+
+            Ogni coppia (input, expected) diventa un test separato.
+
+            👍 Test più leggibili e meno ripetitivi.
+
+    🧰 @pytest.fixture
+        Usata per creare oggetti riutilizzabili nei test, ad es. istanze di classi.
+        Esempio:
+            import pytest
+            from my_project.calculator import Calculator
+
+            @pytest.fixture
+            def calc():
+                return Calculator()
+
+            def test_add(calc):
+                assert calc.add(2, 3) == 5
+
+            def test_subtract(calc):
+                assert calc.subtract(5, 2) == 3
+
+                ✅ Più pulito, niente duplicazione di codice
+
+                ✅ Ottimo per setup di oggetti, file, connessioni ecc.
+
+    ▶️ Eseguire i test
+        Tutti i test nella directory:
+            pytest
+
+        Modalità verbose:
+            pytest -v
+
+        Mostra il nome dei file, nomi delle funzioni testate, parametri (se usi parametrize), stato (PASSED/FAILED).
+
+========================================================================================================================================================================================
+
+
 🧾 LEZIONE 15 – FILE ("Sequenza di Bytes")
     
     📌 Cos'è un File:
