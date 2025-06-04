@@ -79,7 +79,7 @@
   - 📅 05/05/25 – Javascript
   - 📅 22/05/25 – Javascript esercizi
 
-  - **Web.2**
+- **Web.2**
   - 📅 04/06/25 – Creazione cartelle:
       - JavaScipt 🟨
         - 📅 04/06/25 - Funzioni **Asincrone**
