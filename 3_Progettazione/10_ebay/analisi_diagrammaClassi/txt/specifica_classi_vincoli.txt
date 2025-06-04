@@ -1,0 +1,43 @@
+Specificsa delle classi : V = vincolo
+
+	Specifica classe Bid :
+		[V.Bid.istanteMaggioreDiRegistrazione] Gli utenti devono registrarsi prima di proporre bid.
+		Per ogni b:Bid sia u:Utente tale che (b, u) : bid_ut allora deve essere che b.istante > u.registrazione.
+
+		[V.Bid.istanteTraPubblicazioneScadenza] L’istante dei bid devono essere tra la pubblicazione e la scadenza dell’asta.
+		Per ogni b:Bid sia a:Asta tale che (a,b):asta_bid deve essere che a.pubblicazione < b.istante < a.scadenza
+
+
+	Specifica della classe PostOggetto :
+		[V.postOggetto.pubblicazioneMaggioreRegistrazione] Un post deve essere pubblicato da un utente già registrato
+		Per ogni p.PostOggetto sia u:Utente tale che (u,p):pubblica deve essere che p.pubblicazione > u.registrazione.
+
+
+	Specifica della classe Asta
+		[PubblicazionePrimadiScadenza]
+		per ogni oggetto della classe asta, deve essere vero che pubblicazione < di scadenza
+
+
+	Specifica della classe Feedback con vincoliS
+		[v.PostFeedback.CondizioniValide] I post con feedback devono riferirsi esclusivamente a:
+
+		post "compralo subito" che sono stati acquistati, oppure post "asta" che sono terminate ed hanno almeno una offerta.
+
+		Sia p:PostFeedback, può esistere (f,p):relativo solo se:
+
+		- p:CompraloSubito e esiste un privato tale che (p, u):cs_ut,
+		- oppure se p:Asta e adesso > p.scadenza esiste b:Bid tale che (b,p):offerta
+
+
+		[v.Acquisto.TemporalitàCoerente]
+
+		L’istante di acquisto (cs.ut) deve essere maggiore dell’istante di pubblicazione del post oggetto.
+
+		Per ogni cs:Compralosubito e p:,se (cs,p):oggetto allora (cs.ut) > (p.pubblicazione)
+
+
+		[v.UtentePrivato.NoAcquistoPreRegistrazione]
+
+		Un utente privato non può essere coinvolto in un acquisto (cs) con istante di acquisto < a istante di registrazione.
+
+		Per ogni cs e u, se (cs,u):coinvolto e (u):tipo = privato allora (cs.ut) > (u.registrato)
