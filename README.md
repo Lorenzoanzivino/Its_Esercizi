@@ -63,21 +63,26 @@
 
 ---
 
-### 🌐 Web.1 Development
+### 🌐 Web Development
 
-- 📅 01/04/25 – Creazione cartelle:
-  - **Web.1**
-    - HTML 🌐
-    - CSS 🎨
-    - DOM 🔧
-    - Bootstrap 📦
-    - JavaScipt 🟨
+- **Web.1**
+  - 📅 01/04/25 – Creazione cartelle:
+      - HTML 🌐
+      - CSS 🎨
+      - DOM 🔧
+      - Bootstrap 📦
+      - JavaScipt 🟨
 
-- 📅 03/04/25 – Esercizio 3 Web.1
-- 📅 04/04/25 – CSS
-- 📅 14/04/25 – Bootstrap / Dom
-- 📅 05/05/25 – Javascript
-- 📅 22/05/25 – Javascript esercizi
+  - 📅 03/04/25 – Esercizio 3 Web.1
+  - 📅 04/04/25 – CSS
+  - 📅 14/04/25 – Bootstrap / Dom
+  - 📅 05/05/25 – Javascript
+  - 📅 22/05/25 – Javascript esercizi
+
+  - **Web.2**
+  - 📅 04/06/25 – Creazione cartelle:
+      - JavaScipt 🟨
+        - 📅 04/06/25 - Funzioni **Asincrone**
 
 ---
 

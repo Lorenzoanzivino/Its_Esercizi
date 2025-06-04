@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codici ASINCRONI</title>
+    <script>
+        // javascript : codice in modo "sincrono" ... "procedurale"
+        let a = () => {
+            console.log("Sono A");
+        }
+
+        let b = () => {
+            console.log("Sono B");
+        }
+
+        let c = () => {
+            console.log("Sono C");
+        }
+
+        let d = () => {
+            console.log("Sono D");
+        }
+
+        let calcolo = () => {
+            a();
+            b();
+            c();
+            d();
+        }
+
+        calcolo();
+
+        // js è un linguaggio FURBO...
+        // js... sfrutta le librerie... funzioni del browser
+        // js è un linguaggio con 2 ambienti di esecuzione (js - browser)
+
+        // ASINCRONO = eseguito in un altro ambiente
+
+        // funzione setTimeout() -> funzione del browser
+
+
+        let a2 = () => {
+            console.log("Sono A2 : Saluti");
+        }
+
+        let b2 = () => {
+            console.log("Sono B2");
+            setTimeout(() => {
+                console.log("STO RECUPERANDO GLI UTENTI DAL DATABASE")
+            } , 5000); // Funzione del browser (asicrona)
+            // ritarda l'esecuzione del codice
+        }
+
+        let c2 = () => {
+            console.log("Sono C2 : Calcolo CodiceFiscale");
+        }
+
+        let d2 = () => {
+            console.log("Sono D2 : Calcolo la busta paga");
+        }
+
+        let calcolo2 = () => {
+            a2();
+            b2();
+            c2();
+            d2();
+        }
+
+        calcolo2();
+    </script>
+</head>
+<body>
+    <h1>Codici Sincroni e Asincroni</h1>
+</body>
+</html>
