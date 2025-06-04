@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise (oggetto js)</title>
+    <script>
+        console.log("1");
+
+        // Passaggio di funzione come parametro
+        let stampa = () => {
+            console.log("2");
+            console.log("Sono Sampa");
+        }
+
+        let test = (t) => {
+            t();
+        }
+
+        console.log("3");
+
+        test(stampa);
+
+        // COSTRUTTORE
+
+        // Promise: oggetto che ha 2 esiti:
+            // Resolve (bene)
+            // Reject (male)
+
+        // Gestisce chiamate asincrone
+        let x = new Promise((res, rej) => {
+            // Deve essere asincrona, altrimenti non ha senso la promise
+            console.log("4");
+            setTimeout(() => {
+                console.log("5");
+                res("Tutto ok, utenti recuperati"); // chiamata riuscita
+            }, 2000); // 2 secondi
+        });
+
+        console.log("6");
+
+        // CODICE CONSUMATORE : STAMPA A VIDEO
+        x.then( (risultato) => { // nel then ci entra solo alla FINE (asincrona)
+            console.log("7")
+            console.log(risutato);
+        }).catch( (errore) => {
+            console.log(errore);
+        });
+
+        // THEN -> Se va BENE
+        // CATCH -> Se va MALE
+
+        console.log("8")
+
+    </script>
+</head>
+<body>
+    <h1>Promise() :</h1>
+    <h3>Oggetto javascripte ... gestisce chiamate asincrone</h3>
+</body>
+</html>
