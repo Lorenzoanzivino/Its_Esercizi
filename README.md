@@ -82,7 +82,9 @@
 - **Web.2**
   - 📅 04/06/25 – Creazione cartelle:
       - JavaScipt 🟨
-        - 📅 04/06/25 - Funzioni **Asincrone**
+        - 📅 04/06/25 - Funzioni **Asincrone**7
+  - 📅 09/06/25 - Nuovo Professore **Roberto Delisio**
+      - React
 
 ---
 
