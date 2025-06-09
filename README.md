@@ -67,11 +67,11 @@
 
 - **Web.1**
   - 📅 01/04/25 – Creazione cartelle:
-      - HTML 🌐
-      - CSS 🎨
-      - DOM 🔧
-      - Bootstrap 📦
-      - JavaScipt 🟨
+    - HTML 🌐
+    - CSS 🎨
+    - DOM 🔧
+    - Bootstrap 📦
+    - JavaScipt 🟨
 
   - 📅 03/04/25 – Esercizio 3 Web.1
   - 📅 04/04/25 – CSS
@@ -81,12 +81,12 @@
 
 - **Web.2**
   - 📅 04/06/25 – Creazione cartelle:
-      - JavaScipt 🟨
-        - 📅 04/06/25 - Funzioni **Asincrone**7
+    - JavaScipt 🟨
+      - 📅 04/06/25 - Funzioni **Asincrone**7
   - 📅 09/06/25 - Nuovo Professore **Roberto Delisio**
-      - React ⚛️
-        - NodeJS (JS lato server)
-          - NPM (libreria)
+    - React ⚛️
+      - NodeJS (JS lato server)
+        - NPM (libreria)
 
 ---
 
