@@ -16,14 +16,16 @@ is_valid_ipv4("256.100.10.1") # False (256 è fuori range)
 is_valid_ipv4("192.168.1") # False (solo 3 parti)
 is_valid_ipv4("192.168.1.a") # False (parte non numerica)'''
 
-def is_valid_ipv4(address):
-    parti = address.split(".")
-    if len(parti) != 4:
+def is_valid_ipv4(address: str) -> bool:
+    blocchi:list[str] = address.split(".")
+    if len(blocchi) != 4:
         return False
-    for parte in parti:
-        if not parte.isdigit():
+
+    for blocco in blocchi:
+        if not blocco.isdigit():
             return False
-        numero = int(parte)
-        if numero < 0 or numero > 255:
+        valore = int(blocco)
+        if valore < 0 or valore > 255:
             return False
+
     return True
