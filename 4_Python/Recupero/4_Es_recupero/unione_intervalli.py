@@ -20,21 +20,17 @@ intervals = [[1, 4], [4, 5]]
 merge_intervals(intervals) # restituisce [[1, 5]]'''
 
 
-def merge_intervals(intervals):
-    if not intervals:
-        return []
-    if len(intervals) == 1:
-        return intervals
+def ci_sono_sovrapposizioni(intervalli: list[list[int]]) -> bool:
+    if not intervalli or len(intervalli) == 1:
+        return False  # impossibile che ci siano sovrapposizioni
 
-    intervals.sort()  # Ordina per inizio intervallo
-    result = [intervals[0]]
+    intervalli.sort()
+    precedente = intervalli[0]
 
-    for i in range(1, len(intervals)):
-        corrente = intervals[i]
-        ultimo = result[-1]
+    for i in range(1, len(intervalli)):
+        attuale = intervalli[i]
+        if attuale[0] <= precedente[1]:
+            return True  # c'è sovrapposizione o contatto
+        precedente = attuale
 
-        if corrente[0] <= ultimo[1]:  # C'è sovrapposizione
-            ultimo[1] = max(ultimo[1], corrente[1])
-        else:
-            result.append(corrente)
-    return result
+    return False  # nessuna sovrapposizione trovata
