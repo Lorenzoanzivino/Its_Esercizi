@@ -31,38 +31,37 @@ decifrata.'''
 # 27 % 26 = 1 → che corrisponde a 'b'
 
 def caesar_cypher_encrypt(s, key):
+    alphabet_lower = "abcdefghijklmnopqrstuvwxyz"
+    alphabet_upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     result = ""
+
     for char in s:
-        # Lettere minuscole
-        if 'a' <= char <= 'z':
-            pos = ord(char) - ord('a')  # da 0 a 25
-            new_pos = (pos + key) % 26 
-            new_char = chr(new_pos + ord('a'))
-            result += new_char
-        # Lettere maiuscole
-        elif 'A' <= char <= 'Z':
-            pos = ord(char) - ord('A')  # da 0 a 25
+        if char in alphabet_lower:
+            pos = alphabet_lower.index(char)
             new_pos = (pos + key) % 26
-            new_char = chr(new_pos + ord('A'))
-            result += new_char
-        # Altri caratteri (numeri, punteggiatura ecc.)
+            result += alphabet_lower[new_pos]
+        elif char in alphabet_upper:
+            pos = alphabet_upper.index(char)
+            new_pos = (pos + key) % 26
+            result += alphabet_upper[new_pos]
         else:
             result += char
     return result
 
 def caesar_cypher_decrypt(s, key):
+    alphabet_lower = "abcdefghijklmnopqrstuvwxyz"
+    alphabet_upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     result = ""
+
     for char in s:
-        if 'a' <= char <= 'z':
-            pos = ord(char) - ord('a')
+        if char in alphabet_lower:
+            pos = alphabet_lower.index(char)
             new_pos = (pos - key) % 26
-            new_char = chr(new_pos + ord('a'))
-            result += new_char
-        elif 'A' <= char <= 'Z':
-            pos = ord(char) - ord('A')
+            result += alphabet_lower[new_pos]
+        elif char in alphabet_upper:
+            pos = alphabet_upper.index(char)
             new_pos = (pos - key) % 26
-            new_char = chr(new_pos + ord('A'))
-            result += new_char
+            result += alphabet_upper[new_pos]
         else:
             result += char
     return result

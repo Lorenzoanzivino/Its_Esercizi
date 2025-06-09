@@ -19,23 +19,26 @@ output = count_unique_words(text)
 ● # output == {'hello': 2, 'world': 2, 'python': 1}
 '''
 
-def count_unique_words(text):
-    # Elenco dei segni di punteggiatura da rimuovere
+def conta_parole_uniche(testo: str) -> dict[str, int]:
     punteggiatura = ".,;:!?()[]{}'\"-_/\\<>@#$%^&*+=~`|"
-
-    parole = text.split()
-    dizionario = {}
+    parole = testo.split()
+    frequenze: dict[str, int] = {}
 
     for parola in parole:
         parola = parola.lower()
-        # Rimuove i caratteri di punteggiatura solo ai bordi
+
+        # Rimuovo punteggiatura iniziale
         while parola and parola[0] in punteggiatura:
             parola = parola[1:]
+
+        # Rimuovo punteggiatura finale
         while parola and parola[-1] in punteggiatura:
             parola = parola[:-1]
+
         if parola != "":
-            if parola in dizionario:
-                dizionario[parola] += 1
+            if parola in frequenze:
+                frequenze[parola] += 1
             else:
-                dizionario[parola] = 1
-    return dizionario
+                frequenze[parola] = 1
+
+    return frequenze
