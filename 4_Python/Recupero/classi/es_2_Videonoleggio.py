@@ -47,3 +47,82 @@ film se entrambi esistono nel videonoleggio, altrimenti stampa il messaggio
 noleggiati dal client (customer.rented_movies) se il cliente esiste nel
 videonoleggio, altrimenti stampa il messaggio "Cliente non trovato." e ritorna una
 lista vuota.'''
+
+class Movie:
+    def __init__(self, movie_id: str, title: str, director: str, is_rented: bool = False) -> None:
+        self.movie_id: str = movie_id
+        self.title: str = title
+        self.director: str = director
+        self.is_rented: bool = is_rented
+
+    def rent(self) -> None:
+        if not self.is_rented:
+            self.is_rented = True
+        else:
+            print(f"Il film '{self.title}' è già noleggiato.")
+
+    def return_movie(self) -> None:
+        if self.is_rented:
+            self.is_rented = False
+        else:
+            print(f"Il film '{self.title}' non è stato noleggiato da questo cliente.")
+
+
+class Customer:
+    def __init__(self, customer_id: str, name: str) -> None:
+        self.customer_id: str = customer_id
+        self.name: str = name
+        self.rented_movies: list[Movie] = []
+
+    def rent_movie(self, movie: Movie) -> None:
+        if not movie.is_rented:
+            movie.rent()
+            self.rented_movies.append(movie)
+        else:
+            print(f"Il film '{movie.title}' è già noleggiato.")
+
+    def return_movie(self, movie: Movie) -> None:
+        if movie in self.rented_movies:
+            movie.return_movie()
+            self.rented_movies.remove(movie)
+        else:
+            print(f"Il film '{movie.title}' non è stato noleggiato da questo cliente.")
+
+
+class VideoRentalStore:
+    def __init__(self) -> None:
+        self.movies: dict[str, Movie] = {}
+        self.customers: dict[str, Customer] = {}
+
+    def add_movie(self, movie_id: str, title: str, director: str) -> None:
+        if movie_id in self.movies:
+            print(f"Il film con ID '{movie_id}' esiste già.")
+        else:
+            movie = Movie(movie_id, title, director)
+            self.movies[movie_id] = movie
+
+    def register_customer(self, customer_id: str, name: str) -> None:
+        if customer_id in self.customers:
+            print(f"Il cliente con ID '{customer_id}' è già registrato.")
+        else:
+            customer = Customer(customer_id, name)
+            self.customers[customer_id] = customer
+
+    def rent_movie(self, customer_id: str, movie_id: str) -> None:
+        if customer_id in self.customers and movie_id in self.movies:
+            self.customers[customer_id].rent_movie(self.movies[movie_id])
+        else:
+            print("Cliente o film non trovato.")
+
+    def return_movie(self, customer_id: str, movie_id: str) -> None:
+        if customer_id in self.customers and movie_id in self.movies:
+            self.customers[customer_id].return_movie(self.movies[movie_id])
+        else:
+            print("Cliente o film non trovato.")
+
+    def get_rented_movies(self, customer_id: str) -> list[Movie]:
+        if customer_id in self.customers:
+            return self.customers[customer_id].rented_movies
+        else:
+            print("Cliente non trovato.")
+            return []
