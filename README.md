@@ -85,6 +85,7 @@
         - 📅 04/06/25 - Funzioni **Asincrone**7
   - 📅 09/06/25 - Nuovo Professore **Roberto Delisio**
       - React ⚛️
+        - NodeJS (JS lato server)
 
 ---
 
