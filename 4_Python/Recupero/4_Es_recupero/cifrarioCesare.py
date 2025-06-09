@@ -26,41 +26,42 @@ Caratteri speciali, numeri e lettere accentate non devono essere modificati.
 Le funzioni non devono stampare nulla a schermo, ma restituire la stringa cifrata o
 decifrata.'''
 
+# Spiegazione del % 26
 # z ha indice 25
 # 25 + 2 = 27 → dobbiamo tornare indietro all'inizio
 # 27 % 26 = 1 → che corrisponde a 'b'
 
-def caesar_cypher_encrypt(s, key):
-    alphabet_lower = "abcdefghijklmnopqrstuvwxyz"
-    alphabet_upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    result = ""
+def caesar_cypher_encrypt(s: str, key: int) -> str:
+    alphabet_lower: str = "abcdefghijklmnopqrstuvwxyz"
+    alphabet_upper: str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    result: str = ""
 
     for char in s:
         if char in alphabet_lower:
-            pos = alphabet_lower.index(char)
-            new_pos = (pos + key) % 26
+            pos: int = alphabet_lower.index(char)
+            new_pos: int = (pos + key) % 26
             result += alphabet_lower[new_pos]
         elif char in alphabet_upper:
-            pos = alphabet_upper.index(char)
-            new_pos = (pos + key) % 26
+            pos: int = alphabet_upper.index(char)
+            new_pos: int = (pos + key) % 26
             result += alphabet_upper[new_pos]
         else:
             result += char
     return result
 
-def caesar_cypher_decrypt(s, key):
-    alphabet_lower = "abcdefghijklmnopqrstuvwxyz"
-    alphabet_upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    result = ""
+def caesar_cypher_decrypt(s: str, key: int) -> str:
+    alphabet_lower: str = "abcdefghijklmnopqrstuvwxyz"
+    alphabet_upper: str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    result: str = ""
 
     for char in s:
         if char in alphabet_lower:
-            pos = alphabet_lower.index(char)
-            new_pos = (pos - key) % 26
+            pos: int = alphabet_lower.index(char)
+            new_pos: int = (pos - key) % 26
             result += alphabet_lower[new_pos]
         elif char in alphabet_upper:
-            pos = alphabet_upper.index(char)
-            new_pos = (pos - key) % 26
+            pos: int = alphabet_upper.index(char)
+            new_pos: int = (pos - key) % 26
             result += alphabet_upper[new_pos]
         else:
             result += char
