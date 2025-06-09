@@ -86,6 +86,7 @@
   - 📅 09/06/25 - Nuovo Professore **Roberto Delisio**
       - React ⚛️
         - NodeJS (JS lato server)
+          - NPM (libreria)
 
 ---
 
