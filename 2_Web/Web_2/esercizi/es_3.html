@@ -1,11 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Promise 3</title>
 </head>
 <body>
-    
+  <h1>Promise 3</h1>
+  <button onclick="job1()">Esegui Sequenza</button>
+
+  <script>
+    function job1() {
+      return new Promise((resolve) => {
+        console.log("Job1");
+        resolve();
+      }).then(() => {
+        console.log("Hello World");
+        return job2();
+      });
+    }
+
+    function job2() {
+      console.log("Job2");
+    }
+  </script>
 </body>
 </html>

@@ -1,11 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Promise 4</title>
 </head>
 <body>
-    
+  <h1>Promise 4</h1>
+  <button onclick="job()">Avvia Sequenza</button>
+
+  <script>
+    function callback1() {
+      console.log("Sono nella callback1");
+    }
+
+    function callback2() {
+      console.log("Sono nella callback2");
+    }
+
+    function delay(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function job() {
+      await delay(2000);
+      callback1();
+
+      for (let i = 0; i < 3; i++) {
+        await delay(1000);
+        callback2();
+      }
+    }
+  </script>
 </body>
 </html>
