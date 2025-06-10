@@ -20,8 +20,8 @@ output = count_unique_words(text)
 '''
 
 def conta_parole_uniche(testo: str) -> dict[str, int]:
-    punteggiatura = ".,;:!?()[]{}'\"-_/\\<>@#$%^&*+=~`|"
-    parole = testo.split()
+    punteggiatura:str = ".,;:!?()[]{}'\"-_/\\<>@#$%^&*+=~`|"
+    parole:str = testo.split()
     frequenze: dict[str, int] = {}
 
     for parola in parole:
