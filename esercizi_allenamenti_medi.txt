@@ -1,0 +1,96 @@
+Certamente! Ecco una raccolta di esercizi di livello medio, organizzati per le stesse aree che hai già usato (Liste/Dizionari, Condizioni/Loop/Funzioni, Classi). Questi richiedono una comprensione più solida della logica, una maggiore astrazione e in alcuni casi un tocco di progettazione.
+🔁 Liste, Tuple e Dizionari – Livello Medio
+
+🔹 Esercizio 1 (Raggruppamento avanzato)
+Simili:
+
+    1.1 Da una lista di tuple (nome, materia, voto), crea un dizionario con nome come chiave e lista di (materia, voto) come valore.
+
+    1.2 Dato un elenco di (mese, importo), crea un dizionario con la somma degli importi per trimestre.
+
+    1.3 Dato un elenco di (giorno_settimana, attività), raggruppa tutte le attività per giorno in un dizionario.
+
+🔹 Esercizio 2 (Normalizzazione / Trasformazione)
+Simili:
+
+    2.1 Dato un dizionario di studenti e liste di voti, restituisci un nuovo dizionario con la media per studente.
+
+    2.2 Da un dizionario di prodotti e prezzi, genera un nuovo dizionario con i prezzi convertiti in un'altra valuta.
+
+    2.3 Converte una lista di stringhe "chiave:valore" in un dizionario.
+
+🔹 Esercizio 3 (Inversioni e incroci)
+Simili:
+
+    3.1 Inverti un dizionario (chiavi diventano valori e viceversa, considerando che i valori sono unici).
+
+    3.2 Da due liste [chiavi] e [valori], costruisci un dizionario, ma solo se le liste hanno stessa lunghezza.
+
+    3.3 Dati due dizionari, crea un nuovo dizionario che contenga solo le chiavi comuni con la somma dei valori.
+
+🧠 Condizioni, Loop, Funzioni – Livello Medio
+
+🔹 Esercizio 1 (Condizioni complesse)
+Simili:
+
+    1.1 Verifica se una password rispetta almeno 3 su 4 criteri di sicurezza (lunghezza, maiuscola, numero, simbolo).
+
+    1.2 Controlla se una lista contiene almeno 2 valori sopra la soglia e uno sotto.
+
+    1.3 Funzione che restituisce "Promosso", "Rimandato" o "Bocciato" a seconda di 3 voti secondo criteri specifici.
+
+🔹 Esercizio 2 (Manipolazioni su liste)
+Simili:
+
+    2.1 Trova la seconda media più alta da un dizionario studente → lista voti.
+
+    2.2 Data una lista di numeri, rimuovi tutti i duplicati ma conserva l’ordine.
+
+    2.3 Funzione che calcola la somma dei numeri consecutivi in una lista e restituisce la sottolista con somma massima.
+
+🔹 Esercizio 3 (Funzioni composte / nested)
+Simili:
+
+    3.1 Scrivi una funzione che accetta una lista e una funzione f(x) e restituisce una nuova lista con f applicata solo agli elementi dispari.
+
+    3.2 Implementa una funzione filtro_custom(lista, condizione) che accetta una funzione condizione(x) come parametro.
+
+    3.3 Scrivi una funzione che accetta una lista di nomi e restituisce un dizionario con iniziali come chiavi e lista dei nomi corrispondenti.
+
+🧾 Classi – Livello Medio
+
+🔹 Sistema Registro Studenti
+Simili:
+
+    1.1 Classe Studente con metodi per aggiungere corsi, voti per corso, media per corso e media generale.
+
+    1.2 Classe Registro con studenti (dict), metodi per aggiungere studenti, assegnare voti, calcolare medie.
+
+    1.3 Metodo per trovare lo studente con media più alta.
+
+🔹 Sistema di Noleggio Esteso
+Simili:
+
+    2.1 MovieRental con prenotazioni, disponibilità, limiti di giorni e penali per ritardi.
+
+    2.2 BikeRental con gestione oraria/giornaliera/settimanale, tariffe e disponibilità.
+
+    2.3 Classe Customer con storico dei noleggi e metodi per sapere quanti film ha noleggiato nel mese corrente.
+
+🔹 Sistema Articoli / Blog
+Simili:
+
+    3.1 Classe Categoria con nome e articoli (lista).
+
+    3.2 Classe Articolo con titolo, testo, autore, data.
+
+    3.3 Sistema Blog con metodi per aggiungere articoli, trovare per autore o per intervallo di date.
+
+✅ Nota:
+Questi esercizi richiedono:
+
+    Uso più sofisticato di strutture dati
+
+    Capacità di suddividere problemi
+
+    Pensiero più astratto (funzioni come parametri, nested structures, ecc.)

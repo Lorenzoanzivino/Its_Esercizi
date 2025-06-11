@@ -1,0 +1,101 @@
+🔁 [Liste, Tuple e Dizionari]
+🔹 Esercizio 1 (Tupla → Dizionario con somma valori):
+    Simili:
+
+        1.1 Converti una lista di tuple (prodotto, quantità) in un dizionario che sommi le quantità per ogni prodotto.
+
+        1.2 Dato un elenco di tuple (nome_studente, punteggio), crea un dizionario che somma i punteggi per ogni studente.
+
+        1.3 Da una lista di tuple (categoria, spesa), crea un dizionario che totalizza la spesa per ogni categoria.
+
+🔹 Esercizio 2 (Classifica in positivi e negativi):
+    Simili:
+
+        2.1 Dato un elenco di numeri, restituisci un dizionario con due chiavi "pari" e "dispari" che contengano i rispettivi numeri.
+
+        2.2 Dato un elenco di numeri, crea un dizionario con "multipli_di_3" e "non_multipli_di_3".
+
+        2.3 Separa una lista di numeri in due liste "interi" e "decimali" (float con parte decimale ≠ 0) in un dizionario.
+
+🔹 Esercizio 3 (Filtra e modifica prezzi):
+    Simili:
+
+        3.1 Dato un dizionario di prodotti e prezzi, restituisci solo i prodotti con prezzo superiore a 100, scontati del 20%.
+
+        3.2 Dato un dizionario di studenti e voti, restituisci solo quelli con voti < 18, aumentando il voto del 10% (max 18).
+
+        3.3 Dato un dizionario di prodotti con scorte, restituisci quelli con scorte < 10, aumentando la scorta di 5 unità.
+
+
+🧠 [Funzioni, For, While, If, Elif, Else]
+🔹 Esercizio 1 (Verifica combinazione condizioni X, Y, Z):
+    Simili:
+
+        Procedi solo se A è True e B è False.
+
+        Permetti accesso solo se admin è True oppure se utente_loggato è True e permesso_speciale è True.
+
+        Restituisci "OK" solo se almeno due condizioni tra X, Y, Z sono vere.
+
+🔹 Esercizio 2 (Moltiplica numeri sotto threshold):
+    Simili:
+
+        Somma tutti i numeri pari in una lista.
+
+        Conta i numeri inferiori a una soglia n.
+
+        Crea una nuova lista con i quadrati dei numeri inferiori a threshold.
+
+🔹 Esercizio 3 (Stampa sequenze):
+    Simili per ciascuna sottovoce:
+    a) 2, 4, 6, 8, 10, 12, 14
+
+        1, 2, 3, 4, 5, 6, 7
+
+        10, 12, 14, 16, 18
+
+        0, 5, 10, 15, 20
+
+    b) 1, 4, 7, 10, 13
+
+        0, 3, 6, 9, 12
+
+        5, 10, 15, 20
+
+        2, 6, 10, 14
+
+    c) 30, 25, 20, 15, 10, 5, 0
+
+        50, 40, 30, 20, 10
+
+        100, 90, 80, 70
+
+        12, 10, 8, 6, 4, 2, 0
+
+    d) 5, 15, 25, 35, 45
+
+        3, 13, 23, 33
+
+        1, 6, 11, 16, 21
+
+        0, 10, 20, 30, 40
+
+
+🧾 [Classi]
+🔹 ContactManager
+    Simili:
+
+        Sistema per gestire una rubrica email (contacts: dict[str, list[str]]), con metodi per aggiungere/rimuovere email e cercare contatti tramite indirizzo email.
+
+        Sistema per gestire studenti e corsi (students: dict[str, list[str]]), con metodi per aggiungere uno studente, iscriverlo a corsi, rimuovere corsi, e cercare studenti iscritti a un corso.
+
+        Sistema per gestire categorie e articoli (categories: dict[str, list[str]]), con metodi per creare categorie, aggiungere articoli, e cercare la categoria di un articolo.
+
+🔹 Sistema di Videonoleggio
+    Simili:
+
+        Sistema di prestito libri (classi Book, Reader, Library): simile a MovieRental con gestione prestiti.
+
+        Gestione noleggio bici (classi Bike, Customer, BikeRentalStore) con logica per prenotazione/restituzione.
+
+        Sistema di prestito strumenti musicali (classi Instrument, User, InstrumentLendingService): prenotazioni e restituzioni come nei film.
