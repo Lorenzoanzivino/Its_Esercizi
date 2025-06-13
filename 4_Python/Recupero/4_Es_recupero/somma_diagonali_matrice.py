@@ -31,3 +31,30 @@ def somma_diagonale_secondaria(matrice: list[list[int]]) -> int:
     for indice in range(n):
         totale += matrice[indice][n - 1 - indice]
     return totale
+
+
+# Soluzione del Professore
+
+#     0  1  2
+m = [[1, 2, 3], # 0
+     [4, 5, 6], # 1
+     [7, 8, 9]  # 2
+]
+
+# m[0][0]
+# m[1][1]
+# m[2][2]
+
+# m[0][2]
+# m[1][1]
+# m[2][0]
+
+def diag(m:list[list]) -> int:
+
+    somma:int = 0
+    somma_2:int = 0
+
+    for i in range(len(m)):
+
+        somma += m[i][i]
+        somma_2 += m[i][len(m) - 1 - i]    
