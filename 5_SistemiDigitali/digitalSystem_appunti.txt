@@ -128,13 +128,13 @@
 
         3. CPU – Unità di Elaborazione Centrale
             La CPU è il "cervello" del computer, esegue istruzioni, elabora dati e coordina il funzionamento generale del sistema.
-            a) Processing Unit – Unità di Elaborazione
+            a. Processing Unit – Unità di Elaborazione
                 ◦ ALU (Arithmetic Logic Unit)
                     ▪ Esegue operazioni aritmetiche (somma, sottrazione, ecc.) e logiche (AND, OR, NOT, XOR).
                 ◦ Registri Temporanei (TEMP)
                     ▪ Memorie veloci per immagazzinare dati intermedi durante l’esecuzione delle istruzioni.
 
-            b) Control Unit – Unità di Controllo
+            b. Control Unit – Unità di Controllo
                 ◦ PC (Program Counter)
                     ▪ Contiene l’indirizzo della prossima istruzione da eseguire.
                 ◦ IR (Instruction Register)
@@ -184,12 +184,12 @@
         8. Dispositivi di Input e Output
 
             Permettono l’interazione del computer con l’esterno.
-            a) Input:
+            a. Input:
                 Funzione: Inviano dati al computer.
                 Esempi: Tastiera, mouse, scanner, microfono, webcam.
                 Funzionamento: Convertono segnali esterni in dati digitali.
 
-            b) Output:
+            b. Output:
                 Funzione: Mostrano i risultati dell’elaborazione.
                 Esempi: Monitor, stampanti, altoparlanti, proiettori.
                 Funzionamento: Convertono segnali digitali in forma percepibile (suono, immagine, stampa).
@@ -615,83 +615,83 @@
             Funzioni:
                 Fornisce servizi di rete alle applicazioni utente tramite vari protocolli.
 
-        Principali protocolli e funzioni:
-            DNS: Risoluzione dei nomi di dominio (es. www.cisco.com → 198.133.219.25)
-            HTTP/HTTPS: Navigazione web, con HTTPS che aggiunge sicurezza tramite crittografia
-            FTP: Trasferimento file client-server
-            SMTP/POP3/IMAP: Invio e ricezione email
-            DHCP: Assegnazione automatica di indirizzi IP
+            Principali protocolli e funzioni:
+                DNS: Risoluzione dei nomi di dominio (es. www.cisco.com → 198.133.219.25)
+                HTTP/HTTPS: Navigazione web, con HTTPS che aggiunge sicurezza tramite crittografia
+                FTP: Trasferimento file client-server
+                SMTP/POP3/IMAP: Invio e ricezione email
+                DHCP: Assegnazione automatica di indirizzi IP
 
-        DNS (Domain Name System) – Come funziona:
-            Utente inserisce un dominio nel browser.
-            Query inviata a un resolver DNS.
-            Resolver contatta il root server per trovare il server TLD (.com, .org).
-            Resolver contatta il server TLD per trovare il DNS autoritativo del dominio.
-            Il server autoritativo fornisce l'indirizzo IP.
-            Il resolver restituisce l’indirizzo IP al browser, che si connette al server web.
+            DNS (Domain Name System) – Come funziona:
+                Utente inserisce un dominio nel browser.
+                Query inviata a un resolver DNS.
+                Resolver contatta il root server per trovare il server TLD (.com, .org).
+                Resolver contatta il server TLD per trovare il DNS autoritativo del dominio.
+                Il server autoritativo fornisce l'indirizzo IP.
+                Il resolver restituisce l’indirizzo IP al browser, che si connette al server web.
 
-            HTTP / HTTPS
-                HTTP: Protocollo per il trasferimento di pagine web.
-                HTTPS: Estensione sicura di HTTP, cifra i dati scambiati.
+                HTTP / HTTPS
+                    HTTP: Protocollo per il trasferimento di pagine web.
+                    HTTPS: Estensione sicura di HTTP, cifra i dati scambiati.
 
-        Processo tipico di navigazione:
-            Inserimento URL → 2. Risoluzione DNS → 3. Connessione al server →
-            Invio richiesta GET → 5. Ricezione risposta (HTML) → 6. Rendering pagina.
+            Processo tipico di navigazione:
+                Inserimento URL → 2. Risoluzione DNS → 3. Connessione al server →
+                Invio richiesta GET → 5. Ricezione risposta (HTML) → 6. Rendering pagina.
 
-        FTP (File Transfer Protocol)
-            Usa due connessioni: controllo (comandi) e dati (file).
-            Supporta autenticazione con username/password o accesso anonimo.
+            FTP (File Transfer Protocol)
+                Usa due connessioni: controllo (comandi) e dati (file).
+                Supporta autenticazione con username/password o accesso anonimo.
 
-        Email Protocols
-            SMTP: Invia email da client a server o tra server.
-            POP3: Scarica email dal server al client e spesso cancella dal server.
-            IMAP: Gestisce email direttamente sul server, sincronizzando più dispositivi.
-            DHCP (Dynamic Host Configuration Protocol)
-                Assegna automaticamente indirizzi IP e altre configurazioni di rete.
-                Processo: DHCPDISCOVER → DHCPOFFER → DHCPREQUEST → DHCPACK.
+            Email Protocols
+                SMTP: Invia email da client a server o tra server.
+                POP3: Scarica email dal server al client e spesso cancella dal server.
+                IMAP: Gestisce email direttamente sul server, sincronizzando più dispositivi.
+                DHCP (Dynamic Host Configuration Protocol)
+                    Assegna automaticamente indirizzi IP e altre configurazioni di rete.
+                    Processo: DHCPDISCOVER → DHCPOFFER → DHCPREQUEST → DHCPACK.
 
         4. Transport Layer
             Funzioni:
                 Gestisce la trasmissione dati affidabile o non affidabile tra host.
 
-        Protocolli principali:
-            TCP (Transmission Control Protocol): Connessione orientata, garantisce consegna senza errori e in ordine.
-            UDP (User Datagram Protocol): Connessione senza garanzie, più veloce, usato per streaming o giochi.
+            Protocolli principali:
+                TCP (Transmission Control Protocol): Connessione orientata, garantisce consegna senza errori e in ordine.
+                UDP (User Datagram Protocol): Connessione senza garanzie, più veloce, usato per streaming o giochi.
 
-        TCP Header (campi principali)
-            Source/Destination Port: identifica app mittente/destinataria
-            Sequence Number: posizione dati
-            Acknowledgment Number: conferma ricezione
-            Flags: SYN (inizio connessione), ACK (conferma), FIN (fine connessione)
-            Checksum: controllo errori
+            TCP Header (campi principali)
+                Source/Destination Port: identifica app mittente/destinataria
+                Sequence Number: posizione dati
+                Acknowledgment Number: conferma ricezione
+                Flags: SYN (inizio connessione), ACK (conferma), FIN (fine connessione)
+                Checksum: controllo errori
 
-        UDP Header (campi principali)
-            Source/Destination Port
-            Length (header + dati)
-            Checksum
+            UDP Header (campi principali)
+                Source/Destination Port
+                Length (header + dati)
+                Checksum
 
         5. Internet Layer
             Funzioni:
                 Indirizzamento logico e routing dei pacchetti dati.
 
-        Protocolli principali:
-            IP (Internet Protocol): instradamento dati (IPv4, IPv6).
-            ICMP (Internet Control Message Protocol): messaggi di errore e diagnostica (es. ping).
-            ARP (Address Resolution Protocol): associa indirizzi IP a indirizzi MAC.
+            Protocolli principali:
+                IP (Internet Protocol): instradamento dati (IPv4, IPv6).
+                ICMP (Internet Control Message Protocol): messaggi di errore e diagnostica (es. ping).
+                ARP (Address Resolution Protocol): associa indirizzi IP a indirizzi MAC.
 
-        ICMP
-            Usato per errori e diagnostica.
-            Tipi comuni: Echo Request/Reply (ping), Destination Unreachable, Time Exceeded, Redirect.
+            ICMP
+                Usato per errori e diagnostica.
+                Tipi comuni: Echo Request/Reply (ping), Destination Unreachable, Time Exceeded, Redirect.
 
-        ARP
-            Mappa un IP a un indirizzo MAC nella rete locale.
-            Funziona tramite richieste broadcast e risposte unicast.
-            Mantiene una cache con mappature temporanee.
+            ARP
+                Mappa un IP a un indirizzo MAC nella rete locale.
+                Funziona tramite richieste broadcast e risposte unicast.
+                Mantiene una cache con mappature temporanee.
 
         6. Network Access Layer
             Funzioni:
                 Gestisce il livello fisico e di collegamento dati: trasmissione fisica, framing, indirizzamento hardware.
 
-        Tecnologie comuni:
-            Ethernet (LAN cablata)
-            Wi-Fi (wireless)
+            Tecnologie comuni:
+                Ethernet (LAN cablata)
+                Wi-Fi (wireless)

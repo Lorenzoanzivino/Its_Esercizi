@@ -29,3 +29,24 @@ def is_valid_ipv4(address: str) -> bool:
             return False
 
     return True
+
+
+# Soluzione Professore
+
+# 1) valori compresi tra 0 e 255
+# 2) solo numeri
+# 3) 4 gruppi di numeri
+
+def check(ip: str) -> bool:
+
+    ip:list[str] = ip.split(".")
+
+    if len(ip) != 4:
+        return False
+    
+    for component in ip:
+        # verifica che siano solo numeri o che sia compreso
+        if not component.isdigit() or not (0 < int(component) <= 255):
+            return False
+    
+    return True

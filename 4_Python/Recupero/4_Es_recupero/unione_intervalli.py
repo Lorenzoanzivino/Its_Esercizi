@@ -14,13 +14,12 @@ Requisiti:
 ○ Se è presente un solo intervallo, restituiscilo così com’è.
 Esempi:
 intervals = [[1, 3], [2, 6], [8, 10], [15, 18]]
-merge_intervals(intervals) # restituisce [[1, 6], [8, 10], [15,
-18]]
+merge_intervals(intervals) # restituisce [[1, 6], [8, 10], [15,18]]
 intervals = [[1, 4], [4, 5]]
 merge_intervals(intervals) # restituisce [[1, 5]]'''
 
 
-def ci_sono_sovrapposizioni(intervalli: list[list[int]]) -> bool:
+def sovrapposizioni(intervalli: list[list[int]]) -> bool:
     if not intervalli or len(intervalli) == 1:
         return False  # impossibile che ci siano sovrapposizioni
 
@@ -34,3 +33,10 @@ def ci_sono_sovrapposizioni(intervalli: list[list[int]]) -> bool:
         precedente = attuale
 
     return False  # nessuna sovrapposizione trovata
+
+
+intervals:list[list] = [[1, 4], [4, 6], [8, 10], [15, 18], [18, 20]]
+
+def marge_intervals(intervarls:[list[list[int]]]) -> bool:
+
+merge_intervals(intervals)
