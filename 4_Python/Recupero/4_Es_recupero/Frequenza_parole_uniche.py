@@ -67,6 +67,10 @@ def count_unique_words(text: str) -> dict[str, int] :
 
     # 3) voglio pulire i singoli token dai caratteri
     for token in token_lists:
+        
+        # Se la stringa è vuota non aggiungo nulla
+        if not token:
+            continue
 
         if token in words_frequencies:
             words_frequencies[token] += 1
@@ -75,6 +79,6 @@ def count_unique_words(text: str) -> dict[str, int] :
 
     return words_frequencies
 
-text = "Hello, world! Hello... PYTHON? world."
+text = "Hello , world! Hello... PYTHON? world."
 output = count_unique_words(text)
 print(output)
