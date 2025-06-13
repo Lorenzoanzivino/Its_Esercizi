@@ -1,0 +1,38 @@
+ristorante
+cliente
+prenotazione
+
+1) Raffinamento Cliente:
+    1.1) nome : Stringa
+    1.2) Email: Stringa secondo standard
+
+2) Raffinamento Ristorante:
+    2.1) nome : Stringa
+    2.2) partitaIVA : Stringa numerica secondo standard
+    2.3) indirizzo : Stringa secondo standard
+    2.4) città : Stringa
+    2.5) tipologiaCucina : 
+
+3) Raffinamento Prenotazione:
+    3.1) data : DataOra
+    3.2) numerocommensali : Intero > 0
+    3.3) statoPrenotazione
+        3.3.1) confermate
+        3.3.2) rifiutate
+        3.3.3) in attesa
+        3.3.4) non Utilizzata
+    3.4) cliente (v. req. 1.1)
+    3.5) ristorante (v. req. 2)
+
+4) Raffinamento Ristoratore:
+    4.1) ristoranteAssociato (v. req 2)
+    4.2) 
+
+5) raffinamento promozione:
+    5.1) percentuale di sconto su prenotazione : intero > 0 
+        5.1.1) periodo valido in ore : DataOra
+        5.1.2) periodo in giorni : DataOra
+        5.1.3) Numero massimo coperti : intero > 0
+    
+
+
