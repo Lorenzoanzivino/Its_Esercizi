@@ -39,8 +39,6 @@ def sovrapposizione_dna(s1:str, s2:str) -> str:
         else:
             return "Error!"
             
-
-
-
 print(sovrapposizione_dna("GGTACCGTGA", "CGTGAACCTT"))
-    
+
+print(sovrapposizione_dna("AGCTTACG", "ACGTTCGA"))
