@@ -24,8 +24,9 @@ class Alieno(Creatura):
         nome_nuovo:str = f"Robot-{self.__matricola}"
 
         if nome != nome_nuovo:
-            print("Attenzione! Tutti gli Alieni devono avere il nome 'Robot' seguito dal numero di matricola! Reimpostazione nome Alieno in Corso!")
             nome = nome_nuovo
+        else:
+            print("Attenzione! Tutti gli Alieni devono avere il nome 'Robot' seguito dal numero di matricola! Reimpostazione nome Alieno in Corso!")
 
         super().__init__(nome)
         self.__set_munizioni()
