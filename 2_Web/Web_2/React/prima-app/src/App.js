@@ -6,7 +6,7 @@ import Componente_Tabellina from './Esercizi_slide_LeBasi_1/Componente_Tabellina
 import Componente_Stampanumeri from './Esercizi_slide_LeBasi_1/Componente_Stampanumeri';
 import Componente_Contanumeri from './Esercizi_slide_LeBasi_1/Componente_Contanumeri';
 
-import Biblioteca from './Esercizi_slide_LeBasi_1/Es_5_Biblioteca';;
+import Biblioteca from './Esercizi_slide_LeBasi_1/Componente_Biblioteca';;
 
 
 function App() {
