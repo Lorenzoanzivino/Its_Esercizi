@@ -20,15 +20,23 @@ function App() {
       <h5>{ "-".repeat(100) }</h5> {/* Stampa 100 Trattini "-" */}
       <h1>Prima App React: {nome}</h1>
       <br/>
-      <h5>{ "-".repeat(100) }</h5> {/* Stampa 100 Trattini "-" */}
       <h2>
         {
         new Date().toLocaleDateString()+" - "+ new Date().toLocaleTimeString()
         }
       </h2>
-      <Clock timezone="0" country="Italia"></Clock>
-      <Clock timezone="-6" country="USA"></Clock>
-      <Clock timezone="7" country="Japan"></Clock>
+      <p style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+      <span role="img" aria-label="bandiera Italia">🇮🇹</span>
+      <Clock timezone="0" country="Italia" />
+      </p>
+      <p style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+      <span role="img" aria-label="bandiera USA">🇺🇸</span>
+      <Clock timezone="-6" country="USA" />
+      </p>
+      <p style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+      <span role="img" aria-label="bandiera Giappone">🇯🇵</span>
+      <Clock timezone="7" country="Japan" />
+      </p>
       <br/>
       <h5>{ "-".repeat(100) }</h5> {/* Stampa 100 Trattini "-" */}
       <Persona nome="Marco" cognome="Verdi" eta={28} />
@@ -51,6 +59,7 @@ function App() {
         libro2="1984" 
         libro3="Harry Potter" 
       />
+      <h5>{ "-".repeat(100) }</h5> {/* Stampa 100 Trattini "-" */}
     </div>
   );
 }
