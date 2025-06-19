@@ -37,11 +37,11 @@ function App() {
       <p><Componente_Tabellina/></p>
       <br/>
       <h5>{ "-".repeat(100) }</h5> {/* Stampa 100 Trattini "-" */}
-      <div>Numeri da 1/10 : </div>
+      <h6>Numeri da 1/10 : </h6>
       <span><Componente_Stampanumeri/></span>
       <br/>
       <h5>{ "-".repeat(100) }</h5> {/* Stampa 100 Trattini "-" */}
-      <div>Numeri da 0/20 : </div>
+      <h6>Numeri da 0/20 : </h6>
       <span><Componente_Contanumeri/></span>
       <br/>
       <h5>{ "-".repeat(100) }</h5> {/* Stampa 100 Trattini "-" */}
