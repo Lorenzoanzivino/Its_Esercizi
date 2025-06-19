@@ -6,7 +6,7 @@ import Componente_Tabellina from './Esercizi_slide_LeBasi_1/Componente_Tabellina
 import Componente_Stampanumeri from './Esercizi_slide_LeBasi_1/Componente_Stampanumeri';
 import Componente_Contanumeri from './Esercizi_slide_LeBasi_1/Componente_Contanumeri';
 
-import Biblioteca from './Esercizi_slide_LeBasi_1/biblioteca/Componente_Biblioteca';
+import Biblioteca from './Esercizi_slide_LeBasi_1/Es_5_Biblioteca';;
 
 
 function App() {
@@ -46,7 +46,11 @@ function App() {
       <br/>
       <h5>{ "-".repeat(100) }</h5> {/* Stampa 100 Trattini "-" */}
       <h2>La mia Biblioteca</h2>
-      <Biblioteca />
+      <Biblioteca 
+        libro1="Il nome della rosa" 
+        libro2="1984" 
+        libro3="Harry Potter" 
+      />
     </div>
   );
 }
