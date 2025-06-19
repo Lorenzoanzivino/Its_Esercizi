@@ -24,9 +24,8 @@ class Alieno(Creatura):
         nome_nuovo:str = f"Robot-{self.__matricola}"
 
         if nome != nome_nuovo:
-            nome = nome_nuovo
-        else:
             print("Attenzione! Tutti gli Alieni devono avere il nome 'Robot' seguito dal numero di matricola! Reimpostazione nome Alieno in Corso!")
+            nome = nome_nuovo
 
         super().__init__(nome)
         self.__set_munizioni()
@@ -64,6 +63,9 @@ class Mostro(Creatura):
 
     def get_gemito_sconfitta(self) -> str:
         return self.__gemito_sconfitta
+    
+    def get_assalto(self) -> list[int]:
+        return self.__assalto
 
     def __set_sconfitta(self, sconfitta: str) -> None:
         if isinstance(sconfitta, str) and sconfitta.strip():    # Rimuove spazi all'inizio e alla fine
@@ -90,38 +92,13 @@ class Mostro(Creatura):
             i += 1
         return f"Mostro: {alternanza}"
     
+def pariUguali(a: list[int], b: list[int]) -> list[int]:
+    __c:list[int] = []
 
-# === TEST CREAZIONE CREATURE ===
-print("=== TEST CREATURE ===")
-c1 = Creatura("Drago")
-print(c1)  # Creatura: Drago
+    for i in range(len(a)):
+        if a[i] % 2 == 0 and b[i] % 2 == 0:
+            __c.append(1)
+        else:
+            __c.append(0)
 
-c2 = Creatura(123)  # nome non valido
-print(c2)  # Creatura: Creatura Generica
-
-# === TEST CREAZIONE ALIENI ===
-print("\n=== TEST ALIENI ===")
-a1 = Alieno("\nRobot-12345")  # Nome non valido, perché non combacia con la matricola generata
-print(a1)
-print("Matricola:", a1.get_matricola())
-print("Munizioni:", a1.get_munizioni())
-
-a2 = Alieno()  # Nome non passato, sarà generato correttamente
-print(a2)
-
-# === TEST CREAZIONE MOSTRI ===
-print("\n=== TEST MOSTRI ===")
-m1 = Mostro("Godzilla", "RAWR!", "Oh no...")
-print(m1)  # Mostro: gOdZiLlA
-print("Urlo vittoria:", m1.get_urlo_vittoria())
-print("Gemito sconfitta:", m1.get_gemito_sconfitta())
-
-m2 = Mostro("KingKong", "", "")  # urlo e gemito non validi
-print(m2)
-print("Urlo vittoria (default):", m2.get_urlo_vittoria())     # GRAAAHHH
-print("Gemito sconfitta (default):", m2.get_gemito_sconfitta())  # Uuurghhh
-
-# Verifica che l'assalto sia una lista di 15 numeri unici tra 1 e 100
-assalto = m1._Mostro__assalto  # Accesso forzato per test privato (solo per test)
-print("Assalto:", assalto)
-print("Assalto valido:", len(assalto) == 15 and all(1 <= x <= 100 for x in assalto) and len(set(assalto)) == 15)
+    return __c
