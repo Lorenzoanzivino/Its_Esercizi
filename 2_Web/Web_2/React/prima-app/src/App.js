@@ -1,6 +1,13 @@
 import './App.css';
 import Clock from './Clock';
 import Componente1 from './Componente1';
+import Persona from './Esercizi_slide_LeBasi_1/Componente_Persona';
+import Componente_Tabellina from './Esercizi_slide_LeBasi_1/Componente_Tabellina'; 
+import Componente_Stampanumeri from './Esercizi_slide_LeBasi_1/Componente_Stampanumeri';
+import Componente_Contanumeri from './Esercizi_slide_LeBasi_1/Componente_Contanumeri';
+
+import Biblioteca from './Esercizi_slide_LeBasi_1/biblioteca/Componente_Biblioteca';
+
 
 function App() {
   let nome = "Lorenzo"
@@ -22,6 +29,20 @@ function App() {
       <Clock timezone="0" country="Italia"></Clock>
       <Clock timezone="-6" country="USA"></Clock>
       <Clock timezone="7" country="Japan"></Clock>
+      <br/>
+      <Persona nome="Marco" cognome="Verdi" eta={28} />
+      <br/>
+      <p><Componente_Tabellina/></p>
+      <br/>
+      <div>Numeri da 1/10 : </div>
+      <span><Componente_Stampanumeri/></span>
+      <br/>
+      <div>Numeri da 0/20 : </div>
+      <span><Componente_Contanumeri/></span>
+      <br/>
+      <h5>-------------------------------------------</h5>
+      <h2>La mia Biblioteca</h2>
+      <Biblioteca />
     </div>
   );
 }
