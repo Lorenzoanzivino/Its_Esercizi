@@ -12,33 +12,41 @@ Specifica delle Operazioni
 
 =========================================================================================================================================================================================
 
-2. ultimo_bid(i: DataOra): Bid[0..1]
-	Descrizione:
-		Restituisce l’ultimo bid valido effettuato prima o uguale a i.
+2.ultimo_bid(i: DataOra): Bid[0..1]
+	precondizioni: nessuna.
+	postcondizioni:
+		- L'operazione non modifica il livello estensionale
+		- Sia B l'insieme dei b:Bid coinvolti in un link asta_bid insieme a this e che hanno come valore dell'attributo istante minore o uguale a i, formalmente:
+			Sia B l'insieme dei b:Bid tali che (this,b):asta_bid e b.istante <= i.
+		- result è il b in B con valore dell'attributo istante maggiore (o massimo). Formalmente:
+			result è definito come il b' in B tale che non esiste un b'' dove b'.istante < b''.istante.
 
-	Precondizioni:
-		i è una data antecedente o uguale alla scadenza.
+=========================================================================================================================================================================================      
 
-	Postcondizioni:
-		Restituisce il bid con timestamp massimo minore o uguale a i, se esiste.
-		Se nessun bid è stato fatto fino a i, restituisce 0 (nessun bid).
+3. scaduta(i: DataOra): Bool
+    precondizioni: nessuna
+    postcondizioni:
+        - L'operazione non modifica il livello estensionale dei dati
+        - result è definito come segue:
+            - Se this.scadenza < i:
+                - result = True
+                - altrimenti result = False
 
 =========================================================================================================================================================================================
 
-3. vincitore(): Utente[0..1]
-	Descrizione:
-	    	Restituisce l’utente che ha fatto l’ultimo bid valido alla scadenza dell’asta. Se non ci sono bid, non c’è vincitore.
-
-    	Precondizioni:
-		L’asta è scaduta (DataOra corrente > scadenza).
-
-    	Postcondizioni:
-		Restituisce l’utente associato al bid con timestamp massimo prima della scadenza.
-		Se nessun bid è stato fatto, restituisce 0.
+4. vincitore(): Utente[0..1]
+    precondizioni: 
+        - l'operazione this.scaduta con parametro i:adesso deve essere result = True
+    postcondizioni:
+        - L'operazione non modifica il livello estensionale dei dati
+        - Sia p:Privato e b:Bid tale che (p, b):bid_ut e (b, this):asta_bid
+        - result è definito come segue
+            - Sia b:Bid il risultato dell'operazione ultimo_bid(adesso) coinvolto nel link (p, b):bid_ut
+            - result = p:Privato
 
 =========================================================================================================================================================================================      
         
-4. popolarita(i: DataOra): Popolarita
+5. popolarita(i: DataOra): Popolarita
 	Descrizione:
 		Restituisce la popolarità del venditore professionale alla data i, calcolata in base al numero di post oggetto pubblicati fino a quel momento.
 
@@ -57,7 +65,7 @@ Specifica delle Operazioni
 
 =========================================================================================================================================================================================
         
-5. affidabilita(i: DataOra): Reale in [0..1]
+6. affidabilita(i: DataOra): Reale in [0..1]
 	Descrizione:
 		Restituisce un valore -> 0 <= valore <= 1 che rappresenta l’affidabilità del venditore alla data i, in base ai feedback ricevuti fino a quel momento.
 	
