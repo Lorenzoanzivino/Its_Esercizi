@@ -1,0 +1,27 @@
+Specifica dello use case Strumenti venditori
+
+pubblica_compralosubito(
+	descrizione: Stringa, 
+	prezzo: Reale > 0, 
+	anni_garanzia: Intero >= 0, 
+	condizioni: Condizioni [0..1],
+	categoria: Categoria [1..*]
+	mp: MetodoDiPagamento [1..*]
+) : CompraloSubito
+	precondizioni:
+		- Se condizioni non è valorizzato allora anni_garanzia >= 2.
+	postcondizioni:
+		- Si crea e si restituisce l'oggetto cs:CompraloSubito:
+			- cs.descrizione = descrizione
+			- cs.prezzo = prezzo
+			- cs.anni_garanzia = anni_garanzia
+		- Se condizioni è valorizzato:
+			- si crea cs:Usato
+			- cs.condizioni = condizioni
+		- Altrimenti (condizioni non è valorizzato):
+			- si crea cs:Nuovo
+		- si crea il link (v,cs):pubblica dove v è un oggetto della classe VenditoreProf associato all'attore che invoca l'operazione.
+		- per ogni c in categoria:
+			- si crea il link (c,cs):cat_post
+		per ogni m in mp:
+			- si crea il link (mp,cs):met_post
