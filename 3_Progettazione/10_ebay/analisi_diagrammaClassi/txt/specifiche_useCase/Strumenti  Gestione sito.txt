@@ -1,0 +1,18 @@
+Specifica use case Gestione CompraSubito
+
+crea_mdp(nome: Stringa) : MetodoDiPagamento
+    - precondizioni:
+        - non esiste mp: MetodoDiPagamento con mp.nome = nome
+    - postcondizione:
+        - viene creato e restituito mp: MetodoDiPagamento dove:
+            - mp.nome = nome
+
+
+
+crea_categoria(nome: Stringa) : Categoria
+    - precondizioni:
+        - non esiste c: Categoria con c.nome = nome
+    - postcondizione:
+        - viene creato e restituito c: Categoria dove:
+            - c.nome = nome
+            
