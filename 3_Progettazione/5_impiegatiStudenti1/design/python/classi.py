@@ -3,7 +3,7 @@ from __future__ import annotations
 from custom_types import *
 from datetime import date
 
-from utils.Index import Index
+from Index import Index
 
 
 class Persona:

@@ -1,5 +1,5 @@
 from datetime import date
-from Impiegati_studenti import *
+from classi import *
 from custom_types import IntGEZ, RealGEZ, CodiceFiscale
 
 def main():
