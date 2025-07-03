@@ -1,8 +1,0 @@
-{'posti disponibili': 100, 'classe economica': 70, 'classe business': 20, 'prima classe': 10}
-{'posti disponibili': 30, 'classe economica': 0, 'classe business': 20, 'prima classe': 10}
-{'posti disponibili': 10, 'classe economica': 0, 'classe business': 0, 'prima classe': 10}
-{'posti disponibili': 10, 'classe economica': 0, 'classe business': 0, 'prima classe': 10}
-{'posti disponibili': 0, 'classe economica': 0, 'classe business': 0, 'prima classe': 0}
-{'posti disponibili': 0, 'classe economica': 0, 'classe business': 0, 'prima classe': 0}
-Posti disponibili sul volo charter CHA456: 50
-Guadagno della compagnia aerea: 16000.0€

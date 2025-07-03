@@ -238,6 +238,6 @@ if __name__=="__main__":
     print(f"Guadagno della compagnia aerea: {compagnia.guadagno()}€")
     lista.append(str(f"Guadagno della compagnia aerea: {compagnia.guadagno()}€"))
 
-    with open("report.txt", "w", encoding="utf-8") as file:
+    with open("./4_Python/Lezione_22_esercizio/report.txt", "w", encoding="utf-8") as file:
         for output in lista:
             file.write(output + "\n")
