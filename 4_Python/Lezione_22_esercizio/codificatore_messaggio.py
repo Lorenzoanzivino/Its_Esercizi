@@ -63,9 +63,13 @@ class CifratoreACombinazione(CodificatoreMessaggio, DecodificatoreMessaggio):
 
     def _combinazione(self, testo: str) -> str:
         meta = (len(testo) + 1) // 2 
+        if len(testo) % 2 == 0:
+            prima_meta = testo[:meta]
+            seconda_meta = testo[meta:]
+        else:
+            prima_meta = testo[:meta+1] 
+            seconda_meta = testo[meta+1:]
 
-        prima_meta = testo[:meta]
-        seconda_meta = testo[meta:]
         
         risultato = []
         for i in range(len(testo)):
