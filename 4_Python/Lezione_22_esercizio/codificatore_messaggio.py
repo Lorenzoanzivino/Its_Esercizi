@@ -67,8 +67,8 @@ class CifratoreACombinazione(CodificatoreMessaggio, DecodificatoreMessaggio):
             prima_meta = testo[:meta]
             seconda_meta = testo[meta:]
         else:
-            prima_meta = testo[:meta+1] 
-            seconda_meta = testo[meta+1:]
+            prima_meta = testo[:meta + 1] 
+            seconda_meta = testo[meta + 1:]
 
         
         risultato = []
