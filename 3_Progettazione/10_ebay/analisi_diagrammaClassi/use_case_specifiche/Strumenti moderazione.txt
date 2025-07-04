@@ -1,0 +1,16 @@
+Specifica use case Strumenti moderazione
+
+elimina_post(p: postOggetto): None
+
+    - precondizioni:
+        - dati a: Asta e c: CompraSubito tali che:
+            - non devono esistere link (c, p):cs_ut
+            - a.scadenza non deve essere <= adesso
+    - postcondizione:
+        - viene eliminato p: postOggetto tale che:
+            - se p: PostOggetto è anche p: Asta allora:
+                - viene eliminato il link (v, p):pubblica
+                - viene eliminato il link (c, p):cat_post per ogni c in categoria
+                - viene eliminato il link (mp, p):met_post per ogni mp in metodoPagamento
+            se p: Asta allora:
+                - viene elimitato il link (b, p):asta_bid per ogni b in Bid
