@@ -15,7 +15,7 @@ create table corso(
 create table incarico(
     docente integer not null,
     corso integer not null,
-    primary key(docente, corso),
+    primary key(docente, corso), -- va messo sotto quando ci sono più elementi con primary key
     foreign key (docente)
         references docente(mat),
     foreign key (corso)
@@ -29,3 +29,20 @@ create table incarico(
 -- postgres=# \c esami
 -- copia e incolla dei codici sql
 -- \dt mostra la tabella
+
+
+-- Modifica e cancellazione di tabelle, schemi e database
+-- Modifica
+-- ▶ alter table
+-- ▶ alter table add column
+-- ▶ alter table drop column
+-- ▶ alter table alter column
+-- ▶ alter table add constraint
+-- ▶ alter table drop constraint
+-- ▶ etc.
+-- Cancellazione
+-- ▶ drop table <nome tabella>
+-- ▶ drop schema <nome schema>
+-- ▶ drop database <nome database>
+-- Per i dettagli si veda la documentazione di SQL e quella del DBMS in
+-- uso.

@@ -112,6 +112,14 @@
 
 ---
 
+### 🗃️ DataBase
+- 📅 30/06/25 – Progettazione - Database: **Concetti Fondamentali**
+  - Tabelle
+  - Domini
+
+
+---
+
 ### 📚 Altro
 
 - 📅 08/05/25 – 🇬🇧 **Esame di Inglese**
