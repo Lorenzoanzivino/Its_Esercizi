@@ -46,6 +46,12 @@
   - Esercitazione_univeritaria 🧪
   - Officine_1 🛠️
   - Accademia_2 🏛️
+  - Ebay 🛒, RistoBook 🍽️
+    - Specifica di classi 🔧
+    - Specifica di operazioni 🔧
+    - Vincoli esterni 🔒
+    - Use-case 🧩
+    - Diagramma ristrutturato ♻️
 
 - 📅 05/05/25 – **Use Case UML**
 - 📅 07/05/25 – **Ebay/1** 🛒
