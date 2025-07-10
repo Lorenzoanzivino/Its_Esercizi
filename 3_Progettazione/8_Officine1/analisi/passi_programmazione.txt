@@ -1,0 +1,95 @@
+8_OFFICINE1
+
+1. Analisi Concettuale
+    1.1 Raffinamento requisiti
+    1.2 diagramma UML delle classi
+
+    1.3 Specifica delle classi     
+
+    Specifica delle classi Riparazione terminata (v. req. 1.2)
+        VINCOLI ESTERNI:
+            [V.RiparazioneTerminata.fine_dopo_inizio]
+            Versione lunga:
+                Per ogni r:RiparazioneTerminata
+                    · Sia ric il valore dell'attributo riconsegna di r
+                    · Sia acc il valore dell'attributo accettazione di r
+                Deve essere vero che ric > acc.
+            Versione breve:
+                Per ogni r:RiparazioneTerminata, r.riconsegna > r.accettazione
+            Versione che utilizza durata_minuti()
+                Per ogni r:RiparazioneTerminatar.durata_minuti() > 0
+
+        OPERAZIONI DI CLASSE:
+            durata_minuti(): Intero > 0
+                · precondizioni: nessuna
+                · postcondizione:
+                    · l'operazione non modifica i dati.
+                    · il risult è così definito:
+                        · Sia ric il valore dell'attributo riconsegna di this
+                        · Sia acc il valore dell'attributo accettazione di this
+                        · result è ric-acc, espresso in minuti.
+    
+    1.4. Specifica Vincoli ESTERNI
+    operazioni ausiliare
+
+    sovrapposti(i1: DataOra, f1:DataOra, i2: DataOra, f2: DataOra): Booleano
+        · Precondizioni:
+            · i1 <= f1 e i2 <= f2
+        · Postcondizioni:
+            · il risultato result è definito come segue:
+                · result = True se e solo se vale la seguente condizione:
+                · Esiste un t:DataOra tale che
+                    · i1 <= t <= f1 AND i2 <= t <= f2
+    
+    disgiunti(i1: DataOra, f1:DataOra, i2: DataOra, f2: DataOra): Booleano
+        · Precondizioni:
+            · i1 <= f1 e i2 <= f2
+        · Postcondizioni:
+            · il risultato result è definito come not sovrapposti(i1, f1, i2, f2):
+
+        [V.Veicolo.Riparazione.non_sovrapposte]
+        Versione 1:
+            Comunque si prenda un veicolo e due sue riparazioni distinte di tale veicolo, queste non si sovrappongono nel tempo
+
+            Per vogni v:Veicolo
+                Per ongi r1, r2:RiparazioneTerminata, r1 != r2
+                    Tali che Esistono i link (v, r1):rip_veic e (v, r2):rip_veic.
+                    Deve essere vero che:
+                        disgiunti(r1.accettazione, r1.riconsegna, r2.accettazione, r2.riconsegna)
+
+        [V.Riparazione.Veicolo.Proprietario_lavora_o_dirige_Officina]
+            Per ogni r:Riparazione
+                · Sia v tale che esiste il link (r, v):rip_veic (il veicolo coinvolto)
+                · Per ogni p:Proprietario tale che esista il link (v, p):veic_prop
+                    · Per ogni o:Officina tale che esita il lin (r, o):rip_off
+                        · Non devono esistere ne il link (p:Dipendente, o):lavora ne il link (p:Direttore, o):dirige
+
+    1.5. Diagramma degli Use-Case 
+        Esercizio
+
+    1.6. Specifica degli Use-Case 
+        Use-case Statistiche:
+            1. Data un'officina, calcolare il numero di riparazioni iniziate e terminate in un dato periodo.
+            num_riparazioni_in_periodo(o:Officina, i:DataOra, f:DataOra[0..1] -> opzionale ): intero >= 0
+                · Precondizioni: 
+                    · i < f
+                · Postcondizioni:
+                    · Loperazione non modifica i dati.
+                    · Il risultato result è così definito:
+                        · Sia R (maiuscolo perchè un insieme) l'insieme degli oggetti r:RiparazioneTerminata tali che 
+                            · esiste il link (r, o):rip_off AND 
+                            · r.accettazione >= i AND 
+                            · r.riconsegna <= f
+                        · Sia result il numero di elementi di R (cardinalità di R, |R| -> cardinalità)
+            
+            2. Data un'officina, calcolare la durata media delle sue riparazioni
+            durata_media_riparazioni_in_minuti(o: Officina): Intero > 0
+                · Precondizioni: 
+                    · esiste almeno un link(r, o):rip_off tale che r:RiparazioneTerminata.
+                · Postcondizioni:    
+                    · L'operazione non modifica i dati
+                    · il risultato result è così definito:
+                        · Sia R l'insieme delle coppie (r:RiparazioneTerminata, d:intero > 0) tali che il link (r, 0):rip_off e d = r.durata_minuti()
+                        · Sia S la somma di tutti i valori d delle coppie (r, d) in r
+                        · SIa N = |R| la cardinalità di r
+                        · result = S/N oppure scrittto -> S /|R|

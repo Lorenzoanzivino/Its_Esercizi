@@ -1,15 +1,34 @@
+create database esami;
+\c esami
+
+create domain posint as integer
+    check (value > 0);
+
+create domain posint_not_null as posint
+    check (value is not null);
+
+create domain string_not_null as varchar
+    check (value is not null);
+
+create type indirizzo as (
+    via string_not_null,
+    cap char(5),
+    civico posint_not_null
+);
 
 create table docente(
     mat integer primary key, -- implica not null
     cognome varchar(100) not null,
     nome varchar(100) not null,
     email varchar(100) not null
+    indirizzo indirizzo not null
 );
 
 create table corso(
     codice integer primary key,
     nome varchar not null,
     aula varchar(100) not null
+    crediti posint not null
 );
 
 create table incarico(

@@ -9,6 +9,8 @@ import Componente_Contanumeri from './Esercizi_slide_LeBasi_1/Componente_Contanu
 import Biblioteca from './Esercizi_slide_LeBasi_1/Componente_Biblioteca';
 import ProfiloUtente from './Esercizio_slide_2/ProfiloUtente';
 import Counter from './Esercizio_slide_3/Counter';
+import Form from './Form';
+import UserCrud from './Manage_user/UserCrud';
 
 function App() {
   const nome = "Lorenzo";
@@ -128,6 +130,18 @@ function App() {
 
       {/* ================== CONTATORE ================== */}
       <Counter />
+
+      {/* ================== FORM ================== */}
+      <h5>{ "-".repeat(100) }</h5>
+      <h2>Form</h2>
+      <Form></Form>
+
+      <></>
+      {/* ================== USER FORM ================== */}
+      <h5>{ "-".repeat(100) }</h5>
+      <h2>UserForm</h2>
+      <UserCrud></UserCrud>
+
     </div>
   );
 }
