@@ -1,0 +1,22 @@
+INSERT INTO persona (id, nome, cognome, posizione, stipendio) VALUES (1, 'Mario', 'Rossi', 'Ricercatore', '40000');
+
+INSERT INTO persona (id, nome, cognome, posizione, stipendio) VALUES (2, 'Luca', 'Bianchi', 'Professore Associato', '35000');
+
+INSERT INTO persona (id, nome, cognome, posizione, stipendio) VALUES (3, 'Giulia', 'Verdi', 'Professore Ordinario', '32000');
+
+INSERT INTO persona (id, nome, cognome, posizione, stipendio) VALUES (4, 'Alessandro', 'Russo', 'Ricercatore', '60000');
+
+INSERT INTO persona (id, nome, cognome, posizione, stipendio) VALUES (5, 'Francesca', 'Ferrari', 'Professore Associato', '30000');
+
+INSERT INTO persona (id, nome, cognome, posizione, stipendio) VALUES (6, 'Simone', 'Esposito', 'Ricercatore', '50000');
+
+INSERT INTO persona (id, nome, cognome, posizione, stipendio) VALUES (7, 'Sara', 'Romano', 'Ricercatore', '32000');
+
+INSERT INTO persona (id, nome, cognome, posizione, stipendio) VALUES (8, 'Davide', 'Gallo', 'Ricercatore', '32000');
+
+INSERT INTO persona (id, nome, cognome, posizione, stipendio) VALUES (9, 'Elena', 'Costa', 'Ricercatore', '38000');
+
+INSERT INTO persona (id, nome, cognome, posizione, stipendio) VALUES (10, 'Marco', 'Conti', 'Ricercatore', '20000');
+
+
+INSERT INTO assenza (id, persona, tipo, giorno) VALUES (1, 'Mario', 'Rossi', 'Malattia', '2025-05-23');
