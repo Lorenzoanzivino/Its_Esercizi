@@ -20,10 +20,10 @@ class Utente(ABC):
             raise AttributeError("Value for attribute '_username' cannot be None or empty")
         self._registrazione = registrazione
 
-    def username(self) -> str:
+    def get_username(self) -> str:
         return self._username
 
-    def registrazione(self) -> datetime:
+    def get_registrazione(self) -> datetime:
         return self._registrazione
 
     @classmethod
@@ -35,7 +35,7 @@ class Utente(ABC):
         return cls._id_usernames.get(username)
 
     def __str__(self) -> str:
-        return f"{self.username()} --- {self.registrazione()}"
+        return f"{self.get_username()} --- {self.get_registrazione()}"
 
 class Privato(Utente):
     _done_bids: dict[Bid, bid_ut._link]

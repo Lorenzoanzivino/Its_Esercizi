@@ -12,7 +12,6 @@ class IntGEZ(int):
             return n
         raise ValueError(f"Il valore {n} è minore di 0!")
 
-
 class IntGZ(int):
     # Tipo di dato specializzato Intero > 0 (Greater than Zero)
     def __new__(cls, v: float | int | str | bool | Self) -> Self:
@@ -139,7 +138,6 @@ class Indirizzo:
 class Genere(StrEnum):
     uomo = auto()
     donna = auto()
-
      
 class Condizioni(StrEnum):
      ottimo = auto()
