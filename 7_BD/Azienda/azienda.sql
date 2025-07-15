@@ -28,5 +28,7 @@ CREATE TABLE progetto (
     nome Stringa not null,
     budget Denaro not null,
     impiegato integer not null,
-    foreign key (impiegato) references impiegato(id)
+    partecipa integer not null,
+
+    foreign key (partecipa) references impiegato(id)
 );
