@@ -1,221 +1,259 @@
-from __future__ import annotations
-import weakref
-from typing import Any, Self
-from tipi_dati import RealGZ, RealGEZ, IntGEZ
-from index import Index
+from _future_ import annotations
+from typing import *
+from weakref import WeakValueDictionary
+from abc import ABC,abstractmethod
 from datetime import datetime
-from abc import ABC, abstractmethod
+
+KeyType = TypeVar('KeyType')
+ValueType = TypeVar('ValueType')
+
+"""
+	An instance of this class defines an index over a set of objects
+"""
+
+class Index(Generic[KeyType, ValueType]):
+	_name:str
+	_objects:WeakValueDictionary[KeyType, ValueType]
+
+	def _init_(self, name:str):
+		self._name:str = name
+		self._objects:WeakValueDictionary[KeyType, ValueType] = WeakValueDictionary()
+
+	def _str_(self)->str:
+		return (f"Index {self.name()}:\n - length: {len(self._objects)}\n - keys = {[k for k in self._objects.keys()]}")
+
+	def name(self)->str:
+		return self._name
+
+	def add(self, _id:KeyType, obj:ValueType)->None:
+		if _id in self._objects:
+			raise KeyError(f"Duplicate key {_id} for class {type(obj)}")
+		self._objects[_id] = obj
+
+	def remove(self, _id:KeyType)->None:
+		if _id is not None:
+			del self._objects[_id]
+
+	def get(self, _id:KeyType)->ValueType|None:
+		return self._objects.get(_id, None)
+
+	def all(self)->Generator[ValueType, None, None]:
+		return self._objects.values()
+
+	def _len_(self)->int:
+		return len(self._objects)
+		
+		
+class RealGZ(float):
+    
+    def _new_(cls, value: float | int | str | bool ):
+        ret = float._new_(cls, value) 
+
+        if ret < 0:
+            raise ValueError (f"The value {value} must be >= 0")
+        return ret
+
+index_username = Index[str, "Utente"]("UtentiRegistrati")
 
 class Utente(ABC):
-    _id_usernames: Index[str, Self] = Index("Lista Username")
-    _username: str  # <<imm>> {id}
-    _registrazione: datetime  # <<imm>>
+    __username: str  # <<immutable>>
+    __registrazione: datetime  # <<immutable>>
+
+    def _init_(self, username: str):
+        if index_username.get(username) is not None:
+            raise ValueError(f"Username '{username}' già esistente!")
+        self.__username:str = username
+        self.__registrazione:datetime = datetime.now()
+        index_username.add(username, self)
 
     @abstractmethod
-    def __init__(self, username: str, registrazione: datetime):
-        if username:
-            self._id_usernames.add(username, self)
-            self._username = username
-        else:
-            raise AttributeError("Value for attribute '_username' cannot be None or empty")
-        self._registrazione = registrazione
-
-    def get_username(self) -> str:
-        return self._username
-
-    def get_registrazione(self) -> datetime:
-        return self._registrazione
-
-    @classmethod
-    def all(cls):
-        return cls._id_usernames.all()
-
-    @classmethod
-    def get(cls, username: str):
-        return cls._id_usernames.get(username)
-
-    def __str__(self) -> str:
-        return f"{self.get_username()} --- {self.get_registrazione()}"
-
-class Privato(Utente):
-    _done_bids: dict[Bid, bid_ut._link]
-
-    def __init__(self, username, registrazione):
-        super().__init__(username, registrazione)
-        self._done_bids = dict()
-
-    def bids(self) -> frozenset[weakref[bid_ut._link]]:
-        return frozenset(weakref.ref(l) for l in self._done_bids.values())
-
-    def _add_bid(self, link_with_bid: bid_ut._link) -> None:
-        if link_with_bid.privato() is not self:
-            raise ValueError("Link does not involve me!")
-        if link_with_bid.bid() in self._done_bids:
-            raise KeyError(f"Duplicate link ({self}, {link_with_bid.bid()}) not allowed")
-        self._done_bids[link_with_bid.bid()] = link_with_bid
-
-class Bid:
-    _istante: datetime
-    _privato: Privato
-    _asta: Asta
-
-    def __init__(self, istante_bid: datetime, privato: Privato, asta: Asta):
-        self._istante = istante_bid
-        self._privato = None
-        self._asta = None
-        bid_ut._add(self, privato)
-        asta_bid._add(self, asta)
-
-    def privato(self) -> weakref[Privato] | None:
-        return weakref.ref(self._privato) if self._privato else None
-    
-    def asta(self) -> weakref[Asta] | None:
-        return weakref.ref(self._asta) if self._asta else None
-
-    def _set_privato(self, link_priv: bid_ut._link) -> None:
-        if self.privato() is not None:
-            raise ValueError("This bid is already in a link with another Privato")
-        
-        if link_priv.bid() is not self:
-            raise ValueError("Link does not involve me!")
-
-        self._privato = link_priv.privato()
-    
-    def _set_asta(self, link_asta: asta_bid._link) -> None:
-        if self.asta() is not None:
-            raise ValueError("This bid is already in a link with another Asta")
-        
-        if link_asta.bid() is not self:
-            raise ValueError("Link does not involve me!")
-
-        self._asta = link_asta.asta()
-
-class bid_ut:
-    class _link:
-        def __init__(self, bid: Bid, privato: Privato):
-            self._bid = bid
-            self._privato = privato
-
-        def bid(self) -> Bid:
-            return self._bid
-
-        def privato(self) -> Privato:
-            return self._privato
-
-    @classmethod
-    def _add(cls, bid: Bid, privato: Privato) -> None:
-        link = cls._link(bid, privato)
-        bid._set_privato(link)
-        privato._add_bid(link)
-
-    # Link non rimuovibili
-
-class PostOggetto(ABC):
-    _descrizione: str
-    _prezzo: RealGEZ
-    _anni_garanzia: IntGEZ
-
-    @abstractmethod
-    def __init__(self, descrizione: str, anni_garanzia: IntGEZ, prezzo: RealGEZ):
-        self.set_descrizione(descrizione)
-        self.set_anni_garanzia(anni_garanzia)
-        self._prezzo = prezzo
-    
-    def descrizione(self) -> str:
-        return self._descrizione
-    
-    def anni_garanzia(self) -> IntGEZ:
-        return self._anni_garanzia
-    
-    def prezzo(self) -> RealGEZ:
-        return self._prezzo
-    
-    def set_descrizione(self, new_descrizione: str) -> None:
-        self._descrizione = new_descrizione
-
-    def set_anni_garanzia(self, new_garanzia: IntGEZ) -> None:
-        self._anni_garanzia = new_garanzia
-
-    @abstractmethod
-    def __str__(self) -> str:
+    def get_ruolo(self) -> str:
         pass
 
-class Asta(PostOggetto):
+    def get_username(self) -> str:
+        return self.__username
+
+    def get_registrazione(self) -> datetime:
+        return self.__registrazione
+
+    def cancella_registrazione(self) -> None:
+        index_username.remove(self.get_username())
+        print("Utente cancellato correttamente")
+        
+
+    def _str_(self):
+        return self.get_username()
+
+    def _repr_(self) -> str:
+        return f"Username: {self.get_username()}\nData registrazione: {self.get_registrazione().isoformat()}"
+
+    def _eq_(self, other: object) -> bool:
+        return isinstance(other, Utente) and self.get_username() == other.get_username()
+
+    def _hash_(self):
+        return hash(self.get_username())
+        
+        
+class UtentePrivato(Utente):
+    def _init_(self, username: str):
+        super()._init_(username)
+        self._ruolo = "Privato"
+        self._link_bid: list[Bid_Ut._link] = []
+
+    def get_ruolo(self) -> str:
+        return self._ruolo
+
+    def add_link_bid_ut(self, link: Bid_Ut._link) -> None:
+        if link.utente() is not self:
+            raise ValueError("Il link non riguarda questo utente.")
+        self._link_bid.append(link)
+
+    def _repr_(self):
+        return f"Username: {self.get_username()}\nData registrazione: {self.get_registrazione()}\nTipologia Utente: {self._ruolo}"
+        
+        
+class Bid:
+    __istanteBid: datetime
+    __utente: Utente
+
+    def _init_(self, utente: Utente):
+        self.__istanteBid = datetime.now()
+        self.__utente = utente
+        self._link_bid: list[Bid_Ut._link] = []
+        self._link_bid_asta: list[Asta_Bid._link] = []
+
+    def getIstanteBid(self) -> datetime:
+        return self.__istanteBid
+
+    def getUtente(self) -> Utente:
+        return self.__utente
+
+    def add_link_bid_ut(self, link: 'Bid_Ut._link') -> None:
+        if link.bid() is not self:
+            raise ValueError("Il link non riguarda questo bid.")
+        self._link_bid.append(link)
+
+    def add_link_asta_bid(self, link: 'Asta_Bid._link') -> None:
+        if link.bid() is not self:
+            raise ValueError("Il link non riguarda questo bid.")
+        self._link_bid_asta.append(link)
+
+
+    def _repr_(self):
+        return f"Username:{self._utente.get_username()},Data Bid: {self._istanteBid.isoformat()}"
+        
+class Asta:
     _prezzo_bid: RealGZ
-    _scadenza: datetime
-    _bids: dict[Bid, asta_bid._link]
 
-    def __init__(self, descrizione: str, anni_garanzia: IntGEZ, prezzo_iniziale: RealGEZ, prezzo_rialzi: RealGZ, scadenza: datetime):
-        # Does not use set method to bypass any checks - You can create an already expired asta (made mostly for testing)
-        self._scadenza = scadenza
-        self._prezzo = prezzo_iniziale
-        self._prezzo_bid = prezzo_rialzi
-        self._bids = dict()
+    def _init_(self, prezzo: RealGZ, prezzo_bid: RealGZ, pubblicazione: datetime, scadenza: datetime):
+        if pubblicazione >= scadenza:
+            raise ValueError("La scadenza deve essere successiva alla data di pubblicazione.")
+        self.prezzo:RealGZ = prezzo
+        self._prezzo_bid:RealGZ = prezzo_bid
+        self.pubblicazione:datetime = pubblicazione
+        self.scadenza:datetime = scadenza
+        self.lista_bid: list['Bid'] = []
+        self._link_bid: list['Asta_Bid._link'] = []
         
-        super().__init__(descrizione, anni_garanzia, prezzo_iniziale)
-
-    def prezzo_bid(self) -> RealGZ:
-        return self._prezzo_bid
-
-    def scadenza(self) -> datetime:
-        return self._scadenza
     
-    def bids(self) -> frozenset[weakref[asta_bid._link]]:
-        return frozenset(weakref.ref(l) for l in self._bids.values())
-    
-    def set_prezzo_bid(self, prezzo: RealGZ) -> None:
-        if not self.scaduto():
-            self._prezzo_bid = prezzo
-        else:
-            raise AttributeError("Can't set attribute 'prezzo_bid' of an Asta that has already ended.")
+    def set_prezzo(self, prezzo:RealGZ):
+        if self.is_scaduta() or self._link_bid:
+            raise ValueError("Non è possibile cambiare il prezzo")
+        self.prezzo = prezzo    
         
-    def set_prezzo(self, new_prezzo):
-        if not self.scaduto():
-            self._prezzo = new_prezzo
-            print("Ho eseguito questo")
-        else:
-            raise AttributeError("Can't set attribute 'prezzo' of an Asta that has already ended.")
-    
-    def set_scadenza(self, new_scadenza: datetime) -> None:
-        if self.scaduto():
-            raise AttributeError("Can't set attribute 'scadenza' of an Asta that has already ended.")
-        elif new_scadenza < datetime.now():
-            raise AttributeError("Can't set attribute 'scadenza' of Asta to a date that is before today")
-        else:
-            self._scadenza = new_scadenza
-
-    def _add_bid(self, link_bid: asta_bid._link) -> None:
-        if link_bid.asta() is not self:
-            raise ValueError("Link does not involve me!")
+    def set_scadenza(self, scadenza:datetime)->None:
+        if self.is_scaduta() or self._link_bid:
+            raise ValueError ("Non è possibile inserire una nuova scadenza")
+        if scadenza < datetime.now():
+            raise AttributeError("Non è possibile inserire una scadenza minore della data di oggi")
+        self.scadenza= scadenza
         
-        if link_bid.bid() in self._bids:
-            raise KeyError(f"Duplicate link ({self}, {link_bid.bid()}) not allowed")
+
+    def aggiungi_bid(self, bid: 'Bid') -> None:
+        if bid.getIstanteBid() > self.scadenza:
+            raise ValueError("Bid non valido. Il bid è stato effettuato dopo la scadenza dell'asta.")
+        if bid in self.lista_bid:
+            raise ValueError("Questo bid è già stato registrato.")
+        self.lista_bid.append(bid)
+
+    def prezzo_attuale(self, istante: datetime) -> RealGZ:
+        quantita = 0
+        for b in self.lista_bid:
+            if b.getIstanteBid() <= istante:
+                quantita += 1
+        return RealGZ(self.prezzo + quantita * self._prezzo_bid)
+
+
+    def ultimo_bid(self, istante: datetime) -> Bid | None:
+        ultimo_bid_valido = None
+        for b in self.lista_bid:
+            if b.getIstanteBid() <= istante:
+                if (ultimo_bid_valido is None or b.getIstanteBid() > ultimo_bid_valido.getIstanteBid()):
+                    ultimo_bid_valido = b
+        return ultimo_bid_valido
+
+    def add_link_asta_bid(self, link: 'Asta_Bid._link') -> None:
+        if link.asta() is not self:
+            raise ValueError("Il link non riguarda questa asta.")
+        self._link_bid.append(link)
+
+    def is_scaduta(self) -> bool:
+        return datetime.now() > self.scadenza
+
+    def vincitore(self) -> Utente | None:
+        if not self.lista_bid:
+            return None
+        bid_finale = self.ultimo_bid(self.scadenza)
+        return bid_finale.getUtente()
         
-        self._bids[link_bid.bid()] = link_bid
+        
+class Bid_Ut:
+    @classmethod
+    def add(cls, u: UtentePrivato, b: Bid) -> None:
+        l = Bid_Ut._link(u, b)
+        u.add_link_bid_ut(l)
+        b.add_link_bid_ut(l)
 
-    def scaduto(self) -> bool:
-        return self.scadenza() < datetime.now()
-    
-    def __str__(self) -> str:
-        return (f"{self._descrizione}\n\t- Prezzo iniziale: {self._prezzo:.2f}€\n\t- Rialzo minimo: {self.prezzo_bid():.2f}€\n"
-        f"\t- Scadenza: {self.scadenza()}\n\t- Garanzia: {self.anni_garanzia()} ann{'o' if self.anni_garanzia() == 1 else 'i'}\n"
-        f"\t- Stato: {'attivo' if self.scaduto() else 'scaduto'}"
-    )
-
-class asta_bid:
     class _link:
-        def __init__(self, bid: Bid, asta: Asta):
+        def _init_(self, utente: UtentePrivato, bid: Bid):
+            self._utente = utente
             self._bid = bid
-            self._asta = asta
-        
+
+        def utente(self) -> UtentePrivato:
+            return self._utente
+
         def bid(self) -> Bid:
             return self._bid
-        
+
+        def _repr_(self):
+            return f"Bid_Ut (Utente={self._utente}, Bid={self._bid})"
+
+        def _eq_(self, other: Any) -> bool:
+            return (
+                isinstance(other, Bid_Ut._link) and self._utente == other._utente and self._bid == other._bid)
+    
+    
+class Asta_Bid:
+    @classmethod
+    def add(cls, a: Asta, b: Bid) -> None:
+        l = Asta_Bid._link(a, b)
+        a.add_link_asta_bid(l)
+        b.add_link_asta_bid(l)
+           
+    class _link:
+        def _init_(self, asta: Asta, bid: Bid):
+            self._asta = asta
+            self._bid = bid
+            
         def asta(self) -> Asta:
             return self._asta
-    
-    @classmethod
-    def _add(cls, bid: Bid, asta: Asta) -> None:
-        link = cls._link(bid, asta)
-        bid._set_asta(link)
-        asta._add_bid(link)
+
+        def bid(self) -> Bid:
+            return self._bid
+
+        def _repr_(self):
+            return f"Asta_Bid (Asta={self._asta}, Bid={self._bid}, Istante={self._bid.getIstanteBid().isoformat()})"
+
+        def _eq_(self, other: Any) -> bool:
+            return (
+                isinstance(other, Asta_Bid._link) and self._asta == other._asta and self._bid == other._bid)
