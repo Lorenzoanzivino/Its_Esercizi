@@ -1,0 +1,20 @@
+-- Esempi di dati per la tabella dipartimento
+INSERT INTO dipartimento (id, nome, telefono) VALUES
+(1, 'Ricerca e Sviluppo', '02-12345678'),
+(2, 'Marketing', '02-87654321'),
+(3, 'Risorse Umane', '02-11223344');
+
+-- Esempi di dati per la tabella impiegato
+-- Nota: 'afferisce' e 'dirige' fanno riferimento agli ID dei dipartimenti esistenti
+INSERT INTO impiegato (id, nome, cognome, data_nascita, stipendio, dipartimento, afferisce, dirige) VALUES
+(101, 'Mario', 'Rossi', '1980-05-15', 3500.00, 1, 1, 1),
+(102, 'Laura', 'Bianchi', '1992-11-20', 2800.50, 2, 2, 2),
+(103, 'Giuseppe', 'Verdi', '1975-03-10', 4200.75, 1, 1, 1),
+(104, 'Anna', 'Neri', '1988-07-01', 3100.00, 3, 3, 3);
+
+-- Esempi di dati per la tabella progetto
+-- Nota: 'impiegato' fa riferimento agli ID degli impiegati esistenti
+INSERT INTO progetto (id, nome, budget, impiegato) VALUES
+(1001, 'Progetto Alpha', 150000.00, 101),
+(1002, 'Campagna Beta', 75000.00, 102),
+(1003, 'Formazione Nuovi Assunti', 25000.00, 104);

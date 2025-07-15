@@ -18,5 +18,4 @@ INSERT INTO persona (id, nome, cognome, posizione, stipendio) VALUES (9, 'Elena'
 
 INSERT INTO persona (id, nome, cognome, posizione, stipendio) VALUES (10, 'Marco', 'Conti', 'Ricercatore', '20000');
 
-
 INSERT INTO assenza (id, persona, tipo, giorno) VALUES (1, 'Mario', 'Rossi', 'Malattia', '2025-05-23');
