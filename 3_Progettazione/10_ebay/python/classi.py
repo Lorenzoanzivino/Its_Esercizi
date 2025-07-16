@@ -1,4 +1,4 @@
-from _future_ import annotations
+from __future__ import annotations
 from typing import *
 from weakref import WeakValueDictionary
 from abc import ABC,abstractmethod
@@ -98,7 +98,7 @@ class UtentePrivato(Utente):
     def _init_(self, username: str):
         super()._init_(username)
         self._ruolo = "Privato"
-        self._link_bid: list[Bid_Ut._link] = []
+        self._link_bid: set[Bid_Ut._link] =set()
 
     def get_ruolo(self) -> str:
         return self._ruolo
@@ -106,7 +106,7 @@ class UtentePrivato(Utente):
     def add_link_bid_ut(self, link: Bid_Ut._link) -> None:
         if link.utente() is not self:
             raise ValueError("Il link non riguarda questo utente.")
-        self._link_bid.append(link)
+        self._link_bid.add(link)
 
     def _repr_(self):
         return f"Username: {self.get_username()}\nData registrazione: {self.get_registrazione()}\nTipologia Utente: {self._ruolo}"
@@ -119,8 +119,8 @@ class Bid:
     def _init_(self, utente: Utente):
         self.__istanteBid = datetime.now()
         self.__utente = utente
-        self._link_bid: list[Bid_Ut._link] = []
-        self._link_bid_asta: list[Asta_Bid._link] = []
+        self._link_bid: set[Bid_Ut._link] = set()
+        self._link_bid_asta: set[Asta_Bid._link] = set()
 
     def getIstanteBid(self) -> datetime:
         return self.__istanteBid
@@ -131,12 +131,12 @@ class Bid:
     def add_link_bid_ut(self, link: 'Bid_Ut._link') -> None:
         if link.bid() is not self:
             raise ValueError("Il link non riguarda questo bid.")
-        self._link_bid.append(link)
+        self._link_bid.add(link)
 
     def add_link_asta_bid(self, link: 'Asta_Bid._link') -> None:
         if link.bid() is not self:
             raise ValueError("Il link non riguarda questo bid.")
-        self._link_bid_asta.append(link)
+        self._link_bid_asta.add(link)
 
 
     def _repr_(self):
@@ -152,8 +152,8 @@ class Asta:
         self._prezzo_bid:RealGZ = prezzo_bid
         self.pubblicazione:datetime = pubblicazione
         self.scadenza:datetime = scadenza
-        self.lista_bid: list['Bid'] = []
-        self._link_bid: list['Asta_Bid._link'] = []
+        self._insieme_bid: set['Bid'] = set()
+        self._link_bid: set['Asta_Bid._link'] = set()
         
     
     def set_prezzo(self, prezzo:RealGZ):
@@ -172,13 +172,13 @@ class Asta:
     def aggiungi_bid(self, bid: 'Bid') -> None:
         if bid.getIstanteBid() > self.scadenza:
             raise ValueError("Bid non valido. Il bid è stato effettuato dopo la scadenza dell'asta.")
-        if bid in self.lista_bid:
+        if bid in self._insieme_bid:
             raise ValueError("Questo bid è già stato registrato.")
-        self.lista_bid.append(bid)
+        self._insieme_bid.add(bid)
 
     def prezzo_attuale(self, istante: datetime) -> RealGZ:
         quantita = 0
-        for b in self.lista_bid:
+        for b in self._insieme_bid:
             if b.getIstanteBid() <= istante:
                 quantita += 1
         return RealGZ(self.prezzo + quantita * self._prezzo_bid)
@@ -186,7 +186,7 @@ class Asta:
 
     def ultimo_bid(self, istante: datetime) -> Bid | None:
         ultimo_bid_valido = None
-        for b in self.lista_bid:
+        for b in self._insieme_bid:
             if b.getIstanteBid() <= istante:
                 if (ultimo_bid_valido is None or b.getIstanteBid() > ultimo_bid_valido.getIstanteBid()):
                     ultimo_bid_valido = b
@@ -195,13 +195,13 @@ class Asta:
     def add_link_asta_bid(self, link: 'Asta_Bid._link') -> None:
         if link.asta() is not self:
             raise ValueError("Il link non riguarda questa asta.")
-        self._link_bid.append(link)
+        self._link_bid.add(link)
 
     def is_scaduta(self) -> bool:
         return datetime.now() > self.scadenza
 
     def vincitore(self) -> Utente | None:
-        if not self.lista_bid:
+        if not self._insieme_bid:
             return None
         bid_finale = self.ultimo_bid(self.scadenza)
         return bid_finale.getUtente()
@@ -231,6 +231,8 @@ class Bid_Ut:
         def _eq_(self, other: Any) -> bool:
             return (
                 isinstance(other, Bid_Ut._link) and self._utente == other._utente and self._bid == other._bid)
+        def _hash_(self):
+            return hash((self.utente(), self.bid()))
     
     
 class Asta_Bid:
@@ -257,3 +259,5 @@ class Asta_Bid:
         def _eq_(self, other: Any) -> bool:
             return (
                 isinstance(other, Asta_Bid._link) and self._asta == other._asta and self._bid == other._bid)
+        def _hash_(self):
+            return hash((self._asta, self._bid))
