@@ -34,14 +34,14 @@ create table Progetto(
     nome StringaM unique not null,
     inizio date not null,
     fine date not null,
-    check(inizio < fine)
+        check(inizio < fine)
 );
 
 create table WP(
     progetto PosInteger,
     id PosInteger,
     nome StringaM not null,
-    inio date not null,
+    inizio date not null,
     fine date not null,
     check(inizio < fine),
     unique(progetto, nome),
@@ -58,7 +58,7 @@ create table AttivitaProgetto(
     tipo LavoroProgetto not null,
     oreDurata NumeroOre not null,
     foreign key(persona) references Persona(id),
-    foreign key(progetto, wp) references WP(progetto , id)
+    foreign key(progetto, wp) references WP(progetto, id)
 );
 
 create table AttivitaNonProgettuale(

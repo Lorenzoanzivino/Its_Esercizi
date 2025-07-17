@@ -1,0 +1,43 @@
+--1
+SELECT WP.nome, WP.inizio, WP.fine
+FROM WP, Progetto
+WHERE WP.progetto = Progetto.id
+  AND Progetto.nome = 'Pegasus';
+  
+--2
+SELECT Persona.nome, Persona.cognome, Persona.posizione
+FROM Persona, AttivitaProgetto, Progetto, WP
+WHERE Persona.id = AttivitaProgetto.persona
+  AND AttivitaProgetto.progetto = Progetto.id
+  AND AttivitaProgetto.progetto = WP.progetto
+  AND AttivitaProgetto.wp = WP.id
+  AND Progetto.nome = 'Pegasus';
+
+--3
+select distinct p.nome, p.cognome, p.posizione
+from persona as p, attivitaprogetto as ap, attivitaprogetto as ap2,progetto as pr
+where p.id = ap.persona 
+	and ap.progetto = pr.id 
+	and pr.nome ='Pegasus'
+	and ap2.id <> ap.id 
+	and ap2.persona = ap.persona
+	and ap2.progetto = ap.progetto
+order by p.cognome desc;
+
+--4
+SELECT DISTINCT p.nome, p.cognome, p.posizione
+FROM Persona p, Assenza a
+WHERE p.id = a.persona
+  AND p.posizione = 'Professore Ordinario'
+  AND a.tipo = 'Malattia';
+
+--5
+SELECT DISTINCT p.nome, p.cognome, p.posizione
+FROM Persona p, Assenza a1, Assenza a2
+WHERE p.id = a1.persona
+  AND p.id = a2.persona
+  AND a1.id <> a2.id
+  AND a1.tipo = 'Malattia'
+  AND a2.tipo = 'Malattia'
+  AND p.posizione = 'Professore Ordinario';
+
