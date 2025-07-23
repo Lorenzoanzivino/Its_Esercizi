@@ -94,4 +94,16 @@ vincitore(): Utente | None
 		se ultimo_bid(adesso) == None
 			return None
 		return ultimo_bid(adesso).bid_ut.privato
-	
+
+-------------------------------------------------------------------
+
+prezzo(i: DataOra): float
+	precondizioni: nessuna.
+	postcondizioni:
+		B = {}
+		per ogni l in this.asta_bid:
+			se l.bid.istante <= i:
+				B.add(l.bid)
+
+		N = |B|
+		return this.prezzo + N * this.prezzo_bid

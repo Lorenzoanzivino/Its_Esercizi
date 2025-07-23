@@ -51,6 +51,7 @@ INSERT INTO Volo(codice, comp, durataMinuti) VALUES
 ('535',	'Apitalia',		'150'),
 ('134',	'MagicFly',		'600'),
 ('265',	'Caimanair',	'601'),
+('132', 'Apitalia',     '180'),
 ('536',	'Apitalia',		'599');
 
 commit;
