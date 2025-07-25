@@ -126,6 +126,14 @@
 
 ---
 
+### 🔒 Cyber Security
+
+- 📅 21/07/25 – 💻 **Cyber security**
+- 📅 23/07/25 – 🔒  binari, bit, sistemi digitali... teoria
+- 📅 25/07/25 – 🔒  Criptografia e decriptografia
+
+---
+
 ### 📚 Altro
 
 - 📅 08/05/25 – 🇬🇧 **Esame di Inglese**
