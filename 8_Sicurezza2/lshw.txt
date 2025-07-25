@@ -1,0 +1,140 @@
+its-virtual-machine
+    description: Desktop Computer
+    product: Virtual Machine (None)
+    vendor: Microsoft Corporation
+    version: Hyper-V UEFI Release v4.1
+    serial: 5667-5639-0894-9328-1713-7330-23
+    width: 64 bits
+    capabilities: smbios-3.1.0 dmi-3.1.0 smp vsyscall32
+    configuration: boot=normal chassis=desktop family=Virtual Machine sku=None uuid=2123d7c0-f57c-4a58-be8f-635c57a6cae6
+  *-core
+       description: Motherboard
+       product: Virtual Machine
+       vendor: Microsoft Corporation
+       physical id: 0
+       version: Hyper-V UEFI Release v4.1
+       serial: 5667-5639-0894-9328-1713-7330-23
+       slot: Virtual Machine
+     *-firmware
+          description: BIOS
+          vendor: Microsoft Corporation
+          physical id: 0
+          version: Hyper-V UEFI Release v4.1
+          date: 09/04/2024
+          size: 1MiB
+          capabilities: acpi uefi virtualmachine
+     *-cpu
+          description: CPU
+          product: 13th Gen Intel(R) Core(TM) i7-13700H
+          vendor: Intel Corp.
+          physical id: 4
+          bus info: cpu@0
+          version: 6.186.2
+          serial: None
+          slot: None
+          size: 358MHz
+          capacity: 705MHz
+          width: 64 bits
+          clock: 100MHz
+          capabilities: lm fpu fpu_exception wp vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp x86-64 constant_tsc rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp ibrs_enhanced fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves user_shstk avx_vnni umip waitpkg gfni vaes vpclmulqdq rdpid movdiri movdir64b fsrm md_clear serialize ibt flush_l1d arch_capabilities
+          configuration: cores=16 enabledcores=14 microcode=4294967295 threads=2
+     *-memory
+          description: System Memory
+          physical id: 6
+          slot: System board or motherboard
+          size: 16GiB
+        *-bank:0
+             product: None
+             vendor: Microsoft Corporation
+             physical id: 0
+             serial: None
+             slot: M0001
+             size: 3968MiB
+        *-bank:1
+             product: None
+             vendor: Microsoft Corporation
+             physical id: 1
+             serial: None
+             slot: M0002
+             size: 12GiB
+     *-pnp00:00
+          product: PnP device PNP0b00
+          physical id: 1
+          capabilities: pnp
+          configuration: driver=rtc_cmos
+     *-scsi
+          physical id: 2
+          logical name: scsi0
+        *-disk
+             description: SCSI Disk
+             product: Virtual Disk
+             vendor: Msft
+             physical id: 0.0.0
+             bus info: scsi@0:0.0.0
+             logical name: /dev/sda
+             version: 1.0
+             size: 500GiB (536GB)
+             capabilities: gpt-1.00 partitioned partitioned:gpt
+             configuration: ansiversion=5 guid=f86d133b-cdb4-4eaf-a9aa-0f4b0a8adc00 logicalsectorsize=512 sectorsize=512
+           *-volume:0
+                description: EXT4 volume
+                vendor: Linux
+                physical id: 1
+                bus info: scsi@0:0.0.0,1
+                logical name: /dev/sda1
+                logical name: /
+                version: 1.0
+                serial: 89ee03ba-6808-4977-a4fb-9b10174744f8
+                size: 488GiB
+                capabilities: journaled extended_attributes large_files huge_files dir_nlink recover 64bit extents ext4 ext2 initialized
+                configuration: created=2022-05-05 18:08:06 filesystem=ext4 label=desktop-rootfs lastmountpoint=/ modified=2025-07-24 19:05:55 mount.fstype=ext4 mount.options=rw,relatime mounted=2025-07-24 14:27:26 state=mounted
+           *-volume:1
+                description: BIOS Boot partition
+                vendor: EFI
+                physical id: e
+                bus info: scsi@0:0.0.0,14
+                logical name: /dev/sda14
+                serial: 3108e810-4b68-4926-9a9b-fd445dfaca7d
+                capacity: 4095KiB
+                capabilities: nofs
+           *-volume:2
+                description: Windows FAT volume
+                vendor: mkfs.fat
+                physical id: f
+                bus info: scsi@0:0.0.0,15
+                logical name: /dev/sda15
+                logical name: /boot/efi
+                version: FAT32
+                serial: 697e-c17d
+                size: 105MiB
+                capacity: 105MiB
+                capabilities: boot fat initialized
+                configuration: FATs=2 filesystem=fat label=UEFI mount.fstype=vfat mount.options=rw,relatime,fmask=0077,dmask=0077,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro state=mounted
+  *-graphics
+       product: hyperv_drmdrmfb
+       physical id: 1
+       logical name: /dev/fb0
+       capabilities: fb
+       configuration: depth=32 resolution=1024,768
+  *-input:0
+       product: AT Translated Set 2 keyboard
+       physical id: 2
+       logical name: input0
+       logical name: /dev/input/event0
+       capabilities: i8042
+  *-input:1
+       product: Microsoft Vmbus HID-compliant Mouse
+       physical id: 3
+       logical name: input1
+       logical name: /dev/input/event1
+       logical name: /dev/input/js0
+       logical name: /dev/input/mouse0
+       capabilities: virtual
+  *-network
+       description: Ethernet interface
+       physical id: 4
+       logical name: eth0
+       serial: 00:15:5d:88:39:05
+       size: 10Gbit/s
+       capabilities: ethernet physical
+       configuration: autonegotiation=off broadcast=yes driver=hv_netvsc driverversion=6.8.0-1031-azure duplex=full firmware=N/A ip=172.30.228.218 link=yes multicast=yes speed=10Gbit/s
