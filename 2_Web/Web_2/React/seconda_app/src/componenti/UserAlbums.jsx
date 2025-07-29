@@ -1,57 +1,29 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect,useState } from 'react'
 
-const url = "https://jsonplaceholder.typicode.com/users";
-const RenderCondizionale = () => {
+const url="https://jsonplaceholder.typicode.com/user";
+const FetchComponent = () => {
+    const [user,setuser]=useState([]);
 
-  const [isLoading, setIsLoading] = useState(true);
-  const [isError, setIsError] = useState(true);
-  const [users, setUsers] = useState([]);
+    const getData= async function(){
+       const  user=await fetch(url).then(ris=>ris.json())
+       setuser(user)
 
-  const getData = async () => {
-    setIsError(false);
-    setIsLoading(true);
-    try {
-      const response = await axios.get(url);
-      setUsers(response.data);
-    } catch (err) {
-      console.log(err);
-      setIsError(true);
     }
-    setIsLoading(false);
-  };
 
-   useEffect(()=>{
-          getData();
-      },[])
+    useEffect(()=>{
+        getData();
+    },[])
 
-  if (isLoading) {
-    return <Loading></Loading>;
-  }
+  return (
+ <div className='container'>
+    <div className='row'>
+        <select>
+            <option key={users.id} value={}></option>
+        </select>
+    </div>
 
-  if (isError) {
-    return <h2>Attenzione c'è un errore</h2>;
-  }
+ </div>
+  )
+}
 
-  return <div><ul>
-    {
-        users.map((u)=>{
-            const {id,name,username,email}=u
-            return(
-                <li key={id}>
-                    <div>
-                        <h5>{id} - {name} - {username} - {email}</h5>
-                    </div>
-                </li>
-            )
-
-        })
-    }
-  </ul></div>;
-};
-
-const Loading = () => {
-  return <h2>Loading...</h2>;
-};
-
-export default RenderCondizionale;
+export default FetchComponent
