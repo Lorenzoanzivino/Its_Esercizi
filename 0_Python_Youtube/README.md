@@ -1,4 +1,5 @@
 # 🌥️ Corso Python Youtube :
+## 🎥 Corso Python da PRINCIPIANTE ad ESPERTO in 7 ore (python mysql incluso)
 ### 📚 Esercizi & Lezioni :
 📁 Directory: "ITS-Esercizi"  
 🧰 Ambienti: Python, GitHub, VSCode, Web, Docker, Linux, UML
