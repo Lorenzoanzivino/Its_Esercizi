@@ -93,6 +93,8 @@
     - React ⚛️
       - NodeJS (JS lato server)
         - NPM (libreria)
+        - Vite
+        - Docker
 
 ---
 
