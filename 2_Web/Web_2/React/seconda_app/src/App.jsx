@@ -1,5 +1,5 @@
 import './App.css'
-import UserAlbums from './esercizi/UserAlbums'
+import UserAlbums from './componenti/UserAlbums'
 
 function App() {
 
@@ -8,4 +8,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

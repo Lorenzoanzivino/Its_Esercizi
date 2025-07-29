@@ -22,7 +22,6 @@ const UserAlbums = () => {
     const [PhotosIsLoading, PhotosSetIsLoading] = useState(true);
     const [PhotosError, PhotosSetError] = useState(true);
     const [photos, setPhotos] = useState([]);
-    const [selectedPhoto, setSelectedPhotos] = useState();
 
     const getUsersData = async () => {
         setIsError(false);
