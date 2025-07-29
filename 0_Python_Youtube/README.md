@@ -9,7 +9,7 @@
 ---
 
 ⏰ ► Capitoli
-0:00 installazione python
+0:00 installazione python;
 9:26 sintassi
 16:42 variabili
 29:57 tipi di dati
