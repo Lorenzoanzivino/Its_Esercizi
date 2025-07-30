@@ -61,10 +61,12 @@ const UserAlbums = () => {
         PhotosSetIsLoading(false);
     };
 
+    // Appena carichi la pagina, si attiva subito e richiama la funzione getUsersData 
     useEffect(() => {
         getUsersData();
     }, []);
 
+    // Quando selezioni un utente, lui ti carica il suo array, filtrati
     useEffect(() => {
         getAlbumsData(selectedUser);
     }, [selectedUser]);
@@ -73,6 +75,7 @@ const UserAlbums = () => {
         getPhotosData(selectedAlbum);
     }, [selectedAlbum]);
 
+    // Funzione di caricamento
     if (isLoading || albumIsLoading || PhotosIsLoading) {
         return <Loading />;
     }
@@ -81,6 +84,8 @@ const UserAlbums = () => {
         return <h3 className="text-danger text-center mt-4">Si è verificato un'errore</h3>;
     }
 
+
+    // servono nei select per assegnare il valore che hai scelto
     const handleUsersChange = (e) => {
         setSelectedUser(e.target.value);
     };
