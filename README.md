@@ -121,10 +121,10 @@
 ---
 
 ### 🗃️ DataBase
+
 - 📅 30/06/25 – Progettazione - Database: **Concetti Fondamentali**
   - Tabelle
   - Domini
-
 
 ---
 

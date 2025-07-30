@@ -3,7 +3,6 @@ import React from 'react'
 import axios from 'axios';
 
 
-
 const users_url = 'https://jsonplaceholder.typicode.com/users';
 const albums_url = 'https://jsonplaceholder.typicode.com/albums';
 const photos_url = 'https://jsonplaceholder.typicode.com/photos';
