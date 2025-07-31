@@ -1,0 +1,13 @@
+Il docker è dentro SW_developments
+
+comando bash: chiudere il docker
+docker compose down
+
+comando bash: aprire il docker
+docker compose up --build -d
+
+comando bash: entro in un docker
+decker exec -it <nome del docker>
+
+comando bash: vedere quali docker ci sono    
+docker ps -a
