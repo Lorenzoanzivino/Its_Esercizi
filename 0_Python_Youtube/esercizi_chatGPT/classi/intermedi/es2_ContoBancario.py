@@ -14,3 +14,7 @@ Crea una classe ContoBancario con:
     proprietà saldo (con @property) per leggere il saldo in modo sicuro
 
 Test: crea un conto, fai alcuni versamenti e prelievi, mostra il saldo.'''
+
+class ContoBancario:
+    def __init__(self):
+        pass
