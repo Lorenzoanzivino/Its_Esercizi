@@ -1,164 +1,117 @@
-import { useState, useEffect } from 'react'
-import React from 'react'
-import axios from 'axios';
+// creare interfaccia che permette di scegliere un utente,
+// che filtra gli albums e tramite selezioni di questi ultimi appaiono le foto
+// passo 1: valorizzare la select con gli users
 
 
-const users_url = 'https://jsonplaceholder.typicode.com/users';
-const albums_url = 'https://jsonplaceholder.typicode.com/albums';
-const photos_url = 'https://jsonplaceholder.typicode.com/photos';
+import { useEffect } from "react";
+import { useState } from "react";
+
+
+const urlUsers = "https://jsonplaceholder.typicode.com/users";
+const urlAlbums="https://jsonplaceholder.typicode.com/albums";
+//const urlPhotos="https://jsonplaceholder.typicode.com/photos";
+
 
 const UserAlbums = () => {
-    const [isLoading, setIsLoading] = useState(true);
-    const [isError, setIsError] = useState(true);
-    const [users, setusers] = useState([]);
-    const [selectedUser, setSelectedUser] = useState();
+  const [users, setUsers] = useState([]);
+  const [userSelected, setUserSelected] = useState(0);
 
-    const [albumIsLoading, setAlbumIsLoading] = useState(true);
-    const [AlbumsError, setAlbumsIsError] = useState(true);
-    const [albums, setAlbums] = useState([]);
-    const [selectedAlbum, setSelectedAlbum] = useState();
 
-    const [PhotosIsLoading, PhotosSetIsLoading] = useState(true);
-    const [PhotosError, PhotosSetError] = useState(true);
-    const [photos, setPhotos] = useState([]);
+  const [albums,setAlbums]=useState([]);
+  const [albumSelected,setAlbumSelected]=useState(0)
+//useState Photos
 
-    const getUsersData = async () => {
-        setIsError(false);
-        setIsLoading(true);
-        try {
-            const response = await axios.get(users_url);
-            setusers(response.data);
-        } catch (err) {
-            console.log(err);
-            setIsError(true);
-        }
-        setIsLoading(false);
-    };
 
-    const getAlbumsData = async () => {
-        setAlbumsIsError(false);
-        setAlbumIsLoading(true);
-        try {
-            const response = await axios.get(`${albums_url}?userId=${selectedUser}`);
-            setAlbums(response.data);
-        } catch (err) {
-            console.log(err);
-            setAlbumsIsError(true);
-        }
-        setAlbumIsLoading(false);
-    };
 
-    const getPhotosData = async () => {
-        PhotosSetError(false);
-        PhotosSetIsLoading(true);
-        try {
-            const response = await axios.get(`${photos_url}?albumId=${selectedAlbum}`);
-            setPhotos(response.data);
-        } catch (err) {
-            console.log(err);
-            PhotosSetError(true);
-        }
-        PhotosSetIsLoading(false);
-    };
 
-    // Appena carichi la pagina, si attiva subito e richiama la funzione getUsersData 
-    useEffect(() => {
-        getUsersData();
-    }, []);
 
-    // Quando selezioni un utente, lui ti carica il suo array, filtrati
-    useEffect(() => {
-        getAlbumsData(selectedUser);
-    }, [selectedUser]);
 
-    useEffect(() => {
-        getPhotosData(selectedAlbum);
-    }, [selectedAlbum]);
-
-    // Funzione di caricamento
-    if (isLoading || albumIsLoading || PhotosIsLoading) {
-        return <Loading />;
+  const getUsers = async () => {
+    try {
+      const response = await fetch(urlUsers);
+      const result = await response.json();
+      setUsers(result);
+    } catch (err) {
+      console.log(err);
     }
+  };
 
-    if (isError || AlbumsError || PhotosError) {
-        return <h3 className="text-danger text-center mt-4">Si è verificato un'errore</h3>;
+
+  const getAlbums=async ()=>{
+    try{
+      const url=  urlAlbums+"?userId="+userSelected ;
+      const response = await fetch(url);
+      const result = await response.json();
+      setAlbums(result);
+    }catch(err){
+      console.log(err)
     }
+  }
+  useEffect(() => {
+    getUsers();
+   
 
 
-    // servono nei select per assegnare il valore che hai scelto
-    const handleUsersChange = (e) => {
-        setSelectedUser(e.target.value);
-    };
+    /*fetch(urlUsers)
+        .then(res=>res.json())
+        .then(ris=>setUsers(ris))
+        .catch(err=>console.log(err))*/
+  }, []);
 
-    const handleAlbumsChange = (e) => {
-        setSelectedAlbum(e.target.value);
-    };
 
-    return (
-        <div className="container mt-5">
-            <div className="row mb-4">
-                <div className="col-md-6">
-                    <label className="form-label">Utente</label>
-                    <select
-                        className="form-select"
-                        value={selectedUser}
-                        onChange={handleUsersChange}
-                    >
-                        <option value="">Seleziona utente</option>
-                        {users.map((user) => {
-                            const { id, name, username } = user;
-                            return (
-                                <option key={id} value={id}>
-                                    {id} - {name} - {username}
-                                </option>
-                            );
-                        })}
-                    </select>
-                </div>
-                <div className="col-md-6">
-                    <label className="form-label">Album</label>
-                    <select
-                        className="form-select"
-                        value={selectedAlbum}
-                        onChange={handleAlbumsChange}
-                    >
-                        <option value="">Seleziona album</option>
-                        {albums.map((album) => {
-                            const { userId, id, title } = album;
-                            return (
-                                <option key={id} value={id}>
-                                    {userId} - {title}
-                                </option>
-                            );
-                        })}
-                    </select>
-                </div>
-            </div>
+  useEffect(()=>{
+    console.log("Carico albums")
 
-            <div className="row">
-                <div className="col">
-                    <div className="photo-list">
-                        {photos.map((photo) => {
-                            const { albumId, id, title } = photo;
-                            return (
-                                <div className="photo-card" key={id}>
-                                    <p>
-                                        <b>ID:</b> {id} <br />
-                                        <b>AlbumID:</b> {albumId} <br />
-                                        <b>Title:</b> {title}
-                                    </p>
-                                </div>
-                            );
-                        })}
-                    </div>
-                </div>
-            </div>
+
+    if(userSelected){
+        getAlbums()
+    }else{
+      setAlbums([])
+    }
+  },[userSelected])
+  return (
+    <div className="container">
+      <h1>Gestione albums photos</h1>
+      <div className="row">
+        <div className="col-6">
+          <select
+            className="form-select"
+            value={userSelected}
+            onChange={(e) => setUserSelected(e.target.value)}
+          >
+            <option value="0">Seleziona utente</option>
+            {users.map((u) => {
+              return (
+                <option key={u.id} value={u.id}>
+                  {u.name}
+                </option>
+              );
+            })}
+          </select>
         </div>
-    );
+        <div className="col-6">
+            <select  className="form-select"
+             value={albumSelected}
+            onChange={(e) => setAlbumSelected(e.target.value)}>
+                <option value="0">Seleziona l'album</option>
+                {
+                  albums.map((a)=>{
+                    const {id,title}=a
+                    return <option key={id} value={id}>{title}</option>
+                  })
+                }
+            </select>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-12">
+
+
+        </div>
+      </div>
+    </div>
+  );
 };
 
-const Loading = () => {
-    return <h2 className="text-center text-primary mt-4">Loading...</h2>;
-};
 
 export default UserAlbums;
