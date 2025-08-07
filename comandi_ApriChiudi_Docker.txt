@@ -11,3 +11,6 @@ decker exec -it <nome del docker>
 
 comando bash: vedere quali docker ci sono    
 docker ps -a
+
+comando bash: per aprire file j.son da fare dentro la cartella dove sta il bd.json
+json-server --watch db.json --port 3100
