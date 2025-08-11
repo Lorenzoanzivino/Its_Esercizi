@@ -1,87 +1,74 @@
--- Tipi di dato non standard
+-- DOMINI
+CREATE DOMAIN stringa AS varchar;
+CREATE DOMAIN reale AS real CHECK (VALUE >= 0);
+CREATE DOMAIN realeI01 AS real CHECK (VALUE > 0 AND VALUE < 1);
+CREATE DOMAIN intero AS integer CHECK (VALUE >= 0);
+CREATE DOMAIN codicefiscale AS char(16) CHECK (VALUE ~ '^[A-Z]{6}[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9]{3}[A-Z]$');
+CREATE DOMAIN telefono AS varchar(20) CHECK (VALUE ~ '^\+?[0-9]{1,3}[\s\-]?[0-9]{6,14}$');
+CREATE DOMAIN partitaiva AS char(11) CHECK (VALUE ~ '^[A-Z]{2}?[0-9A-Z]{8,13}$');
+CREATE DOMAIN email AS varchar CHECK (VALUE ~ '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$');
+CREATE DOMAIN data_nascita AS date;
 
-CREATE DOMAIN stringa as varchar;
-CREATE DOMAIN reale as real
-    check (value >= 0);
-CREATE DOMAIN realeI01 as real
-    check (value > 0 and value < 1);
-CREATE DOMAIN intero as integer
-    check (value >= 0);
-CREATE DOMAIN CodiceFiscale as char(16)
-    check (value ~ '^[A-Z]{6}[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9]{3}[A-Z]$');
-CREATE DOMAIN Telefono as varchar(20)
-    check (value ~ '^\+?[0-9]{1,3}[\s\-]?[0-9]{6,14}$');
-CREATE DOMAIN PartitaIVA as char(11)
-    check (value ~ '^[A-Z]{2}?[0-9A-Z]{8,13}$');
-CREATE DOMAIN Email as varchar
-    check (value ~ '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$');
-CREATE DOMAIN data_nascita as Date;
-
-CREATE TYPE stato as ENUM ( 'in_preparazione',  'inviato',  'da_saldare', 'saldato');
-CREATE TYPE Indirizzo as (via stringa, civico stringa, cap char(5));
+-- TIPI ENUM E COMPOSITI
+CREATE TYPE stato AS ENUM ('in_preparazione', 'inviato', 'da_saldare', 'saldato');
+CREATE TYPE indirizzo AS (via stringa, civico stringa, cap char(5));
 
 -- TABELLE
-
-CREATE TABLE Nazione(
-    nome StringaM primary key,
+CREATE TABLE nazione (
+    nome stringa PRIMARY KEY
 );
 
-CREATE TABLE Regione(
-    nome StringaM not null,
-    nazione StringaM not null,
-    primary key (nome, regione),
-
-    foreign key (nazione) references Nazione(nome)
+CREATE TABLE regione (
+    nome stringa NOT NULL,
+    nazione stringa NOT NULL,
+    PRIMARY KEY (nome, nazione),
+    FOREIGN KEY (nazione) REFERENCES nazione(nome)
 );
 
-CREATE TABLE Citta(
-    nome StringaM not null,
-    regione StringaM not null,
-    nazione StringaM nott, null,
-    primary key (nome, regione, nazione),
-    
-    foreign key (regione, nazione) references Regione(nome, nazione)
+CREATE TABLE citta (
+    nome stringa NOT NULL,
+    regione stringa NOT NULL,
+    nazione stringa NOT NULL,
+    PRIMARY KEY (nome, regione, nazione),
+    FOREIGN KEY (regione, nazione) REFERENCES regione(nome, nazione)
 );
 
-CREATE TABLE Direttore(
-    nome StringaM not null,
-    cognome StringaM not null,
-    cf CodifceFiscale primary key,
-    data_nascita Date not null,
-    anni_servizio intero not null,
-    Citta StringaM not null,
-    regione StringaM not null,
-    nazione StringaM not null,
-
-    foreign key (citta, regione, nazione) references Citta(nome, regione, nazione)
+CREATE TABLE direttore (
+    nome stringa NOT NULL,
+    cognome stringa NOT NULL,
+    cf codicefiscale PRIMARY KEY,
+    data_nascita data_nascita NOT NULL,
+    anni_servizio intero NOT NULL,
+    citta stringa NOT NULL,
+    regione stringa NOT NULL,
+    nazione stringa NOT NULL,
+    FOREIGN KEY (citta, regione, nazione) REFERENCES citta(nome, regione, nazione)
 );
 
-CREATE TABLE Dipartimento(
-    nome StringaM not null,
-    Indirizzo Indirizzo primary key,
-    direttore StringaM nott null,
-
-    foreign key (direttore) references Direttore(cf)
+CREATE TABLE dipartimento (
+    nome stringa PRIMARY KEY,
+    indirizzo indirizzo NOT NULL,
+    direttore codicefiscale,
+    FOREIGN KEY (direttore) REFERENCES direttore(cf)
 );
 
-CREATE TABLE Fornitore(
-    regione_sociale StringaM not null,
-    partitaIVA PartitaIVA primary key,
-    indirizzo Indirizzo not null,
-    telefono Telefono not null,
-    email Email not null
+CREATE TABLE fornitore (
+    ragione_sociale stringa NOT NULL,
+    partitaiva partitaiva PRIMARY KEY,
+    indirizzo indirizzo NOT NULL,
+    telefono telefono NOT NULL,
+    email email NOT NULL
 );
 
-CREATE TABLE Ordine(
-    data_stipula Date not null,
-    imponibile reale not null,
-    aliquotaIVA realeI01 not null,
-    descrizione StringaM not null,
-    stato Stato not null,
-    id integer primary key,
-    fornitore partitaIVA not null,
-    dipartimento StringaM not null,
-
-    foreign key (fornitore) references Fornitore(partitaIVA),
-    foreign key (dipartimento) references Dipartimento(nome)
+CREATE TABLE ordine (
+    id integer PRIMARY KEY,
+    data_stipula date NOT NULL,
+    imponibile reale NOT NULL,
+    aliquotaiva realeI01 NOT NULL,
+    descrizione stringa NOT NULL,
+    stato stato NOT NULL,
+    fornitore partitaiva NOT NULL,
+    dipartimento stringa NOT NULL,
+    FOREIGN KEY (fornitore) REFERENCES fornitore(partitaiva),
+    FOREIGN KEY (dipartimento) REFERENCES dipartimento(nome)
 );

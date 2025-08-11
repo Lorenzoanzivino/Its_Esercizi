@@ -1,5 +1,4 @@
 '''⏰ Esercizio 5 : Timer
-
 Crea una classe Timer con:
     attributi: ore, minuti, secondi
     metodo aggiungi_secondi(n) che aggiunge n secondi e aggiorna ore/minuti di conseguenza
@@ -33,7 +32,6 @@ class Timer:
     def stampa(self):
         # Formatta sempre con due cifre
         return f"{self._ore:02d}:{self._minuti:02d}:{self._secondi:02d}"
-
 
 if __name__ == "__main__":
     ora = Timer(23, 59, 30)

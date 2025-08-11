@@ -14,3 +14,7 @@ docker ps -a
 
 comando bash: per aprire file j.son da fare dentro la cartella dove sta il bd.json
 json-server --watch db.json --port 3100
+
+
+aprire docker database
+docker exec -it its_postgresql psql -U postgres
