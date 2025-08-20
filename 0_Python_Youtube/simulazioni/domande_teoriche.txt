@@ -1,0 +1,64 @@
+0 Domande teoriche a scelta multipla
+
+Qual è il tipo di dato corretto per memorizzare valori ordinati e modificabili?
+A) tuple
+B) list ✅
+C) set
+D) dict
+
+Qual è la differenza tra == e is in Python?
+A) Nessuna differenza
+B) == confronta valori, is confronta riferimenti ✅
+C) == confronta riferimenti, is confronta valori
+D) Entrambi confrontano solo tipi di dato
+
+Quale struttura dati conserva solo valori unici e non ordinati?
+A) list
+B) tuple
+C) set ✅
+D) dict
+
+Qual è la funzione di __init__ in una classe?
+A) Distrugge l’oggetto
+B) Inizializza gli attributi dell’oggetto ✅
+C) È un metodo statico
+D) Nessuna risposta corretta
+
+Come si apre un file in modalità “scrittura” sovrascrivendo eventuali contenuti?
+A) open(file, "r")
+B) open(file, "w") ✅
+C) open(file, "a")
+D) open(file, "x")
+
+Quale parola chiave permette di definire una variabile globale dentro una funzione?
+A) local
+B) global ✅
+C) def
+D) static
+
+Qual è il metodo corretto per leggere un file riga per riga?
+A) file.read() ❌
+B) for riga in file: ✅
+C) file.write()
+D) file.readline()
+
+Come si crea una funzione lambda che calcola il quadrato di un numero x?
+A) lambda x: x**2 ✅
+B) def x: x**2
+C) lambda x = x**2
+D) def lambda(x): x**2
+
+Come si genera un numero casuale tra 1 e 100 usando il modulo random?
+A) random.randint(1,100) ✅
+B) random.range(1,100)
+C) math.random(1,100)
+D) randint(1,100)
+
+Qual è la differenza tra list e tuple?
+A) La list è immutabile, la tuple è modificabile
+B) La list è modificabile, la tuple è immutabile ✅
+C) Nessuna differenza
+D) Entrambe sono non ordinate
+
+9 su 10
+-------------------------------------------------------------------------------------------------------------------

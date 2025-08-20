@@ -1,0 +1,44 @@
+[
+    {
+        "Artista": "Lorenzo",
+        "Brani": [
+            {
+                "Titolo": "Prigioniero",
+                "Durata": "03:45"
+            },
+            {
+                "Titolo": "A.K.U.M.A",
+                "Durata": "04:12"
+            },
+            {
+                "Titolo": "Solito concetto",
+                "Durata": "03:34"
+            }
+        ]
+    },
+    {
+        "Artista": "Maria",
+        "Brani": []
+    },
+    {
+        "Artista": "BrokenQ",
+        "Brani": [
+            {
+                "Titolo": "Framework",
+                "Durata": "05:31"
+            },
+            {
+                "Titolo": "Black Tar",
+                "Durata": "03:28"
+            },
+            {
+                "Titolo": "Fight Against",
+                "Durata": "04:28"
+            },
+            {
+                "Titolo": "Degenerate",
+                "Durata": "05:10"
+            }
+        ]
+    }
+]
