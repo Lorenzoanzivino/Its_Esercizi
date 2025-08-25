@@ -1,0 +1,15 @@
+# 1. Crea la app con Vite
+npm create vite@latest terza-app
+
+# Segui le istruzioni:
+# - Framework → React
+# - Variant → JavaScript o TypeScript
+
+# 2. Entra nella cartella del progetto
+cd terza-app
+
+# 3. Installa le dipendenze
+npm install
+
+# 4. Avvia il server di sviluppo
+npm run dev
