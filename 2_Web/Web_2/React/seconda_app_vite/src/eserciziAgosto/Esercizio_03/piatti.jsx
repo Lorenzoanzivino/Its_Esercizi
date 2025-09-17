@@ -9,7 +9,7 @@ const piatti = [
   },
   {
     id: 2,
-    nome: "Spaghetti alla Carbonara",
+    nome: "Carbonara",
     prezzo: 9.0
   },
   {

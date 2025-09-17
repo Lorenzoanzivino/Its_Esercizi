@@ -39,7 +39,7 @@ const AggiornaTitolo = () => {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                height: '100vh',
+                height: '10vh',
                 flexDirection: 'column',
                 gap: '10px'
             }}
@@ -49,4 +49,4 @@ const AggiornaTitolo = () => {
     )
 }
 
-export default AggiornaTitolo
+export default AggiornaTitolo;

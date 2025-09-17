@@ -21,8 +21,8 @@
 
 
 import React, { useState } from 'react';
+import PostList from './PostiList';
 import PostForm from './PostForm';
-import PostList from './PostList';
 
 const BlogApp = () => {
 
@@ -48,4 +48,4 @@ const BlogApp = () => {
     )
 }
 
-export default BlogApp
+export default BlogApp;

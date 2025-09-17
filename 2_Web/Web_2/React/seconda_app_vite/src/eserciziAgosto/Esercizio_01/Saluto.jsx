@@ -15,8 +15,18 @@ import React from 'react'
 
 const Saluto = () => {
   return (
-    <h1>Benvenuto nel mio primo componente React!</h1>
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column',
+        gap: '10px'
+      }}
+    >
+      <h1>Benvenuto nel mio primo componente React!</h1>
+    </div>
   )
 }
 
-export default Saluto
+export default Saluto;

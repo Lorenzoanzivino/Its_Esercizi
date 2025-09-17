@@ -28,7 +28,7 @@ const CampoRicerca = () => {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                height: '100vh',
+                height: '20vh',
                 flexDirection: 'column',
                 gap: '10px'
             }}

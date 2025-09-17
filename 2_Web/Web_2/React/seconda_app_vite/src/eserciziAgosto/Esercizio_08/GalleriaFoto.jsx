@@ -13,14 +13,12 @@
 // 7.​ Nel JSX, gestisci i tre stati: mostra un messaggio di caricamento, un messaggio di
 // errore, o la galleria di foto (mappando l'array foto e mostrando le immagini).
 
-
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const url = 'https://jsonplaceholder.typicode.com/photos?_limit=10';
 
 const GalleriaFoto = () => {
-
     const [foto, setFoto] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(null);
@@ -32,7 +30,7 @@ const GalleriaFoto = () => {
             const response = await axios.get(url);
             setFoto(response.data);
         } catch (err) {
-            console.log(err)
+            console.log(err);
             setIsError(true);
         }
         setIsLoading(false);
@@ -40,32 +38,28 @@ const GalleriaFoto = () => {
 
     useEffect(() => {
         getData();
-    }, [])
+    }, []);
 
     if (isLoading) {
-        return <h3>Caricamento...</h3>
-    };
+        return <h3>Caricamento...</h3>;
+    }
 
     if (isError) {
-        return <h3>Si è verificato un'errore</h3>
-    };
+        return <h3>Si è verificato un errore</h3>;
+    }
 
     return (
         <ul>
-            {
-                foto.map((f) => {
-                    return (
-                        <li key={f.id}>
-                            <div>
-                                <img src={f.url} alt="" />
-                                <h5>{f.title}</h5>
-                            </div>
-                        </li>
-                    )
-                })
-            }
+            {foto.map((f) => (
+                <li key={f.id}>
+                    <div>
+                        <img src={f.url} alt={f.title} />
+                        <h5>{f.title}</h5>
+                    </div>
+                </li>
+            ))}
         </ul>
-    )
-}
+    );
+};
 
-export default GalleriaFoto
+export default GalleriaFoto;

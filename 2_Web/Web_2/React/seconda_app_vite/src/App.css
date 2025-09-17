@@ -1,0 +1,116 @@
+/* ============================= */
+/* Stile Globale */
+/* ============================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ============================= */
+/* Container Principale App */
+/* ============================= */
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ============================= */
+/* Titoli e Testi */
+/* ============================= */
+h1, h2, h3 {
+  color: #222;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* ============================= */
+/* Card Utente */
+/* ============================= */
+.card-utente {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin: 20px auto;
+  width: 220px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card-utente img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.card-utente:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Layout cards responsive */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* ============================= */
+/* Pulsanti generici */
+/* ============================= */
+button {
+  padding: 10px 20px;
+  background-color: #0077ff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background-color: #005ecc;
+}
+
+/* ============================= */
+/* Input e Form */
+/* ============================= */
+input, textarea, select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #0077ff;
+}
+
+/* ============================= */
+/* Sezioni generiche */
+/* ============================= */
+.section {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}

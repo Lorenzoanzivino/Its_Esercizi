@@ -72,4 +72,4 @@ const PostForm = ({ aggiungiPost }) => {
     )
 }
 
-export default PostForm
+export default PostForm;
