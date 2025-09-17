@@ -74,3 +74,4 @@ class Strategia:
 
     @staticmethod
     def minimax(griglia:Griglia) -> int :
+        pass
