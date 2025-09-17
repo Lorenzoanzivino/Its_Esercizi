@@ -1,0 +1,33 @@
+Esercizi Funzioni Python
+
+Ecco degli esercizi semplici con soluzione per praticare le basi per la creazione di funzioni in Python.
+
+Esercizio 1
+Scrivi una funzione che prende una lista di numeri e restituisce la somma di tutti gli elementi.
+
+Esercizio 2
+Scrivi una funzione che prende una stringa e restituisce la stringa invertita.
+
+Esercizio 3
+Scrivi una funzione che prende una lista di parole e restituisce una lista contenente solo le parole che iniziano con una lettera specificata.
+
+Esercizio 4
+Scrivi una funzione che prende una lista di numeri e restituisce una lista contenente solo i numeri pari.
+
+Esercizio 5
+Scrivi una funzione che prende una lista di parole e restituisce una lista contenente la lunghezza di ciascuna parola.
+
+Esercizio 6
+Scrivi una funzione che prende una lista di numeri e restituisce il valore massimo.
+
+Esercizio 7
+Scrivi una funzione che prende una lista di parole e restituisce la parola più lunga.
+
+Esercizio 8
+Scrivi una funzione che prende una lista di numeri e restituisce la media dei numeri.
+
+Esercizio 9
+Scrivi una funzione che prende una lista di parole e restituisce una lista contenente solo le parole palindrome.
+
+Esercizio 10
+Scrivi una funzione che prende una lista di numeri e restituisce una lista contenente solo i numeri maggiori di un valore specificato.

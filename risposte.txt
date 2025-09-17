@@ -1,0 +1,77 @@
+1. a
+2. B
+3. B
+4. c
+5. A
+6. A
+7. A
+8. D
+9. B
+10. A
+11. A
+12. D
+13. A
+14. C
+15. D
+16. C
+17. 
+18. 
+19. A
+20. 
+21. c
+22. 
+23. 
+24. 
+25. B
+26. B
+27. B
+28. B
+29. B
+30. C
+31. C
+32. A
+33. C
+34. B
+35. B
+36. B
+37. A
+38. A
+39. B
+40. C
+41. B
+42. B
+43. B
+44. B
+45. A
+46. B
+47. B
+48. 
+49. 
+50. 
+
+
+Quelle sbagliate:
+    HUB = connette più dispositivi in broadcast
+    Linux mostra l’utilizzo della memoria? = free
+    chmod 755 file = Cambia permessi di lettura/scrittura/esecuzione
+    “località di riferimento” = Riguarda la cache, accesso frequente a dati vicini nel tempo/spazio
+    HTTP = Livello Applicazione
+    cache sta nella = CPU
+    comando linux copia file = cp
+    IPv4 = 32 bit
+    RAM = volatile
+    ROM = non volatile
+    bit = binary digit
+    2 byte = 16
+    OS open source = Linux
+    rete personale a corto raggio = PAN
+    memoria è più veloce = Cache
+    byte = 256 valori ASCII
+    1 byte = 8 bit
+    complemento a uno = Inverte bit
+    ASCII standard = 7 bit
+    touch screen = Sia input che output
+    Fetch → Decode → Execute → (Write-back/Store se serve).
+    SMTP (Simple Mail Transfer Protocol) → usato per inviare email.
+    IMAP/POP3 → usati per ricevere email.
+    MAC = 48 bit

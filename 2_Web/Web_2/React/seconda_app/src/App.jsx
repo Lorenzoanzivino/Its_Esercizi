@@ -1,15 +1,13 @@
 import './App.css'
-import UserAlbums from './componenti/UserAlbums'
-import UserCrud from './componenti/UserCrud'
+import BlogApp from './esercizi_agosto/Esercizio_10/BlogApp'
 
 function App() {
 
   return (
     <>
-      {/* <UserAlbums></UserAlbums> */}
-      <UserCrud></UserCrud>
+      <BlogApp/>
     </>
   )
 }
 
-export default App;
+export default App
