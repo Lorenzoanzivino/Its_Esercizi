@@ -1,116 +1,151 @@
-/* ============================= */
-/* Stile Globale */
-/* ============================= */
-* {
+/* ===== CSS Reset base ===== */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
+  font-family: system-ui, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
   line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* ============================= */
-/* Container Principale App */
-/* ============================= */
-.App {
-  max-width: 1200px;
+/* ===== Theme (Light & Dark mode) ===== */
+:root {
+  --bg: #ffffff;
+  --text: #222222;
+  --primary: #0077ff;
+  --secondary: #e0e0e0;
+  --border: #ccc;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121212;
+    --text: #f5f5f5;
+    --primary: #3399ff;
+    --secondary: #1e1e1e;
+    --border: #333;
+  }
+}
+
+/* ===== Layout utility classes ===== */
+.container {
+  max-width: 960px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 1rem;
 }
 
-/* ============================= */
-/* Titoli e Testi */
-/* ============================= */
-h1, h2, h3 {
-  color: #222;
-  margin-bottom: 10px;
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* ===== Typography ===== */
+h1, h2, h3, h4 {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
 p {
-  color: #555;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 
-/* ============================= */
-/* Card Utente */
-/* ============================= */
-.card-utente {
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  padding: 20px;
-  margin: 20px auto;
-  width: 220px;
-  text-align: center;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.card-utente img {
-  border-radius: 50%;
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-
-.card-utente:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-
-/* Layout cards responsive */
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-/* ============================= */
-/* Pulsanti generici */
-/* ============================= */
+/* ===== Buttons ===== */
 button {
-  padding: 10px 20px;
-  background-color: #0077ff;
-  color: #fff;
+  background-color: var(--primary);
+  color: white;
+  padding: 0.6rem 1.2rem;
   border: none;
-  border-radius: 6px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background 0.2s;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
 }
 
 button:hover {
-  background-color: #005ecc;
+  background-color: darken(var(--primary), 10%);
 }
 
-/* ============================= */
-/* Input e Form */
-/* ============================= */
-input, textarea, select {
-  padding: 8px 12px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+/* ===== Inputs ===== */
+input,
+textarea,
+select {
   width: 100%;
-  margin-bottom: 10px;
+  padding: 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background-color: var(--secondary);
+  color: var(--text);
 }
 
-input:focus, textarea:focus, select:focus {
+input:focus,
+textarea:focus,
+select:focus {
   outline: none;
-  border-color: #0077ff;
+  border-color: var(--primary);
 }
 
-/* ============================= */
-/* Sezioni generiche */
-/* ============================= */
-.section {
-  background-color: #fff;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+/* ===== Cards ===== */
+.card {
+  background-color: var(--secondary);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Navigation (basic) ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: var(--secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar a {
+  color: var(--text);
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Footer ===== */
+footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.875rem;
+  color: var(--text);
+  border-top: 1px solid var(--border);
 }

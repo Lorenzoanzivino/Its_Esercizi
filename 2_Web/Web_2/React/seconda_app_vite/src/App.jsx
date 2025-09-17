@@ -1,4 +1,5 @@
 import './App.css'
+import { useState } from 'react'
 import Saluto from './eserciziAgosto/Esercizio_01/Saluto'
 import CardUtente from './eserciziAgosto/Esercizio_02/CardUtente'
 import MenuRistorante from './eserciziAgosto/Esercizio_03/MenuRistorante'
@@ -9,76 +10,51 @@ import AggiornaTitolo from './eserciziAgosto/Esercizio_07/AggiornaTitolo'
 import GalleriaFoto from './eserciziAgosto/Esercizio_08/GalleriaFoto'
 import ModuloContatti from './eserciziAgosto/Esercizio_09/ModuloContatti'
 import BlogApp from './eserciziAgosto/Esercizio_10/BlogApp'
-
-
+import Navbar from './eserciziAgosto/NavBar'
 
 function App() {
-  /* Persona Singola */
-  const persona = {
-    nome: "ugo",
-    email: "rob@rob.it",
-    imgUrl: "https://placehold.co/600x400/png",
-  }
+  const [esercizio, setEsercizio] = useState('')
 
-  /* Lista di Persone */
-  const persone = [
-    {
-      nome: "ugo",
-      email: "rob@rob.it",
-      imgUrl: "https://placehold.co/600x400/png",
-    },
-    {
-      nome: "Pippo",
-      email: "rob@rob.it",
-      imgUrl: "https://placehold.co/600x400/png",
-    },
-    {
-      nome: "Gino",
-      email: "rob@rob.it",
-      imgUrl: "https://placehold.co/600x400/png",
-    },
-  ];
+  const renderCondzionale = () => {
+    switch (esercizio) {
+      case 'Saluto':
+        return <Saluto />
 
+      case 'CardUtente':
+        return <CardUtente />
+
+      case 'MenuRistorante':
+        return <MenuRistorante />
+
+      case 'Termostato':
+        return <Termostato />
+
+      case 'CampoRicerca':
+        return <CampoRicerca />
+
+      case 'MessaggioSegreto':
+        return <MessaggioSegreto />
+
+      case 'AggiornaTitolo':
+        return <AggiornaTitolo />
+
+      case 'GalleriaFoto':
+        return <GalleriaFoto />
+
+      case 'ModuloContatti':
+        return <ModuloContatti />
+        
+      case 'BlogApp':
+        return <BlogApp />
+    }
+
+  };
   return (
     <>
-      <>Esercizio 01</>
-      <Saluto></Saluto>
-      <>Esercizio 02</>
-      {/*<CardUtente
-        nome="Roberto"
-        email="rob@rob.it"
-        imgUrl="https://placehold.co/600x400/png"
-      ></CardUtente>
-
-      <CardUtente {...persona}></CardUtente>*/}
-
-      <div className="row">
-        {persone.map((p) => {
-          return (
-            <div className="col">
-              <CardUtente {...p}></CardUtente>
-            </div>
-          );
-        })}
-      </div>
-      <>Esercizio 03</>
-      <MenuRistorante></MenuRistorante>
-      <>Esercizio 04</>
-      <Termostato></Termostato>
-      <>Esercizio 05</>
-      <CampoRicerca></CampoRicerca>
-      <>Esercizio 06</>
-      <MessaggioSegreto></MessaggioSegreto>
-      <>Esercizio 07</>
-      <AggiornaTitolo></AggiornaTitolo>
-      <>Esercizio 08</>
-      <GalleriaFoto></GalleriaFoto>
-      <>Esercizio 09</>
-      <ModuloContatti />
-      <>Esercizio 10</>
-      <BlogApp></BlogApp>
+      <Navbar onSetEsercizio={setEsercizio} />
+      <div>{renderCondzionale()}</div>
     </>
   )
 }
 
-export default App
+export default App;

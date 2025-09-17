@@ -11,6 +11,8 @@
 // 6.​ Importa e usa <Termostato /> in App.js.
 
 
+// USESTATE = HOOK -> Funzione che permette di tenere traccia degli stati di una variabile e fa reagire react ai suoi cambiamenti
+
 import React, { useState } from 'react';
 
 const Termostato = () => {
