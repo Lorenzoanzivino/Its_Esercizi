@@ -16,7 +16,7 @@
 import React, { useState } from 'react';
 
 const Termostato = () => {
-  const [temperatura, setTemperatura] = useState(0);
+  const [temperatura, setTemperatura] = useState(0);    // DESTRUTTURAZIONE
 
   const aumenta = () => {
     setTemperatura(temperatura + 1);

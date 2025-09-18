@@ -77,12 +77,10 @@ create table progetto (
 		references impiegato(persona)
 );
 
--- Vincoli non implementabili direttamente
--- 	nello schema relazionale:
+-- Vincoli non implementabili direttamente nello schema relazionale:
 
 -- [V.Impiegato.Progettista.responsabile]
---	Per ogni i:Impiegato
---	 se i è coinvolto in un link resp_prog
---	 allora i.ruolo = 'Progettista'
+--    Per ogni i:Impiegato
+--	      se i è coinvolto in un link resp_prog allora i.ruolo = 'Progettista'
 
 
