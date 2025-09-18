@@ -47,6 +47,7 @@ create table ArrPart(
 );
 
 alter table volo add foreign key (codice, comp) references ArrPart(codice, comp) deferrable;
+
 alter table aeroporto add foreign key (codice) references LuogoAeroporto(aeroporto) deferrable;
 
 commit;
