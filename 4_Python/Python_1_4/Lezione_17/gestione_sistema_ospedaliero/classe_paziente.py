@@ -16,24 +16,28 @@ Un paziente ha un nome, un cognome, un età, definiti dalla classe Persona ed un
 from classe_persona import Persona
 
 class Paziente(Persona):
-    __id_code:str
-
-    def __init__(self, first_name, last_name, id_code:str) -> None:
+    def __init__(self, first_name, last_name, age: int, id_code: str) -> None:
         super().__init__(first_name, last_name)
+        self.set_age(age)
 
         if isinstance(id_code, str):
             self.__id_code = id_code
         else:
-            print("il codice identificativo non è una stringa")
+            print("Il codice identificativo non è una stringa")
+            self.__id_code = None
 
     def get_id_code(self) -> str:
         return self.__id_code
 
-    def set_id_code(self, new_id_code:str) -> None:
+    def set_id_code(self, new_id_code: str) -> None:
         if isinstance(new_id_code, str):
             self.__id_code = new_id_code
         else:
             print("Il codice identificativo deve essere una stringa")
 
-    def patientInfo(self) -> None:
-        print(f"Paziente: {self.get_first_name()} {self.get_last_name()}\nID: {self.get_id_code()}")
+    def patient_info(self) -> None:
+        print(
+            f"Paziente: {self.get_first_name()} {self.get_last_name()} "
+            f"(Età: {self.get_age()})\n"
+            f"ID: {self.get_id_code()}"
+        )

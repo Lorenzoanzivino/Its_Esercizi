@@ -22,11 +22,9 @@ Un dottore ha un nome, un cognome, un età, definiti dalla classe Persona, una s
 from classe_persona import Persona
 
 class Dottore(Persona):
-    __specialization:str
-    __parcel:float
-
-    def __init__(self, first_name, last_name, specialization:str, parcel:float) -> None:
+    def __init__(self, first_name, last_name, age: int, specialization: str, parcel: float) -> None:
         super().__init__(first_name, last_name)
+        self.set_age(age)
 
         if isinstance(specialization, str):
             self.__specialization = specialization
@@ -40,7 +38,8 @@ class Dottore(Persona):
             print("La parcella inserita non è un float!")
             self.__parcel = None
 
-    def get_specialization(self) -> str :
+    # Getter / Setter
+    def get_specialization(self) -> str:
         return self.__specialization
         
     def set_specialization(self, new_specialization) -> None:
@@ -53,25 +52,18 @@ class Dottore(Persona):
         return self.__parcel
     
     def set_parcel(self, new_parcel) -> None:
-        if isinstance (new_parcel, float):
+        if isinstance(new_parcel, float):
             self.__parcel = new_parcel
         else:
-            print("La parcella inserita non è un float!")
+            print(f"La parcella inserita non è un float! Valore: {new_parcel}")
 
-    def isAValidDoctor(self) -> None:
-        if self.getAge() is not None and self.getAge() > 30:
-            print(f"Doctor {self.getName()} {self.getLastname()} is valid!")
+    # Metodo richiesto dalla traccia
+    def is_a_valid_doctor(self) -> None:
+        if self.get_age() is not None and self.get_age() > 30:
+            print(f"Doctor {self.get_first_name()} {self.get_last_name()} is valid!")
         else:
-            print(f"Doctor {self.getName()} {self.getLastname()} is not valid!")
-
-    def is_a_valid_doctor(self) -> bool: 
-        if self.get_age() > 30: 
-            print(f"Doctor {self.get_first_name()} {self.get_last_name()} is valid!") 
-            return True
-        else: 
             print(f"Doctor {self.get_first_name()} {self.get_last_name()} is not valid!")
-            return False 
 
-    def doctorGreet(self) -> None:
-        self.greet()
-        print(f"Sono un medico {self.getSpecialization()}")
+    def doctor_greet(self) -> None:
+        print(self.greet())
+        print(f"Sono un medico {self.get_specialization()}")

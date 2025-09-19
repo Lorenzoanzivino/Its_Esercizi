@@ -18,10 +18,10 @@ Creare un file chiamato "persona.py". In tale file, definire una classe chiamata
     getAge(): consente di ritornare l'età di una persona.
     greet(): stampa il seguente saluto "Ciao, sono {nome} {cognome}! Ho {età} anni!"'''
 
-from abc import ABC, abstractmethod
+from abc import ABC
 
 
-class Persona(ABC):
+class Persona:
     __first_name:str
     __last_name:str
     __age:int
@@ -75,4 +75,4 @@ class Persona(ABC):
             print("L'età non è un numero intero")
 
     def greet(self) -> str :
-        return f"Ciao, sono {self.get_first_name()} {self.get_last_name()}! Ho {self.get_age()} anni!"
+        print(f"Ciao, sono {self.__first_name} {self.__last_name}! Ho {self.__age} anni!")

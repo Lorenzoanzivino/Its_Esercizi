@@ -21,24 +21,19 @@ from classe_dottore import Dottore
 from classe_paziente import Paziente
 from classe_fattura import Fattura
 
-# Creo i dottori
-dottore1 = Dottore("Lorenzo", "Anzivino", "Pediatra", 100.99)
-dottore2 = Dottore("Stefano", "Reali", "Medico Generale", 120.00)
-
-# Imposto età per renderli validi
-dottore1.setAge(32)
-dottore2.setAge(41)
+# Creo i dottori (aggiungendo anche l'età nel costruttore)
+dottore1 = Dottore("Lorenzo", "Anzivino", 32, "Pediatra", 100.99)
+dottore2 = Dottore("Stefano", "Reali", 41, "Medico Generale", 120.99)
 
 # Presentazione dei dottori
-dottore1.doctorGreet()
-dottore2.doctorGreet()
+dottore1.doctor_greet()
+dottore2.doctor_greet()
 
 # Creo pazienti
-paziente1 = Paziente("Mario", "Rossi", "P001")
-paziente2 = Paziente("Lucia", "Bianchi", "P002")
-paziente3 = Paziente("Giovanni", "Verdi", "P003")
-paziente4 = Paziente("Elena", "Neri", "P004")
-paziente5 = Paziente("Alessandro", "Gallo", "P005")  # opzionale
+paziente1 = Paziente("Mario", "Rossi", 28, "P001")
+paziente2 = Paziente("Lucia", "Bianchi", 44, "P002")
+paziente3 = Paziente("Giovanni", "Verdi", 13, "P003")
+paziente4 = Paziente("Elena", "Neri", 56, "P004")
 
 # Liste di pazienti
 lista_pazienti1 = [paziente1, paziente2, paziente3]
@@ -49,17 +44,26 @@ fattura1 = Fattura(lista_pazienti1, dottore1)
 fattura2 = Fattura(lista_pazienti2, dottore2)
 
 # Stampo i salari iniziali
-print(f"\nSalario Dottore1: {fattura1.getSalary()} euro!")
-print(f"Salario Dottore2: {fattura2.getSalary()} euro!")
+if fattura1.get_salary() is not None:
+    print(f"\nSalario Dottore1: {fattura1.get_salary():.2f} euro!")
+if fattura2.get_salary() is not None:
+    print(f"Salario Dottore2: {fattura2.get_salary():.2f} euro!")
 
-# Rimuovo un paziente da fattura1 e lo aggiungo a fattura2
-fattura1.removePatient("P003")  # Giovanni Verdi
-fattura2.addPatient(paziente3)
+# Rimuovo un paziente dalla lista del dottore1 e lo aggiungo al dottore2
+fattura1.remove_patient("P003")  # Giovanni Verdi
+fattura2.add_patient(paziente3)
 
 # Stampo i salari aggiornati
-print(f"\nSalario Dottore1 dopo modifica: {fattura1.getSalary()} euro!")
-print(f"Salario Dottore2 dopo modifica: {fattura2.getSalary()} euro!")
+if fattura1.get_salary() is not None:
+    print(f"\nSalario Dottore1 dopo modifica: {fattura1.get_salary():.2f} euro!")
+if fattura2.get_salary() is not None:
+    print(f"Salario Dottore2 dopo modifica: {fattura2.get_salary():.2f} euro!")
 
 # Calcolo guadagno totale dell'ospedale
-guadagno_totale = fattura1.getSalary() + fattura2.getSalary()
-print(f"\nIn totale, l'ospedale ha incassato: {guadagno_totale} euro!")
+guadagno_totale = 0
+if fattura1.get_salary() is not None:
+    guadagno_totale += fattura1.get_salary()
+if fattura2.get_salary() is not None:
+    guadagno_totale += fattura2.get_salary()
+
+print(f"\nIn totale, l'ospedale ha incassato: {guadagno_totale:.2f} euro!")

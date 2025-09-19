@@ -19,11 +19,11 @@ from classe_paziente import Paziente
 
 class Fattura:
     def __init__(self, patients: list[Paziente], doctor: Dottore) -> None:
-        if doctor.isAValidDoctor():
+        if doctor.is_a_valid_doctor():  # assume che ritorni bool
             self.__lista_pazienti = patients
             self.__dottore = doctor
             self.__fatture = len(patients)
-            self.__salary = 0
+            self.__salary = self.__dottore.get_parcel() * self.__fatture
         else:
             print("Non è possibile creare la classe fattura poiché il dottore non è valido!")
             self.__lista_pazienti = None
@@ -31,31 +31,38 @@ class Fattura:
             self.__fatture = None
             self.__salary = None
 
-    def get_salary(self) -> float:
-        if self.__dottore and self.__lista_pazienti:
+    def get_salary(self) -> float | None:
+        if self.__dottore and self.__lista_pazienti is not None:
             self.__salary = self.__dottore.get_parcel() * len(self.__lista_pazienti)
             return self.__salary
         return None
 
-    def get_fatture(self) -> int:
-        if self.__lista_pazienti:
+    def get_fatture(self) -> int | None:
+        if self.__lista_pazienti is not None:
             self.__fatture = len(self.__lista_pazienti)
             return self.__fatture
         return None
 
     def add_patient(self, new_patient: Paziente) -> None:
-        if new_patient not in self.__lista_pazienti:
+        if self.__lista_pazienti is not None and new_patient not in self.__lista_pazienti:
             self.__lista_pazienti.append(new_patient)
             self.get_fatture()
             self.get_salary()
             print(f"Alla lista del Dottor {self.__dottore.get_last_name()} è stato aggiunto il paziente {new_patient.get_id_code()}")
 
     def remove_patient(self, id_code: str) -> None:
-        for patient in self.__lista_pazienti:
-            if patient.get_id_code() == id_code:
-                self.__lista_pazienti.remove(patient)
-                self.get_fatture()
-                self.get_salary()
-                print(f"Alla lista del Dottor {self.__dottore.get_last_name()} è stato rimosso il paziente {patient.get_id_code()}")
-                return
-        print(f"Nessun paziente con ID {id_code} trovato nella lista.")
+        if self.__lista_pazienti is None:
+            print("Nessuna lista pazienti disponibile.")
+            return
+
+        patient = next((p for p in self.__lista_pazienti if p.get_id_code() == id_code), None)
+        if patient:
+            self.__lista_pazienti.remove(patient)
+            self.get_fatture()
+            self.get_salary()
+            print(f"Alla lista del Dottor {self.__dottore.get_last_name()} è stato rimosso il paziente {id_code}")
+        else:
+            print(f"Nessun paziente con ID {id_code} trovato nella lista.")
+
+    def get_patients(self) -> list | None:
+        return self.__lista_pazienti
