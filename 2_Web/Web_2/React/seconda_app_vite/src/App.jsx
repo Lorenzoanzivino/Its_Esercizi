@@ -44,7 +44,7 @@ function App() {
 
       case 'ModuloContatti':
         return <ModuloContatti />
-        
+
       case 'BlogApp':
         return <BlogApp />
 

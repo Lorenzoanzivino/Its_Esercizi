@@ -37,7 +37,7 @@
 // necessari come props.
 
 
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import TodoForm from './TodoForm';
 import TodoList from './TodoList';
 
@@ -50,33 +50,33 @@ const TodoApp = () => {
     const [error, setError] = useState(null);
 
     const fetchTask = async () => {
-        try{
+        try {
             const response = await fetch(API_URL);
-            if(!response.ok) throw new Error('Errore nella fetch')
+            if (!response.ok) throw new Error('Errore nella fetch')
 
             const data = await response.json();
 
             setTasks(data);
 
-        }catch(err){
+        } catch (err) {
             setError(err);
 
-        }finally{
+        } finally {
             setLoading(false);
 
         }
     };
 
     const deleteTask = async (id) => {
-        await fetch(API_URL + '/' + id, {method: "DELETE"});
+        await fetch(API_URL + '/' + id, { method: "DELETE" });
         fetchTask();
     };
 
     const toggleTask = async (id, completed) => {
         await fetch(API_URL + '/' + id, {
             method: "PATCH",
-            headers: {"Content-Type":"application/json"},
-            body:JSON.stringify({completed:!completed})
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ completed: !completed })
         });
         fetchTask();
     };
@@ -85,12 +85,12 @@ const TodoApp = () => {
         fetchTask()
     }, [])
 
-  return (
-    <>
-    <TodoForm/>
-    <TodoList tasks={tasks} onDeleteTask={deleteTask} onToggleTask={toggleTask}/>
-    </>
-  )
+    return (
+        <>
+            <TodoForm />
+            <TodoList tasks={tasks} onDeleteTask={deleteTask} onToggleTask={toggleTask} />
+        </>
+    )
 }
 
 export default TodoApp
