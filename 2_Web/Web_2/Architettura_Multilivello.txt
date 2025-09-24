@@ -1,0 +1,17 @@
+ARCHITETTURA MULTILIVELLO
+    |-Data Layer (Database)
+        |-Postgres, MySql, MariaDB, Oracle
+    |-Logic Layer (Backend)
+        |-Python, Java, PHP, C, C++, JavaScript
+    |-Client Layer (front end)
+        |-HTML, CSS, JAVASCRIPT
+            |-Dominio 1° Livello (TLD: .it, .com.io)
+            |-Dominio 2° Livello (nome del dominio)
+            |-Dominio 3° Livello (www...)
+
+
+Server BackEnd = data_Layer + logic_Layer
+Dominio = client_layer
+
+
+il DOminio si collega al server tramite DNS (domain name system) -> Traduce l'indirizzo ip in una stringa di testo.
