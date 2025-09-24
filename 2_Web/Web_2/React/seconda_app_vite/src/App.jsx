@@ -11,6 +11,7 @@ import GalleriaFoto from './eserciziAgosto/Esercizio_08/GalleriaFoto'
 import ModuloContatti from './eserciziAgosto/Esercizio_09/ModuloContatti'
 import BlogApp from './eserciziAgosto/Esercizio_10/BlogApp'
 import Navbar from './eserciziAgosto/NavBar'
+import TodoApp from './eserciziAgosto/Esercizio_11/TodoApp'
 
 function App() {
   const [esercizio, setEsercizio] = useState('')
@@ -46,6 +47,9 @@ function App() {
         
       case 'BlogApp':
         return <BlogApp />
+
+      case 'TodoApp':
+        return <TodoApp />
     }
 
   };

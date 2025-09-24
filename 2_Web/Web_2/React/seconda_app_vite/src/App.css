@@ -1,4 +1,4 @@
-/* ===== CSS Reset base ===== */
+/* ===== RESET BASE ===== */
 *,
 *::before,
 *::after {
@@ -13,9 +13,9 @@ html {
 }
 
 body {
-  font-family: system-ui, sans-serif;
-  background-color: var(--bg);
-  color: var(--text);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
   line-height: 1.6;
   min-height: 100vh;
   display: flex;
@@ -24,28 +24,57 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* ===== Theme (Light & Dark mode) ===== */
+/* ===== COLOR PALETTE ===== */
+
+/* Light Mode */
 :root {
-  --bg: #ffffff;
-  --text: #222222;
-  --primary: #0077ff;
-  --secondary: #e0e0e0;
-  --border: #ccc;
+  --color-primary: #4f46e5;
+  --color-primary-hover: #4338ca;
+  --color-accent: #10b981;
+  --color-bg: #f9fafb;
+  --color-text: #111827;
+  --color-muted: #6b7280;
+  --color-border: #e5e7eb;
+  --color-surface: #ffffff;
 }
 
+/* Dark Mode */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #121212;
-    --text: #f5f5f5;
-    --primary: #3399ff;
-    --secondary: #1e1e1e;
-    --border: #333;
+    --color-primary: #6366f1;
+    --color-primary-hover: #818cf8;
+    --color-accent: #34d399;
+    --color-bg: #1f2937;
+    --color-text: #f3f4f6;
+    --color-muted: #9ca3af;
+    --color-border: #374151;
+    --color-surface: #111827;
   }
 }
 
-/* ===== Layout utility classes ===== */
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3, h4 {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== LAYOUT ===== */
 .container {
-  max-width: 960px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 1rem;
 }
@@ -68,84 +97,81 @@ body {
   grid-template-columns: repeat(3, 1fr);
 }
 
-/* ===== Typography ===== */
-h1, h2, h3, h4 {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-p {
-  margin-bottom: 1rem;
-}
-
-/* ===== Buttons ===== */
-button {
-  background-color: var(--primary);
+/* ===== BUTTONS ===== */
+button,
+.btn {
+  background-color: var(--color-primary);
   color: white;
   padding: 0.6rem 1.2rem;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
   cursor: pointer;
-  font-weight: bold;
   transition: background-color 0.2s ease;
 }
 
-button:hover {
-  background-color: darken(var(--primary), 10%);
+button:hover,
+.btn:hover {
+  background-color: var(--color-primary-hover);
 }
 
-/* ===== Inputs ===== */
+button:disabled {
+  background-color: var(--color-border);
+  cursor: not-allowed;
+}
+
+/* ===== FORMS ===== */
 input,
 textarea,
 select {
   width: 100%;
-  padding: 0.6rem;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  background-color: var(--secondary);
-  color: var(--text);
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  transition: border-color 0.2s ease;
 }
 
 input:focus,
 textarea:focus,
 select:focus {
   outline: none;
-  border-color: var(--primary);
+  border-color: var(--color-primary);
 }
 
-/* ===== Cards ===== */
+/* ===== CARD ===== */
 .card {
-  background-color: var(--secondary);
-  padding: 1rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* ===== Navigation (basic) ===== */
+/* ===== NAVBAR ===== */
 .navbar {
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
-  background-color: var(--secondary);
-  border-bottom: 1px solid var(--border);
+  align-items: center;
+  background-color: var(--color-surface);
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .navbar a {
-  color: var(--text);
-  text-decoration: none;
-  margin-right: 1rem;
+  color: var(--color-text);
+  margin-right: 1.5rem;
+  font-weight: 500;
 }
 
-.navbar a:hover {
-  text-decoration: underline;
-}
-
-/* ===== Footer ===== */
+/* ===== FOOTER ===== */
 footer {
-  margin-top: auto;
   text-align: center;
-  padding: 1rem;
+  padding: 2rem 1rem;
   font-size: 0.875rem;
-  color: var(--text);
-  border-top: 1px solid var(--border);
+  color: var(--color-muted);
+  border-top: 1px solid var(--color-border);
+  margin-top: auto;
 }
