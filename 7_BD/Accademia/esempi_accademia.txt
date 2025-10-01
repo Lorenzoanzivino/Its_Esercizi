@@ -19,3 +19,8 @@ INSERT INTO persona (id, nome, cognome, posizione, stipendio) VALUES (9, 'Elena'
 INSERT INTO persona (id, nome, cognome, posizione, stipendio) VALUES (10, 'Marco', 'Conti', 'Ricercatore', '20000');
 
 INSERT INTO assenza (id, persona, tipo, giorno) VALUES (1, 'Mario', 'Rossi', 'Malattia', '2025-05-23');
+
+insert into attivitaprogetto(id, persona, progetto, wp, giorno, tipo, oredurata)
+values
+(11, 10, 2, 1, '2012-04-22', 'Altro', 6),
+(12, 10, 2, 1, '2012-04-23', 'Altro', 6);

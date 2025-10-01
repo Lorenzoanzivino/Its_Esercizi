@@ -1,0 +1,11 @@
+codici
+
+pull degli aggiornamenti : 
+    git pull https://github.com/Markz88/code-dragons.git
+
+
+crea immagine : 
+    docker build -t code-and-dragons .
+
+run :
+    docker run --rm -p 5000:5000 code-and-dragons
