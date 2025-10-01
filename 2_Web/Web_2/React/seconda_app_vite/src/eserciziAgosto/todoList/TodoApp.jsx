@@ -37,60 +37,63 @@
 // necessari come props.
 
 
-import React, { useState, useEffect } from 'react';
-import TodoForm from './TodoForm';
-import TodoList from './TodoList';
+import React, { useState, useEffect } from "react";
+import TodoForm from "./TodoForm";
+import TodoList from "./TodoList";
+import { addTasksService, deleteTaskService, fetchTasksService, toogleTaskService, updateTaskServise } from "./api";
 
-const API_URL = 'http://localhost:5340/tasks';
-
+const API_URL = "http://localhost:5340/tasks";
 const TodoApp = () => {
-
     const [tasks, setTasks] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    const fetchTask = async () => {
+    const fetchTasks = async () => {
         try {
-            const response = await fetch(API_URL);
-            if (!response.ok) throw new Error('Errore nella fetch')
-
-            const data = await response.json();
-
+            const data = await fetchTasksService();
             setTasks(data);
-
         } catch (err) {
             setError(err);
-
         } finally {
             setLoading(false);
-
         }
-    };
+    }
 
     const deleteTask = async (id) => {
-        await fetch(API_URL + '/' + id, { method: "DELETE" });
-        fetchTask();
-    };
+        await deleteTaskService(id);
+        fetchTasks();
+    }
 
     const toggleTask = async (id, completed) => {
-        await fetch(API_URL + '/' + id, {
-            method: "PATCH",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ completed: !completed })
-        });
-        fetchTask();
-    };
+        await toogleTaskService(id, completed)
+        fetchTasks();
+    }
+
+    const addTask = async (text) => {
+        await addTasksService(text)
+        fetchTasks();
+    }
+
+    const updateTask = async (id, text) => {
+        await updateTaskServise(id, text)
+        fetchTasks();
+    }
 
     useEffect(() => {
-        fetchTask()
-    }, [])
-
+        fetchTasks();
+    }, []);
     return (
-        <>
-            <TodoForm />
-            <TodoList tasks={tasks} onDeleteTask={deleteTask} onToggleTask={toggleTask} />
-        </>
-    )
-}
+        <div>
+            <h1>Todolist Cloud</h1>
+            <TodoForm onAddTask={addTask}></TodoForm>
+            <TodoList
+                tasks={tasks}
+                onDeleteTask={deleteTask}
+                onToggleTask={toggleTask}
+                onUpdateTask={updateTask}
+            ></TodoList>
+        </div>
+    );
+};
 
-export default TodoApp
+export default TodoApp;

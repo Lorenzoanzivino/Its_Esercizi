@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 const Navbar = ({onSetEsercizio}) => {
-    const lista_esercizi = ["Saluto", "CardUtente", "MenuRistorante", "Termostato", "CampoRicerca", "MessaggioSegreto", "AggiornaTitolo", "GalleriaFoto", "ModuloContatti", "BlogApp", "TodoApp"]
+    const lista_esercizi = ["Saluto", "CardUtente", "MenuRistorante", "Termostato", "CampoRicerca", "MessaggioSegreto", "AggiornaTitolo", "GalleriaFoto", "ModuloContatti", "BlogApp", "TodoApp", "MainComponent"]
 
     return (
         <div>
@@ -23,8 +23,8 @@ const Navbar = ({onSetEsercizio}) => {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarText">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                            {lista_esercizi.map((item) => (
-                                <li className="nav-item">
+                            {lista_esercizi.map((item,index) => (
+                                <li key={index} className="nav-item">
                                     <button onClick={() => { onSetEsercizio(item) }}>{item}</button>
                                 </li>))}
                         </ul>

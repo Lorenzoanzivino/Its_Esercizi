@@ -235,12 +235,22 @@
     {
       "id": "1",
       "text": "Imparare le basi di React",
-      "completed": false
+      "completed": true
     },
     {
       "id": "3",
       "text": "Studiare Bootstrap 5",
       "completed": true
+    },
+    {
+      "id": "af39",
+      "text": "Nuovo tasks",
+      "completed": false
+    },
+    {
+      "id": "45c6",
+      "text": "ciao lorenzo",
+      "completed": false
     }
   ]
 }
