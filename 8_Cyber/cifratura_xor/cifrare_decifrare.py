@@ -9,8 +9,6 @@ Al termine stampare la lista di numeri ottenuti
 In fondo a partire dalla lista di numeri, riapplicare lo xor sempre con 57 e quindi ottenere (ricostruendola) la stringa originale
 NB: potreste utilizzare input(“…”) in modo da leggere sia la stringa da cifrare, sia il valore segreto da applicare come xor
 '''
-
-
 testo = input("Inserisci il testo da cifrare: ")
 
 chiave = int(input("Inserisci la chiave segreta (numero intero): "))

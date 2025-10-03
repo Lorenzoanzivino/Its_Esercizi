@@ -1,13 +1,13 @@
 
 n:int = 3512
-with open("/home/its/vscode_projects/Esercizi_ITS/8_Sicurezza2/rsa/numero1.dat", "wb") as f:
+with open("/home/its/vscode_projects/Esercizi_ITS/8_Cyber/cifratura_rsa/lezione_2Ottobre/numero1.dat", "wb") as f:
     f.write(n.to_bytes(4, byteorder="little"))
 
-with open("/home/its/vscode_projects/Esercizi_ITS/8_Sicurezza2/rsa/numero2.dat", "wb") as f:
+with open("/home/its/vscode_projects/Esercizi_ITS/8_Cyber/cifratura_rsa/lezione_2Ottobre/numero2.dat", "wb") as f:
     f.write(n.to_bytes(4, byteorder="big"))
 
 s:str = "Ciao"
-with open("/home/its/vscode_projects/Esercizi_ITS/8_Sicurezza2/rsa/numero3.dat", "w") as f:
+with open("/home/its/vscode_projects/Esercizi_ITS/8_Cyber/cifratura_rsa/lezione_2Ottobre/numero3.dat", "w") as f:
     f.write(s)
 
 
