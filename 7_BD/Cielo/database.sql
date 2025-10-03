@@ -1,17 +1,19 @@
 begin transaction;
 
+-- DOMINI --
+
 CREATE DOMAIN PosInteger AS Integer
     check (value >= 0);
-
 CREATE DOMAIN StringaM AS VARCHAR(100);
-
 CREATE DOMAIN CodIATA AS CHAR(3);
+
+
+-- TABELLE --
 
 create table Compagnia(
     nome StringaM primary key,
     annoFondaz PosInteger
 );
-
 create table Volo(
     codice PosInteger,
     comp StringaM,
@@ -20,12 +22,10 @@ create table Volo(
 
     foreign key (comp) references Compagnia(nome)
 );
-
 create table Aeroporto(
     codice CodIATA primary key, 
     nome StringaM not null
 );
-
 create table LuogoAeroporto(
     aeroporto CodIATA primary key, 
     citta StringaM not null, 
@@ -33,7 +33,6 @@ create table LuogoAeroporto(
     foreign key (aeroporto) 
         references Aeroporto(codice) deferrable
 );
-
 create table ArrPart(
     codice PosInteger, 
     comp StringaM , 
@@ -45,9 +44,6 @@ create table ArrPart(
     foreign key (arrivo) references Aeroporto(codice),
     foreign key (partenza) references Aeroporto(codice)
 );
-
 alter table volo add foreign key (codice, comp) references ArrPart(codice, comp) deferrable;
-
 alter table aeroporto add foreign key (codice) references LuogoAeroporto(aeroporto) deferrable;
-
 commit;
