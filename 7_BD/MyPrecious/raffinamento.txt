@@ -1,0 +1,72 @@
+MyPrecious, un sistema di gestione di opere d’arte e delle relative esposizioni per conto di un museo, finalizzato all’utilizzo interno.
+
+
+1. requisiti Opere:
+    1.1 nome : stringa
+    1.2 categoria, una tra:
+        1.2.1 dipinto, 
+        1.2.2 scultura, 
+        1.2.3 mosaico, 
+        1.2.4 manoscritto,
+    1.3 autore (v. req. 2)
+    1.4 anno_realizzazione
+    1.4 tecnica : stringa
+    1.5 correnti_artistica : stringa
+
+2. requisiti sugli Autori:
+    2.1 nome_arte : stringa
+    2.2 luogo (v. req. 6)
+    2.3 data_nascita
+    2.4 data_morte
+    2.5 opere_realizzate (v. req. 1)
+
+3. requisiti Esposizione
+    3.1 stato_esposizione, uno tra:
+        3.1.1 permanenti
+        3.1.2 temporanei (v. req. 4)
+
+4. requisiti Esposizione Temporanea:
+    4.1 nome : stringa
+    4.2 prezzo di accesso
+    4.3 intervallo_tempo
+        4.3.1 data_inizio
+        4.3.2 data_fine
+
+5. requisiti Tariffe:
+    5.1 nome
+    5.2 prezzo base (reale >= 0)
+
+6. requisiti Visitatori
+    6.1 tariffa (v. req. 5)
+    6.2 istante_venduto (data inizio)
+    6.2 data_validita (data del giorno della mostra)
+
+7. requisiti biglietti:
+    7.1 tipo, uno tra:
+        7.1.1 standard
+            7.1.1.1 esposizioni permanenti (v.req 3.1.1)
+            7.1.1.2 tariffa base (v. req. 5)
+        7.1.2 extended access 
+            7.1.2.1 esposizioni permanenti (v.req 3.1.1)
+            7.1.2.1 esposizioni temporanee (v. req. 4)
+            7.1.2.3 prezzo (prezzo base tariffa + prezzo accesso opere temporanee)
+
+6. Requisiti sui luoghi
+	6.1. città
+	6.2. regione
+	6.3. nazione
+
+
+
+999. il sistema deve offrire le sequenti funzionalita
+
+    999.0 gli utenti sono responsabili di gestione delle opere e delle esposizioni
+    999.1 inserimento e rimozione di opere d’arte;
+    999.2 creazione di un’esposizione, con le opere relative;
+    999.3 aggiunta di un artista e modifica delle sue informazioni;
+    999.4 modifica delle informazioni di un’esposizione;
+    999.5 registrazione della vendita di uno o più biglietti di una certa tipologia e validi per una certa data.
+    999.6 calcolo degli introiti totali per una certa esposizione temporanea, in un dato periodo. (Solo e unicamente per le funzionalità di seguito, dare la specifica completa.)
+    999.7 Data un’esposizione temporanea e una data, calcolare il numero di biglietti Extended access venduti per tale esposizione e validi per tale data.
+    999.8 Dato un periodo di tempo, calcolare le esposizioni temporanee per la quale è stato venduto il più alto numero di biglietti Extended access nel periodo.
+    999.9 Dato un artista e un periodo di tempo, calcolare le opere realizzate dall’artista che non sono mai state esposte nel periodo dato.

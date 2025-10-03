@@ -1,0 +1,40 @@
+Primo: concetto rapido (due righe, da prof)
+
+    - Private-Key: (2048 bit, 2 primes) significa che la chiave RSA è a 2048 bit e usa 2 primi (p e q).
+    - modulus = n (in esadecimale con :), publicExponent = e (decimale), privateExponent = d (esadecimale).
+    - NON condividere d (chiave privata).
+
+# 1) Crea una directory di lavoro
+mkdir -p ~/rsa_work && cd ~/rsa_work
+
+# 2) Genera la chiave privata RSA (qui usi e = 3)
+openssl genrsa -out FAprivkey.pem -3 2048
+
+# (Se vuoi l'esponente standard 65537, ometti -3:
+# openssl genrsa -out FAprivkey.pem 2048)
+
+# 3) Stampa i parametri (salvali in file per lavorare comodamente)
+openssl rsa -in FAprivkey.pem -text -noout
+
+# 4) (opzionale) genera la chiave pubblica separata
+openssl rsa -in FAprivkey.pem -out FApubkey.pem -pubout -RSAPublicKey_out
+
+# 5) Estrai automaticamente il blocco 'modulus' (senza :, spazi, newline) -> n_hex.txt
+awk '/modulus:/{p=1; next} /publicExponent:/{p=0} p' keyinfo.txt | tr -d ' \n:' > n_hex.txt
+
+# 6) Estrai automaticamente il blocco 'privateExponent' -> d_hex.txt
+awk '/privateExponent:/{p=1; next} /prime1:/{p=0} p' keyinfo.txt | tr -d ' \n:' > d_hex.txt
+
+# 7) Estrai e (publicExponent) (numero decimale) -> e.txt
+awk '/publicExponent:/{print $2}' keyinfo.txt > e.txt
+
+# 8) Controlla i file generati (mostra i primi 100 caratteri)
+echo "n (prima 100 hex):"; head -c 100 n_hex.txt; echo
+echo "d (prima 100 hex):"; head -c 100 d_hex.txt; echo
+echo "e:"; cat e.txt; echo
+
+# Se preferisci copiare manualmente dal file keyinfo.txt, aprilo con:
+# less keyinfo.txt
+
+
+Nota: i comandi awk/tr qui sopra funzionano nella maggior parte delle shell Linux / macOS. Se qualcosa non funziona, puoi sempre aprire keyinfo.txt e copiare i blocchi manualmente.
