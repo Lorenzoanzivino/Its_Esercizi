@@ -1,0 +1,74 @@
+Specifica delle classi
+
+Classe Autore
+    [V.Autore.dateCoerenti]
+    La data di morte, se presente, deve essere successiva alla data di nascita.
+    Per ogni a:Autore, se a.data_morte esiste, allora a.data_nascita < a.data_morte.
+    Non esiste a:Autore tale che a.data_morte esiste e a.data_morte ≤ a.data_nascita.
+
+Classe Opera
+    [V.Opera.annoValido]
+    L’anno di realizzazione di un’opera deve essere maggiore o uguale a 0.
+    Per ogni o:Opera, o.anno_realizzazione ≥ 0.
+
+    [V.Opera.unicitaNomeAutore]
+    Due opere dello stesso autore non possono avere lo stesso nome.
+
+    [V.Opera.esposizione]
+    Un'opera non può essere esposta contemporaneamente in due esposizioni diverse
+
+
+Classe Esposizione
+    [V.Esposizione.dateCoerenti]
+    Per ogni e:EsposizioneTemporanea, la data di fine deve essere successiva alla data di inizio.
+    Per ogni e:EsposizioneTemporanea, e.data_inizio < e.data_fine.
+    Non esiste e:EsposizioneTemporanea tale che e.data_inizio ≥ e.data_fine.
+
+    [V.Esposizione.tipologia]
+    Ogni esposizione deve essere o temporanea o permanente.
+    Per ogni e:Esposizione, e è istanza di EsposizioneTemporanea oppure di EsposizionePermanente, ma non di entrambe.
+
+    [O.EsposizioneTemporanea.calcolo_intervallo]
+    calcola_intervallo(data_inizio: Data, data_fine: Data): data
+    Precondizione
+        prezz_acc ≥ 0
+        prezz_base ≥ 0
+    Postcondizione
+        Restituisce un valore reale maggiore o uguale a zero: 
+        risultato = prezz_base + prezz_acc
+
+Classe Tariffa
+    [V.Tariffa.prezzoBaseValido]
+    Il prezzo base deve essere maggiore o uguale a zero.
+    Per ogni t:Tariffa, t.prezzo_base ≥ 0.
+
+Classe Biglietto
+    [V.Biglietto.dataValidita]
+    La data di validità di un biglietto deve essere uguale o successiva alla data di vendita.
+    Per ogni b:Biglietto, b.data_validità ≥ b.data_vendita.
+    Non esiste b:Biglietto tale che b.data_validità < b.data_vendita.
+
+Classe Biglietto_standard
+    [V.Biglietto_standard.prezzoCalcolato]
+    Il prezzo di un biglietto standard corrisponde al prezzo base della tariffa selezionata.
+    Per ogni b:Biglietto_standard, b.prezzo = b.tariffa.prezzo_base.
+
+Classe Biglietto_ext_acc
+    [V.Biglietto_ext_acc.prezzoCalcolato]
+    Il prezzo di un biglietto extended access è la somma del prezzo base della tariffa selezionata e dei prezzi delle esposizioni temporanee scelte.
+    Per ogni b:Biglietto_ext_acc, b.prezzo = b.tariffa.prezzo_base + e.prezzo_accesso
+
+    [V.Biglietto_ext_acc.coerenzaAccessi]
+    Ogni biglietto extended access dà sempre accesso a tutte le esposizioni permanenti.
+    Per ogni b:Biglietto_ext_acc, b.prezzo = b.tariffa.prezzo_base
+
+    [O.Biglietto_ext_acc.calcola_prezzo]
+    calcola_prezzo(prezz_acc: Prezzo, prezz_base: Prezzo): Reale
+    Precondizione:
+        prezz_acc ≥ 0 ∧ prezz_base ≥ 0
+    Postcondizione:
+        risultato = prezz_base + prezz_acc risultato ≥ 0
+
+Classe Visitatore
+    [V.Visitatore.bigliettoSingoloPerData]
+    Un visitatore non può possedere più di un biglietto valido per la stessa data.

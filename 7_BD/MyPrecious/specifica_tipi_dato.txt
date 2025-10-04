@@ -1,0 +1,2 @@
+Specifica del tipo di dato:
+Prezzo : Reale >= 0
