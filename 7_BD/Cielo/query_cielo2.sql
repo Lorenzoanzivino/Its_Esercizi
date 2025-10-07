@@ -9,6 +9,7 @@ group by a.codice, a.nome;
 select count(*) as num_Voli
 from volo v, arrpart ap
 where v.codice = ap.codice
+	and v.comp = ap.comp
 	and ap.partenza = 'HTR'
 	and v.durataminuti >= 100;
 
@@ -20,7 +21,7 @@ where c.nome = 'Apitalia'
   and v.comp = c.nome
   and ap.codice = v.codice
   and ap.comp = v.comp
-  and (ap.partenza = a.codice or ap.arrivo = a.codice) -- le parentesi hanno la precedenza
+  and (ap.partenza = a.codice or ap.arrivo = a.codice)
   and la.aeroporto = a.codice
 group by la.nazione;
 
@@ -29,9 +30,8 @@ group by la.nazione;
 select avg(durataminuti) as media, 
 	min(durataminuti),
 	max(durataminuti)
-from compagnia c, volo v
-where c.nome = 'MagicFly'
-	and c.nome = v.comp
+from volo v
+where comp = 'MagicFly';
 
 
 -- 5. Qual è l’anno di fondazione della compagnia più vecchia che opera in ognuno degli aeroporti?
@@ -80,27 +80,38 @@ where (ap.partenza = a.codice or ap.arrivo = a.codice)
 	and ap.comp = v.comp
 	and ap.codice = v.codice
 group by a.codice, a.nome
-having count(distinct v.comp) = 2
+having count(distinct v.comp) = 2;
 
 
 -- 10. Quali sono le città con almeno due aeroporti?
 select citta
 from luogoAeroporto
 group by citta
-having count(aeroporto) >= 2;
+having count(*) >= 2;
 
 
 -- 11. Qual è il nome delle compagnie i cui voli hanno una durata media maggiore di 6 ore?
-select c.nome as compagnia
-from compagnia c, volo v
-where v.comp = c.nome
-group by c.nome
-having avg(durataminuti) > 360;
+select v.comp as compagnia
+from volo v
+group by v.comp
+having avg(durataminuti) > 6 * 60;
 
 
 -- 12. Qual è il nome delle compagnie i cui voli hanno tutti una durata maggiore di 100 minuti?
-select c.nome as compagnia
-from compagnia c, volo v
-where v.comp = c.nome
-	and durataminuti >= 100
-group by c.nome;
+select v.comp as compagnia
+from volo v
+group by v.comp
+having min(durataminuti) > 100;
+
+
+-- 13
+with D as (select max(durataminuti) as max_durata from volo)
+select comp
+from volo, D
+group by comp, D.max_durata
+having max(durataminuti) = D.max_durata;
+
+-- 14 Qual'e il nome delle compagnie che non hanno alcun volo
+
+select *
+from arrpart, compagnia
