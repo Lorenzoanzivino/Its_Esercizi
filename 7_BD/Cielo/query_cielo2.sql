@@ -113,5 +113,13 @@ having max(durataminuti) = D.max_durata;
 
 -- 14 Qual'e il nome delle compagnie che non hanno alcun volo
 
-select *
-from arrpart, compagnia
+with D as 
+	(select distinct ap.comp
+	from volo as v, arrpart as ap
+	where ap.codice = v.codice
+	and ap.comp = v.comp)
+
+select c.nome
+from compagnia as c
+group by c.nome
+having c.nome not in (select * from D)
