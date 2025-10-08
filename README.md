@@ -37,9 +37,7 @@
     - JSON (`json.load`)  
     - Debugger  
 
----
-
-## 👨‍💻 Programmazione ad Oggetti (OOP)
+### 👨‍💻 Programmazione ad Oggetti (OOP)
 - **Classi**  
 - **Metodi speciali**
     - `__str__` & `__call__`  
@@ -130,8 +128,10 @@
 ---
 
 ## 🗃️ DataBase
+- SQL
+- postgress
 - Progettazione concettuale  
-- Tabelle e domini  
+- Tabelle e domini 
 
 ---
 
