@@ -83,6 +83,129 @@ docker exec -it its_postgresql psql -U postgres
 - exec -it → entra interattivamente nel container.
 - psql -U postgres → avvia l’interfaccia a riga di comando di PostgreSQL come utente postgres.
 
+---
+
+## 📂 Creazione Database e Connessione
+
+All’interno di psql:
+```bash
+-- Creazione del database
+CREATE DATABASE its_database;
+
+-- Connessione al database appena creato
+\c its_database
+```
+- CREATE DATABASE <nome> → crea un nuovo database.
+- \c <nome_database> → connette il terminale SQL al database specificato.
+
+--- 
+
+## 🏗 Creazione Domini
+
+```bash
+CREATE DOMAIN stringa AS VARCHAR(255);
+CREATE DOMAIN int_positivo AS INTEGER CHECK (VALUE >= 0);
+CREATE DOMAIN real_positivo AS REAL CHECK (VALUE >= 0);
+```
+I domini sono tipi personalizzati con vincoli già inclusi (es: lunghezza, valori positivi).
+
+--- 
+
+## 📑 Creazione Tabelle
+
+```bash
+CREATE TABLE autore (
+    id SERIAL PRIMARY KEY,
+    nome stringa NOT NULL,
+    cognome stringa NOT NULL,
+    data_nascita DATE NOT NULL,
+    data_morte DATE
+);
+
+CREATE TABLE libro (
+    id SERIAL PRIMARY KEY,
+    titolo stringa NOT NULL,
+    anno_pubblicazione int_positivo,
+    autore_id INTEGER,
+    FOREIGN KEY (autore_id) REFERENCES autore(id)
+);
+```
+---
+
+## 🔧 Alter Table e Vincoli
+
+```bash
+-- Aggiunta vincolo foreign key
+ALTER TABLE libro
+ADD CONSTRAINT fk_autore FOREIGN KEY (autore_id)
+REFERENCES autore(id);
+```
+---
+
+## ⚡ Trigger
+
+```bash
+CREATE OR REPLACE FUNCTION check_date_morte()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF NEW.data_morte IS NOT NULL AND NEW.data_morte <= NEW.data_nascita THEN
+        RAISE EXCEPTION 'La data di morte deve essere successiva alla nascita';
+    END IF;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trg_autore_date
+BEFORE INSERT OR UPDATE ON autore
+FOR EACH ROW
+EXECUTE FUNCTION check_date_morte();
+```
+Il trigger verifica che la data di morte sia coerente con la data di nascita.
+
+---
+
+## 💾 Inserimento Dati
+
+```bash
+INSERT INTO autore (nome, cognome, data_nascita)
+VALUES ('Lorenzo', 'Anzivino', '2000-01-01');
+
+INSERT INTO libro (titolo, anno_pubblicazione, autore_id)
+VALUES ('Progetto DB', 2025, 1);
+```
+
+---
+
+## 🖥 Utilizzo di pgAdmin
+
+Apri PGAdmin e crea una nuova connessione al server PostgreSQL.
+
+Host: localhost, porta: 5432, utente: postgres, password: postgres.
+
+Visualizza tabelle, esegui query e monitora il database.
+
+---
+
+## 📊 Query di esempio
+
+```bash
+-- Seleziona tutti gli autori
+SELECT * FROM autore;
+
+-- Filtra autori nati dopo il 1990
+SELECT * FROM autore WHERE data_nascita > '1990-01-01';
+
+-- Conteggio libri
+SELECT COUNT(*) FROM libro;
+
+-- Join tra autore e libro
+SELECT a.nome, a.cognome, l.titolo
+FROM autore a
+JOIN libro l ON a.id = l.autore_id;
+```
+
+---
+
 ## 👨‍💻 Autore
 **Lorenzo Anzivino**  
 Studente ITS – Corso Application Cloud Developer  
