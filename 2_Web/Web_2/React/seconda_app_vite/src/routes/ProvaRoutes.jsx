@@ -3,6 +3,9 @@ import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
 import Profile from "./Profile";
+import ErrorPage from "./ErrorPage";
+import SingleProfile from "./SingleProfile";
+import MyProfile from "./MyProfile";
 
 
 const ProvaRoutes = () => {
@@ -34,7 +37,11 @@ const ProvaRoutes = () => {
                 <Routes>
                     <Route path="/" element={<Home></Home>}></Route>
                     <Route path="/about" element={<About></About>}></Route>
-                    <Route path="/profile" element={<Profile></Profile>}></Route>
+                    <Route path="/profile/" element={<Profile></Profile>}>
+                        <Route path="/profile/:id" element={<SingleProfile></SingleProfile>}></Route>
+                        <Route path="me" element={<MyProfile></MyProfile>}></Route>
+                    </Route>
+                    <Route path="*" element={<ErrorPage></ErrorPage>}></Route>
                 </Routes>
             </BrowserRouter>
 
