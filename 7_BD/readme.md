@@ -71,16 +71,17 @@ docker run --name its_postgresql -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d p
 
 Spiegazione comandi:
 
-- "--name its_postgresql → nome del container."
-- "-e POSTGRES_PASSWORD=postgres → password dell’utente postgres."
-- "-p 5432:5432 → mappatura porta host → container."
-- "-d postgres → esegue il container in background."
+- --name its_postgresql → nome del container.
+- -e POSTGRES_PASSWORD=postgres → password dell’utente postgres.
+- -p 5432:5432 → mappatura porta host → container.
+- -d postgres → esegue il container in background.
 
 Per entrare nel container e usare psql:
 ```bash
 docker exec -it its_postgresql psql -U postgres
 ```
-
+- exec -it → entra interattivamente nel container.
+- psql -U postgres → avvia l’interfaccia a riga di comando di PostgreSQL come utente postgres.
 
 ## 👨‍💻 Autore
 **Lorenzo Anzivino**  
