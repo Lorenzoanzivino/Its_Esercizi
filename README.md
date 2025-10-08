@@ -1,143 +1,148 @@
-# 🌥️ Cloud Developer :
-### 📚 Esercizi & Lezioni :
-📁 Directory: "ITS-Esercizi"  
-🧰 Ambienti: Python, GitHub, VSCode, Web, Docker, Linux, UML
+# 🌥️ Cloud Developer  
+## 📚 Esercizi & Lezioni
 
 ---
 
-### 🐍 Python
-
-- 📅 04/03/25 – Lezione 4: **Funzioni**
-- 📅 27/03/25 – Lezione 13: **Funzioni Ricorsive**
-- 📅 02/04/25 – Lezione 18: **Eccezioni & Asserzioni**
-  - `raise Exception()`
-  - `try / except / finally`
-  - `assert`
-- 📅 09/04/25 – Lezione 9: **Regex**
-- 📅 30/04/25 – Lezione 9: **Lambda Functions**
-- 📅 08/05/25 – Lezione 15: **File (open/close)**
-- 📅 09/05/25 – Lezione 15:
-  - File : `with` (Context Manager)
-  - Metodi : `open()/close()` 
-  - Json : `json.load`
-  - Debugger
+## 📁 Directory
+**ITS-Esercizi**
 
 ---
 
-### 👨‍💻 Programmazione ad Oggetti (OOP)
-
-- 📅 13/03/25 – Lezione 6: **Classi**
-- 📅 29/03/25 – Lezione 6: **Metodi `__str__` & `__call__`**
-- 📅 16/04/25 – Lezione 8: **Ereditarietà**
-- 📅 28/04/25 – Lezione 8: **Polimorfismo**
-- 📅 28/04/25 – Lezione 8: **Classi Astratte**
-
----
-
-### 🧪 Progettazione Software
-
-- 📅 18/03/25 – Modulo di **Progettazione**
-  - Azienda_1 🏢
-  - Volo_1 ✈️
-  - Università_1 🎓
-  - Ordini_Fatture_1 🎓
-  - Impiegati_Studenti_1 🧑‍💼
-  - GO! ⚫
-  - Esercitazione_univeritaria 🧪
-  - Officine_1 🛠️
-  - Accademia_2 🏛️
-  - Ebay 🛒, RistoBook 🍽️
-    - Specifica di classi 🔧
-    - Specifica di operazioni 🔧
-    - Vincoli esterni 🔒
-    - Use-case 🧩
-    - Diagramma ristrutturato ♻️
-
-- 📅 05/05/25 – **Use Case UML**
-- 📅 07/05/25 – **Ebay/1** 🛒
-  - Raffinamento dei requisiti 📋
-- 📅 19/05/25 – **Ebay/2** 🛒
-  - Diagramma delle classi 📊
-- 📅 22/05/25 – **Consegna progettazione dei tipi di di dato**
+## 🧰 Ambienti di sviluppo
+- **Python**: scripting, OOP, gestione file, regex, eccezioni, debugging  
+- **Git & GitHub**: versionamento, branching, pull/push remoto → locale  
+- **VSCode**: IDE principale, supporto a Python, Docker, React, debugging  
+- **Web**: HTML5, CSS3, JavaScript, DOM, Bootstrap, React, NodeJS  
+- **Docker**: containerizzazione applicazioni, Dockerfile, immagini e container  
+- **Linux & Bash**: terminale, utenti e permessi, file system, shell scripting  
+- **UML & Progettazione Software**: diagrammi classi, use-case, vincoli  
+- **Database**: progettazione concettuale, tabelle, domini  
+- **Cyber Security**: teoria dei sistemi digitali, criptografia, sicurezza informatica  
 
 ---
 
-### 🧰 Git & GitHub
-
-- 📅 10/03/25 – Comandi Git + panoramica GitHub
-- 📅 11/03/25 – Comando **pull** (remoto → locale)
-
----
-
-### 🌐 Web Development
-
-- **Web.1**
-  - 📅 01/04/25 – Creazione cartelle:
-    - HTML 🌐
-    - CSS 🎨
-    - DOM 🔧
-    - Bootstrap 📦
-    - JavaScipt 🟨
-
-  - 📅 03/04/25 – Esercizio 3 Web.1
-  - 📅 04/04/25 – CSS
-  - 📅 14/04/25 – Bootstrap / Dom
-  - 📅 05/05/25 – Javascript
-  - 📅 22/05/25 – Javascript esercizi
-
-- **Web.2**
-  - 📅 04/06/25 – Creazione cartelle:
-    - JavaScipt 🟨
-      - 📅 04/06/25 - Funzioni **Asincrone**7
-  - 📅 09/06/25 - Nuovo Professore **Roberto Delisio**
-    - React ⚛️
-      - NodeJS (JS lato server)
-        - NPM (libreria)
-        - Vite
-        - Docker
+## 🐍 Python
+- **Lezioni Funzioni**
+    - Funzioni base  
+    - Funzioni ricorsive  
+- **Eccezioni & Asserzioni**
+    - `raise Exception()`  
+    - `try / except / finally`  
+    - `assert`  
+- **Regex**  
+- **Lambda Functions**  
+- **Gestione File**
+    - `open()` / `close()`  
+    - Context Manager (`with`)  
+    - JSON (`json.load`)  
+    - Debugger  
 
 ---
 
-### 🐳 Docker
-
-- 📅 15/04/25 – Lezione 20: **Docker**
-- 📅 20/05/25 – Lezione 20: **Docker**
-
----
-
-### 🐧 Linux & Bash
-
-- 📅 29/04/25 – Lezione 21: **Concetti Fondamentali**
-  - Utente root 👤
-  - Gruppi e password 👥
-  - Shell Bash 🖥️
-  - Comandi utili 🧾
-  - File system 📂
-  - Input / Output / Error 🔄
-  - Pipeline ⛓️
-  - Lista 📋
-  - Operatori logici ⚙️
+## 👨‍💻 Programmazione ad Oggetti (OOP)
+- **Classi**  
+- **Metodi speciali**
+    - `__str__` & `__call__`  
+- **Ereditarietà**  
+- **Polimorfismo**  
+- **Classi astratte**  
 
 ---
 
-### 🗃️ DataBase
-
-- 📅 30/06/25 – Progettazione - Database: **Concetti Fondamentali**
-  - Tabelle
-  - Domini
+## 🧪 Progettazione Software
+- **Modulo di Progettazione**
+    - Azienda_1 🏢  
+    - Volo_1 ✈️  
+    - Università_1 🎓  
+    - Ordini_Fatture_1 🎓  
+    - Impiegati_Studenti_1 🧑‍💼  
+    - GO! ⚫  
+    - Esercitazione_univeritaria 🧪  
+    - Officine_1 🛠️  
+    - Accademia_2 🏛️  
+    - Ebay 🛒, RistoBook 🍽️  
+        - Specifica di classi 🔧  
+        - Specifica di operazioni 🔧  
+        - Vincoli esterni 🔒  
+        - Use-case 🧩  
+        - Diagramma ristrutturato ♻️  
+- **Use Case UML**  
+- **Ebay/1 🛒**
+    - Raffinamento dei requisiti 📋  
+- **Ebay/2 🛒**
+    - Diagramma delle classi 📊  
+- Consegna progettazione dei tipi di dato  
 
 ---
 
-### 🔒 Cyber Security
-
-- 📅 21/07/25 – 💻 **Cyber security**
-- 📅 23/07/25 – 🔒  binari, bit, sistemi digitali... teoria
-- 📅 25/07/25 – 🔒  Criptografia e decriptografia
+## 🧰 Git & GitHub
+- Comandi base e avanzati Git  
+- Panoramica GitHub  
+- Pull remoto → locale  
 
 ---
 
-### 📚 Altro
+## 🌐 Web Development
 
-- 📅 08/05/25 – 🇬🇧 **Esame di Inglese**
-  - 🥇 Voto : 10/10
-- 📅 22/05/25 –  Soft_Skills_4  **Organizzazione_Aziendale**
+### Web.1
+- Creazione cartelle:
+    - HTML 🌐  
+    - CSS 🎨  
+    - DOM 🔧  
+    - Bootstrap 📦  
+    - JavaScript 🟨  
+- Esercizi Web.1  
+- CSS  
+- Bootstrap / DOM  
+- JavaScript  
+- JavaScript esercizi  
+
+### Web.2
+- Creazione cartelle:
+    - JavaScript 🟨  
+        - Funzioni Asincrone  
+- React ⚛️
+    - NodeJS (JS lato server)  
+        - NPM (gestione librerie)  
+        - Vite (build tool)  
+        - Docker  
+
+---
+
+## 🐳 Docker
+- Containerizzazione applicazioni  
+- Creazione immagini e gestione container  
+
+---
+
+## 🐧 Linux & Bash
+- Concetti fondamentali
+    - Utente root 👤  
+    - Gruppi e permessi 👥  
+    - Shell Bash 🖥️  
+    - Comandi utili 🧾  
+    - File system 📂  
+    - Input / Output / Error 🔄  
+    - Pipeline ⛓️  
+    - Liste e array 📋  
+    - Operatori logici ⚙️  
+
+---
+
+## 🗃️ DataBase
+- Progettazione concettuale  
+- Tabelle e domini  
+
+---
+
+## 🔒 Cyber Security
+- Teoria e principi base 💻  
+- Sistemi digitali, binari e bit 🔒  
+- Criptografia e decriptografia 🔒  
+
+---
+
+## 📚 Altro
+- Esame di Inglese 🇬🇧
+    - 🥇 Voto: 10/10  
+- Soft Skills: Organizzazione Aziendale  
