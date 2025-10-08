@@ -1,0 +1,53 @@
+Introduzione a FLASK:
+    Per sviluppare la logica dell'applicazione web sfruttando ad esempio Python, Le web app basate su modello client-server.
+    Model View Controller (MVC):
+        Modello su cui si basa una web app
+            - view = user interface
+            - controller = application logica
+            - model = DB strutture e query
+    
+    Flask è un micro framewark scritto in python, reso flessibile e leggero, lasciando al programmatore la possibilità di scegliere con quali librerire lavorare. 
+
+    Come installare flask:
+        - Versione python >= 3.9
+        - Scrivere su terminale "pip install Flask"
+        - Nel nostro caso con i nostri pc "sudo apt install python3-flask"
+        - Nel mio pc in particolare mi sposto nella cartella vscode_projects e poi "pip install Flask"
+
+        - Dopo in un file.py scrivere :
+
+            from flask import Flask
+            
+            app = Flask(__name__)
+
+            #decoratore
+            @app.route('/') # avere solo il percorso e basta restituisce un get
+            def home() -> str:
+            return "<h3>Hello, world!</h3>"
+
+            # sempre a fine codice
+            app.run(debug=True, host='127.0.0.1', port=5000)
+            # in production, set debug to false
+
+        - Nel terminale del file.py se ho il run scrivere:
+            - python3 main.py
+                esempio: its@its-Virtual-Machine:~/vscode_projects/Esercizi_ITS/4_Python/Python_5_6/flask$ python3 main.py
+
+                    * Serving Flask app 'main'
+                    * Debug mode: on
+                    WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+                    * Running on http://127.0.0.1:5000
+                    Press CTRL+C to quit
+                    * Restarting with stat
+                    * Debugger is active!
+                    * Debugger PIN: 116-122-709
+                    127.0.0.1 - - [07/Oct/2025 12:25:03] "GET / HTTP/1.1" 200 -
+                    * Detected change in '/home/its/vscode_projects/Esercizi_ITS/4_Python/Python_5_6/flask/main.py', reloading
+                    * Restarting with stat
+                    * Debugger is active!
+                    * Debugger PIN: 116-122-709
+
+        - Nel terminale del file.py se non ho il run: 
+            - flask --app main run
+            OR
+            - flask --app main run --debug --host 127.0.0.1 --port 5000
