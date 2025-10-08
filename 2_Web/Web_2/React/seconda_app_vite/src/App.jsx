@@ -13,6 +13,9 @@ import BlogApp from './eserciziAgosto/Esercizio_10/BlogApp'
 import Navbar from './eserciziAgosto/NavBar'
 import TodoApp from './eserciziAgosto/todoList/TodoApp'
 import MainComponent from './eserciziAgosto/MainComponent'
+import ProvaRoutes from './routes/ProvaRoutes'
+
+
 function App() {
   const [esercizio, setEsercizio] = useState('')
 
@@ -60,8 +63,10 @@ function App() {
     <>
       <Navbar onSetEsercizio={setEsercizio} />
       <div>{renderCondzionale()}</div>
+      <br />
+      <ProvaRoutes></ProvaRoutes>
     </>
-  )
-}
+  );
+};
 
 export default App;
