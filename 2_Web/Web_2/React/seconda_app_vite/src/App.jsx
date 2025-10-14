@@ -14,7 +14,10 @@ import Navbar from './eserciziAgosto/NavBar'
 import TodoApp from './eserciziAgosto/todoList/TodoApp'
 import MainComponent from './eserciziAgosto/MainComponent'
 import ProvaRoutes from './routes/ProvaRoutes'
-
+import MostraNascondi from './esercizi_UseState/MostraNascondi'
+import CambioColoreTesto from './esercizi_UseState/CambioColoreTesto'
+import EchoInput from './esercizi_UseState/EchoInput'
+import SelettorePizza from './esercizi_UseState/SelettorePizza'
 
 function App() {
   const [esercizio, setEsercizio] = useState('')
@@ -63,8 +66,22 @@ function App() {
     <>
       <Navbar onSetEsercizio={setEsercizio} />
       <div>{renderCondzionale()}</div>
-      <br />
+      <br /><br />
       <ProvaRoutes></ProvaRoutes>
+      <br /><br />
+      <h3 className="text-center">Esercizio Mostra/Nascondi</h3>
+      <MostraNascondi></MostraNascondi>
+      <br /><br />
+      <h3 className="text-center">Esercizio Cambia colore testo</h3>
+      <CambioColoreTesto></CambioColoreTesto>
+      <br /><br />
+      <h3 className="text-center">Esercizio Echo Testo</h3>
+      <EchoInput></EchoInput>
+      <br /><br />
+      <h3 className="text-center">Esercizio Selettore Pizza</h3>
+      <SelettorePizza></SelettorePizza>
+      <br /><br />
+
     </>
   );
 };
