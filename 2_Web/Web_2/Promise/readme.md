@@ -1,4 +1,4 @@
-# 📖 JavaScript Promises — La Bibbia
+# 📖 JavaScript Promises
 
 ## Cos’è una Promise
 
