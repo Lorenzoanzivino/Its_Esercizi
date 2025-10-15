@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import SkillsList from './SkillsList';
 
 const SkillsSelector = () => {
     const skills = [
@@ -17,6 +16,13 @@ const SkillsSelector = () => {
 
     const [selectedSkills, setSelectedSkills] = useState([]);
 
+    // Controlla il limite massimo
+    useEffect(() => {
+        if (selectedSkills.length > 5) {
+            alert("Hai selezionato più di 5 skills!");
+        }
+    }, [selectedSkills]);
+
     const handleCheckboxChange = (id) => {
         if (selectedSkills.includes(id)) {
             setSelectedSkills(prev => prev.filter(skillId => skillId !== id));
@@ -24,12 +30,6 @@ const SkillsSelector = () => {
             setSelectedSkills(prev => [...prev, id]);
         }
     };
-
-    useEffect(() => {
-        if (selectedSkills.length > 5) {
-            alert("Hai selezionato più di 5 skills!");
-        }
-    }, [selectedSkills]);
 
     const handleReset = () => {
         setSelectedSkills([]);
@@ -39,11 +39,17 @@ const SkillsSelector = () => {
         <div className="text-center" style={{ padding: "20px", maxWidth: "400px", margin: "auto" }}>
             <h3>Seleziona le tue skills</h3>
 
-            <SkillsList
-                skills={skills}
-                selectedSkills={selectedSkills}
-                onChangeSkill={handleCheckboxChange}
-            />
+            {/* Lista delle checkbox direttamente qui */}
+            {skills.map(skill => (
+                <div key={skill.id} style={{ margin: "5px 0" }}>
+                    <input
+                        type="checkbox"
+                        checked={selectedSkills.includes(skill.id)}
+                        onChange={() => handleCheckboxChange(skill.id)}
+                    />
+                    <label style={{ marginLeft: "8px" }}>{skill.name}</label>
+                </div>
+            ))}
 
             <p style={{ color: selectedSkills.length > 5 ? "red" : "black" }}>
                 Selezionate: {selectedSkills.length} / 10
