@@ -1,0 +1,11 @@
+DOMANDE SCONOSCIUTE:
+    1- Cosa rappresenta un programma CPU-bound?
+    6- Quale metodo Python utilizza per la gestione della memoria?
+    12- Cosa può causare un race condition nella gestione della memoria?
+    16- Qual è il vantaggio principale dell'uso del multiprocessing rispetto al threading per compiti CPU-bound?
+    19- Qual è un esempio di programma che potrebbe beneficiare dell'uso dei thread?
+    35- Perché è consigliato utilizzare ThreadPoolExecutor come context manager?
+    62- Quale funzione utilizza Python per il conteggio dei riferimenti?
+    67- Cosa succede alla fine del blocco with quando si utilizza ThreadPoolExecutor?
+    88- Quale metodo viene utilizzato per proteggere le variabili condivise in un ambiente multi-thread?
+    91- Quale convenzione devono seguire gli header dei metodi di test in unittest?
