@@ -21,4 +21,4 @@ from volo v
 
 select *
 from compagnia c LEFT OUTER JOIN volo vecchia
-    ON c.nome = v.comp;
+    ON c.nome = v.comp;s
