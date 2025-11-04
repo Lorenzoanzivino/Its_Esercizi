@@ -1,0 +1,60 @@
+# QuickHospital, un sistema informatico per la gestione di ricoveri e di visite mediche in un ospedale 
+
+
+0. Recapito:
+    0.1. indirizzo :
+        0.1.1. Via : stringa
+        0.1.2. Civico : stringa
+        0.1.3. Cap : intero di 5 numeri
+    0.2. telefono : stringa
+    0.3. email : stringa
+
+1. Anagrafica:
+    1.1. nome : stringa
+    1.2. cognome : stringa
+    1.3. data di nascita : data
+
+2. Pazienti interni:
+    2.1. anagrafica (v. req. 0)
+    2.2. recapito : (v. req. 0)
+    2.3. data ricovero : se e solo se disponibilità di posti letto ha esito positivo
+    2.4. stanza del ricovero (v. req. 4) : non potrà cambiare
+    2.5. inizio ricovero : intero < fine ricovero 
+    2.6. fine ricovero : intero > inizio ricovero
+
+3. Medici:
+    3.1. anagrafica (v. req. 0)
+    3.2. Pazienti in cura  (v. req. 2)
+    3.3. Pazienti esterni per prestazione (. req. 7)
+    3.4. specializzazioni:
+        3.4.1. primaria : stringa 1..1
+        3.4.2. secondarie : stringa 0..*
+
+4. Stanze:
+    4.1. numero posti letto : intero compreso tra 1 e 8 compreso
+    4.2. numero piano : intero >= 0
+    4.3. numero settore : intero >= 0
+
+5. storico dei pazienti:
+    5.1. pazienti (v. req. 2)
+
+6. Giro delle visite:
+    6.1. medici (v. req. 3)
+    6.2. ordine del giro : un insieme del numero stanza e numero settore in ordine crescente [(1, 1), (1, 3), (3, 4), (7, 1), (7, 7)]
+        6.2.1. numero stanza 
+        6.2.2. numero settore
+        
+7. Pazienti Esterni:
+    7.1. anagrafica (v. req. 1)
+    7.2. prestazione medica : ortopedica, dermatologica ect...
+        7.2.1 data prestazione 
+        7.2.1 descrizione : stringa
+        
+
+
+999. l sistema gestisce anche:
+    999.1. prestazioni mediche fatte da medici dell’ospedale a pazienti esterni.
+    999.2. il sistema deve restituire l’insieme dei medici maggiormente idonei a soddisfare la scelta del paziente della specializzazione del medico. Il criterio di idoneità è il seguente: 
+        - se esistono medici con specializzazione primaria pari ad s, il risultato è l’insieme di tali medici. 
+        - Altrimenti, il risultato è l’insieme dei medici che hanno s tra le loro specializzazioni secondarie.
+    999.3. Il sistema QuickHospital è accessibile ai medici, al personale amministrativo e a quello dell’ufficio prenotazioni

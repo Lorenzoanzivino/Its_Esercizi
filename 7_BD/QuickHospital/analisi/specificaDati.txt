@@ -1,0 +1,8 @@
+indirizzo : tipo record con campi:
+    - via : stringa
+    - civico : stringa 
+    - cap : stringa di 5 caratteri alfanumerici
+
+telefono : stringa  ^(\+?\d{1,4})?(\s?[\(\)-\d\s]{3,15})$
+
+email : stringa  ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
