@@ -1,0 +1,119 @@
+COME SCRIVERE UN VINCOLO ESTERNO: [
+    # un'opera non può essere esposta in due esposizioni contemporaneamente
+    # opera è una classe -> quindi un Oggetto
+
+    o: Opera                                                # o è istanza(oggetto) della classe Opera
+    e1: Etemp                                               # e1 = istanza(oggetto) della classe ETemp
+    e2: Etemp                                               # e2 = istanza(oggetto) della classe ETemp
+    e1 =/= e2                                               # e1 e e2 devono essere diversi
+
+    e2.df < e1.di                                           # df = data_fine
+        or                                                  # oppure
+    e1.df < e2.di                                           # di = data_inizio 
+
+    (o, e1): op_es                                          # o e1 è il link di associazione op_esp (opera esposta nell'esposizione temporanea e1)
+    (o, e2): op_es                                          # o e2 è il link di associazione op_esp (opera esposta nell'esposizione temporanea e2)
+]
+
+[V.Etemp_Op.Non_Contemporanea]                              # Titolo del vincolo che prende le classi "Opera" e "EsposizioneTemporanea"
+
+Per ogni o: Opera sia e1: ETemp e e2: ETemp tali che:       # abbiamo preso le istanze che ci servo
+    (o, e1): op_esp AND (o, e2): op_esp                     # Le metto in relazione
+deve essere:    
+    e1 =/= e2 AND (e2.df <= e1.di < e1.df <= e2.di)         # Impongo il vincolo dicendo che le due esposizioni non sono contemporanee
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+VINCOLI ESTERNI PER CIELO:
+ 
+# 1- Arrivo e partenza non sono uguali
+        [v: Volo 
+        a1: Aeroporto
+        a2: Aeroporto
+        
+        (v, a1): Arrivo
+        (v, a2): partenza]
+
+    [V.Volo_aereoporto.arrivoPartenza]
+        per ogni v: Volo sia a1: Aeroporto e a2: Aeroporto tali che:
+            (v, a1): Arrivo AND (v, a2): Partenza
+        deve essere:
+            a1 =/= a2 AND ((v, a1).istante > (v, a2).istante)
+
+
+# 4- Aereo non può essere contemporaneamente in due istanti di voli diversi
+        [a: Aereo
+        v1: Volo
+        v2: Volo
+
+        (v1, a1): partenza  # istante Partenza volo 1 di aeroporto 1
+        (v1, a2): arrivo    # istante arrivo
+        (v2, a1): partenza  # istante partenza volo 2 di aeroporto 1
+        (v2, a2): arrivo    # istante arrivo
+
+        (a, v1): aer_vol
+        (a, v2): aer_vol]
+
+    [V.Aereo_Volo.Aereo_non_può_avere_2_istanti_di_volo_contemporaneamente]    
+        per ogni a: aereo sia v1: volo e v2: volo tali che:
+            (a, v1): aer_vol AND (a, v2): aer_vol 
+        deve essere:
+            v1 =/= v2 AND ((v2, a2).istante <= (v1, a1).istante < (v1, a2).istante <= (v2, a2).istante)
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+COME SCRIVERE UN'OPERAZIONE CLASSE:[ 
+    # somma del prezzo base della tariffa + il prezzo extended access dell'esposizione temporanea
+
+    this                                            # Oggetto che invoca l'operazione
+        t: tariffa                                  # istanza della classe Tariffa
+        E = { e: ETemp }                            # Insieme di tutte le esposizioni temporanee del sistema
+        e: ETemp                                    # istanza della classe EsposizioneTemporanea
+        t.prezzo                                    # attributo prezzo della classe tariffa
+        e.prezzo_acc                                # attributo prezzo_acc della classe EsposizioneTemporanea
+
+    (this, t): big_tar                              # mettiamo in relazione
+    (this, e): esp_temp_big                         # mettiamo in relazione
+]
+
+[O.Big_Ext_Acc.calcolaPrezzo]                      # Titolo dell'operazione 
+calcola_prezzo(): Reale > 0                         # operazione scritta nella classe
+
+precondizione:                                      # precondizione
+    nessuna
+postcondizione:                                     # post condizione
+    sia t: Tariffa tale che:
+        (this, t): big_tar
+    sia E l'insieme di e: ETemp tale che:
+        (this, e): esp_temp_big
+
+    result è definito come:
+        - sia sum la somma di tutti gli e.prezzo_acc in E
+
+    result = sum + t.prezzo
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+COME SCRIVERE OPERAZIONI DI USE-CASE                                
+    # numero dei biglietti venduti per una determinata data
+
+    b: Data_valida = d
+    B = { b: Big_Ext_Acc }
+    e: ETemp
+    (e, b) : esp_temp_big
+
+[O.NomeUseCase.numeroBigliettiVenduti]                           # Titolo dell'operazione di UseCase
+n_biglietti_venduti(e: ETemp, d: Data) : Int >= 0                # operazione
+
+precondizione:                                                   # precondizione
+    nessuna
+postcondizione:                                                  # postcondizione
+    sia B l'insieme di b: Big_Ext_Acc tale che:
+        (e, b): esp_temp_big AND b.Data_valida = d
+    
+    result è definito come:
+        - è il numero degli elementi di B 
+
+    result = |B|                                                # Cardinalità

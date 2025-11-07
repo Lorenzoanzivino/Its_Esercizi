@@ -1,0 +1,64 @@
+Calcolo itinerario
+
+calcolo_itinerario(med: Medico) : {Intero >= 0, Intero >= 0} :
+- precondizioni:
+    - Nessuna
+
+- postcondizioni:
+        - Sia R l'insieme di tutti i ric:Ricovero, tali che (ric, med):med_ric
+        - Per ogni ric in R, sia PL l'insieme di tutti i pl:PostoLetto, tali che (ric, pl):ric_pl
+        - Sia ST l'insieme di tutte le st:Stanza, tali che st partecipa al link dell'associazione con un pl in PL
+    - Sia Res l'insieme delle coppie (p, s), dove per ogni st:Stanza in ST:
+        - p è l'attributo st.piano
+        - s è l'attributo st.settore
+    - result = Res
+
+
+
+
+Calcolo specializzazioni:
+
+calcolo_specializzazioni(s: Specializzazione) : Medico[0..*]:
+- precondizioni:
+    - Nessuna
+
+- postcondizioni
+    - Sia M_primaria l'insieme di tutti i med:Medico, tale che (s, med):spec_primaria
+    - Sia M_secondaria l'insieme di tutti i med:Medico, tale che (s, med):spec_secondaria
+    - Se M_primaria è un insieme vuoto allora result = M_secondaria altrimenti result = M_primaria
+
+
+
+Gestione pazienti e ricoveri:
+    registrazione_ricovero(data_ricovero : Data, int : Interno, med : Medico, pl : PostoLetto) :
+    - precondizioni:
+        - pl deve essere presente nell'insieme pl.disponibili(data_ricovero)
+
+    - postcondizioni:
+        - viene creati e restituiti i seguenti link/oggetti:
+            - ric:Ricovero, tale che:
+                - ric.data_ricovero = data_ricovero
+            - (ric, pl):ric_pl
+            - (int, ric):paz_ric
+            - (ric, med):ric_med
+        
+
+    registra_dimissione(ric : Ricovero, data_dimissione : Data) : Data:
+        - precondizioni:
+            - Nessuna
+
+        - postcondizioni:
+            - viene creato e restituito l'attributo ric.data_dimissione = data_dimissione
+
+    
+    registra_paziente(nome : Stringa, cognome : Stringa, data_nasc : Data, email : Email [0..*], tel : NumTel[0..*], recapito : Indirizzo, prest : Prestazione[0..1]) :
+        - precondizioni:
+            - Vengono creati e restituiti i seguenti link/oggetti:
+                - paz:Paziente, tale che:
+                    - paz.nome = nome
+                    - paz.cognome = cognome
+                    - paz.data_nasc = data_nasc
+                    - paz.email = email
+                    - paz.tel = tel
+                    - paz.recapito = recapito
+                - (paz, prest):paz_prest
