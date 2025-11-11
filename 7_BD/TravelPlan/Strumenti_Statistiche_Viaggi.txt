@@ -1,0 +1,68 @@
+numero_spostamenti(viag: Viaggio, ut: Utente): Intero:
+- precondizioni:
+    - deve essere vero che (ut, viag):partecipa
+- postcondizioni:
+    - Sia S l'insieme di tutti gli sp:Spostamento, tali che (viag, sp):viag_att e che (ut, sp):ut_att
+    - result = |S|
+
+utenti_con_max_attivita(viag: Viaggio) : Utente[0..*]:
+    - precondizioni:
+        - nessuna
+    - postcondizioni:
+        - Sia U l'insieme delle coppie (ut, n), dove:
+            - ut:Utente, tale che esiste il link (ut, viag):partecipa
+            - n è il numero di att:Attivita, tali che:
+                - Esiste il link (ut, att):ut_att
+                - Esiste il link (viag, att):viag_att
+        - Sia U_Max l'insieme degli elementi (ut, n) di U che hanno n massimo
+        - result è l'insieme formato da tutti gli elementi ut dell'insieme U_Max
+
+citta_piu_viaggiate(naz: Nazione) :
+    - precondizioni:
+        - nessuna
+    - postcondizioni:
+        - Sia Res l'insieme di tutte le coppie (reg, C_Max), dove:
+            - reg:Regione, tale che esista il link (reg, naz):reg_naz
+            - C_Max è definito come segue:
+                - Sia C l'insieme di tutte le coppie (cit, n2), dove:
+                    - cit:Citta, tale che esista il link (cit, reg):cit_reg
+                    - n2 è il numero di tutte i viag:Viaggio, tali che:
+                        - Sia A l'insieme di tutte le att:Attivita tali che (viag, att):viag_att,
+                        e sia I l'insieme di tutti gli ind:Indirizzo tali che (ind, cit):ind_cit,
+                        esista almeno una coppia di att e ind che insieme partecipano al link dell'associazione luogo_iniziale_attivita
+                    - C_Max è l'insieme di tutti gli elementi cit per i quali il valore di n2 è massimo
+        - result = Res
+
+citta_con_piu_viaggi(naz:Nazione) :
+    - precondizioni:
+        - nessuna
+    - postcondizioni:
+        - Sia 
+
+utenti_in_attivita(att: Attivita) : Intero:
+    - Sia U l'insieme di tutti gli ut:Utente tali che (ut, att):ut_att
+    - result = |U|
+
+attivita_con_max_utenti(viag: Viaggio) : Attivita[0..*]
+    - precondizioni:
+        - nessuna
+    - postcondizioni:
+        - Sia A l'insieme formato dalle coppie (att, n), dove:
+            - att:Attivita, tale che esiste il link (viag, att):viag_att
+            - n è il numero di ut:Utente tali che esiste il link (ut, att):ut_att
+        - Sia A_Max l'insieme degli elementi (att, n) di A che hanno n massimo
+        - result è l'insieme formato da tutti gli elementi att dell'insieme A_Max
+
+numero_viaggi_per_mese(cit:Citta) :
+- precondizioni:
+    - nessuna
+- postcondizioni
+    - Sia V l'insieme di 12 coppie (m, n), dove:
+        - m corrisponde a ciascuno dei 12 mesi dell'anno solare (Gennaio, Febbraio, Marzo, ..., Dicembre)
+        - n è il numero di viag:Viaggio tali che:
+            - il mese di viag.inizio = m
+            - l'anno di viag.inizio = l'anno di adesso
+            - Sia A l'insieme di tutte le att:Attivita tali che (viag, att):viag_att,
+            e sia I l'insieme di tutti gli ind:Indirizzo tali che (ind, cit):ind_cit,
+            esista almeno una coppia di att e ind che insieme partecipano al link dell'associazione luogo_iniziale_attivita
+    - result è l'insieme V

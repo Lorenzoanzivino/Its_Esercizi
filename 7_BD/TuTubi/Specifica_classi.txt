@@ -1,0 +1,84 @@
+Specifica delle classi 
+
+
+
+Specifica della classe Video 
+
+numero_visualizzazioni() : Intero >= 0: 
+    Precondizioni: 
+        Nessuna 
+
+    Postcondizioni: 
+        Sia V l’insieme  di tutte le vis:Visualizzazione, tali che (vis, this):vis_vid 
+        result = |V|
+    
+media_val() : Reale in[0..5]: 
+
+    Precondizioni: 
+        this è coinvolto almeno in un link dell’associazione valutazione 
+
+    Postcondizioni: 
+        Sia result definito come segue: 
+        Sia V l’insieme di tutti i link dell’associazione valutazione che coinvolgono this 
+        Sia S la somma di tutti i valori per gli attributi voto dei link in V 
+        result = S / |V|
+
+ 
+
+numero_risposte() : Intero >= 0: 
+
+    Precondizioni: 
+        Nessuna 
+
+    Postcondizioni: 
+        Sia V l’insieme di tutti i vid2:Video, tali che partecipano al link dell’associazione vid_risp,
+        nel quale vid2 ha ruolo di risposta e this ha ruolo di risposto 
+        Sia result = |V| 
+
+[V.Video.risposta.utente_non_autorisposta] Un utente non può rispondere con un video ai suoi stessi video 
+Per ogni ut1:Utente, ut2:Utente, vid1:Video e vid2:Video, tali che:
+    - vid1 partecipa con il ruolo di risposto e vid2 partecipa con il ruolo di risposta al link dell'associazione (vid1, vid2):vid_risp, 
+    - (vid1, ut1):pubblica 
+    - (vid2, ut2):pubblica 
+Non deve essere che ut1 = ut2 
+
+
+
+Specifica della classe Utente 
+
+[V.Utente.Valutazione.valuta_visualizzati] Un utente non può valutare un video che non ha visualizzato 
+Per ogni ut:Utente e vid:Video, tali che (ut, vid):valutazione, deve esistere una vis:Visualizzazione
+tale che (ut, vis):ut_vis e che (vis, vid):vis_vis. 
+
+[V.Utente.Valutazione.no_autovalutazione] Un utente non può valutare un video pubblicato da se stesso. 
+Per ogni ut:Utente e vid:Video, non deve essere contemporaneamente che (ut, vid):valutazione e che (ut, vid):pubblica 
+
+[V.Utente.Valutazione.non_su_video_censurati] Un utente non può valutare video dopo che sono stati censurati 
+Per ogni ut:Utente e vid:Video, tali che (ut, vid):valutazione, non deve essere che vid è anche istanza di VideoCensurato
+e che (ut, vid).istante >= (ut, vid).istante_censura 
+  
+
+
+Specifica della classe Visualizzazione 
+
+[V.Visualizzazione.non_su_video_censurati] Un utente non può visualizzare video dopo che sono stati censurati 
+Per ogni vis:Visualizzazione e vid:Video, tali che (vis, vid):vis_vid, non deve essere che  vid è anche istanza di VideoCensurato
+e che vis.istante >= vid.istante_censura 
+
+[V.Visualizzazione.Commento.commenta_visualizzati] L'istante del commento deve venire dopo l'istante della visualizzazione 
+Per ogni vis:Visualizzazione e comm:Commento, tali che (vis, comm):comm_vis, deve essere che vis.istante <= comm.istante 
+
+
+
+Specifica della classe Commento 
+
+[V.Commento.Video.non_su_video_censurati] Un utente non può commentare video dopo che sono stati censurati 
+Per ogni comm:Commento, vis:Visualizzazione e vid:Video, tali che (comm, vis):comm_vis e che (vis, vid):vis_vid,
+non deve essere che vid è anche istanza di VideoCensurato e che comm.istante >= vid.istante_censura 
+
+
+
+Specifica della classe Playlist 
+
+[V.Playlist.Video.non_contiene_censurati] Una playlist non può contenere video censurati 
+Per ogni pl:Playlist e vid:Video, tali che (pl, vid):pl_vid, non deve essere che vid sia anche istanza di VideoCen 

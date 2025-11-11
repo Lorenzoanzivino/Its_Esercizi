@@ -1,0 +1,54 @@
+Si vuole progettare e realizzare TravelPlan, un sistema per la creazione e la condivisione
+di itinerari di viaggio.
+Gli utenti di TravelPlan utilizzano il sistema per organizzare viaggi e unirsi a viaggi
+organizzati da altri utenti.
+Di ogni utente interessa conoscere il nome, il cognome, l’indirizzo email, la citta` di prove-
+nienza e la data di iscrizione.
+Ogni utente puo` creare viaggi in qualita` di organizzatore; dei viaggi interessa il nome,
+il numero minimo e il numero massimo di partecipanti. Gli utenti di TravelPlan possono
+quindi prendere parte ai viaggi organizzati dagli altri utenti.
+Un viaggio e` associato a un certo insieme di attivita`, quali visite, pasti, tour, trasporti e
+pernottamenti. Di ogni attivita` interessa conoscere il nome, l’istante di inizio, la durata, il
+prezzo, il luogo in cui si tiene, e una descrizione testuale.
+Di ogni luogo interessa conoscere l’indirizzo, la citta`, la regione e la nazione.
+Per facilitare la pianificazione da parte degli organizzatori, il sistema deve permettere di
+creare attivita` composte, cioe` che raggruppano piu` attivita` semplici. Ad esempio, l’attivita`
+“tour gastronomico del centro storico” includera` la visita di due piazze, un percorso a piedi,
+un pasto al ristorante e la visita di una cantina (ognuna di queste e` un’attivita` semplice).
+Il sistema deve poter rappresentare gli spostamenti (con qualsiasi mezzo: treno, aereo,
+nave, bicicletta, a piedi, ecc.) come attivita`, delle quali e` di interesse conoscere sia il luogo
+di partenza che quello di arrivo.
+Poiche´ puo` succedere che gli utenti che partecipano a uno stesso viaggio non prendano poi
+tutti parte alle stesse attivita` (p. es., due sotto-gruppi possono cenare in ristoranti diversi),
+il sistema deve permettere di specificare, per ogni attivita` inclusa in un viaggio, gli utenti
+che vi partecipano.
+Il sistema deve permettere agli utenti registrati di partecipare a viaggi e di creare viaggi
+in qualita` di organizzatori, aggiungendo a essi attivita` di vario tipo.
+Infine, il sistema deve offrire agli utenti registrati e ai responsabili del sistema le seguenti
+funzionalita` avanzate:
+1. trovare tutti i viaggi che includono una certa destinazione in un certo intervallo di
+tempo.
+2. trovare la/e citta` toccata/e dal maggior numero di viaggi in un certo intervallo di
+tempo;
+3. calcolare, per ogni regione di una data nazione, il numero di viaggi organizzati in un
+dato periodo di tempo che toccano tale regione;
+4. dato un budget minimo, un budget massimo, un insieme di regioni, un periodo di
+tempo e un numero N , calcolare l’insieme dei viaggi che hanno un budget nell’intervallo
+richiesto, toccano almeno una delle regioni date, si svolgono interamente all’interno del
+periodo dato e sono organizzati da un utente che abbia organizzato almeno N viaggi
+in precedenza.
+5. I responsabili del sistema devono poter calcolare, data una citta` di destinazione, per
+ognuno dei 12 mesi dell’anno, il numero di viaggi organizzati in quel mese nell’ultimo
+anno solare.
+(Solo e unicamente per le funzionalita` di seguito, dare la specifica completa.)
+• Dato un viaggio e un utente che vi partecipa, calcolare il numero di attivita` del viaggio
+di tipo “spostamento” alle quali ha preso parte.
+• Dato un viaggio, ottenere gli utenti che hanno partecipato al viaggio e che hanno preso
+parte al maggior numero di attivita` organizzate in esso.
+• I responsabili del sistema, data una nazione, devono poter calcolare, per ognuna delle
+sue regioni, la/e citta` toccata/e dal maggior numero di viaggi.
+• Data un’attivita`, calcolare il numero di utenti che vi ha preso parte.
+• Dato un viaggio, ottenere la/e attivita` organizzata/e in esso alla/e quale/i ha preso
+parte il maggior numero di utenti.
+• Data una citta` di destinazione, per ognuno dei 12 mesi dell’anno, calcolare il numero
+di viaggi organizzati in tale mese nell’ultimo anno solare, in tale citta`

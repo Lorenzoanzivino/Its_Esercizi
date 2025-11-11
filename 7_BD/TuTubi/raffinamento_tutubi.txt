@@ -1,0 +1,33 @@
+
+
+1. Requisiti sugli Utenti
+    1.1. nome (Stringa)
+    1.2. data_iscrizione (Data)
+
+
+2. Requisiti sui Video
+    2.1. titolo (Stringa)
+    2.2. durata (Intero positivo)
+    2.3. descrizione (Stringa)
+    2.4. nome_file (Stringa secondo standard) di questo 
+        2.4.1. path (Stringa secondo standard)
+    2.5. categoria (Univoca)
+        2.5.1. nome (Stringa)
+    2.6. tag (almeno uno)
+        2.6.1. nome (Stringa)
+    
+
+3. Requisiti sui Commenti
+    data (Data)
+    ora (Ora)
+    testo (Stringa)
+
+
+4. Requisiti sulle Playlist
+    4.1. nome (Stringa)
+    4.2. data_creazione (Data)
+    4.3. stato, uno tra
+        4.3.1. pubblica
+        4.3.2. privata
+
+

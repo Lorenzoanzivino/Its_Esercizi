@@ -1,0 +1,41 @@
+Funzioni ausiliarie
+sovrapposti(i1 : DataOra, i2 : DataOra, f1 : DataOra, f2 : DataOra) : Booleano:
+- precondizioni:
+    - Deve essere vero che i1 <= f1 e che i2 <= f2
+- postcondizioni:
+    - result = true se i1 <= f2 e i2 <= f1 altrimenti result = false
+
+Specifica della classe Utente
+[V.Utente.partecipa_ad_attivita_prima_iscrizione] Un utente non può partecipare ad attività che sono iniziate prima della sua iscrizione
+Per ogni ut:Utente, sia att:Attivita tale che (ut, att):ut_att, deve essere vero che ut.iscrizione <= att.inizio
+
+Specifica della classe Viaggio
+[V.Viaggio.date_valide] La data di inizio deve venire prima della data di fine
+Per ogni viag:Viaggio, deve essere vero che viag.inizio <= viag.fine
+
+[V.Viaggio.numero_corretto_partecipanti] Il numero di utenti che partecipano ad un viaggio deve essere coerente con i valori dei relativi attributi
+Per ogni viag:Viaggio, sia U l'insieme di tutti gli ut:Utente che partecipano nel link dell'associazione (ut, viag):partecipa.
+Deve essere vero che viag.min_partecipanti <= |U| <= viag.max_partecipanti
+
+Specifiche della classe Attivita
+fine() : DataOra:
+- precondizioni:
+    - nessuna
+- postcondizioni:
+    - L'operazione non modifica il livello estensionale
+    - Sia result = this.inizio + this.durata
+
+[V.Attivita.data_attivita_valida] La data di inizio dell'attività deve essere dopo la data di inizio del viaggio e la data di fine dell'attività deve essere prima della data di fine del viaggio
+Per ogni att:Attivita, sia viag:Viaggio tale che (viag, att):viag_att deve essere vero che viag.inizio <= att.inizio <= att.fine() <= viag.fine
+
+[V.Attivita.utenti_partecipano_anche_al_viaggio] Tutti gli utenti che partecipano all'attività X devono anche partecipare al viaggio di quella attività X
+Per ogni att:Attivita:
+- sia U1 l'insieme di tutti gli ut:Utente tali che (ut, at):ut_att.
+- sia viag:Viaggio tale che (viag, att):viag_att,
+    sia U2 l'insieme di tutti gli ut:Utente tali che (ut, viag):partecipa
+Deve essere vero che ogni ut:Utente in U1 è anche presente in U2
+
+[V.Attivita.utente_non_partecipare_due_attivita_contemporaneamente] Un utente non può partecipare a due attività che si sovrappongono temporalmente.
+Per ogni ut:Utente, sia att':Attivita e att'':Attivita,
+tali che att' != att'', che (ut, att'):ut_att e che (ut, att''):ut_att
+non deve essere vero che sovrapposti(att'.inizio, att''.inizio, att'.fine(), att''.fine())

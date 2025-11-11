@@ -1,0 +1,68 @@
+1. Requisiti sugli Utenti:
+    1.1. nome
+    1.2. cognome
+    1.3. indirizzo email
+    1.4. città di provenienza (v. req. 4)
+    1.5. data di iscrizione
+    1.6. viaggi creati come organizzatore (v. req. 2)
+    1.7. viaggi ai quali partecipa/ha partecipato (v. req. 2)
+    1.8. le attività al quale partecipa (v. req. 3)
+
+2. Requisiti sui Viaggi:
+    2.1. nome
+    2.2. numero minimo di partecipanti
+    2.3. numero massimo di partecipanti
+    2.4. utente che lo ha organizzato (v. req. 1)
+    2.5. utenti che vi partecipano (v. req. 1)
+    2.6. attività di cui è composto
+
+3. Requisiti sulle Attività:
+    3.1. nome
+    3.2. istante di inizio
+    3.3. durata
+    3.4. prezzo
+    3.5. indirizzo di una città dove si tiene (v. req. 4)
+    3.6. descrizione testuale
+    3.7. Se si tratta di una attività composta
+    3.8. Se è un'attività composta, le sotto-attività semplici della quale è composta
+    3.9. Se un'attività è uno spostamento
+        3.9.1. il luogo di partenza (v. req. 4)
+        3.9.2. il luogo di arrivo (v. req. 4)
+    3.12. Gli utenti del viaggio che partecipano all'attività (v. req. 1)
+
+4. Requisiti sui Luoghi:
+    4.1. indirizzo
+    4.2. città
+    4.3. regione
+    4.4. nazione
+
+999.1. il sistema deve permettere di specificare, per ogni attivita` inclusa in un viaggio, gli utenti
+che vi partecipano.
+999.2. Il sistema deve permettere agli utenti registrati di partecipare a viaggi e di creare viaggi
+in qualita` di organizzatori, aggiungendo a essi attivita` di vario tipo.
+999.3. trovare tutti i viaggi che includono una certa destinazione in un certo intervallo di
+tempo.
+999.4. trovare la/e citta` toccata/e dal maggior numero di viaggi in un certo intervallo di
+tempo;
+999.5. calcolare, per ogni regione di una data nazione, il numero di viaggi organizzati in un
+dato periodo di tempo che toccano tale regione;
+999.6. dato un budget minimo, un budget massimo, un insieme di regioni, un periodo di
+tempo e un numero N , calcolare l’insieme dei viaggi che hanno un budget nell’intervallo
+richiesto, toccano almeno una delle regioni date, si svolgono interamente all’interno del
+periodo dato e sono organizzati da un utente che abbia organizzato almeno N viaggi
+in precedenza.
+999.7. I responsabili del sistema devono poter calcolare, data una citta` di destinazione, per
+ognuno dei 12 mesi dell’anno, il numero di viaggi organizzati in quel mese nell’ultimo
+anno solare.
+(Solo e unicamente per le funzionalita` di seguito, dare la specifica completa.)
+999.8. Dato un viaggio e un utente che vi partecipa, calcolare il numero di attivita` del viaggio
+di tipo “spostamento” alle quali ha preso parte.
+999.9. Dato un viaggio, ottenere gli utenti che hanno partecipato al viaggio e che hanno preso
+parte al maggior numero di attivita` organizzate in esso.
+999.10. I responsabili del sistema, data una nazione, devono poter calcolare, per ognuna delle
+sue regioni, la/e citta` toccata/e dal maggior numero di viaggi.
+999.11. Data un’attivita`, calcolare il numero di utenti che vi ha preso parte.
+999.12. Dato un viaggio, ottenere la/e attivita` organizzata/e in esso alla/e quale/i ha preso
+parte il maggior numero di utenti.
+999.13. Data una citta` di destinazione, per ognuno dei 12 mesi dell’anno, calcolare il numero
+di viaggi organizzati in tale mese nell’ultimo anno solare, in tale citta`

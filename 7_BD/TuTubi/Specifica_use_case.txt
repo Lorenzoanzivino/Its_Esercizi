@@ -1,0 +1,39 @@
+Specifica di Use Case 
+
+
+
+Strumenti Playlist 
+
+trova_playlists(ut: Utente) : PlaylistPub[0..*]: 
+    Precondizioni: 
+        Nessuna
+
+    Postcondizioni: 
+        Sia result l’insieme di tutte le pl:PlaylistPub tali che (ut, pl):ut_pl 
+
+ 
+
+Strumenti Video 
+
+ricerca_video(cat: Categoria, tags: Tag[0..*], v: 0..5) : Video[0..*]: 
+
+    Precondizioni: 
+        Nessuna 
+
+    Postcondizioni: 
+        Sia result l’insieme di tutti i vid:Video, tali che: 
+        vid NON è anche istanza di VideoCensurato 
+        Esista il link (cat, vid):cat_vid 
+        Esiste almeno un t:Tag in tags tale che esista il link (t, vid):tag_vid 
+        vid non è coinvolto in alcun link dell’associazione valutazione oppure vid.media_val() >= v 
+
+vid_piu_discussi(cat: Categoria) : Video[0..*]: 
+    Precondizioni: 
+        Nessuna 
+
+    Postcondizioni: 
+        Sia V l’insieme di tutti le coppie (vid, n), dove: 
+        vid:Video, tale che (cat, vid):cat_vid 
+        n è il valore di vid.numero_risposte() 
+        Sia V_Max l’insieme di tutte le coppie (vid, n) in V che hanno valore di n pari al massimo 
+        Sia result l’insieme di tutti i valori di vid in V_Max 
