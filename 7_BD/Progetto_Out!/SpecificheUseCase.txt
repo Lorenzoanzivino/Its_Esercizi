@@ -1,0 +1,11 @@
+UseCase StrumentiResponsabileSpettacolo:
+    invio_suggerimenti(u: Utente): Spettacolo [0..*]
+
+    precondizione:
+        nessuna
+    postcondizione:
+        l'operazione non modifica i dati
+        il risultato result è cosi definito:
+
+        sia S l'insieme di s: Spettacoli tali che
+        esiste almeno un'oggetto  che è istanza di 
