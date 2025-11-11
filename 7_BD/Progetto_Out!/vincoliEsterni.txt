@@ -1,0 +1,49 @@
+
+[V.Spettacolo.dataFine_dopo_dataInizio]
+    la data di fine viene sempre dopo la data di inizio
+    per ogni s:Spettacolo tali che:
+        s.dataFine >= s.dataInizio
+
+[V.SalaSpettacolo.uno_spettacolo_alla_volta]
+    gli spettacoli non possono essere sovrapposti
+
+    per ogni s:Sala sia sp1:Spettacolo e sp2:spettacolo tali che:
+        (sp1, s): sala_spet e (sp2, s): sala_spet allora:
+        sp1.fine < sp2.inizio OR sp2.fine < sp1.inizio
+
+
+[O.PrezzoRidottoPrezzoUtente.biglietto_ridotto]
+    se l'età dell'utente è inferiore a 12 allora il prezzo del biglietto pieno vale la metà
+    riduzione(p:Prezzo, u:Utente) : Reale > 0
+
+    precondizione: 
+        nessuna
+
+    postcondizione:
+        sia u: Utente pr: Prenotazione e po: Posto tale che:
+        (u, pr): pre_ut, (pr, po): Pre_posto e (pr, this): pre_prezzo
+        se u.eta < 12 allora:
+
+        result = this.prezzo / 2
+
+[O.PostoLiberoPosto.posti_liberi]
+    i posti liberi saranno i posti totali meno il numero di prenotazioni
+    precondizione:
+        nessuna
+
+    postCondizione:
+        sia u: Utente, pr: Prenotazione, po: Posto e Pr l'insieme di pr: prenotazioni tale che:
+        (u, pr): pre_ut e (pr, this): Pre_posto allora:
+
+        result : postiTotali - Pr
+
+[O.PostoOccupatoPostoLiberoPosto.posti_liberi]
+    i posti liberi saranno i posti totali meno il numero di prenotazioni
+    precondizione:
+        nessuna
+
+    postCondizione:
+        sia u: Utente, pr: Prenotazione, po: Posto e pl: PostoLibero tale che:
+        (u, pr): pre_ut e (pr, this): Pre_posto allora:
+        
+        result : PostiTotali - PostoLibero

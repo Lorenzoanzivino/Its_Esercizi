@@ -17,7 +17,7 @@ COME SCRIVERE UN VINCOLO ESTERNO: [
 
 [V.Etemp_Op.Non_Contemporanea]                              # Titolo del vincolo che prende le classi "Opera" e "EsposizioneTemporanea"
 
-Per ogni o: Opera sia e1: ETemp e e2: ETemp tali che:       # abbiamo preso le istanze che ci servo
+Per ogni o: Opera sia e1: ETemp e e2: ETemp tali che:       # abbiamo preso le istanze che ci servono
     (o, e1): op_esp AND (o, e2): op_esp                     # Le metto in relazione
 deve essere:    
     e1 =/= e2 AND (e2.df <= e1.di < e1.df <= e2.di)         # Impongo il vincolo dicendo che le due esposizioni non sono contemporanee

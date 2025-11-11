@@ -1,0 +1,57 @@
+# Out!, un sistema Web che consenta agli utenti di consultare il programma di diversi cinema e teatri cittadini, e di prenotare gli spettacoli a cui desiderano assistere.
+
+
+1. requisiti sulle Sedi (teatri, cinema e altre sedi associate al circuito): 
+    1.1. sale distinte : {id} ( v. req 2 )
+
+2. requisiti sulle Sale:
+    2.1. ospitare spettacolo : [0..*] ( v. req 3 )
+    (uno alla volta, s1.fine < s2.inizio OR s2.fine < s1.inizio)
+    2.2. posti a sedere : (v. req. 5)
+
+3. Spettacoli:
+    3.1. data inizio : Data [1..1]
+    3.2. data fine : Data [0..1]
+    3.3. orario : DataOra
+    3.4. titolo : stringa
+    3.5. tipologia : ( v. req. 4 )
+    3.6. genere : stringa
+    3.7. artisti : 
+        3.7.1. nome : stringa
+    3.8. Sede dove avviene spettacolo : ( v. req. 1 )
+    3.9. Sala della sede : ( v. req 2 )
+
+4. tipologia:
+    4.1. tipo : { concerto, rappresentazione teatrale, film }
+
+5. posti a sedere:
+    5.0. Posti liberi : intero > 0
+    (operazione : prodotto delle file * colonne - posti prenotati)
+    5.1. numeri di file : intero > 0
+    5.2. numeri colonne : intero > 0
+    5.3. settore : stringa
+    5.4. prezzo : float
+        5.4.1. pieno
+        5.4.2. ridotto
+
+6. Calendari di spettacoli:
+    6.1. spettacoli : ( v. req. 3 )
+    (classe che eredita direttamente gli spettacoli le sale e le sedi)
+
+7. Utenti:
+    7.1. nome : stringa
+    7.2. cognome : stringa
+    7.3. codice fiscale : CodiceFiscale {id}
+    999.2.1. Visionano il calendario
+    999.2.2. scelgono i posti nella sala dello spettacolo
+
+
+
+999. Il sistema deve permettere di :
+    999.1 avere uno storico che mantiene salvati le sede le sale e le date per ogni spettacolo
+    999.2 consentire agli utenti di : 
+        999.2.1. iscriversi al servizio fornendo i dati
+        999.2.2. prenotare uno o più posti a prezzo pieno o ridotto di un dato settore tramite la data dello spettacolo
+        999.2.3. Avere una lista di spettacoli per tipologia e genere in un certo giorno
+
+    999.3. ricevere suggerimenti su nuovi spettacoli, insieme di spettacoli programmati nei prossimi 7 giorni dello stesso genere dell'ultimo spettacolo visionato.
