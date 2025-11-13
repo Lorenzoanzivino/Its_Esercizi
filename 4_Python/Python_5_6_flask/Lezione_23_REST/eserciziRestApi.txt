@@ -1,0 +1,126 @@
+1. Progettazione risorse: Considera un centro sportivo che gestisce corsi, istruttori e iscritti. Elenca le principali risorse e scrivi gli URI corretti. Indica anche esempi di URI errati.
+
+    /corsi          # Corretto
+    /corso          # Scorretto
+    /Istruttori     # Corretto
+    /Istruttore     # Scorretto
+    /Iscritti       # Corretto
+    /Iscrivere      # Scorretto
+
+---
+
+2. Metodi HTTP e CRUD: Per ciascuna operazione indica il metodo HTTP e il codice di stato corretto:
+
+    Creare un nuovo corso
+        POST /Corsi/1    -> 201 Created
+    Aggiornare i dati di un istruttore
+        PUT /Istruttori/23    -> 200 0K
+    Eliminare un iscritto
+        DELETE /Iscritti/123    -> 200 OK
+    Ottenere l’elenco dei corsi
+        GET /Corsi    -> 200 OK
+    Tentare di accedere a un corso inesistente
+        GET /Corsi/Nuoto ->    404 NOT FOUND
+
+---
+
+3. Analisi JSON: Ecco un oggetto JSON relativo a una prenotazione di campo da tennis: 
+
+Content-Type: application/json
+{
+   'id': 12,
+   'cliente': 'Luca Neri', 
+   'campo': 3, 
+   'data': '2025-03-20', 
+   'ora': '18:00', 
+   'durata_ore': 2
+}
+BASE URL: https://api.esempio.it
+Individua la risorsa e utilizza i metodi HTTP per crea una nuova prenotazione con i dati forniti, modificare l'intera prenotazione, e creare una nuova prenotazione con dati differenti. Indica anche il codice di stato corretto. 
+
+    POST    /Prenotazioni    -> 201 Created
+    Content-Type: application/json
+    {
+    'id': 12,
+    'cliente': 'Luca Neri', 
+    'campo': 3, 
+    'data': '2025-03-20', 
+    'ora': '18:00', 
+    'durata_ore': 2
+    }
+
+    PUT     /Prenotazioni/12    -> 200 OK
+    Content-Type: application/json
+    {
+    'id': 12,
+    'cliente': 'Luca Neri', 
+    'campo': 4,                  # modificato da 3 a 4
+    'data': '2025-03-20', 
+    'ora': '18:30',              # modificato da 18:00 a 18:30
+    'durata_ore': 2
+    }
+
+    POST    /Prenotazioni    -> 201 Created
+    Content-Type: application/json
+    {
+    'id': 15,
+    'cliente': 'Luca Rossi', 
+    'campo': 2, 
+    'data': '2025-04-10', 
+    'ora': '18:00', 
+    'durata_ore': 3
+    }
+
+---
+
+4. Progetta una mini API: un’agenzia di viaggi deve gestire destinazioni, clienti e prenotazioni. Definisci 5 endpoint REST (metodo + URI + esempio di risposta JSON).
+
+    /destinazioni
+    /clienti
+    /prenotazioni
+
+    POST    /destinazioni    -> 201 Created
+    Content-Type: application/json
+    {
+    'id_destinazione': 'Roma',
+    'ora' : '18:00'
+    }
+
+    POST    /clienti    -> 201 Created
+    {
+    'id_cliente': '1',
+    'nome' : 'Mario',
+    'cognome' : 'Rossi',
+    'cf' : 'mrrrss98p09h501j'
+    }
+
+    Content-Type: application/json
+    POST    /prenotazioni/1/roma   -> 201 Created
+    {
+    'id_prenotazione' : '1234'
+    'id_cliente': '1',
+    'id_destinazione' : 'Roma',
+    'ora' : 14:00,
+    'prezzo' : 35
+    }
+
+    GET    /prenotazioni/1234   -> 200 Ok
+    {
+    'id_prenotazione' : '1234'
+    'id_cliente': '1',
+    'id_destinazione' : 'Roma',
+    'ora' : 14:00,
+    'prezzo' : 35
+    }
+
+    GET /destinazioni/roma    -> 200 Ok
+    {
+    'id_destinazione': 'Roma',
+    'ora' : '18:00'
+    }
+
+---
+
+5. Livelli di Maturità REST: ti vengono mostrati esempi di API. Indica per ciascuno il livello di maturità (0–3) secondo il modello di Richardson.
+
+

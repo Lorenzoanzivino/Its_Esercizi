@@ -11,10 +11,6 @@
 from flask import Flask, url_for
 app = Flask(__name__)
 
-@app.route('/') # avere solo il percorso e basta restituisce un get
-def home() -> str:
-    return "<h3>La mia Home</h3>"
-
 @app.route('/user/<string:nome>')
 def show_nome(nome:str) -> str:
     return f"Benvenuto, {nome}"
@@ -30,4 +26,4 @@ def show_somma(a:int, b:int) -> int:
     return f"La somma di {a} e {b} è : {somma}"
     
     
-app.run(debug=True, host='127.0.0.1', port=5000)
+app.run(debug=True)
