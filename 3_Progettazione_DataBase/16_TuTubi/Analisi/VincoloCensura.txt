@@ -1,0 +1,8 @@
+[V.CensuratoVisualizzazione.NonDeveEsistereDopoVisualizzazione]
+
+per ogni v:Video, vis:Visualizzazione e c:Censurato tale che:
+    (vis, v): vis_vid 
+    allora:
+    non deve esistere (vis, c): vis_vid se c.istanteCensurato > vis.istanteVisualizzazione
+
+

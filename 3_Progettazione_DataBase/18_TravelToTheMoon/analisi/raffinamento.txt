@@ -1,0 +1,57 @@
+1.Requisiti sulle crociere
+	1.1. codice (stringa univoca)
+    1.2. data_inizio (DataOra)
+    1.3. data_fine (DataOra)
+    1.4. nave (v.req.2)
+    1.5. tipologia
+        1.5.1. luna di miele
+            1.5.1. tipologia
+                1.5.1.1. tradizionali
+                    1.5.1.1.1. se destinazioni romantiche >= destinazioni divertenti
+                1.5.1.2. alternative
+                    1.5.1.2.1. se destinazioni romantiche < destinazioni divertenti
+        1.5.2. crociere per famiglia
+            1.5.2.1. adatte ai bambini (Boolean)
+
+
+2. Requisiti sulle navi
+    2.1. nome (stringa)
+    2.2. grado confort (3..5)
+    2.3. numero_massimo_passegeri (Intero positivo)
+
+
+3. Requisiti sulle destinazioni
+    3.1. nome (Stringa)
+    3.2. continente (Stringa)
+    3.3. tipologia
+        3.3.1. romantiche
+        3.3.2. divertenti
+    3.4. ordine dell'itinerario
+    
+
+4. Requisiti sui posti
+    4.1. nome (Stringa)
+    4.2. descrizione (Stringa)
+    4.3. inizio (DataOra)
+    4.3. fine (DataOra)
+
+
+5. Requisiti sulle prenotazioni
+    5.1. istante_prenotazione (DataOra)
+    5.2. crociera (v.req.1)
+    5.3. numero posti (Intero > 0)
+
+
+6. Requisiti sui clienti
+    6.1. nome (Stringa)
+    6.2. cognome (Stringa)
+    6.3. eta (Intero >= 0)
+    6.4. indirizzo
+
+7. itinerario  
+    7.1 nome
+    7.2 sequenza ordinata di destinazioni
+    7.3 le crociere
+    7.4 destinazione
+
+DA RIFARE ASSOLUTAMENTE

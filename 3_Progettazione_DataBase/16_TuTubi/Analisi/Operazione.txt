@@ -1,0 +1,29 @@
+calcola_media(v:Video): Reale in [0..5]
+	precondizioni:
+        evitare divisioni per 0:
+        - deve esistere almeno un (this,u): valutazione dove u:Utente
+	postcondizioni:
+		Per ogni u:Utente
+		- Sia V l'insieme di tutti i link (u,v):Valutazione
+		- Sia s la somma di tutti (u,v).voto
+		- result = s / |V|
+
+---
+
+video_categoria(c:Categoria): Intero >= 0
+	precondizioni:
+	postcondizioni: 
+		- Sia V l'insieme di v:Video tale che (c, v):cat_vid e calcola_media(v) >= 4
+		- result = |V|
+
+---
+
+iscrivi_utente(n: Stringa): Utente 
+    precondizione:
+        - per ogni u: Utente non esiste u.nome = n
+    postcondizione:
+        - L'operazione modifica il livello estensionale dei dati
+        - crea l'istanza u:Utente tale che:
+            - u.nome = n
+            - u.iscrizione = adesso
+        - result = u
