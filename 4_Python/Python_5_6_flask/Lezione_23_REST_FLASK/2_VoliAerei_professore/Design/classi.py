@@ -7,7 +7,9 @@ class Nazione:
 
     def __init__(self, nome: str, citta: set[Citta]|None = None) -> None:
         self.set_nome(nome)
-        # TODO da completare
+        if citta:
+            for c in citta:
+                c.set_nazione(self)
 
     def nome(self) -> str:
         return self._nome
@@ -18,13 +20,11 @@ class Nazione:
     def citta(self) -> frozenset[Citta]:
         return frozenset(self._citta)
 
-    def _add_citta(self, c: Citta) -> None:
-        # TODO da implementare
-        pass
+    def _add_citta(self, citta: Citta) -> None:
+        self._citta.add(citta)
 
-    def remove_citta(self, citta: Citta) -> None:
-        # TODO da implementare
-        pass
+    def _remove_citta(self, citta: Citta) -> None:
+        self._citta.remove(citta)
 
 
 
@@ -58,8 +58,12 @@ class Citta:
         return self._nazione
 
     def set_nazione(self, nazione: Nazione) -> None:
-        # TODO da implementare
-        pass
+        if nazione:
+            self._nazione._remove_citta(self)
+            nazione._add_citta(self)
+            self._nazione = nazione
+        
+
 
     def __str__(self) -> str:
         return f"Citta '{self.nome()}' con {self.abitanti()} abitanti"
@@ -131,12 +135,16 @@ class Volo:
     _codice: CodiceVolo # immutabile, noto alla nascita
     _durata_minuti: IntGZ # noto alla nascita
     _compagnia: Compagnia # da assoc. volo_comp [1..1], immutabile, noto alla nascita
+    _arrivo: Aeroporto # <<imm>>
+    _partenza: Aeroporto # <<imm>>
 
-    def __init__(self, codice: CodiceVolo, durata: IntGZ, compagnia: Compagnia) -> None:
+    def __init__(self, codice: CodiceVolo, durata: IntGZ, compagnia: Compagnia, arrivo: Aeroporto, partenza: Aeroporto) -> None:
         self._codice = codice
         self.set_durata_minuti(durata)
         self._compagnia = compagnia
         compagnia._add_volo(self)
+        self._arrivo = arrivo
+        self._partenza = partenza
 
     def codice(self) -> CodiceVolo:
         return self._codice
@@ -149,7 +157,12 @@ class Volo:
 
     def compagnia(self) -> Compagnia:
         return self._compagnia
+    
+    def arrivo(self) -> Aeroporto:
+        return self._arrivo
 
+    def partenza(self) -> Aeroporto:
+        return self._partenza
 
     def __str__(self) -> str:
         return f"Volo '{self.codice()}' di '{self.compagnia().nome()} con durata {self.durata_minuti()} minuti"
