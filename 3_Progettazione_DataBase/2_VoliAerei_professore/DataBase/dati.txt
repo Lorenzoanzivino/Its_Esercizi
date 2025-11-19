@@ -1,0 +1,49 @@
+-- Dati per la tabella Nazione
+INSERT INTO Nazione (id, nome) VALUES
+(1, 'Italia'),
+(2, 'Stati Uniti'),
+(3, 'Francia'),
+(4, 'Germania'),
+(5, 'Spagna');
+
+-- Dati per la tabella Citta
+INSERT INTO Citta (id, n_abitanti, nome, nazione) VALUES
+(101, 2800000, 'Roma', 1),
+(102, 8500000, 'New York', 2),
+(103, 2100000, 'Parigi', 3),
+(104, 1700000, 'Milano', 1),
+(105, 3700000, 'Berlino', 4),
+(106, 3300000, 'Madrid', 5),
+(107, 1300000, 'Napoli', 1);
+
+-- Dati per la tabella Aereoporto
+INSERT INTO Aereoporto (id, nome, codice, citta) VALUES
+(201, 'Fiumicino', 'FCO', 101),
+(202, 'JFK', 'JFK', 102),
+(203, 'Charles de Gaulle', 'CDG', 103),
+(204, 'Linate', 'LIN', 104),
+(205, 'Malpensa', 'MXP', 104),
+(206, 'Tegel', 'TXL', 105),
+(207, 'Adolfo Suárez Madrid-Barajas', 'MAD', 106),
+(208, 'Capodichino', 'NAP', 107);
+
+-- Dati per la tabella CompagniaAerea
+INSERT INTO CompagniaAerea (id, fondazione, nome, citta) VALUES
+(301, 1946, 'Alitalia', 101),
+(302, 1939, 'American Airlines', 102),
+(303, 1933, 'Air France', 103),
+(304, 1953, 'Lufthansa', 105),
+(305, 1927, 'Iberia', 106);
+
+-- Dati per la tabella Volo
+INSERT INTO Volo (id, durata_in_minuti, codice, compagniaAerea, aeroporto_partenza, aeroporto_arrivo) VALUES
+(401, 180, 'AZ100', 301, 201, 203), -- Roma FCO -> Parigi CDG (Alitalia)
+(402, 480, 'AA200', 302, 202, 201), -- New York JFK -> Roma FCO (American Airlines)
+(403, 90, 'AF300', 303, 203, 204),  -- Parigi CDG -> Milano LIN (Air France)
+(404, 120, 'LH400', 304, 206, 205), -- Berlino TXL -> Milano MXP (Lufthansa)
+(405, 150, 'IB500', 305, 207, 201), -- Madrid MAD -> Roma FCO (Iberia)
+(406, 60, 'AZ101', 301, 204, 201),  -- Milano LIN -> Roma FCO (Alitalia)
+(407, 450, 'AA201', 302, 201, 202), -- Roma FCO -> New York JFK (American Airlines)
+(408, 100, 'AF301', 303, 203, 208), -- Parigi CDG -> Napoli NAP (Air France)
+(409, 130, 'LH401', 304, 205, 206), -- Milano MXP -> Berlino TXL (Lufthansa)
+(410, 160, 'IB501', 305, 201, 207); -- Roma FCO -> Madrid MAD (Iberia)
