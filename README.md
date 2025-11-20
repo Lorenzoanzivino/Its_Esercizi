@@ -2,18 +2,17 @@
 ## 📚 Esercizi & Lezioni
 
 ### 📑 Sommario
-1. [📁 Directory](#-directory)
-2. [🧰 Ambienti di sviluppo](#-ambienti-di-sviluppo)
-3. [🐍 Python 1-4](#-python-1-4)
-4. [🐍 Python 5-6 (Flask)](#-python-5-6)
-5. [🧪 Progettazione Software](#-progettazione-software)
-6. [🧰 Git & GitHub](#-git--github)
-7. [🌐 Web Development](#-web-development)
-8. [🐳 Docker](#-docker)
-9. [🐧 Linux & Bash](#-linux--bash)
-10. [🔒 Cyber Security](#-cyber-security)
-11. [📚 Altro](#-altro)
-12. [📚🎓 Esami](#-esami)
+
+- [🔐 OBIETTIVO](#-obiettivo)
+- [1️⃣ CREA IL FILE DI TESTO (in chiaro)](#1️⃣-crea-il-file-di-testo-in-chiaro)
+- [2️⃣ CREA LO ZIP CIFRATO (AES-256)](#2️⃣-crea-lo-zip-cifrato-aes-256)  
+  - [✔️ Linux / Mac (terminale)](#️-linux--mac-terminale)
+- [3️⃣ CONSERVAZIONE (come fare il backup serio)](#3️⃣-conservazione-come-fare-il-backup-serio)
+- [4️⃣ COME APRIRLO DAL TELEFONO](#4️⃣-come-aprirlo-dal-telefono)
+- [5️⃣ LA COSA PIÙ IMPORTANTE](#5️⃣-la-cosa-più-importante)
+- [📘 LIBRO PERSONALE DELLE CREDENZIALI](#libro-personale-delle-credenziali)
+- [📌 Checklist rapida](#-checklist-rapida-copiala-alla-fine-del-file-se-vuoi)
+- [📦 STRUTTURA DEL TUO ARCHIVIO ZIP](#-struttura-del-tuo-archivio-zip-aes-256)
 
 ---
 
