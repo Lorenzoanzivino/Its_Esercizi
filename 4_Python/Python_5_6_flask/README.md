@@ -1,7 +1,7 @@
 ## 🏗️ Struttura cartelle di un progetto completo
 
 ```bash
-VoliAerei/
+CartellaProgetto/
 ├── 📂 docs/                        <-- (La "Memoria": Analisi, Design, etc.)
 │   ├── Analisi/
 │   ├── Design/
