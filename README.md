@@ -4,13 +4,13 @@
 ---
 
 ## 📁 Directory
-**ITS-Esercizi**
+**ITS-Esercizi 📂**
 
 ---
 
 ## 🧰 Ambienti di sviluppo
-- **Python**: scripting, OOP, gestione file, regex, eccezioni, debugging  
-- **Java**: scripting, OOP, gestione file, regex, eccezioni, debugging  
+- **Python**: scripting, OOP, gestione file, regex, eccezioni, debugging 
+- **Java**: scripting, OOP, gestione file, regex, eccezioni, debugging 
 - **Git & GitHub**: versionamento, branching, pull/push remoto → locale  
 - **VSCode**: IDE principale, supporto a Python, Docker, React, debugging  
 - **Web**: HTML5, CSS3, JavaScript, DOM, Bootstrap, React, NodeJS  
@@ -46,47 +46,60 @@
 
 ## 🐍 Python 5-6
 - **REST - FLASK**
+    
+```bash
+    from flask import Flask, request, url_for, jsonify
+
+    app = Flask(__name__)
+
+    app.run(debug=True)
+```
+
+- **Verbi**
+    - `GET`, `POST`, `PUT`, `PATH`, `DELETE`
+- **Routes**
+    - `app.get('/collezioni/risorsa')`
+    - `app.route('/collezioni/..., methods=['GET', 'POST'])`
 
 ---
 
 ## 🧪 Progettazione Software
-- **Analisi** (concettuale)
-- **Design** (python)
-- **DataBase** (sql)
+- **Analisi 🧠** (*concettuale*)
+- **Design 🎨** (*python*)
+- **DataBase 🗃️** (*sql*)
     - SQL
     - postgress
     - Progettazione concettuale  
     - Tabelle e domini 
 
-    - **Esercizi di Progettazione**
-        - Azienda_1 🏢  
-        - Volo_1 ✈️  
-        - Università_1 🎓  
-        - Ordini_Fatture_1 🎓  
-        - Impiegati_Studenti_1 🧑‍💼  
-        - GO! ⚫  
-        - Esercitazione_univeritaria 🧪  
-        - Officine_1 🛠️  
-        - Accademia_2 🏛️  
-        - Ebay 🛒, RistoBook 🍽️  
-            - Specifica di classi 🔧  
-            - Specifica di operazioni 🔧  
-            - Vincoli esterni 🔒  
-            - Use-case 🧩  
-            - Diagramma ristrutturato ♻️  
-        - Ristobook
-        - TravelPlan
-        - MyPrecious
-        - Out!
-        - TuTubi
-        - QuickHospital
-        - TravelToTheMoon
-    - **Use Case UML**  
-    - **Ebay/1 🛒**
-        - Raffinamento dei requisiti 📋  
-    - **Ebay/2 🛒**
-        - Diagramma delle classi 📊  
-    - Consegna progettazione dei tipi di dato  
+- **Esercizi ✍️**
+    - Azienda_1 🏢  
+    - Volo_1 ✈️  
+    - Università_1 🎓  
+    - Ordini_Fatture_1 🎓  
+    - Impiegati_Studenti_1 🧑‍💼  
+    - GO! ⚫  
+    - Esercitazione_univeritaria 🧪  
+    - Officine_1 🛠️  
+    - Accademia_2 🏛️  
+    - Ebay 🛒, RistoBook 🍽️  
+        - Specifica di classi 🔧  
+        - Specifica di operazioni ⚙️  
+        - Vincoli esterni 🔒  
+        - Use-case 🧩  
+        - Diagramma ristrutturato ♻️  
+    - Ristobook 📖
+    - TravelPlan 🗺️
+    - MyPrecious 💍
+    - Out! 🚪
+    - TuTubi 📺
+    - QuickHospital 🏥
+    - TravelToTheMoon 🚀
+- **Use Case UML**  
+- **Ebay/1 🛒**
+    - Raffinamento dei requisiti 📋  
+- **Ebay/2 🛒**
+    - Diagramma delle classi 📊   
 
 ---
 
@@ -152,22 +165,24 @@
 ---
 
 ## 📚 Altro 
-- Soft Skills: Organizzazione Aziendale  
-- Progetto extracurriculare **SIATE_PlayGroung_Sapienza**
+- Soft Skills: Organizzazione Aziendale 🤝
+- Progetto extracurriculare **SIATE_PlayGroung_Sapienza** 👾
+
+---
 
 ## 📚🎓 Esami
-- Inglese 🇬🇧
+- Inglese 🇬🇧:
     - 🥇 Voto: 10/10 
-- Sistemi Digitali:
-    - 🥇 Voto:
-- Python 1-4:
-    - 🥇 Voto:
-- Progettazione (analisi):
-    - 🥇 Voto:
-- Web (1-2):
-    -🥇 Voto:
-- DataBase (diagramma e tabelle):
-    - 🥇 Voto:
-- DataBase (Query):
-    - 🥇 Voto:
+- Sistemi Digitali 💾:
+    - 🥇 Voto: /10 
+- Python 1-4 🐍:
+    - 🥇 Voto: /10
+- Progettazione (*analisi*) 📐:
+    - 🥇 Voto: /10
+- Web (*1-2*) 🌐:
+    -🥇 Voto: /10
+- DataBase (*diagramma e tabelle*) 🗄️:
+    - 🥇 Voto: /10
+- DataBase (*Query*) 🔎:
+    - 🥇 Voto: /10
 
