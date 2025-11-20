@@ -1,16 +1,16 @@
-## Struttura cartelle di un progetto completo
+## 🏗️ Struttura cartelle di un progetto completo
 
 ```bash
 VoliAerei/
-├── Progect/                        <-- (Invariato: Analisi, Design, etc.)
-│   |── Analisi/
-|   |── Design/
-|   |   |── Python/
-|   |   |── Postgress/
-|   |   |── RestAPI/
-|   |── DataBase/
-|
-├── app/                            <-- IL CODICE
+├── 📂 docs/                        <-- (La "Memoria": Analisi, Design, etc.)
+│   ├── Analisi/
+│   ├── Design/
+│   │   ├── Python/
+│   │   ├── Postgress/
+│   │   └── RestAPI/
+│   └── DataBase/
+│
+├── 🚀 app/                         <-- (Il "Codice Attivo")
 │   ├── __init__.py                 <-- Qui inizializzi l'app Flask
 │   │
 │   ├── models/                     <-- (EX data_model del Prof)
@@ -29,15 +29,15 @@ VoliAerei/
 │   ├── static/                     <-- CSS, IMG (Invariato)
 │   └── templates/                  <-- HTML (Invariato)
 │
-├── tests/                          <-- NUOVA CARTELLA TEST
+├── 🧪 tests/                       <-- NUOVA CARTELLA TEST
 │   ├── __init__.py
 │   ├── test_models.py              <-- (Ex classi_test.py)
 │   └── test_routes.py              <-- (Ex test.py)
 │
-├── venv/                           <-- (Invariato)
-├── run.py                          <-- (Ex main.py del prof)
-├── requirements.txt
-└── README.md
+├── 🐍 venv/                        <-- (Invariato)
+├── ▶️ run.py                       <-- (Ex main.py del prof)
+├── 📄 requirements.txt
+└── 📖 README.md
 ```
 
 ### La Nuova Struttura Consigliata

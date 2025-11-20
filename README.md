@@ -33,6 +33,7 @@
 - **UML & Progettazione Software**: diagrammi classi, use-case, vincoli  
 - **Database**: progettazione concettuale, tabelle, domini  
 - **Cyber Security**: teoria dei sistemi digitali, criptografia, sicurezza informatica  
+
 [⬆️ Torna su](#-sommario)
 
 ---
@@ -58,6 +59,7 @@
 - **Ereditarietà**  
 - **Polimorfismo**  
 - **Classi astratte**  
+
 [⬆️ Torna su](#-sommario)
 
 ---
@@ -78,6 +80,7 @@
 - **Routes**
     - `app.get('/collezioni/risorsa')`
     - `app.route('/collezioni/..., methods=['GET', 'POST'])`
+
 [⬆️ Torna su](#-sommario)
 
 ---
@@ -119,6 +122,7 @@
     - Raffinamento dei requisiti 📋  
 - **Ebay/2 🛒**
     - Diagramma delle classi 📊   
+
 [⬆️ Torna su](#-sommario)
 
 ---
@@ -127,6 +131,7 @@
 - Comandi base e avanzati Git  
 - Panoramica GitHub  
 - Pull remoto → locale  
+
 [⬆️ Torna su](#-sommario)
 
 ---
@@ -155,6 +160,7 @@
         - NPM (gestione librerie)  
         - Vite (build tool)  
         - Docker  
+
 [⬆️ Torna su](#-sommario)
 
 ---
@@ -162,6 +168,7 @@
 ## 🐳 Docker
 - Containerizzazione applicazioni  
 - Creazione immagini e gestione container  
+
 [⬆️ Torna su](#-sommario)
 
 ---
@@ -177,6 +184,7 @@
     - Pipeline ⛓️  
     - Liste e array 📋  
     - Operatori logici ⚙️  
+
 [⬆️ Torna su](#-sommario)
 
 ---
@@ -185,6 +193,7 @@
 - Teoria e principi base 💻  
 - Sistemi digitali, binari e bit 🔒  
 - Criptografia e decriptografia 🔒  
+
 [⬆️ Torna su](#-sommario)
 
 ---
@@ -192,6 +201,7 @@
 ## 📚 Altro 
 - Soft Skills: Organizzazione Aziendale 🤝
 - Progetto extracurriculare **SIATE_PlayGroung_Sapienza** 👾
+
 [⬆️ Torna su](#-sommario)
 
 ---
@@ -211,4 +221,5 @@
     - 🥇 Voto: /10
 - DataBase (*Query*) 🔎:
     - 🥇 Voto: /10
+
 [⬆️ Torna su](#-sommario)
