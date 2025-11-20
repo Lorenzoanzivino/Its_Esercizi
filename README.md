@@ -10,6 +10,7 @@
 
 ## 🧰 Ambienti di sviluppo
 - **Python**: scripting, OOP, gestione file, regex, eccezioni, debugging  
+- **Java**: scripting, OOP, gestione file, regex, eccezioni, debugging  
 - **Git & GitHub**: versionamento, branching, pull/push remoto → locale  
 - **VSCode**: IDE principale, supporto a Python, Docker, React, debugging  
 - **Web**: HTML5, CSS3, JavaScript, DOM, Bootstrap, React, NodeJS  
@@ -21,7 +22,7 @@
 
 ---
 
-## 🐍 Python
+## 🐍 Python 1-4
 - **Lezioni Funzioni**
     - Funzioni base  
     - Funzioni ricorsive  
@@ -36,40 +37,56 @@
     - Context Manager (`with`)  
     - JSON (`json.load`)  
     - Debugger  
-
-### 👨‍💻 Programmazione ad Oggetti (OOP)
 - **Classi**  
 - **Metodi speciali**
-    - `__str__` & `__call__`  
+    - `__str__`, `__call__`, `__repr__`, `__eq__`, `__hash__`  
 - **Ereditarietà**  
 - **Polimorfismo**  
 - **Classi astratte**  
 
+## 🐍 Python 5-6
+- **REST - FLASK**
+
 ---
 
 ## 🧪 Progettazione Software
-- **Modulo di Progettazione**
-    - Azienda_1 🏢  
-    - Volo_1 ✈️  
-    - Università_1 🎓  
-    - Ordini_Fatture_1 🎓  
-    - Impiegati_Studenti_1 🧑‍💼  
-    - GO! ⚫  
-    - Esercitazione_univeritaria 🧪  
-    - Officine_1 🛠️  
-    - Accademia_2 🏛️  
-    - Ebay 🛒, RistoBook 🍽️  
-        - Specifica di classi 🔧  
-        - Specifica di operazioni 🔧  
-        - Vincoli esterni 🔒  
-        - Use-case 🧩  
-        - Diagramma ristrutturato ♻️  
-- **Use Case UML**  
-- **Ebay/1 🛒**
-    - Raffinamento dei requisiti 📋  
-- **Ebay/2 🛒**
-    - Diagramma delle classi 📊  
-- Consegna progettazione dei tipi di dato  
+- **Analisi** (concettuale)
+- **Design** (python)
+- **DataBase** (sql)
+    - SQL
+    - postgress
+    - Progettazione concettuale  
+    - Tabelle e domini 
+
+    - **Esercizi di Progettazione**
+        - Azienda_1 🏢  
+        - Volo_1 ✈️  
+        - Università_1 🎓  
+        - Ordini_Fatture_1 🎓  
+        - Impiegati_Studenti_1 🧑‍💼  
+        - GO! ⚫  
+        - Esercitazione_univeritaria 🧪  
+        - Officine_1 🛠️  
+        - Accademia_2 🏛️  
+        - Ebay 🛒, RistoBook 🍽️  
+            - Specifica di classi 🔧  
+            - Specifica di operazioni 🔧  
+            - Vincoli esterni 🔒  
+            - Use-case 🧩  
+            - Diagramma ristrutturato ♻️  
+        - Ristobook
+        - TravelPlan
+        - MyPrecious
+        - Out!
+        - TuTubi
+        - QuickHospital
+        - TravelToTheMoon
+    - **Use Case UML**  
+    - **Ebay/1 🛒**
+        - Raffinamento dei requisiti 📋  
+    - **Ebay/2 🛒**
+        - Diagramma delle classi 📊  
+    - Consegna progettazione dei tipi di dato  
 
 ---
 
@@ -127,14 +144,6 @@
 
 ---
 
-## 🗃️ DataBase
-- SQL
-- postgress
-- Progettazione concettuale  
-- Tabelle e domini 
-
----
-
 ## 🔒 Cyber Security
 - Teoria e principi base 💻  
 - Sistemi digitali, binari e bit 🔒  
@@ -142,7 +151,23 @@
 
 ---
 
-## 📚 Altro
-- Esame di Inglese 🇬🇧
-    - 🥇 Voto: 10/10  
+## 📚 Altro 
 - Soft Skills: Organizzazione Aziendale  
+- Progetto extracurriculare **SIATE_PlayGroung_Sapienza**
+
+## 📚🎓 Esami
+- Inglese 🇬🇧
+    - 🥇 Voto: 10/10 
+- Sistemi Digitali:
+    - 🥇 Voto:
+- Python 1-4:
+    - 🥇 Voto:
+- Progettazione (analisi):
+    - 🥇 Voto:
+- Web (1-2):
+    -🥇 Voto:
+- DataBase (diagramma e tabelle):
+    - 🥇 Voto:
+- DataBase (Query):
+    - 🥇 Voto:
+
