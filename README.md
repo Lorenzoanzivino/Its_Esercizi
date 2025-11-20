@@ -1,6 +1,20 @@
 # 🌥️ Cloud Developer  
 ## 📚 Esercizi & Lezioni
 
+### 📑 Sommario
+1. [📁 Directory](#-directory)
+2. [🧰 Ambienti di sviluppo](#-ambienti-di-sviluppo)
+3. [🐍 Python 1-4](#-python-1-4)
+4. [🐍 Python 5-6 (Flask)](#-python-5-6)
+5. [🧪 Progettazione Software](#-progettazione-software)
+6. [🧰 Git & GitHub](#-git--github)
+7. [🌐 Web Development](#-web-development)
+8. [🐳 Docker](#-docker)
+9. [🐧 Linux & Bash](#-linux--bash)
+10. [🔒 Cyber Security](#-cyber-security)
+11. [📚 Altro](#-altro)
+12. [📚🎓 Esami](#-esami)
+
 ---
 
 ## 📁 Directory
@@ -19,6 +33,8 @@
 - **UML & Progettazione Software**: diagrammi classi, use-case, vincoli  
 - **Database**: progettazione concettuale, tabelle, domini  
 - **Cyber Security**: teoria dei sistemi digitali, criptografia, sicurezza informatica  
+
+[⬆️ Torna su](#-sommario)
 
 ---
 
