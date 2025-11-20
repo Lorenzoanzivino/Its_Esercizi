@@ -78,14 +78,12 @@ Al livello più alto (dentro VoliAerei/) dovresti avere solo i file di gestione:
 
     run.py: È un file piccolissimo che serve solo ad avviare tutto. Esempio:
 
-    ```bash
     from app import create_app
 
     app = create_app()
 
     if __name__ == '__main__':
         app.run(debug=True)
-    ```
 
     - requirements.txt: Fondamentale se lavori in team o cambi PC. Lo generi con pip freeze > requirements.txt.
 
