@@ -2,28 +2,36 @@
 
 ```bash
 VoliAerei/
-├── docs/                           <-- Tutta la documentazione (Niente codice eseguibile)
-│   ├── analisi/                    <-- I tuoi vecchi diagrammi, .vpp, .txt concettuali
-│   ├── design/                     <-- Diagrammi architetturali, PDF del design
-│   └── database_schema/            <-- Diagrammi ER, PDF struttura DB
+├── docs/                           <-- (Invariato: Analisi, Design, etc.)
 │
-├── app/                            <-- IL CUORE DELL'APPLICAZIONE FLASK
-│   ├── __init__.py                 <-- Inizializza l'app Flask e il DB
-│   ├── models.py                   <-- (Ex file.sql/design) Le classi del DB (SQLAlchemy)
-│   ├── routes.py                   <-- (Ex file.py) Le rotte (URL) e la logica
-│   ├── static/                     <-- CSS, JavaScript, Immagini, Loghi
-│   │   ├── css/
-│   │   └── img/
-│   └── templates/                  <-- I file HTML (Jinja2)
-│       ├── base.html
-│       ├── index.html
-│       └── ...
+├── app/                            <-- IL CODICE
+│   ├── __init__.py                 <-- Qui inizializzi l'app Flask
+│   │
+│   ├── models/                     <-- (EX data_model del Prof)
+│   │   ├── __init__.py             <-- Rende la cartella un package
+│   │   ├── citta.py                <-- File del prof
+│   │   └── nazione.py              <-- File del prof
+│   │
+│   ├── data/                       <-- (EX dp del Prof - Data Persistence)
+│   │   ├── __init__.py
+│   │   ├── mockup_db.json          <-- Il "database" JSON del prof
+│   │   ├── mockup_db_init.json
+│   │   └── data_manager.py         <-- (Ex utils.py) Funzioni per leggere il JSON
+│   │
+│   ├── routes.py                   <-- Qui importi le classi da models/ e i dati da data/
+│   │
+│   ├── static/                     <-- CSS, IMG (Invariato)
+│   └── templates/                  <-- HTML (Invariato)
 │
-├── migrations/                     <-- (Opzionale ma consigliato) Versionamento del DB
-├── venv/                           <-- Virtual Environment (da non committare)
-├── run.py                          <-- Il file che lancia il server (entry point)
-├── requirements.txt                <-- Lista librerie (flask, ecc.)
-└── README.md                       <-- Spiegazione del progetto
+├── tests/                          <-- NUOVA CARTELLA TEST
+│   ├── __init__.py
+│   ├── test_models.py              <-- (Ex classi_test.py)
+│   └── test_routes.py              <-- (Ex test.py)
+│
+├── venv/                           <-- (Invariato)
+├── run.py                          <-- (Ex main.py del prof)
+├── requirements.txt
+└── README.md
 ```
 
 ### La Nuova Struttura Consigliata
