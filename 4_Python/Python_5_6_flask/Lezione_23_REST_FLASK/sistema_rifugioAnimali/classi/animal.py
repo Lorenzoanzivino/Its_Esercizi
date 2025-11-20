@@ -33,4 +33,3 @@ class Animal(ABC):
     
     def bmi_like(self) -> float:    # Indice Massa Corporea
         return self.weight_kg / (self.age_years + 1) 
-

@@ -7,6 +7,7 @@ class Nazione:
 
     def __init__(self, nome: str, citta: set[Citta]|None = None) -> None:
         self.set_nome(nome)
+        self._citta = set()
         if citta:
             for c in citta:
                 c.set_nazione(self)
