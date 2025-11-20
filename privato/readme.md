@@ -6,24 +6,16 @@ Questo documento ti spiega come creare, organizzare e mettere al sicuro il tuo f
 
 ## 📑 Sommario
 
-- [1. Obiettivo](#1-obiettivo)
-- [2. Creazione del file `credenzialitxt`](#2-creazione-del-file-credenzialitxt)
-- [3. Struttura consigliata del file](#3-struttura-consigliata-del-file)
-- [4. Creazione dello ZIP cifrato AES-256](#4-creazione-dello-zip-cifrato-aes-256)
-  - [4.1 Windows (7-Zip)](#41-windows-7-zip)
-  - [4.2 Linux / macOS (zip & 7z)](#42-linux--macos-zip--7z)
-- [5. Conservazione e backup sicuro](#5-conservazione-e-backup-sicuro)
-- [6. Apertura del file dal telefono](#6-apertura-del-file-dal-telefono)
-- [7. Regole sulla password dell’archivio](#7-regole-sulla-password-dellarchivio)
-- [8. Libro personale delle credenziali](#8-libro-personale-delle-credenziali)
-  - [8.1 Social](#81-social)
-  - [8.2 Servizi finanziari](#82-servizi-finanziari)
-  - [8.3 Dispositivi](#83-dispositivi)
-  - [8.4 Account vari](#84-account-vari)
-  - [8.5 Codici 2FA e ripristino](#85-codici-2fa-e-ripristino)
-  - [8.6 Note personali importanti](#86-note-personali-importanti)
-- [9. Checklist finale di sicurezza](#9-checklist-finale-di-sicurezza)
-- [10. Struttura dell’archivio ZIP](#10-struttura-dellarchivio-zip)
+- [🔐 OBIETTIVO](#-obiettivo)
+- [1️⃣ CREA IL FILE DI TESTO (in chiaro)](#1️⃣-crea-il-file-di-testo-in-chiaro)
+- [2️⃣ CREA LO ZIP CIFRATO (AES-256)](#2️⃣-crea-lo-zip-cifrato-aes-256)  
+  - [✔️ Linux / Mac (terminale)](#️-linux--mac-terminale)
+- [3️⃣ CONSERVAZIONE (come fare il backup serio)](#3️⃣-conservazione-come-fare-il-backup-serio)
+- [4️⃣ COME APRIRLO DAL TELEFONO](#4️⃣-come-aprirlo-dal-telefono)
+- [5️⃣ LA COSA PIÙ IMPORTANTE](#5️⃣-la-cosa-più-importante)
+- [📘 LIBRO PERSONALE DELLE CREDENZIALI](#libro-personale-delle-credenziali)
+- [📌 Checklist rapida](#-checklist-rapida-copiala-alla-fine-del-file-se-vuoi)
+- [📦 STRUTTURA DEL TUO ARCHIVIO ZIP](#-struttura-del-tuo-archivio-zip-aes-256)
 
 ---
 
