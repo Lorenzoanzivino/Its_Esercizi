@@ -2,9 +2,12 @@
 
 ```bash
 VoliAerei/
-├── Progect/                           <-- (Invariato: Analisi, Design, etc.)
+├── Progect/                        <-- (Invariato: Analisi, Design, etc.)
 │   |── Analisi/
-|   |── Design Python/
+|   |── Design/
+|   |   |── Python/
+|   |   |── Postgress/
+|   |   |── RestAPI/
 |   |── DataBase/
 |
 ├── app/                            <-- IL CODICE
