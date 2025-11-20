@@ -2,8 +2,14 @@
 
 ```bash
 VoliAerei/
-├── docs/                           <-- (Invariato: Analisi, Design, etc.)
-│
+├── Progect/                        <-- (Invariato: Analisi, Design, etc.)
+│   |── Analisi/
+|   |── Design/
+|   |   |── Python/
+|   |   |── Postgress/
+|   |   |── RestAPI/
+|   |── DataBase/
+|
 ├── app/                            <-- IL CODICE
 │   ├── __init__.py                 <-- Qui inizializzi l'app Flask
 │   │
