@@ -1,0 +1,120 @@
+🧠 20 Concetti Chiave
+
+    1. Modello di Von Neumann: CPU, memoria, I/O con bus condiviso
+
+    2. Ciclo di istruzione: Fetch → Decode → Execute
+
+    3. Firmware vs Driver: firmware = integrato, driver = installabile
+
+    4. BIOS vs UEFI: UEFI moderno, supporta Secure Boot
+
+    5. Sistema operativo: kernel + interfaccia utente
+
+    6. Processi: stati (ready, running, waiting, zombie)
+
+    7. Memoria virtuale: paging, swapping
+
+    8. File system: gerarchia, path assoluto/relativo
+
+    9. Topologie di rete: bus, ring, star, mesh, tree
+
+    10. Modello ISO/OSI: 7 livelli, da fisico ad applicazione
+
+    11. TCP/IP: 4 livelli, più pratico
+
+    12. Indirizzi IP: IPv4 vs IPv6
+
+    13. Codifica binaria: base 2, complemento a due
+
+    14. Algebra booleana: AND, OR, NOT, De Morgan
+
+    15. Shell Linux: comandi base (ls, cd, mkdir, rm)
+
+    16. Script bash: variabili, cicli, condizioni
+
+    17. Python base: variabili, cicli, funzioni
+
+    18. Ambiente hardware: CPU, GPU, RAM, SSD
+
+    19. Client-Server vs P2P: centralizzato vs distribuito
+
+    20. Sicurezza: firewall, crittografia, autenticazione
+
+
+📘 10 Definizioni Fondamentali
+
+    1. CPU: Unità centrale di elaborazione
+
+    2. RAM: Memoria volatile, veloce
+
+    3. Kernel: Cuore del sistema operativo
+
+    4. Processo: Programma in esecuzione
+
+    5. IP Address: Identificativo univoco in rete
+
+    6. Protocollo: Regole di comunicazione
+
+    7. Script: Sequenza di comandi automatizzati
+
+    8. Algoritmo: Sequenza logica di istruzioni
+
+    9. Bit: Unità minima di informazione
+
+    10. Bus: Canale di comunicazione tra componenti
+
+
+🧪 5 Esempi Pratici
+
+    1. Complemento a due:
+        +5 → 00000101
+        −5 → 11111011
+
+    2. Script bash semplice:
+        bash
+        for i in {1..5}; do echo "Numero $i"; done
+
+    3. Ciclo Python:
+        python
+        for i in range(5):
+        print("Numero", i)
+
+    4. Comando Linux:
+        bash
+        mkdir nuova_cartella && cd nuova_cartella
+
+    5. Modello OSI vs TCP/IP:
+        OSI: 7 livelli (fisico → applicazione)
+        TCP/IP: 4 livelli (rete → applicazione)
+
+
+🧭 3 Diagrammi da Ricordare
+
+    1. Modello Von Neumann 
+    
+        CPU ↔ Memoria ↔ I/O 
+        (con bus dati, indirizzi, controllo)
+
+    2. Topologie di rete
+
+        Star: centrale
+
+        Mesh: interconnessa
+
+        Tree: gerarchica
+
+    3. Livelli OSI
+
+        Fisico
+
+        Data Link
+
+        Rete
+
+        Trasporto
+
+        Sessione
+
+        Presentazione
+
+        Applicazione
